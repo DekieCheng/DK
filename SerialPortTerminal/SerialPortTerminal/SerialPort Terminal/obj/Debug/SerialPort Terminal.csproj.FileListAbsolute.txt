@@ -1,0 +1,10 @@
+D:\03Sharing\SerialPortTools\SerialPortTerminal\SerialPort Terminal\bin\Debug\SerialPort Terminal.exe.config
+D:\03Sharing\SerialPortTools\SerialPortTerminal\SerialPort Terminal\bin\Debug\SerialPort Terminal.exe
+D:\03Sharing\SerialPortTools\SerialPortTerminal\SerialPort Terminal\bin\Debug\SerialPort Terminal.pdb
+D:\03Sharing\SerialPortTools\SerialPortTerminal\SerialPort Terminal\obj\Debug\SerialPortTerminal.frmAbout.resources
+D:\03Sharing\SerialPortTools\SerialPortTerminal\SerialPort Terminal\obj\Debug\SerialPortTerminal.frmTerminal.resources
+D:\03Sharing\SerialPortTools\SerialPortTerminal\SerialPort Terminal\obj\Debug\SerialPortTerminal.Properties.Resources.resources
+D:\03Sharing\SerialPortTools\SerialPortTerminal\SerialPort Terminal\obj\Debug\SerialPort Terminal.csproj.GenerateResource.cache
+D:\03Sharing\SerialPortTools\SerialPortTerminal\SerialPort Terminal\obj\Debug\SerialPort Terminal.csproj.CoreCompileInputs.cache
+D:\03Sharing\SerialPortTools\SerialPortTerminal\SerialPort Terminal\obj\Debug\SerialPort Terminal.exe
+D:\03Sharing\SerialPortTools\SerialPortTerminal\SerialPort Terminal\obj\Debug\SerialPort Terminal.pdb
