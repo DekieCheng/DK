@@ -57,6 +57,7 @@ namespace SerialPortTerminal
             this.nupInterval = new System.Windows.Forms.NumericUpDown();
             this.lblInterval = new System.Windows.Forms.Label();
             this.btnAutoSend = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.gbDataMode.SuspendLayout();
             this.gbPortSettings.SuspendLayout();
             this.gCommunicateMode.SuspendLayout();
@@ -71,7 +72,7 @@ namespace SerialPortTerminal
             this.rtfTerminal.Location = new System.Drawing.Point(3, 6);
             this.rtfTerminal.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.rtfTerminal.Name = "rtfTerminal";
-            this.rtfTerminal.Size = new System.Drawing.Size(711, 227);
+            this.rtfTerminal.Size = new System.Drawing.Size(711, 322);
             this.rtfTerminal.TabIndex = 0;
             this.rtfTerminal.Text = "";
             // 
@@ -79,12 +80,13 @@ namespace SerialPortTerminal
             // 
             this.txtSendData.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSendData.Location = new System.Drawing.Point(99, 237);
+            this.txtSendData.Location = new System.Drawing.Point(99, 332);
             this.txtSendData.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtSendData.Multiline = true;
             this.txtSendData.Name = "txtSendData";
             this.txtSendData.Size = new System.Drawing.Size(614, 57);
             this.txtSendData.TabIndex = 2;
+            this.txtSendData.WordWrap = false;
             this.txtSendData.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSendData_KeyDown);
             this.txtSendData.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSendData_KeyPress);
             // 
@@ -92,7 +94,7 @@ namespace SerialPortTerminal
             // 
             this.lblSend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblSend.AutoSize = true;
-            this.lblSend.Location = new System.Drawing.Point(3, 237);
+            this.lblSend.Location = new System.Drawing.Point(3, 332);
             this.lblSend.Name = "lblSend";
             this.lblSend.Size = new System.Drawing.Size(81, 20);
             this.lblSend.TabIndex = 1;
@@ -101,7 +103,7 @@ namespace SerialPortTerminal
             // btnSend
             // 
             this.btnSend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSend.Location = new System.Drawing.Point(587, 301);
+            this.btnSend.Location = new System.Drawing.Point(587, 396);
             this.btnSend.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(127, 35);
@@ -177,7 +179,7 @@ namespace SerialPortTerminal
             this.gbDataMode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.gbDataMode.Controls.Add(this.rbText);
             this.gbDataMode.Controls.Add(this.rbHex);
-            this.gbDataMode.Location = new System.Drawing.Point(265, 297);
+            this.gbDataMode.Location = new System.Drawing.Point(265, 392);
             this.gbDataMode.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.gbDataMode.Name = "gbDataMode";
             this.gbDataMode.Padding = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -277,7 +279,7 @@ namespace SerialPortTerminal
             // btnOpenPort
             // 
             this.btnOpenPort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnOpenPort.Location = new System.Drawing.Point(587, 385);
+            this.btnOpenPort.Location = new System.Drawing.Point(587, 480);
             this.btnOpenPort.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnOpenPort.Name = "btnOpenPort";
             this.btnOpenPort.Size = new System.Drawing.Size(127, 35);
@@ -298,7 +300,7 @@ namespace SerialPortTerminal
             this.gbPortSettings.Controls.Add(this.cmbParity);
             this.gbPortSettings.Controls.Add(this.cmbDataBits);
             this.gbPortSettings.Controls.Add(this.label1);
-            this.gbPortSettings.Location = new System.Drawing.Point(7, 297);
+            this.gbPortSettings.Location = new System.Drawing.Point(7, 392);
             this.gbPortSettings.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.gbPortSettings.Name = "gbPortSettings";
             this.gbPortSettings.Padding = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -312,7 +314,7 @@ namespace SerialPortTerminal
             this.lnkAbout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lnkAbout.AutoSize = true;
             this.lnkAbout.Font = new System.Drawing.Font("Segoe UI Emoji", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnkAbout.Location = new System.Drawing.Point(646, 463);
+            this.lnkAbout.Location = new System.Drawing.Point(646, 558);
             this.lnkAbout.Name = "lnkAbout";
             this.lnkAbout.Size = new System.Drawing.Size(63, 26);
             this.lnkAbout.TabIndex = 7;
@@ -325,7 +327,7 @@ namespace SerialPortTerminal
             this.gCommunicateMode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.gCommunicateMode.Controls.Add(this.chkDTR);
             this.gCommunicateMode.Controls.Add(this.chkRTS);
-            this.gCommunicateMode.Location = new System.Drawing.Point(265, 363);
+            this.gCommunicateMode.Location = new System.Drawing.Point(265, 458);
             this.gCommunicateMode.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.gCommunicateMode.Name = "gCommunicateMode";
             this.gCommunicateMode.Padding = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -363,7 +365,7 @@ namespace SerialPortTerminal
             // nupInterval
             // 
             this.nupInterval.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.nupInterval.Location = new System.Drawing.Point(473, 463);
+            this.nupInterval.Location = new System.Drawing.Point(473, 558);
             this.nupInterval.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.nupInterval.Maximum = new decimal(new int[] {
             9999999,
@@ -383,7 +385,7 @@ namespace SerialPortTerminal
             // 
             this.lblInterval.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblInterval.AutoSize = true;
-            this.lblInterval.Location = new System.Drawing.Point(265, 467);
+            this.lblInterval.Location = new System.Drawing.Point(265, 562);
             this.lblInterval.Name = "lblInterval";
             this.lblInterval.Size = new System.Drawing.Size(182, 20);
             this.lblInterval.TabIndex = 8;
@@ -392,7 +394,7 @@ namespace SerialPortTerminal
             // btnAutoSend
             // 
             this.btnAutoSend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAutoSend.Location = new System.Drawing.Point(587, 343);
+            this.btnAutoSend.Location = new System.Drawing.Point(587, 438);
             this.btnAutoSend.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnAutoSend.Name = "btnAutoSend";
             this.btnAutoSend.Size = new System.Drawing.Size(127, 35);
@@ -400,11 +402,21 @@ namespace SerialPortTerminal
             this.btnAutoSend.Text = "&Auto Send";
             this.btnAutoSend.Click += new System.EventHandler(this.btnAutoSend_Click);
             // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(1, 352);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(92, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "(ctrl + enter)";
+            // 
             // frmTerminal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(721, 500);
+            this.ClientSize = new System.Drawing.Size(721, 595);
             this.Controls.Add(this.nupInterval);
             this.Controls.Add(this.lnkAbout);
             this.Controls.Add(this.lblInterval);
@@ -414,11 +426,13 @@ namespace SerialPortTerminal
             this.Controls.Add(this.gCommunicateMode);
             this.Controls.Add(this.gbDataMode);
             this.Controls.Add(this.btnSend);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblSend);
             this.Controls.Add(this.txtSendData);
             this.Controls.Add(this.rtfTerminal);
             this.Font = new System.Drawing.Font("Segoe UI Emoji", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.MinimumSize = new System.Drawing.Size(739, 418);
             this.Name = "frmTerminal";
@@ -466,6 +480,7 @@ namespace SerialPortTerminal
         private System.Windows.Forms.NumericUpDown nupInterval;
         private System.Windows.Forms.Label lblInterval;
         private System.Windows.Forms.Button btnAutoSend;
+        private System.Windows.Forms.Label label2;
     }
 }
 
