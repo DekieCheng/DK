@@ -299,7 +299,9 @@ namespace SerialPortTerminal
         private void txtSendData_KeyDown(object sender, KeyEventArgs e)
         {
             // If the user presses [ENTER], send the data now
-            if (KeyHandled = e.KeyCode == Keys.Enter) { e.Handled = true; SendData(); }
+            // if (KeyHandled = e.KeyCode == Keys.Enter) { e.Handled = true; SendData(); }
+            if (e.Modifiers == Keys.Control && e.KeyCode == Keys.Enter) { e.Handled = true; SendData(); }
+
         }
         private void txtSendData_KeyPress(object sender, KeyPressEventArgs e)
         { e.Handled = KeyHandled; }
