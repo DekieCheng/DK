@@ -26,7 +26,7 @@ namespace ReportsApplication
 
         private void INITForm()
         {
-            this.txtDBConnection.Text = "Data Source=NSCM0295\\FFMES2K17;Initial Catalog=FF2_9_3;Integrated Security=True";
+            this.txtDBConnection.Text = "Data Source=your sql server instance;Initial Catalog=YourDBName;Integrated Security=True";
             this.txtRDLCPath.Text = @"..\..\Report1.rdlc";
             this.txtUDPName.Text = "udpGetReportDataVS2017";
         }
