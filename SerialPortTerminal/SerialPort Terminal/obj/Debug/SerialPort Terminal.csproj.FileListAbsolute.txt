@@ -1,0 +1,10 @@
+C:\00Works\02github\tools\DK\SerialPortTerminal\SerialPort Terminal\bin\Debug\SerialPort Terminal.exe.config
+C:\00Works\02github\tools\DK\SerialPortTerminal\SerialPort Terminal\bin\Debug\SerialPort Terminal.exe
+C:\00Works\02github\tools\DK\SerialPortTerminal\SerialPort Terminal\bin\Debug\SerialPort Terminal.pdb
+C:\00Works\02github\tools\DK\SerialPortTerminal\SerialPort Terminal\obj\Debug\SerialPortTerminal.frmAbout.resources
+C:\00Works\02github\tools\DK\SerialPortTerminal\SerialPort Terminal\obj\Debug\SerialPortTerminal.frmTerminal.resources
+C:\00Works\02github\tools\DK\SerialPortTerminal\SerialPort Terminal\obj\Debug\SerialPortTerminal.Properties.Resources.resources
+C:\00Works\02github\tools\DK\SerialPortTerminal\SerialPort Terminal\obj\Debug\SerialPort Terminal.csproj.GenerateResource.cache
+C:\00Works\02github\tools\DK\SerialPortTerminal\SerialPort Terminal\obj\Debug\SerialPort Terminal.csproj.CoreCompileInputs.cache
+C:\00Works\02github\tools\DK\SerialPortTerminal\SerialPort Terminal\obj\Debug\SerialPort Terminal.exe
+C:\00Works\02github\tools\DK\SerialPortTerminal\SerialPort Terminal\obj\Debug\SerialPort Terminal.pdb
