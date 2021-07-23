@@ -1,0 +1,13 @@
+C:\00work\03others\00-Study\PrintLabelSimulator\PrintLabelSimulator\PrintLabelSimulator\bin\Debug\PrintLabelSimulator.exe
+C:\00work\03others\00-Study\PrintLabelSimulator\PrintLabelSimulator\PrintLabelSimulator\bin\Debug\PrintLabelSimulator.pdb
+C:\00work\03others\00-Study\PrintLabelSimulator\PrintLabelSimulator\PrintLabelSimulator\bin\Debug\PrintLabelSimulator.xml
+C:\00work\03others\00-Study\PrintLabelSimulator\PrintLabelSimulator\PrintLabelSimulator\obj\Debug\PrintLabelSimulator.Resources.resources
+C:\00work\03others\00-Study\PrintLabelSimulator\PrintLabelSimulator\PrintLabelSimulator\obj\Debug\PrintLabelSimulator.vbproj.GenerateResource.cache
+C:\00work\03others\00-Study\PrintLabelSimulator\PrintLabelSimulator\PrintLabelSimulator\obj\Debug\PrintLabelSimulator.vbproj.CoreCompileInputs.cache
+C:\00work\03others\00-Study\PrintLabelSimulator\PrintLabelSimulator\PrintLabelSimulator\obj\Debug\PrintLabelSimulator.exe
+C:\00work\03others\00-Study\PrintLabelSimulator\PrintLabelSimulator\PrintLabelSimulator\obj\Debug\PrintLabelSimulator.xml
+C:\00work\03others\00-Study\PrintLabelSimulator\PrintLabelSimulator\PrintLabelSimulator\obj\Debug\PrintLabelSimulator.pdb
+C:\00work\03others\00-Study\PrintLabelSimulator\PrintLabelSimulator\PrintLabelSimulator\bin\Debug\PrintLabelSimulator.exe.config
+C:\00work\03others\00-Study\PrintLabelSimulator\PrintLabelSimulator\PrintLabelSimulator\obj\Debug\PrintLabelSimulator.frmPrintLabelByDosCmd.resources
+C:\00work\03others\00-Study\PrintLabelSimulator\PrintLabelSimulator\PrintLabelSimulator\obj\Debug\PrintLabelSimulator.frmPrintLabelSimulator.resources
+C:\00work\03others\00-Study\PrintLabelSimulator\PrintLabelSimulator\PrintLabelSimulator\obj\Debug\PrintLabelSimulator.vbprojAssemblyReference.cache

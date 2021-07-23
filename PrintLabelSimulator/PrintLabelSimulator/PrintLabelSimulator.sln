@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31229.75
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PrintLabelSimulator", "PrintLabelSimulator\PrintLabelSimulator.vbproj", "{4B9902A4-10A9-48DB-984E-3D2E9D89F106}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4B9902A4-10A9-48DB-984E-3D2E9D89F106}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B9902A4-10A9-48DB-984E-3D2E9D89F106}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B9902A4-10A9-48DB-984E-3D2E9D89F106}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B9902A4-10A9-48DB-984E-3D2E9D89F106}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {87C18290-14E9-4BB2-970F-12F5E9C55180}
+	EndGlobalSection
+EndGlobal
