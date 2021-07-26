@@ -121,23 +121,31 @@ Public Class RawPrinterHelper
 
     ' When the function is given a string and a printer name,
     ' the function sends the string to the printer as raw bytes.
-    Public Shared Function SendStringToPrinter(ByVal szPrinterName As String, ByVal szString As String, ByVal IsAnsi As Boolean)
+    Public Shared Function SendStringToPrinter(ByVal szPrinterName As String, ByVal szString As String) As Boolean
         Dim pBytes As IntPtr
-        Dim dwCount As Int32
+        'Dim dwCount As Int32
         ' How many characters are in the string?
-        dwCount = szString.Length()
-        ' Assume that the printer is expecting ANSI text, and then convert
-        ' the string to ANSI text.
-        'If IsAnsi Then
-        pBytes = Marshal.StringToCoTaskMemAnsi(szString)
-        '    pBytes = Marshal.StringToHGlobalAnsi(szString)
-        'Else
-        '    pBytes = Marshal.StringToHGlobalUni(szString)
-        'End If
+        'dwCount = szString.Length()
+        '' Assume that the printer is expecting ANSI text, and then convert
+        '' the string to ANSI text.
 
-        ' Send the converted ANSI string to the printer.
-        SendBytesToPrinter(szPrinterName, pBytes, dwCount)
+        'pBytes = Marshal.StringToCoTaskMemAnsi(szString)
+        '' Send the converted ANSI string to the printer.
+        'SendBytesToPrinter(szPrinterName, pBytes, dwCount)
+
+        Dim encodedBytes As Byte()
+        'create a temp byte buffer
+        encodedBytes = Text.Encoding.Unicode.GetBytes(szString)
+
+        'allocate some memory for the copy
+        pBytes = Marshal.AllocCoTaskMem(encodedBytes.Length + 1)
+
+        'copy the byte arry to the allocated memory
+        Marshal.Copy(encodedBytes, 0, pBytes, encodedBytes.Length)
+        SendBytesToPrinter(szPrinterName, pBytes, encodedBytes.Length)
+
         Marshal.FreeCoTaskMem(pBytes)
+        Return True
     End Function
 
 End Class

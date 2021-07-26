@@ -9,5 +9,6 @@ C:\00work\03others\00-Study\PrintLabelSimulator\PrintLabelSimulator\PrintLabelSi
 C:\00work\03others\00-Study\PrintLabelSimulator\PrintLabelSimulator\PrintLabelSimulator\obj\Debug\PrintLabelSimulator.pdb
 C:\00work\03others\00-Study\PrintLabelSimulator\PrintLabelSimulator\PrintLabelSimulator\bin\Debug\PrintLabelSimulator.exe.config
 C:\00work\03others\00-Study\PrintLabelSimulator\PrintLabelSimulator\PrintLabelSimulator\obj\Debug\PrintLabelSimulator.frmPrintLabelByDosCmd.resources
-C:\00work\03others\00-Study\PrintLabelSimulator\PrintLabelSimulator\PrintLabelSimulator\obj\Debug\PrintLabelSimulator.frmPrintLabelSimulator.resources
+C:\00work\03others\00-Study\PrintLabelSimulator\PrintLabelSimulator\PrintLabelSimulator\obj\Debug\PrintLabelSimulator.frmMainEntry.resources
+C:\00work\03others\00-Study\PrintLabelSimulator\PrintLabelSimulator\PrintLabelSimulator\obj\Debug\PrintLabelSimulator.frmPrintLabelWinspoolDrv.resources
 C:\00work\03others\00-Study\PrintLabelSimulator\PrintLabelSimulator\PrintLabelSimulator\obj\Debug\PrintLabelSimulator.vbprojAssemblyReference.cache
