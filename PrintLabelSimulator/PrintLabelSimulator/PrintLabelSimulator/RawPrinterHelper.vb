@@ -138,7 +138,8 @@ Public Class RawPrinterHelper
         encodedBytes = Text.Encoding.Unicode.GetBytes(szString)
 
         'allocate some memory for the copy
-        pBytes = Marshal.AllocCoTaskMem(encodedBytes.Length + 1)
+        '  pBytes = Marshal.AllocCoTaskMem(encodedBytes.Length + 1)
+        pBytes = Marshal.AllocHGlobal(encodedBytes.Length + 1)
 
         'copy the byte arry to the allocated memory
         Marshal.Copy(encodedBytes, 0, pBytes, encodedBytes.Length)
