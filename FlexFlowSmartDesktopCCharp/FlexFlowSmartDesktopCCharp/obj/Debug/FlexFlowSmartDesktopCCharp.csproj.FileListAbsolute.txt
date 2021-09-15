@@ -1,0 +1,14 @@
+C:\00work\03others\00-Study\DK\FlexFlowSmartDesktopCCharp\FlexFlowSmartDesktopCCharp\obj\Debug\FlexFlowSmartDesktopCCharp.Properties.Resources.resources
+C:\00work\03others\00-Study\DK\FlexFlowSmartDesktopCCharp\FlexFlowSmartDesktopCCharp\obj\Debug\FlexFlowSmartDesktopCCharp.csproj.GenerateResource.cache
+C:\00work\03others\00-Study\DK\FlexFlowSmartDesktopCCharp\FlexFlowSmartDesktopCCharp\obj\Debug\FlexFlowSmartDesktopCCharp.csproj.CoreCompileInputs.cache
+C:\00work\03others\00-Study\DK\FlexFlowSmartDesktopCCharp\FlexFlowSmartDesktopCCharp\bin\Debug\FlexFlowSmartDesktopCCharp.exe
+C:\00work\03others\00-Study\DK\FlexFlowSmartDesktopCCharp\FlexFlowSmartDesktopCCharp\bin\Debug\FlexFlowSmartDesktopCCharp.pdb
+C:\00work\03others\00-Study\DK\FlexFlowSmartDesktopCCharp\FlexFlowSmartDesktopCCharp\obj\Debug\FlexFlowSmartDesktopCCharp.exe
+C:\00work\03others\00-Study\DK\FlexFlowSmartDesktopCCharp\FlexFlowSmartDesktopCCharp\obj\Debug\FlexFlowSmartDesktopCCharp.pdb
+C:\00work\03others\00-Study\DK\FlexFlowSmartDesktopCCharp\FlexFlowSmartDesktopCCharp\obj\Debug\FlexFlowSmartDesktopCCharp.ThirdExeInterface.resources
+C:\00work\03others\00-Study\DK\FlexFlowSmartDesktopCCharp\FlexFlowSmartDesktopCCharp\obj\Debug\FlexFlowSmartDesktopCCharp.MainForm.resources
+C:\00work\03others\00-Study\DK\FlexFlowSmartDesktopCCharp\FlexFlowSmartDesktopCCharp\obj\Debug\FlexFlowSmartDesktopCCharp.Form1.resources
+C:\00work\03others\00-Study\DK\FlexFlowSmartDesktopCCharp\FlexFlowSmartDesktopCCharp\obj\Debug\HZH_Controls.Forms.FrmWaiting.resources
+C:\00work\03others\00-Study\DK\FlexFlowSmartDesktopCCharp\FlexFlowSmartDesktopCCharp\bin\Debug\FlexFlowSmartDesktopCCharp.exe.config
+C:\00work\03others\00-Study\DK\FlexFlowSmartDesktopCCharp\FlexFlowSmartDesktopCCharp\bin\Debug\HZH_Controls.dll
+C:\00work\03others\00-Study\DK\FlexFlowSmartDesktopCCharp\FlexFlowSmartDesktopCCharp\obj\Debug\FlexFlowSmartDesktopCCharp.csproj.CopyComplete

@@ -1,0 +1,11 @@
+C:\00work\03others\00-Study\DK\FlexFlowSmartDesktop\FlexFlowSmartDesktop\bin\Debug\FlexFlowSmartDesktop.exe
+C:\00work\03others\00-Study\DK\FlexFlowSmartDesktop\FlexFlowSmartDesktop\bin\Debug\FlexFlowSmartDesktop.pdb
+C:\00work\03others\00-Study\DK\FlexFlowSmartDesktop\FlexFlowSmartDesktop\bin\Debug\FlexFlowSmartDesktop.xml
+C:\00work\03others\00-Study\DK\FlexFlowSmartDesktop\FlexFlowSmartDesktop\obj\Debug\FlexFlowSmartDesktop.vbprojAssemblyReference.cache
+C:\00work\03others\00-Study\DK\FlexFlowSmartDesktop\FlexFlowSmartDesktop\obj\Debug\FlexFlowSmartDesktop.frmMain.resources
+C:\00work\03others\00-Study\DK\FlexFlowSmartDesktop\FlexFlowSmartDesktop\obj\Debug\FlexFlowSmartDesktop.Resources.resources
+C:\00work\03others\00-Study\DK\FlexFlowSmartDesktop\FlexFlowSmartDesktop\obj\Debug\FlexFlowSmartDesktop.vbproj.GenerateResource.cache
+C:\00work\03others\00-Study\DK\FlexFlowSmartDesktop\FlexFlowSmartDesktop\obj\Debug\FlexFlowSmartDesktop.vbproj.CoreCompileInputs.cache
+C:\00work\03others\00-Study\DK\FlexFlowSmartDesktop\FlexFlowSmartDesktop\obj\Debug\FlexFlowSmartDesktop.exe
+C:\00work\03others\00-Study\DK\FlexFlowSmartDesktop\FlexFlowSmartDesktop\obj\Debug\FlexFlowSmartDesktop.xml
+C:\00work\03others\00-Study\DK\FlexFlowSmartDesktop\FlexFlowSmartDesktop\obj\Debug\FlexFlowSmartDesktop.pdb

@@ -1,0 +1,952 @@
+9/6/2021 9:31:04 AM : 
+	OBJEMPVALIDATEPROMPTPASSWORDCHANGE
+	@EmployeeID = 1001, -- (System.Int32)
+	@ApplicationTypeID = '1', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:31:04 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'luStationStatus', -- (System.String)
+	@restriction = ' where id = 1', -- (System.String)
+	@fieldName = '*', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:31:04 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'luApplicationType', -- (System.String)
+	@restriction = ' where Description = 'Station'', -- (System.String)
+	@fieldName = '*', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:31:04 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVersion', -- (System.String)
+	@restriction = ' where ApplicationTypeID = 1 AND VersionNumber = 'bsD87kHNeCye+wZwilFBXA=='', -- (System.String)
+	@fieldName = '*', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:31:04 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVar', -- (System.String)
+	@restriction = '', -- (System.String)
+	@fieldName = 'Name, Value', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:31:04 AM : 
+	OBJSNLGETSTATIONCONFIG
+	@StationID = '39', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:31:04 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVar', -- (System.String)
+	@restriction = '', -- (System.String)
+	@fieldName = 'Name, Value', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:31:04 AM : 
+	OBJSNLGETSTATIONCONFIG
+	@StationID = '39', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:31:05 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVar', -- (System.String)
+	@restriction = '', -- (System.String)
+	@fieldName = 'Name, Value', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:31:05 AM : 
+	OBJSNLGETSTATIONCONFIG
+	@StationID = '39', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:31:05 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'ffStationType', -- (System.String)
+	@restriction = ' where id = 3053', -- (System.String)
+	@fieldName = '*', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:31:05 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsCategory', -- (System.String)
+	@restriction = ' where id = 0', -- (System.String)
+	@fieldName = '*', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:31:05 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVar', -- (System.String)
+	@restriction = '', -- (System.String)
+	@fieldName = 'Name, Value', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:31:05 AM : 
+	OBJSNLGETSTATIONCONFIG
+	@StationID = '39', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:31:05 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVar', -- (System.String)
+	@restriction = '', -- (System.String)
+	@fieldName = 'Name, Value', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:31:05 AM : 
+	OBJSNLGETSTATIONCONFIG
+	@StationID = '39', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:31:05 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'ffLine', -- (System.String)
+	@restriction = ' where id = 2', -- (System.String)
+	@fieldName = '*', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:31:05 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'luEmployeeGroup', -- (System.String)
+	@restriction = ' where id = 1', -- (System.String)
+	@fieldName = '*', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:31:05 AM : 
+	OBJEMPGETONLINEINFOCENTERTAB
+	@xmlStation = '<?xml version="1.0" encoding="ISO-8859-1"?><StationInfo ID="39" Description="OffLineLabelPrinting" StationTypeID="3053" LineID="2" />', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:31:05 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'luApplicationType', -- (System.String)
+	@restriction = ' where Description = 'Station'', -- (System.String)
+	@fieldName = '*', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:31:05 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVersion', -- (System.String)
+	@restriction = ' where ApplicationTypeID = 1 AND VersionNumber = 'bsD87kHNeCye+wZwilFBXA=='', -- (System.String)
+	@fieldName = '*', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:31:05 AM : 
+	OBJEMPGETEMPLOYEEACCESSLIST
+	@ApplicationType = 'Station', -- (System.String)
+	@EmployeeGroupID = 1, -- (System.Int32)
+	RETURN VALUE = 0
+
+9/6/2021 9:31:05 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVar', -- (System.String)
+	@restriction = '', -- (System.String)
+	@fieldName = 'Name, Value', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:31:05 AM : 
+	OBJSNLGETSTATIONCONFIG
+	@StationID = '39', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:31:05 AM : 
+	OBJSNLGETTASK
+	@Order = 0, -- (System.Int32)
+	@xmlStation = '<?xml version="1.0" encoding="ISO-8859-1"?><StationInfo ID="39" Description="OffLineLabelPrinting" StationTypeID="3053" LineID="2" />', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:31:05 AM : 
+	OBJUTLGETIMAGE
+	@Description = 'CustomerLogo', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:31:05 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVar', -- (System.String)
+	@restriction = '', -- (System.String)
+	@fieldName = 'Name, Value', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:31:05 AM : 
+	OBJSNLGETSTATIONCONFIG
+	@StationID = '39', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:31:05 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'ffAlertClass', -- (System.String)
+	@restriction = ' where   isnull(IsCreateJob,0) = 1 ', -- (System.String)
+	@fieldName = ' Count(*) as NoRecord ', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:31:05 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'ffAlertClass', -- (System.String)
+	@restriction = ' where   isnull(IsCreateJob,0) = 1 ', -- (System.String)
+	@fieldName = ' Count(*) as NoRecord ', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:31:05 AM : 
+	OBJEMPGETONLINEINFOCENTERTAB
+	@xmlStation = '<?xml version="1.0" encoding="ISO-8859-1"?><StationInfo ID="39" Description="OffLineLabelPrinting" StationTypeID="3053" LineID="2" />', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:31:05 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsUserSetting', -- (System.String)
+	@restriction = ' where EmployeeID = 1001 and Category = 'Station'', -- (System.String)
+	@fieldName = 'XML', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:31:05 AM : 
+	OBJSNLGETTHRUPUT 
+	@xmlStation = '<?xml version="1.0" encoding="ISO-8859-1"?><StationInfo ID="39" Description="OffLineLabelPrinting" StationTypeID="3053" LineID="2" />', -- (System.String)
+	@NumOfHours = 8, -- (System.Int32)
+	@EnterTime = 9/6/2021 9:31:05 AM, -- (System.DateTime)
+	RETURN VALUE = 0
+
+9/6/2021 9:31:05 AM : 
+	OBJSNLGETCUSTOMIZEMENU
+	@StationTypeID = 3053, -- (System.Int32)
+	RETURN VALUE = 0
+
+9/6/2021 9:31:14 AM : 
+	OBJUTLGETFROMFSLANGUAGE
+	@Type = 'Message', -- (System.String)
+	@Code = 1000046, -- (System.Int32)
+	RETURN VALUE = 0
+
+9/6/2021 9:31:15 AM : 
+	USPCFGSAVEUSERSETTING
+	@Category = 'Station', -- (System.String)
+	@EmployeeID = 1001, -- (System.Int32)
+	@XML = '<SETTING><NAME key="pnlProductInfor">False</NAME><NAME key="pnlTaskGroup">True</NAME><NAME key="pnlNotes">True</NAME><NAME key="wbrWorkInstruction">False</NAME><NAME key="Dashboard">False</NAME><NAME key="IFC_GENERAL">False</NAME><NAME key="IFC_UNIT_DETAIL">False</NAME><NAME key="IFC_UNIT_HISTORY">False</NAME><NAME key="IFC_TEST_REPAIR">False</NAME><NAME key="IFC_GENEALOGY">False</NAME><NAME key="IFC_LOT_INFO">False</NAME><NAME key="IFC_MULTIBOARD">False</NAME><NAME key="IFC_TRACE">False</NAME></SETTING>', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:32:36 AM : 
+	OBJEMPVALIDATEPROMPTPASSWORDCHANGE
+	@EmployeeID = 1001, -- (System.Int32)
+	@ApplicationTypeID = '1', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:32:36 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'luStationStatus', -- (System.String)
+	@restriction = ' where id = 1', -- (System.String)
+	@fieldName = '*', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:32:36 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'luApplicationType', -- (System.String)
+	@restriction = ' where Description = 'Station'', -- (System.String)
+	@fieldName = '*', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:32:36 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVersion', -- (System.String)
+	@restriction = ' where ApplicationTypeID = 1 AND VersionNumber = 'bsD87kHNeCye+wZwilFBXA=='', -- (System.String)
+	@fieldName = '*', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:32:36 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVar', -- (System.String)
+	@restriction = '', -- (System.String)
+	@fieldName = 'Name, Value', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:32:36 AM : 
+	OBJSNLGETSTATIONCONFIG
+	@StationID = '39', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:32:36 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVar', -- (System.String)
+	@restriction = '', -- (System.String)
+	@fieldName = 'Name, Value', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:32:36 AM : 
+	OBJSNLGETSTATIONCONFIG
+	@StationID = '39', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:32:38 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVar', -- (System.String)
+	@restriction = '', -- (System.String)
+	@fieldName = 'Name, Value', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:32:38 AM : 
+	OBJSNLGETSTATIONCONFIG
+	@StationID = '39', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:32:38 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'ffStationType', -- (System.String)
+	@restriction = ' where id = 3053', -- (System.String)
+	@fieldName = '*', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:32:38 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsCategory', -- (System.String)
+	@restriction = ' where id = 0', -- (System.String)
+	@fieldName = '*', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:32:38 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVar', -- (System.String)
+	@restriction = '', -- (System.String)
+	@fieldName = 'Name, Value', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:32:38 AM : 
+	OBJSNLGETSTATIONCONFIG
+	@StationID = '39', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:32:38 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVar', -- (System.String)
+	@restriction = '', -- (System.String)
+	@fieldName = 'Name, Value', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:32:38 AM : 
+	OBJSNLGETSTATIONCONFIG
+	@StationID = '39', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:32:38 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'ffLine', -- (System.String)
+	@restriction = ' where id = 2', -- (System.String)
+	@fieldName = '*', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:32:38 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'luEmployeeGroup', -- (System.String)
+	@restriction = ' where id = 1', -- (System.String)
+	@fieldName = '*', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:32:38 AM : 
+	OBJEMPGETONLINEINFOCENTERTAB
+	@xmlStation = '<?xml version="1.0" encoding="ISO-8859-1"?><StationInfo ID="39" Description="OffLineLabelPrinting" StationTypeID="3053" LineID="2" />', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:32:38 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'luApplicationType', -- (System.String)
+	@restriction = ' where Description = 'Station'', -- (System.String)
+	@fieldName = '*', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:32:38 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVersion', -- (System.String)
+	@restriction = ' where ApplicationTypeID = 1 AND VersionNumber = 'bsD87kHNeCye+wZwilFBXA=='', -- (System.String)
+	@fieldName = '*', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:32:38 AM : 
+	OBJEMPGETEMPLOYEEACCESSLIST
+	@ApplicationType = 'Station', -- (System.String)
+	@EmployeeGroupID = 1, -- (System.Int32)
+	RETURN VALUE = 0
+
+9/6/2021 9:32:38 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVar', -- (System.String)
+	@restriction = '', -- (System.String)
+	@fieldName = 'Name, Value', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:32:38 AM : 
+	OBJSNLGETSTATIONCONFIG
+	@StationID = '39', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:32:38 AM : 
+	OBJSNLGETTASK
+	@Order = 0, -- (System.Int32)
+	@xmlStation = '<?xml version="1.0" encoding="ISO-8859-1"?><StationInfo ID="39" Description="OffLineLabelPrinting" StationTypeID="3053" LineID="2" />', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:32:38 AM : 
+	OBJUTLGETIMAGE
+	@Description = 'CustomerLogo', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:32:38 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVar', -- (System.String)
+	@restriction = '', -- (System.String)
+	@fieldName = 'Name, Value', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:32:38 AM : 
+	OBJSNLGETSTATIONCONFIG
+	@StationID = '39', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:32:38 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'ffAlertClass', -- (System.String)
+	@restriction = ' where   isnull(IsCreateJob,0) = 1 ', -- (System.String)
+	@fieldName = ' Count(*) as NoRecord ', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:32:38 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'ffAlertClass', -- (System.String)
+	@restriction = ' where   isnull(IsCreateJob,0) = 1 ', -- (System.String)
+	@fieldName = ' Count(*) as NoRecord ', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:32:38 AM : 
+	OBJEMPGETONLINEINFOCENTERTAB
+	@xmlStation = '<?xml version="1.0" encoding="ISO-8859-1"?><StationInfo ID="39" Description="OffLineLabelPrinting" StationTypeID="3053" LineID="2" />', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:32:38 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsUserSetting', -- (System.String)
+	@restriction = ' where EmployeeID = 1001 and Category = 'Station'', -- (System.String)
+	@fieldName = 'XML', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 9:32:38 AM : 
+	OBJSNLGETTHRUPUT 
+	@xmlStation = '<?xml version="1.0" encoding="ISO-8859-1"?><StationInfo ID="39" Description="OffLineLabelPrinting" StationTypeID="3053" LineID="2" />', -- (System.String)
+	@NumOfHours = 8, -- (System.Int32)
+	@EnterTime = 9/6/2021 9:32:38 AM, -- (System.DateTime)
+	RETURN VALUE = 0
+
+9/6/2021 9:32:38 AM : 
+	OBJSNLGETCUSTOMIZEMENU
+	@StationTypeID = 3053, -- (System.Int32)
+	RETURN VALUE = 0
+
+9/6/2021 9:32:46 AM : 
+	OBJUTLGETFROMFSLANGUAGE
+	@Type = 'Message', -- (System.String)
+	@Code = 1000046, -- (System.Int32)
+	RETURN VALUE = 0
+
+9/6/2021 9:32:47 AM : 
+	USPCFGSAVEUSERSETTING
+	@Category = 'Station', -- (System.String)
+	@EmployeeID = 1001, -- (System.Int32)
+	@XML = '<SETTING><NAME key="pnlProductInfor">False</NAME><NAME key="pnlTaskGroup">True</NAME><NAME key="pnlNotes">True</NAME><NAME key="wbrWorkInstruction">False</NAME><NAME key="Dashboard">False</NAME><NAME key="IFC_GENERAL">False</NAME><NAME key="IFC_UNIT_DETAIL">False</NAME><NAME key="IFC_UNIT_HISTORY">False</NAME><NAME key="IFC_TEST_REPAIR">False</NAME><NAME key="IFC_GENEALOGY">False</NAME><NAME key="IFC_LOT_INFO">False</NAME><NAME key="IFC_MULTIBOARD">False</NAME><NAME key="IFC_TRACE">False</NAME></SETTING>', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:06 AM : 
+	OBJEMPVALIDATEPROMPTPASSWORDCHANGE
+	@EmployeeID = 1001, -- (System.Int32)
+	@ApplicationTypeID = '1', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:06 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'luStationStatus', -- (System.String)
+	@restriction = ' where id = 1', -- (System.String)
+	@fieldName = '*', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:06 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'luApplicationType', -- (System.String)
+	@restriction = ' where Description = 'Station'', -- (System.String)
+	@fieldName = '*', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:06 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVersion', -- (System.String)
+	@restriction = ' where ApplicationTypeID = 1 AND VersionNumber = 'bsD87kHNeCye+wZwilFBXA=='', -- (System.String)
+	@fieldName = '*', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:06 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVar', -- (System.String)
+	@restriction = '', -- (System.String)
+	@fieldName = 'Name, Value', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:06 AM : 
+	OBJSNLGETSTATIONCONFIG
+	@StationID = '39', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:06 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVar', -- (System.String)
+	@restriction = '', -- (System.String)
+	@fieldName = 'Name, Value', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:06 AM : 
+	OBJSNLGETSTATIONCONFIG
+	@StationID = '39', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:06 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVar', -- (System.String)
+	@restriction = '', -- (System.String)
+	@fieldName = 'Name, Value', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:06 AM : 
+	OBJSNLGETSTATIONCONFIG
+	@StationID = '39', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:06 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'ffStationType', -- (System.String)
+	@restriction = ' where id = 3053', -- (System.String)
+	@fieldName = '*', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:06 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsCategory', -- (System.String)
+	@restriction = ' where id = 0', -- (System.String)
+	@fieldName = '*', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:07 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVar', -- (System.String)
+	@restriction = '', -- (System.String)
+	@fieldName = 'Name, Value', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:07 AM : 
+	OBJSNLGETSTATIONCONFIG
+	@StationID = '39', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:07 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVar', -- (System.String)
+	@restriction = '', -- (System.String)
+	@fieldName = 'Name, Value', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:07 AM : 
+	OBJSNLGETSTATIONCONFIG
+	@StationID = '39', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:07 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'ffLine', -- (System.String)
+	@restriction = ' where id = 2', -- (System.String)
+	@fieldName = '*', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:07 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'luEmployeeGroup', -- (System.String)
+	@restriction = ' where id = 1', -- (System.String)
+	@fieldName = '*', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:07 AM : 
+	OBJEMPGETONLINEINFOCENTERTAB
+	@xmlStation = '<?xml version="1.0" encoding="ISO-8859-1"?><StationInfo ID="39" Description="OffLineLabelPrinting" StationTypeID="3053" LineID="2" />', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:07 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'luApplicationType', -- (System.String)
+	@restriction = ' where Description = 'Station'', -- (System.String)
+	@fieldName = '*', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:07 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVersion', -- (System.String)
+	@restriction = ' where ApplicationTypeID = 1 AND VersionNumber = 'bsD87kHNeCye+wZwilFBXA=='', -- (System.String)
+	@fieldName = '*', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:07 AM : 
+	OBJEMPGETEMPLOYEEACCESSLIST
+	@ApplicationType = 'Station', -- (System.String)
+	@EmployeeGroupID = 1, -- (System.Int32)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:07 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVar', -- (System.String)
+	@restriction = '', -- (System.String)
+	@fieldName = 'Name, Value', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:07 AM : 
+	OBJSNLGETSTATIONCONFIG
+	@StationID = '39', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:07 AM : 
+	OBJSNLGETTASK
+	@Order = 0, -- (System.Int32)
+	@xmlStation = '<?xml version="1.0" encoding="ISO-8859-1"?><StationInfo ID="39" Description="OffLineLabelPrinting" StationTypeID="3053" LineID="2" />', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:07 AM : 
+	OBJUTLGETIMAGE
+	@Description = 'CustomerLogo', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:07 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVar', -- (System.String)
+	@restriction = '', -- (System.String)
+	@fieldName = 'Name, Value', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:07 AM : 
+	OBJSNLGETSTATIONCONFIG
+	@StationID = '39', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:07 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'ffAlertClass', -- (System.String)
+	@restriction = ' where   isnull(IsCreateJob,0) = 1 ', -- (System.String)
+	@fieldName = ' Count(*) as NoRecord ', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:07 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'ffAlertClass', -- (System.String)
+	@restriction = ' where   isnull(IsCreateJob,0) = 1 ', -- (System.String)
+	@fieldName = ' Count(*) as NoRecord ', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:07 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVar', -- (System.String)
+	@restriction = '', -- (System.String)
+	@fieldName = 'Name, Value', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:07 AM : 
+	OBJSNLGETSTATIONCONFIG
+	@StationID = '39', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:07 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVar', -- (System.String)
+	@restriction = '', -- (System.String)
+	@fieldName = 'Name, Value', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:07 AM : 
+	OBJSNLGETSTATIONCONFIG
+	@StationID = '39', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:08 AM : 
+	OBJEMPGETONLINEINFOCENTERTAB
+	@xmlStation = '<?xml version="1.0" encoding="ISO-8859-1"?><StationInfo ID="39" Description="OffLineLabelPrinting" StationTypeID="3053" LineID="2" />', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:08 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsUserSetting', -- (System.String)
+	@restriction = ' where EmployeeID = 1001 and Category = 'Station'', -- (System.String)
+	@fieldName = 'XML', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:08 AM : 
+	OBJSNLGETTHRUPUT 
+	@xmlStation = '<?xml version="1.0" encoding="ISO-8859-1"?><StationInfo ID="39" Description="OffLineLabelPrinting" StationTypeID="3053" LineID="2" />', -- (System.String)
+	@NumOfHours = 8, -- (System.Int32)
+	@EnterTime = 9/6/2021 10:47:08 AM, -- (System.DateTime)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:08 AM : 
+	OBJSNLGETCUSTOMIZEMENU
+	@StationTypeID = 3053, -- (System.Int32)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:14 AM : 
+	OBJUTLGETFROMFSLANGUAGE
+	@Type = 'Message', -- (System.String)
+	@Code = 1000046, -- (System.Int32)
+	RETURN VALUE = 0
+
+9/6/2021 10:47:15 AM : 
+	USPCFGSAVEUSERSETTING
+	@Category = 'Station', -- (System.String)
+	@EmployeeID = 1001, -- (System.Int32)
+	@XML = '<SETTING><NAME key="pnlProductInfor">False</NAME><NAME key="pnlTaskGroup">True</NAME><NAME key="pnlNotes">True</NAME><NAME key="wbrWorkInstruction">False</NAME><NAME key="Dashboard">False</NAME><NAME key="IFC_GENERAL">False</NAME><NAME key="IFC_UNIT_DETAIL">False</NAME><NAME key="IFC_UNIT_HISTORY">False</NAME><NAME key="IFC_TEST_REPAIR">False</NAME><NAME key="IFC_GENEALOGY">False</NAME><NAME key="IFC_LOT_INFO">False</NAME><NAME key="IFC_MULTIBOARD">False</NAME><NAME key="IFC_TRACE">False</NAME></SETTING>', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:22 AM : 
+	OBJEMPVALIDATEPROMPTPASSWORDCHANGE
+	@EmployeeID = 1001, -- (System.Int32)
+	@ApplicationTypeID = '1', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:22 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'luStationStatus', -- (System.String)
+	@restriction = ' where id = 1', -- (System.String)
+	@fieldName = '*', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:22 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'luApplicationType', -- (System.String)
+	@restriction = ' where Description = 'Station'', -- (System.String)
+	@fieldName = '*', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:22 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVersion', -- (System.String)
+	@restriction = ' where ApplicationTypeID = 1 AND VersionNumber = 'bsD87kHNeCye+wZwilFBXA=='', -- (System.String)
+	@fieldName = '*', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:23 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVar', -- (System.String)
+	@restriction = '', -- (System.String)
+	@fieldName = 'Name, Value', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:23 AM : 
+	OBJSNLGETSTATIONCONFIG
+	@StationID = '39', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:23 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVar', -- (System.String)
+	@restriction = '', -- (System.String)
+	@fieldName = 'Name, Value', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:23 AM : 
+	OBJSNLGETSTATIONCONFIG
+	@StationID = '39', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:23 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVar', -- (System.String)
+	@restriction = '', -- (System.String)
+	@fieldName = 'Name, Value', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:23 AM : 
+	OBJSNLGETSTATIONCONFIG
+	@StationID = '39', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:23 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'ffStationType', -- (System.String)
+	@restriction = ' where id = 3053', -- (System.String)
+	@fieldName = '*', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:23 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsCategory', -- (System.String)
+	@restriction = ' where id = 0', -- (System.String)
+	@fieldName = '*', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:23 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVar', -- (System.String)
+	@restriction = '', -- (System.String)
+	@fieldName = 'Name, Value', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:23 AM : 
+	OBJSNLGETSTATIONCONFIG
+	@StationID = '39', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:23 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVar', -- (System.String)
+	@restriction = '', -- (System.String)
+	@fieldName = 'Name, Value', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:23 AM : 
+	OBJSNLGETSTATIONCONFIG
+	@StationID = '39', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:23 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'ffLine', -- (System.String)
+	@restriction = ' where id = 2', -- (System.String)
+	@fieldName = '*', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:23 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'luEmployeeGroup', -- (System.String)
+	@restriction = ' where id = 1', -- (System.String)
+	@fieldName = '*', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:23 AM : 
+	OBJEMPGETONLINEINFOCENTERTAB
+	@xmlStation = '<?xml version="1.0" encoding="ISO-8859-1"?><StationInfo ID="39" Description="OffLineLabelPrinting" StationTypeID="3053" LineID="2" />', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:23 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'luApplicationType', -- (System.String)
+	@restriction = ' where Description = 'Station'', -- (System.String)
+	@fieldName = '*', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:23 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVersion', -- (System.String)
+	@restriction = ' where ApplicationTypeID = 1 AND VersionNumber = 'bsD87kHNeCye+wZwilFBXA=='', -- (System.String)
+	@fieldName = '*', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:23 AM : 
+	OBJEMPGETEMPLOYEEACCESSLIST
+	@ApplicationType = 'Station', -- (System.String)
+	@EmployeeGroupID = 1, -- (System.Int32)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:23 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVar', -- (System.String)
+	@restriction = '', -- (System.String)
+	@fieldName = 'Name, Value', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:23 AM : 
+	OBJSNLGETSTATIONCONFIG
+	@StationID = '39', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:23 AM : 
+	OBJSNLGETTASK
+	@Order = 0, -- (System.Int32)
+	@xmlStation = '<?xml version="1.0" encoding="ISO-8859-1"?><StationInfo ID="39" Description="OffLineLabelPrinting" StationTypeID="3053" LineID="2" />', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:23 AM : 
+	OBJUTLGETIMAGE
+	@Description = 'CustomerLogo', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:23 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVar', -- (System.String)
+	@restriction = '', -- (System.String)
+	@fieldName = 'Name, Value', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:23 AM : 
+	OBJSNLGETSTATIONCONFIG
+	@StationID = '39', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:23 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'ffAlertClass', -- (System.String)
+	@restriction = ' where   isnull(IsCreateJob,0) = 1 ', -- (System.String)
+	@fieldName = ' Count(*) as NoRecord ', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:23 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'ffAlertClass', -- (System.String)
+	@restriction = ' where   isnull(IsCreateJob,0) = 1 ', -- (System.String)
+	@fieldName = ' Count(*) as NoRecord ', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:23 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVar', -- (System.String)
+	@restriction = '', -- (System.String)
+	@fieldName = 'Name, Value', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:23 AM : 
+	OBJSNLGETSTATIONCONFIG
+	@StationID = '39', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:23 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsVar', -- (System.String)
+	@restriction = '', -- (System.String)
+	@fieldName = 'Name, Value', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:23 AM : 
+	OBJSNLGETSTATIONCONFIG
+	@StationID = '39', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:24 AM : 
+	OBJEMPGETONLINEINFOCENTERTAB
+	@xmlStation = '<?xml version="1.0" encoding="ISO-8859-1"?><StationInfo ID="39" Description="OffLineLabelPrinting" StationTypeID="3053" LineID="2" />', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:24 AM : 
+	OBJUTLEXECUTEQUERY
+	@tableName = 'fsUserSetting', -- (System.String)
+	@restriction = ' where EmployeeID = 1001 and Category = 'Station'', -- (System.String)
+	@fieldName = 'XML', -- (System.String)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:24 AM : 
+	OBJSNLGETTHRUPUT 
+	@xmlStation = '<?xml version="1.0" encoding="ISO-8859-1"?><StationInfo ID="39" Description="OffLineLabelPrinting" StationTypeID="3053" LineID="2" />', -- (System.String)
+	@NumOfHours = 8, -- (System.Int32)
+	@EnterTime = 9/6/2021 10:51:24 AM, -- (System.DateTime)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:24 AM : 
+	OBJSNLGETCUSTOMIZEMENU
+	@StationTypeID = 3053, -- (System.Int32)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:30 AM : 
+	OBJUTLGETFROMFSLANGUAGE
+	@Type = 'Message', -- (System.String)
+	@Code = 1000046, -- (System.Int32)
+	RETURN VALUE = 0
+
+9/6/2021 10:51:30 AM : 
+	USPCFGSAVEUSERSETTING
+	@Category = 'Station', -- (System.String)
+	@EmployeeID = 1001, -- (System.Int32)
+	@XML = '<SETTING><NAME key="pnlProductInfor">False</NAME><NAME key="pnlTaskGroup">True</NAME><NAME key="pnlNotes">True</NAME><NAME key="wbrWorkInstruction">False</NAME><NAME key="Dashboard">False</NAME><NAME key="IFC_GENERAL">False</NAME><NAME key="IFC_UNIT_DETAIL">False</NAME><NAME key="IFC_UNIT_HISTORY">False</NAME><NAME key="IFC_TEST_REPAIR">False</NAME><NAME key="IFC_GENEALOGY">False</NAME><NAME key="IFC_LOT_INFO">False</NAME><NAME key="IFC_MULTIBOARD">False</NAME><NAME key="IFC_TRACE">False</NAME></SETTING>', -- (System.String)
+	RETURN VALUE = 0
+
