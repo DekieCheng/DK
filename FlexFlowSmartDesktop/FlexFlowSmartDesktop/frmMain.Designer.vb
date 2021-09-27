@@ -33,11 +33,12 @@ Partial Class frmMain
         Me.lvFFClientList.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lvFFClientList.BackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.lvFFClientList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lvFFClientList.HideSelection = False
-        Me.lvFFClientList.Location = New System.Drawing.Point(2, 2)
+        Me.lvFFClientList.Location = New System.Drawing.Point(1, 39)
         Me.lvFFClientList.Name = "lvFFClientList"
-        Me.lvFFClientList.Size = New System.Drawing.Size(576, 149)
+        Me.lvFFClientList.Size = New System.Drawing.Size(581, 282)
         Me.lvFFClientList.SmallImageList = Me.ImageList1
         Me.lvFFClientList.StateImageList = Me.ImageList1
         Me.lvFFClientList.TabIndex = 0
@@ -47,14 +48,14 @@ Partial Class frmMain
         '
         Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
         Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
-        Me.ImageList1.Images.SetKeyName(0, "FFClientBig.png")
+        Me.ImageList1.Images.SetKeyName(0, "FF.jpg")
         '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(582, 153)
+        Me.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.ClientSize = New System.Drawing.Size(582, 321)
         Me.Controls.Add(Me.lvFFClientList)
         Me.Name = "frmMain"
         Me.Text = "FlexFlow Smart Desktop"

@@ -8,7 +8,7 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("FlexFlow Smart Desktop")>
+<Assembly: AssemblyTitle("FlexFlow Smart Desktop FlexPM#133462-01")>
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("")>
 <Assembly: AssemblyProduct("FlexFlow Smart Desktop")>

@@ -127,17 +127,19 @@ Public Class frmMain
     End Function
 
     Private Sub InitListViewLayOut()
-        Me.lvFFClientList.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(233, Byte), Integer), CType(CType(216, Byte), Integer))
+        Me.lvFFClientList.BackColor = Color.SteelBlue
+        Me.lvFFClientList.ForeColor = Color.White
         Me.lvFFClientList.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {
-                                           ToGenerateColumnHeader("No.", 50),
+                                           ToGenerateColumnHeader("No.", 100),
                                            ToGenerateColumnHeader("FFClient", 100),
                                            ToGenerateColumnHeader("Window Title", 100)
                                            })
-        Me.lvFFClientList.Font = New System.Drawing.Font("Verdana", 12.75!)
+        Me.lvFFClientList.Font = New System.Drawing.Font("Verdana", 10.75!, FontStyle.Regular)
         Me.lvFFClientList.FullRowSelect = True
         Me.lvFFClientList.HideSelection = False
         Me.lvFFClientList.Location = New System.Drawing.Point(2, 2)
         Me.lvFFClientList.MultiSelect = False
+        Me.lvFFClientList.HoverSelection = False
         Me.lvFFClientList.Name = "lvFFClientList"
         Me.lvFFClientList.ShowItemToolTips = True
         Me.lvFFClientList.TabIndex = 2
@@ -146,6 +148,7 @@ Public Class frmMain
         Me.lvFFClientList.StateImageList = Me.ImageList1
         Me.lvFFClientList.SmallImageList = Me.ImageList1
         Me.lvFFClientList.LargeImageList = Me.ImageList1
+        Me.lvFFClientList.Sorting = SortOrder.Ascending
     End Sub
 
     Private Sub LoadFlexFlowClientList()
@@ -170,11 +173,20 @@ Public Class frmMain
         Static iCounter As Integer = 1
         Try
             Dim prjName As String = ParserToGetProjectName(currProcess.MainModule.FileName)
-            Dim sTitles As String() = currProcess.MainWindowTitle.Split(" • ")
+            Dim spliterChar() As String = New String() {" • "}
+
+            Dim sTitles As String() = currProcess.MainWindowTitle.Split(spliterChar, StringSplitOptions.RemoveEmptyEntries)
+            Dim stName As String = ""
+            If (sTitles(0).Contains("Flexflow") Or sTitles(0).Contains("FlexFlow")) Then
+                stName = sTitles(0).Substring(0, 12) & "..."
+            Else
+                stName = sTitles(0)
+            End If
+
             Dim it As New ListViewItem(prjName, 0)
             it.Tag = currProcess
             Dim itSub1 As New ListViewItem.ListViewSubItem()
-            itSub1.Text = sTitles(0)
+            itSub1.Text = stName
 
             Dim itSub2 As New ListViewItem.ListViewSubItem
             itSub2.Text = currProcess.MainModule.FileVersionInfo.InternalName
@@ -203,9 +215,15 @@ Public Class frmMain
         mMenu.MenuItems.Add(ToGenMenuItemInstance(MU_REFRESH))
         mMenu.MenuItems.Add(ToGenMenuItemInstance(""))
         mMenu.MenuItems.Add(ToGenMenuItemInstance("-"))
-        mMenu.MenuItems.Add(ToGenMenuItemInstance(MU_OPENNEWINSTANCE))
+        'mMenu.MenuItems.Add(ToGenMenuItemInstance(MU_OPENNEWINSTANCE))
         mMenu.MenuItems.Add(ToGenMenuItemInstance(MU_ENDSELECTEDTASK))
         mMenu.MenuItems.Add(ToGenMenuItemInstance(MU_ENDALLTASK))
+        'mMenu.MenuItems.Add(ToGenMenuItemInstance("-"))
+        'mMenu.MenuItems.Add(ToGenMenuItemInstance(MU_V_Title))
+        'mMenu.MenuItems.Add(ToGenMenuItemInstance(MU_V_List))
+        'mMenu.MenuItems.Add(ToGenMenuItemInstance(MU_V_Detail))
+        'mMenu.MenuItems.Add(ToGenMenuItemInstance(MU_V_SmallIcon))
+        'mMenu.MenuItems.Add(ToGenMenuItemInstance(MU_V_LargeIcon))
         mMenu.MenuItems.Add(ToGenMenuItemInstance("-"))
         mMenu.MenuItems.Add(ToGenMenuItemInstance(""))
         mMenu.MenuItems.Add(ToGenMenuItemInstance(MU_CLOSE))
@@ -217,10 +235,10 @@ Public Class frmMain
         If (Me.ContextMenu Is Nothing) Then Return
 
         If (Me.lvFFClientList.Items.Count = 0 Or Me.lvFFClientList.SelectedItems.Count = 0) Then
-            Me.ContextMenu.MenuItems.Item(MU_OPENNEWINSTANCE).Enabled = False
+            ' Me.ContextMenu.MenuItems.Item(MU_OPENNEWINSTANCE).Enabled = False
             Me.ContextMenu.MenuItems.Item(MU_ENDSELECTEDTASK).Enabled = False
         Else
-            Me.ContextMenu.MenuItems.Item(MU_OPENNEWINSTANCE).Enabled = True
+            '  Me.ContextMenu.MenuItems.Item(MU_OPENNEWINSTANCE).Enabled = True
             Me.ContextMenu.MenuItems.Item(MU_ENDSELECTEDTASK).Enabled = True
         End If
 
@@ -257,6 +275,8 @@ Public Class frmMain
                 Me.KillAllProcess()
             Case MU_CLOSE.ToUpper
                 Me.Close()
+            Case Else
+                ToAssignListViewState(m.Name)
         End Select
     End Sub
 
@@ -266,10 +286,12 @@ Public Class frmMain
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles Me.Load
         Try
+            Me.BackColor = Color.SteelBlue
+            Me.lvFFClientList.BackColor = Color.SteelBlue
             Me.AllowTransparency = True
             Me.TopMost = True
             Me.FormBorderStyle = FormBorderStyle.None
-            modMain.SetWindowPos(Me.Handle, 0, 300, 0, 800, 8, 0)
+            modMain.SetWindowPos(Me.Handle, 0, 240, 0, 1000, 8, 0)
             InitListViewLayOut()
             LoadFlexFlowClientList()
             AddMouseLeaveHandlers()
@@ -287,6 +309,7 @@ Public Class frmMain
     End Sub
 
     Private Sub frmMain_MouseEnter(sender As Object, e As EventArgs) Handles Me.MouseEnter
+        LoadFlexFlowClientList()
         Me.Height = 200
     End Sub
 
@@ -369,6 +392,21 @@ Public Class frmMain
         ShowWindow(currP.MainWindowHandle, SW_SHOWMAXIMIZED)
     End Sub
 
+    Private Sub ToAssignListViewState(ByVal listViewMode As String)
+        Select Case listViewMode.ToUpper()
+            Case "TITLE"
+                Me.lvFFClientList.View = System.Windows.Forms.View.Tile
+            Case "DETAILS"
+                Me.lvFFClientList.View = System.Windows.Forms.View.Details
+            Case "LIST"
+                Me.lvFFClientList.View = System.Windows.Forms.View.List
+            Case "SMALLICON"
+                Me.lvFFClientList.View = System.Windows.Forms.View.SmallIcon
+            Case "LARGEICON"
+                Me.lvFFClientList.View = System.Windows.Forms.View.LargeIcon
+
+        End Select
+    End Sub
 #End Region
 
 End Class

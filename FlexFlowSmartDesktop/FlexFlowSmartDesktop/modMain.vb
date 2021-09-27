@@ -22,6 +22,12 @@ Module modMain
     Public Const MU_ENDSELECTEDTASK = "End Selected Task"
     Public Const MU_ENDALLTASK = "End All Task"
 
+    Public Const MU_V_Title = "Title"
+    Public Const MU_V_Detail = "Details"
+    Public Const MU_V_SmallIcon = "SmallIcon"
+    Public Const MU_V_LargeIcon = "LargeIcon"
+    Public Const MU_V_List = "List"
+
 #End Region
 
 #Region "Common API "
