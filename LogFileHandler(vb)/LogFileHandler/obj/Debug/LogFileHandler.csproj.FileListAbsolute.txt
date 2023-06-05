@@ -1,0 +1,8 @@
+C:\00work\03others\00-Study\DK\Pallele\LogFileHandler\bin\Debug\LogFileHandler.exe.config
+C:\00work\03others\00-Study\DK\Pallele\LogFileHandler\bin\Debug\LogFileHandler.exe
+C:\00work\03others\00-Study\DK\Pallele\LogFileHandler\bin\Debug\LogFileHandler.pdb
+C:\00work\03others\00-Study\DK\Pallele\LogFileHandler\obj\Debug\frmLogFileMonitor.resources
+C:\00work\03others\00-Study\DK\Pallele\LogFileHandler\obj\Debug\LogFileHandler.csproj.GenerateResource.cache
+C:\00work\03others\00-Study\DK\Pallele\LogFileHandler\obj\Debug\LogFileHandler.csproj.CoreCompileInputs.cache
+C:\00work\03others\00-Study\DK\Pallele\LogFileHandler\obj\Debug\LogFileHandler.exe
+C:\00work\03others\00-Study\DK\Pallele\LogFileHandler\obj\Debug\LogFileHandler.pdb
