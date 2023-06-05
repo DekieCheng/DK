@@ -1,0 +1,38 @@
+﻿Installing assembly 'C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataService\LNMeterDataService\bin\Debug\LNMeterDataService.exe'.
+Affected parameters are:
+   i = 
+   logfile = C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataService\LNMeterDataService\bin\Debug\LNMeterDataService.InstallLog
+   assemblypath = C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataService\LNMeterDataService\bin\Debug\LNMeterDataService.exe
+   logtoconsole = 
+Installing service LNMeterDataService...
+Service LNMeterDataService has been successfully installed.
+Creating EventLog source LNMeterDataService in log Application...
+Committing assembly 'C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataService\LNMeterDataService\bin\Debug\LNMeterDataService.exe'.
+Affected parameters are:
+   i = 
+   logfile = C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataService\LNMeterDataService\bin\Debug\LNMeterDataService.InstallLog
+   assemblypath = C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataService\LNMeterDataService\bin\Debug\LNMeterDataService.exe
+   logtoconsole = 
+Uninstalling assembly 'C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataService\LNMeterDataService\bin\Debug\LNMeterDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataService\LNMeterDataService\bin\Debug\LNMeterDataService.InstallLog
+   assemblypath = C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataService\LNMeterDataService\bin\Debug\LNMeterDataService.exe
+Removing EventLog source LNMeterDataService.
+Service LNMeterDataService is being removed from the system...
+Service LNMeterDataService was successfully removed from the system.
+Installing assembly 'C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataService\LNMeterDataService\bin\Debug\LNMeterDataService.exe'.
+Affected parameters are:
+   i = 
+   logfile = C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataService\LNMeterDataService\bin\Debug\LNMeterDataService.InstallLog
+   assemblypath = C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataService\LNMeterDataService\bin\Debug\LNMeterDataService.exe
+   logtoconsole = 
+Installing service LNMeterDataService...
+Service LNMeterDataService has been successfully installed.
+Creating EventLog source LNMeterDataService in log Application...
+Committing assembly 'C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataService\LNMeterDataService\bin\Debug\LNMeterDataService.exe'.
+Affected parameters are:
+   i = 
+   logfile = C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataService\LNMeterDataService\bin\Debug\LNMeterDataService.InstallLog
+   assemblypath = C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataService\LNMeterDataService\bin\Debug\LNMeterDataService.exe
+   logtoconsole = 

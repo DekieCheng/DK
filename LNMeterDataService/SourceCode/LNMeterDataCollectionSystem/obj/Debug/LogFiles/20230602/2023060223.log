@@ -1,0 +1,126 @@
+2023-06-02 23:34:09.029: 6/2/2023 11:34:09 PM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Unable to cast object of type 'System.DBNull' to type 'System.String'.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNMeterCategory.get_LNSerialPortServerCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCategory.cs:line 221
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 98
+2023-06-02 23:34:32.054: 6/2/2023 11:34:32 PM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Unable to cast object of type 'System.DBNull' to type 'System.String'.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNMeterCategory.get_LNSerialPortServerCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCategory.cs:line 221
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 98
+2023-06-02 23:34:32.137: 6/2/2023 11:34:32 PM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Unable to cast object of type 'System.DBNull' to type 'System.String'.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNMeterCategory.get_LNSerialPortServerCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCategory.cs:line 221
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 98
+2023-06-02 23:34:40.738: 6/2/2023 11:34:40 PM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Unable to cast object of type 'System.DBNull' to type 'System.String'.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNMeterCategory.get_LNSerialPortServerCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCategory.cs:line 221
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 98
+2023-06-02 23:35:15.896: 6/2/2023 11:35:15 PM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Unable to cast object of type 'System.DBNull' to type 'System.String'.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNMeterCategory.get_LNSerialPortServerCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCategory.cs:line 221
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 98
+2023-06-02 23:35:56.800: 6/2/2023 11:35:50 PM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: The connection was not closed. The connection's current state is open.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNMeterCategory.get_LNSerialPortServerCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCategory.cs:line 221
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 98
+2023-06-02 23:35:58.700: 6/2/2023 11:35:56 PM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Unable to cast object of type 'System.DBNull' to type 'System.String'.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNMeterCategory.get_LNSerialPortServerCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCategory.cs:line 221
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 98
+2023-06-02 23:40:10.811: 6/2/2023 11:40:09 PM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: The connection was not closed. The connection's current state is open.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNMeterCategory.get_LNSerialPortServerCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCategory.cs:line 221
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 98
+2023-06-02 23:40:10.811: 6/2/2023 11:40:09 PM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: The connection was not closed. The connection's current state is open.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNMeterCategory.get_LNSerialPortServerCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCategory.cs:line 221
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 98
+2023-06-02 23:40:14.249: 6/2/2023 11:40:14 PM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Unable to cast object of type 'System.DBNull' to type 'System.String'.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNMeterCategory.get_LNSerialPortServerCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCategory.cs:line 221
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 98
+2023-06-02 23:40:14.280: 6/2/2023 11:40:14 PM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Unable to cast object of type 'System.DBNull' to type 'System.String'.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNMeterCategory.get_LNSerialPortServerCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCategory.cs:line 221
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 98
+2023-06-02 23:40:15.176: 6/2/2023 11:40:15 PM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Unable to cast object of type 'System.DBNull' to type 'System.String'.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNMeterCategory.get_LNSerialPortServerCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCategory.cs:line 221
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 98
+2023-06-02 23:40:16.066: 6/2/2023 11:40:16 PM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Unable to cast object of type 'System.DBNull' to type 'System.String'.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNMeterCategory.get_LNSerialPortServerCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCategory.cs:line 221
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 98
+2023-06-02 23:40:17.452: 6/2/2023 11:40:17 PM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Unable to cast object of type 'System.DBNull' to type 'System.String'.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNMeterCategory.get_LNSerialPortServerCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCategory.cs:line 221
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 98
+2023-06-02 23:40:35.438: 6/2/2023 11:40:34 PM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: The connection was not closed. The connection's current state is open.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNMeterCategory.get_LNSerialPortServerCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCategory.cs:line 221
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 98
+2023-06-02 23:40:35.524: 6/2/2023 11:40:35 PM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Unable to cast object of type 'System.DBNull' to type 'System.String'.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNMeterCategory.get_LNSerialPortServerCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCategory.cs:line 221
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 98
+2023-06-02 23:41:53.754: 6/2/2023 11:41:52 PM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: The connection was not closed. The connection's current state is open.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNMeterCategory.get_LNSerialPortServerCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCategory.cs:line 221
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 98
+2023-06-02 23:41:55.792: 6/2/2023 11:41:55 PM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: The connection was not closed. The connection's current state is open.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNMeterCategory.get_LNSerialPortServerCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCategory.cs:line 221
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 98
+2023-06-02 23:41:56.490: 6/2/2023 11:41:56 PM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Unable to cast object of type 'System.DBNull' to type 'System.String'.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNMeterCategory.get_LNSerialPortServerCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCategory.cs:line 221
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 98
+2023-06-02 23:41:56.518: 6/2/2023 11:41:56 PM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Unable to cast object of type 'System.DBNull' to type 'System.String'.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNMeterCategory.get_LNSerialPortServerCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCategory.cs:line 221
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 98
+2023-06-02 23:43:17.114: 6/2/2023 11:43:17 PM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Unable to cast object of type 'System.DBNull' to type 'System.String'.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNMeterCategory.get_LNSerialPortServerCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCategory.cs:line 221
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 98

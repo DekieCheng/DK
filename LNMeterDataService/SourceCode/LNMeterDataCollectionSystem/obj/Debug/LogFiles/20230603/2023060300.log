@@ -1,0 +1,54 @@
+2023-06-03 00:13:29.664: 6/3/2023 12:13:29 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: There is already an open DataReader associated with this Command which must be closed first.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNMeterCategory.get_LNSerialPortServerCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCategory.cs:line 221
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 98
+2023-06-03 00:13:30.788: 6/3/2023 12:13:30 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: The connection was not closed. The connection's current state is open.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNElectricityMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 154
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 103
+2023-06-03 00:13:30.790: 6/3/2023 12:13:30 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: The connection was not closed. The connection's current state is open.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNElectricityMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 154
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 103
+2023-06-03 00:13:31.023: 6/3/2023 12:13:31 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: The connection was not closed. The connection's current state is open.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNElectricityMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 154
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 103
+2023-06-03 00:13:31.101: 6/3/2023 12:13:31 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[1] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-03 00:13:31.162: 6/3/2023 12:13:31 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[1] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-03 00:13:32.464: 6/3/2023 12:13:32 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: The connection was not closed. The connection's current state is open.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNElectricityMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 154
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 103
+2023-06-03 00:13:32.562: 6/3/2023 12:13:32 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[2] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-03 00:13:32.679: 6/3/2023 12:13:32 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: The connection was not closed. The connection's current state is open.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104

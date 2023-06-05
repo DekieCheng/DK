@@ -1,0 +1,27 @@
+C:\flex\PMI_APITestLaser\TKFFTcpIpSDK.dll
+C:\flex\PMI_APITestLaser\TKFFTcpIpSDK.pdb
+C:\00work\02sc-cfd-git\05TL\CFD-TK-FLEXPM137593-TCPIPAdapter4\SourceCodes\TKFFTcpIpSDK\obj\Debug\TKFFTcpIpSDK.frmFFTcpIpHandler.resources
+C:\00work\02sc-cfd-git\05TL\CFD-TK-FLEXPM137593-TCPIPAdapter4\SourceCodes\TKFFTcpIpSDK\obj\Debug\TKFFTcpIpSDK.Properties.Resources.resources
+C:\00work\02sc-cfd-git\05TL\CFD-TK-FLEXPM137593-TCPIPAdapter4\SourceCodes\TKFFTcpIpSDK\obj\Debug\TKFFTcpIpSDK.csproj.GenerateResource.cache
+C:\00work\02sc-cfd-git\05TL\CFD-TK-FLEXPM137593-TCPIPAdapter4\SourceCodes\TKFFTcpIpSDK\obj\Debug\TKFFTcpIpSDK.csproj.CoreCompileInputs.cache
+C:\00work\02sc-cfd-git\05TL\CFD-TK-FLEXPM137593-TCPIPAdapter4\SourceCodes\TKFFTcpIpSDK\obj\Debug\TKFFTcpIpSDK.dll
+C:\00work\02sc-cfd-git\05TL\CFD-TK-FLEXPM137593-TCPIPAdapter4\SourceCodes\TKFFTcpIpSDK\obj\Debug\TKFFTcpIpSDK.pdb
+C:\00work\02sc-cfd-git\05TL\CFD-TK-FLEXPM137593-TCPIPAdapter4\SourceCode\TKFFTcpIpSDK\obj\Debug\TKFFTcpIpSDK.frmFFTcpIpHandler.resources
+C:\00work\02sc-cfd-git\05TL\CFD-TK-FLEXPM137593-TCPIPAdapter4\SourceCode\TKFFTcpIpSDK\obj\Debug\TKFFTcpIpSDK.Properties.Resources.resources
+C:\00work\02sc-cfd-git\05TL\CFD-TK-FLEXPM137593-TCPIPAdapter4\SourceCode\TKFFTcpIpSDK\obj\Debug\TKFFTcpIpSDK.csproj.GenerateResource.cache
+C:\00work\02sc-cfd-git\05TL\CFD-TK-FLEXPM137593-TCPIPAdapter4\SourceCode\TKFFTcpIpSDK\obj\Debug\TKFFTcpIpSDK.csproj.CoreCompileInputs.cache
+C:\00work\02sc-cfd-git\05TL\CFD-TK-FLEXPM137593-TCPIPAdapter4\SourceCode\TKFFTcpIpSDK\obj\Debug\TKFFTcpIpSDK.dll
+C:\00work\02sc-cfd-git\05TL\CFD-TK-FLEXPM137593-TCPIPAdapter4\SourceCode\TKFFTcpIpSDK\obj\Debug\TKFFTcpIpSDK.pdb
+C:\00work\02sc-cfd-git\05TL\CFD-TK-FLEXPM137593-TCPIPAdapter4\SourceCode - Copy\TKFFTcpIpSDK\obj\Debug\TKFFTcpIpSDK.frmFFTcpIpHandler.resources
+C:\00work\02sc-cfd-git\05TL\CFD-TK-FLEXPM137593-TCPIPAdapter4\SourceCode - Copy\TKFFTcpIpSDK\obj\Debug\TKFFTcpIpSDK.Properties.Resources.resources
+C:\00work\02sc-cfd-git\05TL\CFD-TK-FLEXPM137593-TCPIPAdapter4\SourceCode - Copy\TKFFTcpIpSDK\obj\Debug\TKFFTcpIpSDK.csproj.GenerateResource.cache
+C:\00work\02sc-cfd-git\05TL\CFD-TK-FLEXPM137593-TCPIPAdapter4\SourceCode - Copy\TKFFTcpIpSDK\obj\Debug\TKFFTcpIpSDK.csproj.CoreCompileInputs.cache
+C:\00work\02sc-cfd-git\05TL\CFD-TK-FLEXPM137593-TCPIPAdapter4\SourceCode - Copy\TKFFTcpIpSDK\obj\Debug\TKFFTcpIpSDK.dll
+C:\00work\02sc-cfd-git\05TL\CFD-TK-FLEXPM137593-TCPIPAdapter4\SourceCode - Copy\TKFFTcpIpSDK\obj\Debug\TKFFTcpIpSDK.pdb
+C:\00work\02sc-cfd-git\05TL\CFD-TK-FLEXPM137593-TCPIPAdapter4\SourceCode - Copy\TKFFTcpIpSDK\obj\Debug\TKFFTcpIpSDK.csproj.AssemblyReference.cache
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\TKFFTcpIpSDK\obj\Debug\TKFFTcpIpSDK.Properties.Resources.resources
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\TKFFTcpIpSDK\obj\Debug\TKFFTcpIpSDK.csproj.GenerateResource.cache
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\TKFFTcpIpSDK\obj\Debug\TKFFTcpIpSDK.csproj.CoreCompileInputs.cache
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\TKFFTcpIpSDK\obj\Debug\TKFFTcpIpSDK.dll
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\TKFFTcpIpSDK\obj\Debug\TKFFTcpIpSDK.pdb
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\TKFFTcpIpSDK\obj\Debug\TKFFTcpIpSDK.csproj.CopyComplete

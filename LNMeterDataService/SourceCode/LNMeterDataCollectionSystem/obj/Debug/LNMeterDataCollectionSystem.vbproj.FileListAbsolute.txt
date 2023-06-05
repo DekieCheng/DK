@@ -1,0 +1,12 @@
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\obj\Debug\LNMeterDataCollectionSystem.vbproj.AssemblyReference.cache
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\obj\Debug\LNMeterDataCollectionSystem.frmLNSvrSimulator.resources
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\obj\Debug\LNMeterDataCollectionSystem.frmSPSSimulator.resources
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\obj\Debug\LNMeterDataCollectionSystem.vbproj.GenerateResource.cache
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\obj\Debug\LNMeterDataCollectionSystem.vbproj.CoreCompileInputs.cache
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\obj\Debug\LNMeterDataCollectionSystem.vbproj.CopyComplete
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\obj\Debug\LNMeterDataCollectionSystem.exe.config
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\obj\Debug\LNMeterDataCollectionSystem.exe
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\obj\Debug\LNMeterDataCollectionSystem.xml
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\obj\Debug\LNMeterDataCollectionSystem.pdb
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\obj\Debug\LNMeterInfrastructure.dll
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\obj\Debug\LNMeterInfrastructure.pdb

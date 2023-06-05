@@ -1,0 +1,468 @@
+2023-06-04 01:16:13.688: 6/4/2023 1:16:13 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[1] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:16:16.759: 6/4/2023 1:16:16 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[2] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:16:41.074: 6/4/2023 1:16:41 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[3] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:16:41.344: 6/4/2023 1:16:41 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[1] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:23:41.095: 6/4/2023 1:23:41 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[1] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:23:41.195: 6/4/2023 1:23:41 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[2] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:23:41.296: 6/4/2023 1:23:41 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[3] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:23:41.389: 6/4/2023 1:23:41 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[4] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:23:41.479: 6/4/2023 1:23:41 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[5] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:23:41.564: 6/4/2023 1:23:41 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNElectricityMeter by using the SerialPortServerID[6] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNElectricityMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 154
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 103
+2023-06-04 01:23:41.650: 6/4/2023 1:23:41 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNElectricityMeter by using the SerialPortServerID[7] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNElectricityMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 154
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 103
+2023-06-04 01:23:41.736: 6/4/2023 1:23:41 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNElectricityMeter by using the SerialPortServerID[8] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNElectricityMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 154
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 103
+2023-06-04 01:23:51.047: 6/4/2023 1:23:51 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[1] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:23:51.131: 6/4/2023 1:23:51 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[2] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:23:51.223: 6/4/2023 1:23:51 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[3] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:23:51.318: 6/4/2023 1:23:51 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[4] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:23:51.402: 6/4/2023 1:23:51 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[5] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:23:51.486: 6/4/2023 1:23:51 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNElectricityMeter by using the SerialPortServerID[6] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNElectricityMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 154
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 103
+2023-06-04 01:23:51.577: 6/4/2023 1:23:51 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNElectricityMeter by using the SerialPortServerID[7] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNElectricityMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 154
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 103
+2023-06-04 01:23:51.662: 6/4/2023 1:23:51 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNElectricityMeter by using the SerialPortServerID[8] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNElectricityMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 154
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 103
+2023-06-04 01:24:01.049: 6/4/2023 1:24:01 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[1] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:24:01.132: 6/4/2023 1:24:01 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[2] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:24:01.227: 6/4/2023 1:24:01 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[3] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:24:01.322: 6/4/2023 1:24:01 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[4] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:24:01.408: 6/4/2023 1:24:01 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[5] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:24:01.490: 6/4/2023 1:24:01 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNElectricityMeter by using the SerialPortServerID[6] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNElectricityMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 154
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 103
+2023-06-04 01:24:01.573: 6/4/2023 1:24:01 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNElectricityMeter by using the SerialPortServerID[7] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNElectricityMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 154
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 103
+2023-06-04 01:24:01.658: 6/4/2023 1:24:01 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNElectricityMeter by using the SerialPortServerID[8] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNElectricityMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 154
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 103
+2023-06-04 01:24:11.207: 6/4/2023 1:24:11 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[1] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:24:11.471: 6/4/2023 1:24:11 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[2] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:24:11.683: 6/4/2023 1:24:11 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[3] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:24:11.919: 6/4/2023 1:24:11 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[4] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:24:12.027: 6/4/2023 1:24:12 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[5] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:24:12.245: 6/4/2023 1:24:12 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNElectricityMeter by using the SerialPortServerID[6] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNElectricityMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 154
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 103
+2023-06-04 01:24:12.529: 6/4/2023 1:24:12 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNElectricityMeter by using the SerialPortServerID[7] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNElectricityMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 154
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 103
+2023-06-04 01:24:12.741: 6/4/2023 1:24:12 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNElectricityMeter by using the SerialPortServerID[8] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNElectricityMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 154
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 103
+2023-06-04 01:24:21.170: 6/4/2023 1:24:21 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[1] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:24:21.253: 6/4/2023 1:24:21 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[2] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:24:21.334: 6/4/2023 1:24:21 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[3] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:24:21.424: 6/4/2023 1:24:21 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[4] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:24:21.505: 6/4/2023 1:24:21 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[5] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:24:21.593: 6/4/2023 1:24:21 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNElectricityMeter by using the SerialPortServerID[6] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNElectricityMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 154
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 103
+2023-06-04 01:24:21.675: 6/4/2023 1:24:21 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNElectricityMeter by using the SerialPortServerID[7] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNElectricityMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 154
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 103
+2023-06-04 01:24:21.755: 6/4/2023 1:24:21 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNElectricityMeter by using the SerialPortServerID[8] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNElectricityMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 154
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 103
+2023-06-04 01:24:31.047: 6/4/2023 1:24:31 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[1] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:24:31.130: 6/4/2023 1:24:31 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[2] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:24:31.211: 6/4/2023 1:24:31 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[3] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:24:31.294: 6/4/2023 1:24:31 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[4] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:24:31.375: 6/4/2023 1:24:31 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[5] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:24:31.459: 6/4/2023 1:24:31 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNElectricityMeter by using the SerialPortServerID[6] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNElectricityMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 154
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 103
+2023-06-04 01:24:31.545: 6/4/2023 1:24:31 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNElectricityMeter by using the SerialPortServerID[7] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNElectricityMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 154
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 103
+2023-06-04 01:24:31.625: 6/4/2023 1:24:31 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNElectricityMeter by using the SerialPortServerID[8] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNElectricityMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 154
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 103
+2023-06-04 01:24:41.051: 6/4/2023 1:24:41 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[1] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:24:41.135: 6/4/2023 1:24:41 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[2] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:24:41.217: 6/4/2023 1:24:41 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[3] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:24:41.306: 6/4/2023 1:24:41 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[4] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:24:41.389: 6/4/2023 1:24:41 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNWaterMeter by using the SerialPortServerID[5] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNWaterMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 172
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 104
+2023-06-04 01:24:41.476: 6/4/2023 1:24:41 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNElectricityMeter by using the SerialPortServerID[6] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNElectricityMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 154
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 103
+2023-06-04 01:24:41.559: 6/4/2023 1:24:41 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNElectricityMeter by using the SerialPortServerID[7] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNElectricityMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 154
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 103
+2023-06-04 01:24:41.644: 6/4/2023 1:24:41 AM >>> App Server: NSCM1654
+Exception Source: Void .ctor(System.String, Int32)
+Message: Cannot find the records from udtLNElectricityMeter by using the SerialPortServerID[8] value.
+StackTrace:    at Model.LNMeterCollection..ctor(String tableName, Int32 id) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNMeterCollection.cs:line 116
+   at Model.LNSerialPortServer.get_LNElectricityMeterCollection() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\Model\LNSerialPortServer.cs:line 154
+   at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.FireCollectDataAction(LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 103
+2023-06-04 01:27:13.786: 6/4/2023 1:27:13 AM >>> App Server: NSCM1654
+Exception Source: Void ParallelExecutionforElectricityMeter(Model.LNMeterCollection, Model.LNMeterCategory)
+Message: Unable to cast object of type 'Model.LNMeterCollection' to type 'System.Collections.Generic.IEnumerable`1[Model.LNElectricityMeter]'.
+StackTrace:    at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.ParallelExecutionforElectricityMeter(LNMeterCollection lNMeterCollection, LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 131
+2023-06-04 01:27:16.053: 6/4/2023 1:27:16 AM >>> App Server: NSCM1654
+Exception Source: Void ParallelExecutionforElectricityMeter(Model.LNMeterCollection, Model.LNMeterCategory)
+Message: Unable to cast object of type 'Model.LNMeterCollection' to type 'System.Collections.Generic.IEnumerable`1[Model.LNElectricityMeter]'.
+StackTrace:    at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.ParallelExecutionforElectricityMeter(LNMeterCollection lNMeterCollection, LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 131
+2023-06-04 01:27:16.131: 6/4/2023 1:27:16 AM >>> App Server: NSCM1654
+Exception Source: Void ParallelExecutionforElectricityMeter(Model.LNMeterCollection, Model.LNMeterCategory)
+Message: Unable to cast object of type 'Model.LNMeterCollection' to type 'System.Collections.Generic.IEnumerable`1[Model.LNElectricityMeter]'.
+StackTrace:    at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.ParallelExecutionforElectricityMeter(LNMeterCollection lNMeterCollection, LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 131
+2023-06-04 01:27:16.210: 6/4/2023 1:27:16 AM >>> App Server: NSCM1654
+Exception Source: Void ParallelExecutionforElectricityMeter(Model.LNMeterCollection, Model.LNMeterCategory)
+Message: Unable to cast object of type 'Model.LNMeterCollection' to type 'System.Collections.Generic.IEnumerable`1[Model.LNElectricityMeter]'.
+StackTrace:    at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.ParallelExecutionforElectricityMeter(LNMeterCollection lNMeterCollection, LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 131
+2023-06-04 01:27:16.288: 6/4/2023 1:27:16 AM >>> App Server: NSCM1654
+Exception Source: Void ParallelExecutionforElectricityMeter(Model.LNMeterCollection, Model.LNMeterCategory)
+Message: Unable to cast object of type 'Model.LNMeterCollection' to type 'System.Collections.Generic.IEnumerable`1[Model.LNElectricityMeter]'.
+StackTrace:    at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.ParallelExecutionforElectricityMeter(LNMeterCollection lNMeterCollection, LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 131
+2023-06-04 01:27:32.392: 6/4/2023 1:27:32 AM >>> App Server: NSCM1654
+Exception Source: Void ParallelExecutionforElectricityMeter(Model.LNMeterCollection, Model.LNMeterCategory)
+Message: Unable to cast object of type 'Model.LNMeterCollection' to type 'System.Collections.Generic.IEnumerable`1[Model.LNElectricityMeter]'.
+StackTrace:    at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.ParallelExecutionforElectricityMeter(LNMeterCollection lNMeterCollection, LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 131
+2023-06-04 01:27:32.718: 6/4/2023 1:27:32 AM >>> App Server: NSCM1654
+Exception Source: Void ParallelExecutionforElectricityMeter(Model.LNMeterCollection, Model.LNMeterCategory)
+Message: Unable to cast object of type 'Model.LNMeterCollection' to type 'System.Collections.Generic.IEnumerable`1[Model.LNElectricityMeter]'.
+StackTrace:    at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.ParallelExecutionforElectricityMeter(LNMeterCollection lNMeterCollection, LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 131
+2023-06-04 01:27:32.786: 6/4/2023 1:27:32 AM >>> App Server: NSCM1654
+Exception Source: Void ParallelExecutionforElectricityMeter(Model.LNMeterCollection, Model.LNMeterCategory)
+Message: Unable to cast object of type 'Model.LNMeterCollection' to type 'System.Collections.Generic.IEnumerable`1[Model.LNElectricityMeter]'.
+StackTrace:    at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.ParallelExecutionforElectricityMeter(LNMeterCollection lNMeterCollection, LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 131
+2023-06-04 01:27:32.829: 6/4/2023 1:27:32 AM >>> App Server: NSCM1654
+Exception Source: Void ParallelExecutionforElectricityMeter(Model.LNMeterCollection, Model.LNMeterCategory)
+Message: Unable to cast object of type 'Model.LNMeterCollection' to type 'System.Collections.Generic.IEnumerable`1[Model.LNElectricityMeter]'.
+StackTrace:    at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.ParallelExecutionforElectricityMeter(LNMeterCollection lNMeterCollection, LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 131
+2023-06-04 01:27:32.868: 6/4/2023 1:27:32 AM >>> App Server: NSCM1654
+Exception Source: Void ParallelExecutionforElectricityMeter(Model.LNMeterCollection, Model.LNMeterCategory)
+Message: Unable to cast object of type 'Model.LNMeterCollection' to type 'System.Collections.Generic.IEnumerable`1[Model.LNElectricityMeter]'.
+StackTrace:    at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.ParallelExecutionforElectricityMeter(LNMeterCollection lNMeterCollection, LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 131
+2023-06-04 01:29:38.815: 6/4/2023 1:29:38 AM >>> App Server: NSCM1654
+Exception Source: Void ParallelExecutionforElectricityMeter(Model.LNMeterCollection, Model.LNMeterCategory)
+Message: Unable to cast object of type 'Model.LNMeterCollection' to type 'System.Collections.Generic.IEnumerable`1[Model.LNElectricityMeter]'.
+StackTrace:    at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.ParallelExecutionforElectricityMeter(LNMeterCollection lNMeterCollection, LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 131
+2023-06-04 01:29:38.897: 6/4/2023 1:29:38 AM >>> App Server: NSCM1654
+Exception Source: Void ParallelExecutionforElectricityMeter(Model.LNMeterCollection, Model.LNMeterCategory)
+Message: Unable to cast object of type 'Model.LNMeterCollection' to type 'System.Collections.Generic.IEnumerable`1[Model.LNElectricityMeter]'.
+StackTrace:    at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.ParallelExecutionforElectricityMeter(LNMeterCollection lNMeterCollection, LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 131
+2023-06-04 01:29:38.983: 6/4/2023 1:29:38 AM >>> App Server: NSCM1654
+Exception Source: Void ParallelExecutionforElectricityMeter(Model.LNMeterCollection, Model.LNMeterCategory)
+Message: Unable to cast object of type 'Model.LNMeterCollection' to type 'System.Collections.Generic.IEnumerable`1[Model.LNElectricityMeter]'.
+StackTrace:    at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.ParallelExecutionforElectricityMeter(LNMeterCollection lNMeterCollection, LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 131
+2023-06-04 01:29:39.066: 6/4/2023 1:29:39 AM >>> App Server: NSCM1654
+Exception Source: Void ParallelExecutionforElectricityMeter(Model.LNMeterCollection, Model.LNMeterCategory)
+Message: Unable to cast object of type 'Model.LNMeterCollection' to type 'System.Collections.Generic.IEnumerable`1[Model.LNElectricityMeter]'.
+StackTrace:    at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.ParallelExecutionforElectricityMeter(LNMeterCollection lNMeterCollection, LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 131
+2023-06-04 01:29:39.158: 6/4/2023 1:29:39 AM >>> App Server: NSCM1654
+Exception Source: Void ParallelExecutionforElectricityMeter(Model.LNMeterCollection, Model.LNMeterCategory)
+Message: Unable to cast object of type 'Model.LNMeterCollection' to type 'System.Collections.Generic.IEnumerable`1[Model.LNElectricityMeter]'.
+StackTrace:    at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.ParallelExecutionforElectricityMeter(LNMeterCollection lNMeterCollection, LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 131
+2023-06-04 01:29:48.856: 6/4/2023 1:29:48 AM >>> App Server: NSCM1654
+Exception Source: Void ParallelExecutionforElectricityMeter(Model.LNMeterCollection, Model.LNMeterCategory)
+Message: Unable to cast object of type 'Model.LNMeterCollection' to type 'System.Collections.Generic.IEnumerable`1[Model.LNElectricityMeter]'.
+StackTrace:    at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.ParallelExecutionforElectricityMeter(LNMeterCollection lNMeterCollection, LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 131
+2023-06-04 01:29:48.963: 6/4/2023 1:29:48 AM >>> App Server: NSCM1654
+Exception Source: Void ParallelExecutionforElectricityMeter(Model.LNMeterCollection, Model.LNMeterCategory)
+Message: Unable to cast object of type 'Model.LNMeterCollection' to type 'System.Collections.Generic.IEnumerable`1[Model.LNElectricityMeter]'.
+StackTrace:    at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.ParallelExecutionforElectricityMeter(LNMeterCollection lNMeterCollection, LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 131
+2023-06-04 01:29:49.100: 6/4/2023 1:29:49 AM >>> App Server: NSCM1654
+Exception Source: Void ParallelExecutionforElectricityMeter(Model.LNMeterCollection, Model.LNMeterCategory)
+Message: Unable to cast object of type 'Model.LNMeterCollection' to type 'System.Collections.Generic.IEnumerable`1[Model.LNElectricityMeter]'.
+StackTrace:    at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.ParallelExecutionforElectricityMeter(LNMeterCollection lNMeterCollection, LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 131
+2023-06-04 01:29:49.143: 6/4/2023 1:29:49 AM >>> App Server: NSCM1654
+Exception Source: Void ParallelExecutionforElectricityMeter(Model.LNMeterCollection, Model.LNMeterCategory)
+Message: Unable to cast object of type 'Model.LNMeterCollection' to type 'System.Collections.Generic.IEnumerable`1[Model.LNElectricityMeter]'.
+StackTrace:    at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.ParallelExecutionforElectricityMeter(LNMeterCollection lNMeterCollection, LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 131
+2023-06-04 01:29:49.187: 6/4/2023 1:29:49 AM >>> App Server: NSCM1654
+Exception Source: Void ParallelExecutionforElectricityMeter(Model.LNMeterCollection, Model.LNMeterCategory)
+Message: Unable to cast object of type 'Model.LNMeterCollection' to type 'System.Collections.Generic.IEnumerable`1[Model.LNElectricityMeter]'.
+StackTrace:    at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.ParallelExecutionforElectricityMeter(LNMeterCollection lNMeterCollection, LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 131
+2023-06-04 01:29:58.734: 6/4/2023 1:29:58 AM >>> App Server: NSCM1654
+Exception Source: Void ParallelExecutionforElectricityMeter(Model.LNMeterCollection, Model.LNMeterCategory)
+Message: Unable to cast object of type 'Model.LNMeterCollection' to type 'System.Collections.Generic.IEnumerable`1[Model.LNElectricityMeter]'.
+StackTrace:    at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.ParallelExecutionforElectricityMeter(LNMeterCollection lNMeterCollection, LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 131
+2023-06-04 01:29:58.774: 6/4/2023 1:29:58 AM >>> App Server: NSCM1654
+Exception Source: Void ParallelExecutionforElectricityMeter(Model.LNMeterCollection, Model.LNMeterCategory)
+Message: Unable to cast object of type 'Model.LNMeterCollection' to type 'System.Collections.Generic.IEnumerable`1[Model.LNElectricityMeter]'.
+StackTrace:    at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.ParallelExecutionforElectricityMeter(LNMeterCollection lNMeterCollection, LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 131
+2023-06-04 01:29:58.811: 6/4/2023 1:29:58 AM >>> App Server: NSCM1654
+Exception Source: Void ParallelExecutionforElectricityMeter(Model.LNMeterCollection, Model.LNMeterCategory)
+Message: Unable to cast object of type 'Model.LNMeterCollection' to type 'System.Collections.Generic.IEnumerable`1[Model.LNElectricityMeter]'.
+StackTrace:    at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.ParallelExecutionforElectricityMeter(LNMeterCollection lNMeterCollection, LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 131
+2023-06-04 01:29:58.849: 6/4/2023 1:29:58 AM >>> App Server: NSCM1654
+Exception Source: Void ParallelExecutionforElectricityMeter(Model.LNMeterCollection, Model.LNMeterCategory)
+Message: Unable to cast object of type 'Model.LNMeterCollection' to type 'System.Collections.Generic.IEnumerable`1[Model.LNElectricityMeter]'.
+StackTrace:    at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.ParallelExecutionforElectricityMeter(LNMeterCollection lNMeterCollection, LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 131
+2023-06-04 01:29:58.887: 6/4/2023 1:29:58 AM >>> App Server: NSCM1654
+Exception Source: Void ParallelExecutionforElectricityMeter(Model.LNMeterCollection, Model.LNMeterCategory)
+Message: Unable to cast object of type 'Model.LNMeterCollection' to type 'System.Collections.Generic.IEnumerable`1[Model.LNElectricityMeter]'.
+StackTrace:    at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.ParallelExecutionforElectricityMeter(LNMeterCollection lNMeterCollection, LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 131
+2023-06-04 01:35:33.336: 6/4/2023 1:35:33 AM >>> App Server: NSCM1654
+Exception Source: Void ParallelExecutionforElectricityMeter(Model.LNMeterCollection, Model.LNMeterCategory)
+Message: Unable to cast object of type 'Microsoft.VisualBasic.ForEachEnum' to type 'System.Collections.Generic.List`1[Model.LNElectricityMeter]'.
+StackTrace:    at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.ParallelExecutionforElectricityMeter(LNMeterCollection lNMeterCollection, LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 135
+2023-06-04 01:35:33.336: 6/4/2023 1:35:33 AM >>> App Server: NSCM1654
+Exception Source: Void ParallelExecutionforElectricityMeter(Model.LNMeterCollection, Model.LNMeterCategory)
+Message: Unable to cast object of type 'Microsoft.VisualBasic.ForEachEnum' to type 'System.Collections.Generic.List`1[Model.LNElectricityMeter]'.
+StackTrace:    at LNMeterDataCollectionSystem.ServiceMgr.LNSvrMgr.ParallelExecutionforElectricityMeter(LNMeterCollection lNMeterCollection, LNMeterCategory currMeterCategory) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\Class\LNSvrMgr.vb:line 135

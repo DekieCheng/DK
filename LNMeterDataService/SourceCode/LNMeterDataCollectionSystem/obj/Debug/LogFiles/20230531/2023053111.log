@@ -1,0 +1,66 @@
+2023-05-31 11:01:01.519: 5/31/2023 11:01:01 AM >>> App Server: NSCM1654
+Exception Source: Int32 Read(Byte[], Int32, Int32)
+Message: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+StackTrace:    at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   at TCPIP.AsyncTcpClient.SendDataToRemoteHost(String outgoingIP, Int32 outgoingPort, String cmd) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\TCPIP\AsyncTcpClient.cs:line 379
+Inner Exception:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+2023-05-31 11:01:01.587: 5/31/2023 11:01:01 AM >>> App Server: NSCM1654
+Exception Source: Int32 Read(Byte[], Int32, Int32)
+Message: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+StackTrace:    at TCPIP.AsyncTcpClient.SendDataToRemoteHost(String outgoingIP, Int32 outgoingPort, String cmd) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\TCPIP\AsyncTcpClient.cs:line 409
+Inner Exception:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+2023-05-31 11:01:04.803: 5/31/2023 11:01:04 AM >>> App Server: NSCM1654
+Exception Source: Int32 Read(Byte[], Int32, Int32)
+Message: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+StackTrace:    at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   at TCPIP.AsyncTcpClient.SendDataToRemoteHost(String outgoingIP, Int32 outgoingPort, String cmd) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\TCPIP\AsyncTcpClient.cs:line 379
+Inner Exception:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+2023-05-31 11:01:04.876: 5/31/2023 11:01:04 AM >>> App Server: NSCM1654
+Exception Source: Int32 Read(Byte[], Int32, Int32)
+Message: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+StackTrace:    at TCPIP.AsyncTcpClient.SendDataToRemoteHost(String outgoingIP, Int32 outgoingPort, String cmd) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\TCPIP\AsyncTcpClient.cs:line 409
+Inner Exception:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+2023-05-31 11:01:29.809: 5/31/2023 11:01:29 AM >>> App Server: NSCM1654
+Exception Source: Int32 Read(Byte[], Int32, Int32)
+Message: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+StackTrace:    at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   at TCPIP.AsyncTcpClient.SendDataToRemoteHost(String outgoingIP, Int32 outgoingPort, String cmd) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\TCPIP\AsyncTcpClient.cs:line 379
+Inner Exception:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+2023-05-31 11:01:29.871: 5/31/2023 11:01:29 AM >>> App Server: NSCM1654
+Exception Source: Int32 Read(Byte[], Int32, Int32)
+Message: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+StackTrace:    at TCPIP.AsyncTcpClient.SendDataToRemoteHost(String outgoingIP, Int32 outgoingPort, String cmd) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\TCPIP\AsyncTcpClient.cs:line 409
+Inner Exception:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+2023-05-31 11:01:33.067: 5/31/2023 11:01:33 AM >>> App Server: NSCM1654
+Exception Source: Int32 Read(Byte[], Int32, Int32)
+Message: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+StackTrace:    at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   at TCPIP.AsyncTcpClient.SendDataToRemoteHost(String outgoingIP, Int32 outgoingPort, String cmd) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\TCPIP\AsyncTcpClient.cs:line 379
+Inner Exception:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+2023-05-31 11:01:33.135: 5/31/2023 11:01:33 AM >>> App Server: NSCM1654
+Exception Source: Int32 Read(Byte[], Int32, Int32)
+Message: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+StackTrace:    at TCPIP.AsyncTcpClient.SendDataToRemoteHost(String outgoingIP, Int32 outgoingPort, String cmd) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\TCPIP\AsyncTcpClient.cs:line 409
+Inner Exception:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+2023-05-31 11:02:40.646: 5/31/2023 11:02:40 AM >>> App Server: NSCM1654
+Exception Source: Int32 Read(Byte[], Int32, Int32)
+Message: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+StackTrace:    at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   at TCPIP.AsyncTcpClient.SendDataToRemoteHost(String outgoingIP, Int32 outgoingPort, String cmd) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\TCPIP\AsyncTcpClient.cs:line 379
+Inner Exception:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+2023-05-31 11:02:40.720: 5/31/2023 11:02:40 AM >>> App Server: NSCM1654
+Exception Source: Int32 Read(Byte[], Int32, Int32)
+Message: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+StackTrace:    at TCPIP.AsyncTcpClient.SendDataToRemoteHost(String outgoingIP, Int32 outgoingPort, String cmd) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\TCPIP\AsyncTcpClient.cs:line 409
+Inner Exception:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+2023-05-31 11:02:46.470: 5/31/2023 11:02:46 AM >>> App Server: NSCM1654
+Exception Source: Int32 Read(Byte[], Int32, Int32)
+Message: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+StackTrace:    at System.Net.Sockets.NetworkStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   at TCPIP.AsyncTcpClient.SendDataToRemoteHost(String outgoingIP, Int32 outgoingPort, String cmd) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\TCPIP\AsyncTcpClient.cs:line 379
+Inner Exception:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+2023-05-31 11:02:46.536: 5/31/2023 11:02:46 AM >>> App Server: NSCM1654
+Exception Source: Int32 Read(Byte[], Int32, Int32)
+Message: Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+StackTrace:    at TCPIP.AsyncTcpClient.SendDataToRemoteHost(String outgoingIP, Int32 outgoingPort, String cmd) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\TCPIP\AsyncTcpClient.cs:line 409
+Inner Exception:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond

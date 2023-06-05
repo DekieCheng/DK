@@ -1,0 +1,12 @@
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataService\LNMeterDataService\bin\Debug\LNMeterDataService.exe.config
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataService\LNMeterDataService\bin\Debug\LNMeterDataService.exe
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataService\LNMeterDataService\bin\Debug\LNMeterDataService.pdb
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataService\LNMeterDataService\obj\Debug\LNMeterDataService.csproj.CoreCompileInputs.cache
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataService\LNMeterDataService\obj\Debug\LNMeterDataService.exe
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataService\LNMeterDataService\obj\Debug\LNMeterDataService.pdb
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataService\LNMeterDataService\obj\Debug\LNMeterDataService.ProjectInstaller.resources
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataService\LNMeterDataService\obj\Debug\LNMeterDataService.csproj.GenerateResource.cache
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataService\LNMeterDataService\obj\Debug\LNMeterDataService.csproj.AssemblyReference.cache
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataService\LNMeterDataService\bin\Debug\LNMeterInfrastructure.dll
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataService\LNMeterDataService\bin\Debug\LNMeterInfrastructure.pdb
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataService\LNMeterDataService\obj\Debug\LNMeterDataService.csproj.CopyComplete

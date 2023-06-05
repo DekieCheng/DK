@@ -1,0 +1,1 @@
+installutil.exe /i  LNMeterDataService.exe
