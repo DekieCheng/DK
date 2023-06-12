@@ -1,0 +1,14 @@
+C:\00work\03others\00-Study\DK\QRCodeMaker\obj\Debug\QRCodeMaker.frmQRMaker.resources
+C:\00work\03others\00-Study\DK\QRCodeMaker\obj\Debug\QRCodeMaker.vbproj.GenerateResource.cache
+C:\00work\03others\00-Study\DK\QRCodeMaker\obj\Debug\QRCodeMaker.vbproj.CoreCompileInputs.cache
+C:\Program Files\Flextronics\FFClient 2.9.3\QRCodeMaker.exe
+C:\Program Files\Flextronics\FFClient 2.9.3\QRCodeMaker.pdb
+C:\Program Files\Flextronics\FFClient 2.9.3\QRCodeMaker.xml
+C:\00work\03others\00-Study\DK\QRCodeMaker\obj\Debug\QRCodeMaker.vbproj.CopyComplete
+C:\00work\03others\00-Study\DK\QRCodeMaker\obj\Debug\QRCodeMaker.exe
+C:\00work\03others\00-Study\DK\QRCodeMaker\obj\Debug\QRCodeMaker.xml
+C:\00work\03others\00-Study\DK\QRCodeMaker\obj\Debug\QRCodeMaker.pdb
+C:\00work\03others\00-Study\DK\QRCodeMaker\bin\QRCodeMaker.exe
+C:\00work\03others\00-Study\DK\QRCodeMaker\bin\QRCodeMaker.pdb
+C:\00work\03others\00-Study\DK\QRCodeMaker\bin\QRCodeMaker.xml
+C:\00work\03others\00-Study\DK\QRCodeMaker\bin\ThoughtWorks.QRCode.dll

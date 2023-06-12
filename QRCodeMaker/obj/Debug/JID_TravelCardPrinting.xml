@@ -1,0 +1,20 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+JID_TravelCardPrinting
+</name>
+</assembly>
+<members>
+<member name="M:JID_TravelCardPrinting.JIDTravelCardPrintingMgr.ProcessToPrintTravelCard(FlexFlow.Unit,System.String,System.Boolean,System.String,FlexFlow.ProductionOrder,FlexFlow.Part)">
+ <summary>
+ 
+ </summary>
+ <param name="oCurrBatchLotUnit">it's the current batch lot unit</param>
+ <param name="UDPName">UDP name configured in task setting to load the travel card info</param>
+ <param name="IsReview">Decide if allow preview the report content before being printed out</param>
+ <param name="PrinterName">The specified printer name configured in task setting</param>
+ <returns></returns>
+</member>
+</members>
+</doc>

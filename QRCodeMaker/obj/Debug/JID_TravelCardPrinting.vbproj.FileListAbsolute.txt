@@ -1,0 +1,54 @@
+D:\Program Files\Flextronics\FFClient 2.9.3\JID_TravelCardPrinting.dll
+D:\Program Files\Flextronics\FFClient 2.9.3\JID_TravelCardPrinting.pdb
+D:\Program Files\Flextronics\FFClient 2.9.3\JID_TravelCardPrinting.xml
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\101_103316-01\SourceCodes\obj\Debug\JID_TravelCardPrinting.frmJIDTravelCardPrinting.resources
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\101_103316-01\SourceCodes\obj\Debug\JID_TravelCardPrinting.vbproj.GenerateResource.Cache
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\101_103316-01\SourceCodes\obj\Debug\JID_TravelCardPrinting.dll
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\101_103316-01\SourceCodes\obj\Debug\JID_TravelCardPrinting.xml
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\101_103316-01\SourceCodes\obj\Debug\JID_TravelCardPrinting.pdb
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\101_104033-01\SourceCodes\obj\Debug\JID_TravelCardPrinting.frmJIDTravelCardPrinting.resources
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\101_104033-01\SourceCodes\obj\Debug\JID_TravelCardPrinting.vbproj.GenerateResource.Cache
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\101_104033-01\SourceCodes\obj\Debug\JID_TravelCardPrinting.dll
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\101_104033-01\SourceCodes\obj\Debug\JID_TravelCardPrinting.xml
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\101_104033-01\SourceCodes\obj\Debug\JID_TravelCardPrinting.pdb
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\101_104033-01\SourceCodes\obj\Debug\JID_TravelCardPrinting.vbprojResolveAssemblyReference.cache
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\102_104033-02\SourceCodes\obj\Debug\JID_TravelCardPrinting.frmJIDTravelCardPrinting.resources
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\102_104033-02\SourceCodes\obj\Debug\JID_TravelCardPrinting.vbproj.GenerateResource.cache
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\102_104033-02\SourceCodes\obj\Debug\JID_TravelCardPrinting.vbproj.CoreCompileInputs.cache
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\102_104033-02\SourceCodes\obj\Debug\JID_TravelCardPrinting.dll
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\102_104033-02\SourceCodes\obj\Debug\JID_TravelCardPrinting.xml
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\102_104033-02\SourceCodes\obj\Debug\JID_TravelCardPrinting.pdb
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\102_104033-02\SourceCodes\obj\Debug\JID_TravelCardPrinting.vbprojResolveAssemblyReference.cache
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\102_104033-02\SourceCodes - Copy\obj\Debug\JID_TravelCardPrinting.frmJIDTravelCardPrinting.resources
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\102_104033-02\SourceCodes - Copy\obj\Debug\JID_TravelCardPrinting.vbproj.GenerateResource.cache
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\102_104033-02\SourceCodes - Copy\obj\Debug\JID_TravelCardPrinting.vbproj.CoreCompileInputs.cache
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\102_104033-02\SourceCodes - Copy\obj\Debug\JID_TravelCardPrinting.dll
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\102_104033-02\SourceCodes - Copy\obj\Debug\JID_TravelCardPrinting.xml
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\102_104033-02\SourceCodes - Copy\obj\Debug\JID_TravelCardPrinting.pdb
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\103_104033-03\SourceCodes\obj\Debug\JID_TravelCardPrinting.frmJIDTravelCardPrinting.resources
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\103_104033-03\SourceCodes\obj\Debug\JID_TravelCardPrinting.vbproj.GenerateResource.cache
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\103_104033-03\SourceCodes\obj\Debug\JID_TravelCardPrinting.vbproj.CoreCompileInputs.cache
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\103_104033-03\SourceCodes\obj\Debug\JID_TravelCardPrinting.dll
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\103_104033-03\SourceCodes\obj\Debug\JID_TravelCardPrinting.xml
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\103_104033-03\SourceCodes\obj\Debug\JID_TravelCardPrinting.pdb
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\103_104033-03\SourceCodes - Copy\obj\Debug\JID_TravelCardPrinting.vbprojResolveAssemblyReference.cache
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\103_104033-03\SourceCodes - Copy\obj\Debug\JID_TravelCardPrinting.frmJIDTravelCardPrinting.resources
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\103_104033-03\SourceCodes - Copy\obj\Debug\JID_TravelCardPrinting.vbproj.GenerateResource.cache
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\103_104033-03\SourceCodes - Copy\obj\Debug\JID_TravelCardPrinting.vbproj.CoreCompileInputs.cache
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\103_104033-03\SourceCodes - Copy\obj\Debug\JID_TravelCardPrinting.dll
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\103_104033-03\SourceCodes - Copy\obj\Debug\JID_TravelCardPrinting.xml
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\103_104033-03\SourceCodes - Copy\obj\Debug\JID_TravelCardPrinting.pdb
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\104_104033-04\SourceCodes\obj\Debug\JID_TravelCardPrinting.vbprojResolveAssemblyReference.cache
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\104_104033-04\SourceCodes\obj\Debug\JID_TravelCardPrinting.frmJIDTravelCardPrinting.resources
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\104_104033-04\SourceCodes\obj\Debug\JID_TravelCardPrinting.vbproj.GenerateResource.cache
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\104_104033-04\SourceCodes\obj\Debug\JID_TravelCardPrinting.vbproj.CoreCompileInputs.cache
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\104_104033-04\SourceCodes\obj\Debug\JID_TravelCardPrinting.dll
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\104_104033-04\SourceCodes\obj\Debug\JID_TravelCardPrinting.xml
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\104_104033-04\SourceCodes\obj\Debug\JID_TravelCardPrinting.pdb
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\104_104033-04\SourceCodes - Copy\obj\Debug\JID_TravelCardPrinting.frmJIDTravelCardPrinting.resources
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\104_104033-04\SourceCodes - Copy\obj\Debug\JID_TravelCardPrinting.vbproj.GenerateResource.cache
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\104_104033-04\SourceCodes - Copy\obj\Debug\JID_TravelCardPrinting.vbproj.CoreCompileInputs.cache
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\104_104033-04\SourceCodes - Copy\obj\Debug\JID_TravelCardPrinting.dll
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\104_104033-04\SourceCodes - Copy\obj\Debug\JID_TravelCardPrinting.xml
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\104_104033-04\SourceCodes - Copy\obj\Debug\JID_TravelCardPrinting.pdb
+D:\08-FTFS-Customization\Asia Customization\SHG\Edelwise\Client\JID_TravelCardPrinting\104_104033-04\SourceCodes - Copy\obj\Debug\JID_TravelCardPrinting.vbprojResolveAssemblyReference.cache
