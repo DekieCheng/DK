@@ -1,0 +1,17 @@
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\bin\Debug\LNMeterInfrastructure.dll
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\bin\Debug\LNMeterInfrastructure.pdb
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\obj\Debug\LNMeterInfrastructure.csproj.CoreCompileInputs.cache
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\obj\Debug\LNMeterInfrastructure.dll
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\obj\Debug\LNMeterInfrastructure.pdb
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\DLL\LNMeterInfrastructure.dll
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\DLL\LNMeterInfrastructure.pdb
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\DLL\LNMeterInfrastructure.dll
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\DLL\LNMeterInfrastructure.pdb
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\obj\Debug\LNMeterInfrastructure.csproj.CoreCompileInputs.cache
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\obj\Debug\LNMeterInfrastructure.dll
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\obj\Debug\LNMeterInfrastructure.pdb
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\00DataService\DLL\LNMeterInfrastructure.dll
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\00DataService\DLL\LNMeterInfrastructure.pdb
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\00DataService\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\obj\Debug\LNMeterInfrastructure.csproj.CoreCompileInputs.cache
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\00DataService\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\obj\Debug\LNMeterInfrastructure.dll
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\00DataService\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\obj\Debug\LNMeterInfrastructure.pdb
