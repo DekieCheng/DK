@@ -1,0 +1,143 @@
+﻿@using SDPSubSystem.Web.Common;
+@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    @*<div class="form-group" style="margin: 0 0;padding:0 0;">
+            <div class="col-md-3"></div>
+            <label class="col-sm-4 control-label" style="padding-top:10px;font-size:20px;">@Html.GetLang("L000034"):</label>
+            <div class="col-sm-5" style="padding-top:10px">
+                <select class="form-control selectpicker" style="width:180px;" data-width="180px" data-live-search="true" id="Customer" name="Customer" title="Choose one of the following..." data-size="10"></select>
+            </div>
+        </div>
+        <div class="form-group" style="margin: 0 0;padding:0 0;">
+            <div class="col-md-3"></div>
+            <label class="col-md-4 control-label" style="padding-top:10px;font-size:20px;">导入数据:</label>
+            <div class="col-md-5" style="padding-top:10px">
+                <button id="btnImport" class="btn btn-primary"><span class="glyphicon glyphicon-import"></span>@Html.GetLang("BT00004")</button>
+            </div>
+        </div>*@
+
+    <label class="control-label" style="padding-top:10px;font-size:20px;">@Html.GetLang("L000034"):</label>
+    <select class="form-control selectpicker" style="width:180px;" data-width="180px" data-live-search="true" id="Customer" name="Customer" title="Choose one of the following..." data-size="10"></select>
+
+    <button id="btnImport" class="btn btn-primary"><span class="glyphicon glyphicon-import"></span>@Html.GetLang("BT00004")</button>
+    <button id="btnReImportUpdate" class="btn btn-primary"><span class="glyphicon glyphicon-resize-full"></span>Re-Import Update</button>
+    <button id="btnTemplateDownload" class="btn btn-warning"><span class="glyphicon glyphicon-download"></span>Template Download</button>
+    <table id="tab_table" class="table table-striped table-hover table-bordered tableWidth ">
+        <thead>
+            <tr>
+                <th style="width:12px"><input type="checkbox" id="selectAll" /></th>
+                <th>Customer</th>
+                <th>Model</th>
+                <th>Field Site</th>
+                <th>Field Open Date</th>
+                <th>Field Open  Week</th>
+                <th>Field Prod. Order (Batch No )</th>
+                <th>Bulk PN</th>
+                <th>Model Description</th>
+                <th>Input Qty</th>
+                <th>Defect Qty</th>
+                <th>Defect Ratio</th>
+                <th>Station</th>
+                <th>Issue descirption</th>
+                <th>SN</th>
+                <th>RMA#</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+<div class="modal fade bs-example-modal-lg" id="_Dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+<input id="code" type="hidden" value="" />
+
+<style type="text/css">
+    .center-in-center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+</style>
+
+<script type="text/javascript">
+    var _cols = ["ID", "Customer", "Model", "FieldSite", "FieldOpenDate", "FieldOpenWeek", "FieldProdOrderBatchNo", "BulkPN", "ModelDescription", "InputQty", "DefectQty", "DefectRatio", "Station", "IssueDescirption", "SN", "RMANumber"];
+    var _editcol = "";
+    var _tableName = "tab_table";
+    $(function () {
+
+        $.post('@Url.Action("getDetailDropForCustomer")', {  }, function (res) {
+
+            var phtml = "";
+            for (var i = 0; i < res.Customer.length; i++) {
+                if (i == 0) {
+                    phtml += "<option  value='" + res.Customer[i].ID + "' selected='selected' data-name='" + res.Customer[i].Name + "'>" + res.Customer[i].Name + "</option>";
+                } else {
+                    phtml += "<option  value='" + res.Customer[i].ID + "' data-name='" + res.Customer[i].Name + "'>" + res.Customer[i].Name + "</option>";
+                }
+            }
+            $("#Customer").html(phtml);
+            $('.selectpicker').selectpicker('refresh');//加载select框选择器
+
+        });
+
+        postLoadTable('@Url.Action("ImportLoad")', _tableName, _cols, _editcol, '');
+
+        //debugger;
+        $('#btnImport').x_import_RMA({
+            saveUrl: '@Url.Action("Import")', template: '@Url.Content("~/Template/RMA_System_B17_ImportTemplate.xlsx")', callback: function () {
+                //layer.alert("导入成功");
+            }
+        })
+
+
+
+        $('#btnReImportUpdate').click(function () {
+
+            $("#_Dialog").load('@Url.Action("ReImportUpdate")', { }, function () {
+                $("#_Dialog").modal("show");
+            });
+
+        });
+
+        $('#btnTemplateDownload').click(function () {
+
+            $.fileDownload("@Url.Action("templateDownload")", {
+                httpMethod: 'post',
+                // 因为这个插件貌似只支持URL参数,所以要用jquery param将js对象转成URL参数
+                data: {
+                    Code: $('#code').val()
+                },
+                // data: $.param(params),
+                prepareCallback: function (url) {
+                    //console.log("正在导出...");
+                },
+                //要想成功回调失败和成功方法，要在响应首部加 response.setHeader("Set-Cookie", "fileDownload=true; path=/");
+                successCallback: function (url) {
+                    $.globalMessenger().post({
+                        message: "操作成功",//提示信息
+                        type: 'info',//消息类型。error、info、success
+                        hideAfter: 5,//多长时间消失
+                        showCloseButton: true,//是否显示关闭按钮
+                        hideOnNavigate: true //是否隐藏导航
+                    });
+                },
+                failCallback: function (html, url) {
+                    //console.log("导出失败");
+                    bootbox.alert({ message: 'No data', title: "Export Failed" });
+                }
+            });
+
+        });
+
+    })
+
+
+</script>
+

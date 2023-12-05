@@ -1,0 +1,212 @@
+﻿@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using SDPSubSystem.Web.Common;
+
+<div class="container-fluid">
+    <div class="row" style="padding-top:5px;padding-bottom:5px">
+        <div class="btn-group col-sm-6">
+            <button id="btnAdd" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span>@Html.GetLang("BT00001")</button>
+            <button type="button" id="btnImport" class="btn btn-danger"><span class="glyphicon glyphicon-import"></span>@Html.GetLang("BT00004")</button>
+
+        </div>
+        <div class="input-group col-sm-6">
+            <input type="text" class="form-control" id="code" placeholder="Please input to search" style="width:300px;float:right" onkeypress="getKey(event);">
+            <span class="input-group-btn">
+                <button id="btnSearch" class="btn btn-primary "><span class="glyphicon glyphicon-search"></span>Search</button>
+            </span>
+        </div>
+    </div>
+
+    <table id="tab_table" class="table table-hover table-striped table-bordered tableWidth" cellspacing="0">
+        <thead>
+            <tr>
+                <th style="width:12px"><input type="checkbox" id="selectAll" disabled /></th>
+                <th>P/N</th>
+                <th>Project</th>
+                <th>Where used -<br> Device PN</th>
+                <th>Is Active</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+</div>
+<div class="modal fade bs-example-modal-lg" id="_Dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+
+<script type="text/javascript">
+    var _cols = ["ID", "GluePartNumber", "ProjectName", "DevicePartNumber", "IsActive"];
+    var _editcol = "GluePartNumber";
+    var _tableName = "tab_table";
+    $(function () {
+
+        $.ajaxSetup({ cache: false, async: true })
+        $('#selectAll').click(function () {
+            if ($(this).is(":checked")) {
+                $('#tab_table tbody input[name="selectid"]').prop("checked", true);
+            }
+            else {
+                $('#tab_table tbody input[name="selectid"]').prop("checked", false);
+            }
+        });
+
+        postLoadDevicePNMatrixTable('@Url.Action("MaintenanceLoad")', _tableName, _cols, _editcol, '@Url.Action("MaintenanceEdit")');
+
+        $("#btnSearch").click(function () {
+            $("#" + _tableName).DataTable().ajax.reload();
+        });
+
+
+        $('#btnAdd').click(function () {
+            $("#_Dialog").load('@Url.Action("MaintenanceAdd")', "", function () {
+                $("#_Dialog").modal("show");
+            });
+        });
+
+
+
+        $('#btnDelete').click(function () {
+            postCancel('@Url.Action("Delete")', _tableName);
+        });
+
+
+    });
+
+    function postLoadDevicePNMatrixTable(url, tableName, cols, editcol, editUrl) {
+        var height = parseInt($("body").css("height").replace("px", "")) - 140;
+        var defs = [];
+        for (var i = 0; i < cols.length; i++) {
+            if (cols[i] == editcol) {
+                defs.push({
+                    "className": "text-left", "targets": i, "orderable": false, "data": cols[i], "render": function (data, type, full, meta) {
+                        //debugger
+                        var str = "javascript" + ":postEdit('" + full.ID  + "','" + encodeURIComponent(editUrl) + "')";
+                        return '<a href="#" onclick="' + str + '">' + data + '</a>';
+                    }
+                });
+            }
+            else if (cols[i] == "ID") {
+                defs.push({
+                    "className": "text-center", "targets": i, "orderable": false, "data": cols[i], "render": function (data, type, full, meta) {
+                        var flag;
+                        flag = ((full.StatusID == 0) ? '' : 'disabled');
+                        return '<input type="checkbox" name="selectid" value="' + data + '" ' + flag + '/>';
+                    }
+                });
+            }
+            else {
+                defs.push({
+                    "className": "text-left", "targets": i, "orderable": false, "data": cols[i], "render": function (data, type, full, meta) {
+                        return data || "";
+                    }
+                });
+            }
+
+
+        }
+        var domCustomized = "<'row'<'col-sm-12'tr>>" +
+            "<'row'<'col-sm-2'l><'col-sm-3'i><'col-sm-7'p>>";
+        var t = $("#" + tableName).dataTable({
+            "dom": domCustomized,
+            autoWidth: true,
+            filter: false,
+            processing: true,
+            serverSide: true,
+            order: [],
+            scrollY: height,
+            scrollX: true,
+            scrollCollapse: false,
+            paging: true,
+            paginationType: "full_numbers",
+            lengthMenu: [[10,20, 50, 100, 99999999], [10,20, 50, 100, "All"]],
+            pageLength: 10,
+            lengthChange: true, //fixedColumns: { leftColumns: 2 },
+            serverMethod: "POST",
+            ajax: {
+                url: url
+            },
+            language: {
+                url: '/Content/Datatables/Lang/Lang_' + $('body').attr("LangID") + ".txt"
+            },
+            columnDefs: defs,
+            fnServerParams: function (data) {
+                data.code = $("#code").val();
+            }
+        });
+    }
+
+    
+    
+
+    $('#btnImport').x_import({
+            saveUrl: '@Url.Action("MaintenanceImport")', template: '@Url.Content("~/Template/GlueMaintenanceTemplate.xlsx")', callback: function () {
+                $("#tab_table").DataTable().ajax.reload();
+
+            }
+    })
+
+    //加载明细数据列表
+    function LoadData(Num) {
+        $("#tab_Detail thead").empty();
+        $("#tab_Detail tbody").empty();
+        $("#a").show();
+        $("#b").hide();
+        $.post('@Url.Action("LoadDetail")', { Num: Num }, function (result) {
+
+            var ord;
+            var Pro;
+            var UTILTIME;
+            var LOADTIME;
+            $("#tab_Detail thead").append("<tr>");
+            $.each(result.cols, function (idx, item) {
+                if (item == "ID") {
+                    $("#tab_Detail thead tr").append('<th style="width:12px"></th>');
+                }
+                else {
+                    $("#tab_Detail thead tr").append('<th>' + item + '</th>');
+                }
+
+            });
+            $.each(result.data, function (idx, item) {
+                var rowHtml = "<tr>";
+                $.each(result.cols, function (i, citem) {
+                    if (citem == "ID") {
+                        rowHtml += '<td><input type="checkbox" name="selectid" value="' + item[citem] + '" /></td>';
+                    }
+
+                    else {
+                        rowHtml += '<td><div style="max-width:250px;word-wrap : break-word" >' + (item[citem] == null ? "" : item[citem]) + "</div></td>"
+                    }
+
+                });
+                rowHtml += "</>";
+                $("#tab_Detail tbody").append(rowHtml);
+            })
+        })
+    }
+
+    function Modify(id) {
+        $("#_Dialog").load('@Url.Action("Edit")', { ID: id }, function () {
+            $(this).modal("show");
+        });
+    }
+
+    // 使后打开的模态窗优先级高
+
+    $("#_Dialog").on("show.bs.modal", ".modal", function (event) {
+
+        var zIndex = 1040 + 10 * $(".modal:visible").length;
+
+        $(this).css("z-index", zIndex);
+
+    });
+
+    function getKey(event) {
+        if (event.keyCode == 13) {
+            //$('#btnSearch').click();
+            $("#" + _tableName).DataTable().ajax.reload();
+        }
+    }
+
+</script>

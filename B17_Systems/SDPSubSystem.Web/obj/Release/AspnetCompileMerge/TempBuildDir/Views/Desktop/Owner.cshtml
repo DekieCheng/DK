@@ -1,0 +1,110 @@
+﻿@using SDPSubSystem.Web.Common;
+@{
+    ViewBag.Title = "Desktop Computer Owner Maintainance";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container-fluid">
+    <div class="row" style="padding-top:5px;padding-bottom:5px">
+        <div class="btn-group col-sm-6">
+            
+        </div>
+        <div class="input-group col-sm-6">
+            <input type="text" class="form-control" id="code" placeholder="Please input value to search" style="width:200px;float:right" onkeypress="getKey(event);">
+            <span class="input-group-btn">
+                <button id="btnSearch" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span>Search</button>
+            </span>
+        </div>
+    </div>
+    <table id="tab_table" class="table table-striped table-hover table-bordered tableWidth ">
+        <thead>
+            <tr>
+                <th style="width:12px"><input type="checkbox" id="selectAll" /></th>
+                <th>RowNum</th>
+                <th>ComputerName</th>
+                <th>Building</th>
+                <th>Owner</th>
+                <th>FlexeraStatus</th>
+                <th>S1Status</th>
+                <th>SolidCoreStatus</th>
+                <th>WSUSCoverageStatus</th>
+                <th>WSUSPatchStatus</th>
+                <th>LastUpdate</th>
+                <th>Operator</th>
+                <th>Remark</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+<div class="modal fade bs-example-modal-lg" id="_Dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+
+
+<script type="text/javascript">
+    var _cols = ["ID", "RowNum", "ComputerName", "Building", "Owner", "FlexeraStatus", "S1Status", "SolidCoreStatus", "WSUSCoverageStatus", "WSUSPatchStatus", "LastUpdate", "Operator", "Remark"];
+    var _editcol = "ComputerName";
+    var _tableName = "tab_table";
+    $(function () {
+       // $.ajaxSetup({ cache: false, async: true });
+        $.ajaxSetup({
+            beforeSend: function (jqXHR, settings) {
+                var X_DB_MATRIX = parent.GetMatrix();
+                if (X_DB_MATRIX != null) {
+                    settings.url += settings.url.match(/\?/) ? "&" : "?";
+                    settings.url += "X_DB_MATRIX=" + X_DB_MATRIX;
+                }
+            },
+        });
+
+
+        $('#selectAll').click(function () {
+            if ($(this).is(":checked")) {
+                $('#tab_data tbody input[name="selectid"]').prop("checked", true);
+            }
+            else {
+                $('#tab_data tbody input[name="selectid"]').removeAttr("checked");
+            }
+        })
+        postLoadTableByComputerOwner('@Url.Action("loadOwner")', _tableName, _cols, _editcol, '@Url.Action("Edit")');
+        @*postLoadTableModal('@Url.Action("LoadShippingNotice")', _tableName, _cols, _editcol, '@Url.Action("EditShippingNotice")');*@
+
+        $("#btnSearch").click(function () {
+            $("#" + _tableName).DataTable().ajax.reload();
+        }); 
+        
+
+        $('#btnAdd').click(function () {
+            $("#_Dialog").load('@Url.Action("Add")', "", function () {
+                $("#_Dialog").modal("show");
+            });
+        });
+        $('#btnDelete').click(function () {
+            postDelete('@Url.Action("Delete")', _tableName);
+        });
+
+        $('#btnImport').x_import({
+            saveUrl: '@Url.Action("ImportProduct")', template: '@Url.Content("~/product loading.xlsx")', callback: function () {
+                $("#tab_data").DataTable().ajax.reload();
+                $("#tab_date").DataTable().ajax.reload();
+            }
+        })
+    })
+
+    // 使后打开的模态窗优先级高
+
+    $("#_Dialog").on("show.bs.modal", ".modal", function (event) {
+
+        var zIndex = 1040 + 10 * $(".modal:visible").length;
+
+        $(this).css("z-index", zIndex);
+
+    });
+
+    function getKey(event) {
+        if (event.keyCode == 13) {
+            //$('#btnSearch').click();
+            $("#" + _tableName).DataTable().ajax.reload();
+        }
+    }
+
+</script>
+

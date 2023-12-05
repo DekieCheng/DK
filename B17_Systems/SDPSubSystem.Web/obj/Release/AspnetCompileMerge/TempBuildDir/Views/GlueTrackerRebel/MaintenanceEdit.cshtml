@@ -1,0 +1,84 @@
+﻿
+@{
+    Layout = null;
+}
+@using SDPSubSystem.Web.Common;
+@model SDPSubSystem.Model.GlueTracker.GlueTrack_ProductStructure
+
+<div class="modal-dialog" style="width:55%;height:400px;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" style="color:White" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-edit"></span>Edit Record</h4>
+        </div>
+        <div class="modal-body">
+            <div id="message-box" style="display:none" class="alert alert-danger fade in" role="alert"><ul></ul></div>
+            <form class="form-horizontal" id="addressedit">
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">P/N:</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="GluePartNumber" name="GluePartNumber" value="@Model.GluePartNumber" />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">Project:</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="ProjectName" name="ProjectName" value="@Model.ProjectName" />
+
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">Where used -<br> Device PN:</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="DevicePartNumber" name="DevicePartNumber" value="@Model.DevicePartNumber" />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">Is Active:</label>
+                    <div class="col-sm-8" style="padding-top:2px">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="IsActive" id="optionsRadios1" value="1">
+                                Yes
+                            </label>
+                            <label>
+                                <input type="radio" name="IsActive" id="optionsRadios2" value="0">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <input id="ID" name="ID" type="hidden" value="@Model.ID" />
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button id="btnSave" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-saved"></span>Save</button>
+            <button id="btnClosePO" type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove-sign"></span>Close</button>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+
+
+<script type="text/javascript">
+    $(function () {
+        $('input:radio').each(function (index, domEle) {
+            if (domEle.value=='@Model.IsActive') {
+                domEle.setAttribute('checked', 'checked')
+            }
+        });
+
+        $("#btnSave").click(function () {
+            
+            $.post('@Url.Action("MaintenanceSaveEdit")',
+                { poststr: JSON.stringify($('#addressedit').serializeJSON()) },
+                function (result) {
+                    $("#_Dialog").modal("hide");
+                    $("#tab_table").DataTable().ajax.reload();
+                    $("#_id").val(result.Data);
+                })
+
+        })
+
+    });
+</script>

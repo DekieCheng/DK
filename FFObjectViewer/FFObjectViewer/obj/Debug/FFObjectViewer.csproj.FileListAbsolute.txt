@@ -1,0 +1,8 @@
+C:\OneDriver\OneDrive - Flex\Desktop\08others\00SampleCodes\FFObjectViewer\FFObjectViewer\obj\Debug\FFObjectViewer.frmObjetViewer.resources
+C:\OneDriver\OneDrive - Flex\Desktop\08others\00SampleCodes\FFObjectViewer\FFObjectViewer\obj\Debug\FFObjectViewer.Properties.Resources.resources
+C:\OneDriver\OneDrive - Flex\Desktop\08others\00SampleCodes\FFObjectViewer\FFObjectViewer\obj\Debug\FFObjectViewer.csproj.GenerateResource.cache
+C:\OneDriver\OneDrive - Flex\Desktop\08others\00SampleCodes\FFObjectViewer\FFObjectViewer\obj\Debug\FFObjectViewer.csproj.CoreCompileInputs.cache
+C:\OneDriver\OneDrive - Flex\Desktop\08others\00SampleCodes\FFObjectViewer\FFObjectViewer\bin\Debug\FFObjectViewer.exe
+C:\OneDriver\OneDrive - Flex\Desktop\08others\00SampleCodes\FFObjectViewer\FFObjectViewer\bin\Debug\FFObjectViewer.pdb
+C:\OneDriver\OneDrive - Flex\Desktop\08others\00SampleCodes\FFObjectViewer\FFObjectViewer\obj\Debug\FFObjectViewer.exe
+C:\OneDriver\OneDrive - Flex\Desktop\08others\00SampleCodes\FFObjectViewer\FFObjectViewer\obj\Debug\FFObjectViewer.pdb

@@ -1,0 +1,464 @@
+﻿@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_LayoutJquery.cshtml";
+}
+@using SDPSubSystem.Web.Common;
+
+<style>
+    .eco table tbody tr td {
+        width: 40px !important;
+        word-wrap: break-word;
+    }
+
+    .eco table thead th {
+        vertical-align: central !important;
+        color: black !important;
+    }
+
+    .ItemsTableCss thead th {
+        font-weight: bold !important;
+        background-color:darksalmon;
+        color: black;
+    }
+    td.details-control {
+        background: url('../../Content/resources/details_open.png') no-repeat center center;
+        cursor: pointer;
+    }
+
+    tr.shown td.details-control {
+        background: url('../../Content/resources/details_close.png') no-repeat center center;
+    }
+
+</style>
+<div class="container-fluid">
+    @*<div class="row" style="padding-top:5px;padding-bottom:5px">
+        <div class="col-sm-6">
+            <button type="button" id="btnImport" class="btn btn-primary"><span class="glyphicon glyphicon-import"></span>@Html.GetLang("BT00004")</button>
+
+        </div>
+        <div class="col-sm-6">
+            
+        </div>
+    </div>*@
+    <div class="panel panel-default">
+        <div class="panel-body form-inline">
+            <div class="form-group" style="margin: 0 0;padding:0 0;">
+                <label class="control-label">GN ECO#:</label>
+                <input style="width:200px;" class="form-control" type="text" id="GNECO" name="GNECO" value="" autocomplete="on" />
+
+            </div>
+            <div class="form-group" style="margin: 0 0;padding-left:10px;">
+                <label class="control-label">Flex ECO #:</label>
+                <input style="width:200px;" class="form-control" type="text" id="FlexECO" name="FlexECO" value="" />
+            </div>
+            <div class="form-group" style="margin: 0 0;padding-left:10px;">
+                <label class="control-label">Status:</label>
+                @Html.DropDownList("Status", (List<SelectListItem>)ViewData["Status"], new { @id = "Status", @style = "width:200px;", @class = "form-control", datatype = "*", nullmsg = "Please select the Type!" })
+            </div>
+            <div class="form-group" style="margin: 0 0;padding-left:10px;">
+                <label class="control-label">Customer Project:</label>
+                @Html.DropDownList("CustomerProjectID", (List<SelectListItem>)ViewData["CustomerProject"], new { @id = "CustomerProjectID", @style = "width:200px;", @class = "form-control", datatype = "*", nullmsg = "Please select the Type!" })
+            </div>
+
+            <div class="form-group" style="margin: 0 0;padding-left:10px;">
+                <label class="control-label"></label>
+                <button id="btnSearch" class="btn btn-danger "><span class="glyphicon glyphicon-search"></span>@Html.GetLang("BT00006")</button>
+                <button type="button" id="btnExport" class="btn btn-primary"><span class="glyphicon glyphicon-export"></span>@Html.GetLang("BT00005")</button>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="eco">
+        <table id="tab_table" class="table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    @*<th><input type="checkbox" id="selectAll" disabled /></th>*@
+                    <th></th>
+                    <th>GN ECO#</th>
+                    <th>Flex ECO #</th>
+                    <th>EC Type</th>
+                    <th>Change Type#</th>
+                    <th>EC Received Date</th>
+                    <th>Customer Project</th>
+                    <th>EC Description</th>
+                    <th style="background-color:chocolate">Status</th>
+                    <th style="background-color:mediumseagreen">Estimate implementation date</th>
+                    <th style="background-color: mediumseagreen">Actual implementation date</th>
+                    <th style="background-color:chocolate">Owner</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    
+
+</div>
+<div class="modal fade bs-example-modal-lg" id="_Dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+<input id="Month"  type="hidden" value="@ViewData["Month"]"/>
+<input id="Year"  type="hidden" value="@ViewData["Year"]"/>
+
+<script type="text/javascript">
+    var counttable = 0;
+    var _cols = ["ID", "GNECO", "FlexECO", "ECType", "ChangeType", "ECReceivedDate", "CustomerProject", "ECDescription", "Status", "EstimateImplementationDate", "ActualImplementationDate", "Owner"];
+    var _editcol = "FlexECO";
+    var _tableName = "tab_table";
+    $(function () {
+        $('#Month').val(parent.$("#Jabra_ECO_Month_Hyperlink_Param_Transfer").val());
+        $('#Year').val(parent.$("#Jabra_ECO_Year_Hyperlink_Param_Transfer").val());
+        $(' select#CustomerProjectID option ').each(function (index, domEle) {
+            //写入代码
+            let lineName = parent.$("#Jabra_ECO_CustomerProject_Hyperlink_Param_Transfer").val();
+            if (lineName == domEle.text) {
+                $('select#CustomerProjectID')[0].selectedIndex = index;
+            }
+        });
+
+        $.ajaxSetup({ cache: false, async: true })
+        $('#selectAll').click(function () {
+            if ($(this).is(":checked")) {
+                $('#tab_table tbody input[name="selectid"]').prop("checked", true);
+            }
+            else {
+                $('#tab_table tbody input[name="selectid"]').prop("checked", false);
+            }
+        });
+
+
+        postLoadECOTracker('@Url.Action("Load")', _tableName, _cols, _editcol, '@Url.Action("Edit")');
+
+        $("#btnSearch").click(function () {
+            $("#" + _tableName).DataTable().ajax.reload();
+        });
+
+
+        @*$('#btnAdd').click(function () {
+            $("#_Dialog").load('@Url.Action("Add")', "", function () {
+                $("#_Dialog").modal("show");
+            });
+        });*@
+
+        // Add event listener for opening and closing details
+        $('#tab_table tbody').on('click', 'td.details-control', function () {
+            //debugger
+            var tr = $(this).closest('tr');
+            var table = $('#tab_table').DataTable();
+            var row = table.row(tr);
+            if (row.child.isShown()) {
+                // This row is already open - close it
+                row.child.hide();
+                tr.removeClass('shown');
+            }
+            else {
+                // Open this row
+                //$('#code').val(row.data().ID);
+                row.child(format(row.data())).show();
+                tr.addClass('shown');
+            }
+        });
+
+    });
+
+    /* Formatting function for row details - modify as you need */
+    function format(d) {
+        // `d` is the original data object for the row
+
+        return '<table  id="table_Items' + counttable+'" class="ItemsTableCss" cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">' +
+                    '<thead >' +
+                        '<tr>' +
+                        '<th>Affected Items List</th>' +
+                        '<th>Affected Items.Item Type</th>' +
+                        '<th>Affected Items.New Rev</th>' +
+                        '<th>Affected Items.Eff Date</th>' +
+                        '<tr>' +
+                    '</thead>' +
+                    '<tbody>' +
+                    '</tbody>' +
+            '</table>'+
+            '<script>' +
+            'var _cols_dtl = ["AffItem", "AffItemType", "AffNewRev", "AffEffDate"];' +
+            '$.post("'+'@Url.Action("LoadAffectedItems")'+'", { AgileHdrID: "'+d.ID+'" }, function (result) {\
+                gentable(result.Items, "table_Items'+ counttable + '",_cols_dtl);\
+                counttable++ ;\
+            });' +
+            'function gentable(data,divtable,_cols_dtl){\
+                if ($("#" + divtable + " tbody").html() != "") {\
+                    $("#" + divtable + "").dataTable().fnDestroy();\
+                }\
+                $("#" + divtable + " tbody").empty();\
+                $.each(data, function (idx, item) {\
+                    var tr = $("<tr ></tr>");\
+                    $.each(_cols_dtl, function (idx, c) {\
+                        tr.append("<td>" + item[c] + "</td>");\
+                    });\
+                    $("#" + divtable + " tbody").append(tr);\
+                })\
+            }'+
+            '<\/script>'
+            ;
+    }
+
+
+    @*$('#btnImport').x_import({
+            saveUrl: '@Url.Action("Import")', template: '@Url.Content("~/Template/ECTrackerImportTemplate.xlsx")', callback: function () {
+                $("#tab_table").DataTable().ajax.reload();
+
+            }
+    })*@
+
+    $("#btnExport").click(function () {
+        
+
+        $.fileDownload("@Url.Action("exportData")", {
+            httpMethod: 'post',
+            // 因为这个插件貌似只支持URL参数,所以要用jquery param将js对象转成URL参数
+            data: {
+                GNECO: $("#GNECO").val(),
+                FlexECO: $("#FlexECO").val(),
+                Status: $('#Status option:selected').text(),
+                CustomerProject: $('#CustomerProjectID option:selected').text()
+            },
+            // data: $.param(params),
+            prepareCallback: function (url) {
+                //console.log("正在导出...");
+            },
+            //要想成功回调失败和成功方法，要在响应首部加 response.setHeader("Set-Cookie", "fileDownload=true; path=/");
+            successCallback: function (url) {
+                $.globalMessenger().post({
+                    message: "操作成功",//提示信息
+                    type: 'info',//消息类型。error、info、success
+                    hideAfter: 5,//多长时间消失
+                    showCloseButton: true,//是否显示关闭按钮
+                    hideOnNavigate: true //是否隐藏导航
+                });
+            },
+            failCallback: function (html, url) {
+                console.log("导出失败");
+            }
+        });
+
+    });
+
+    function postLoadECOTracker(url, tableName, cols, editcol, editUrl) {
+
+        var defs = [];
+        for (var i = 0; i < cols.length; i++) {
+            //debugger
+            if (cols[i] == editcol) {
+                defs.push({
+                    "className": "text-left", "targets": i, "orderable": false, "data": cols[i], "render": function (data, type, full, meta) {
+                        var str = "javascript" + ":postEdit(" + full.ID + ",'" + encodeURIComponent(editUrl) + "')";
+                        return '<a href="#" onclick="' + str + '">' + data + '</a>';
+                    }
+                });
+            }
+            else if (cols[i] == "ID") {
+                defs.push({
+                    "className": "details-control", "targets": i, "orderable": false, "data": cols[i], "render": function (data, type, full, meta) {
+                        //var flag;
+                        //flag = ((full.StatusID == 0) ? '' : 'disabled');
+                        //return '<input type="checkbox" name="selectid" value="' + data + '" ' + flag + '/>';
+                        return null;
+                    }
+                });
+            }
+            else if (cols[i] == "ECDescription" || cols[i] == "ChangeType") {
+                defs.push({
+                    "className": "text-center", "targets": i, "orderable": false, "data": cols[i], "render": function (data, type, full, meta) {
+                        return '<div style="width:300px;white-space:normal;/*word-wrap:break-word;*/" >' + (data || '') + '</div>';
+                    }
+                });
+            }
+            else {
+                defs.push({
+                    "className": "text-left", "targets": i, "orderable": true, "data": cols[i], "render": function (data, type, full, meta) {
+
+                        return data||'';
+                    }
+                });
+            }
+
+
+        }
+
+        var height = parseInt($("body").css("height").replace("px", "")) - 240;
+
+        var domCustomized = "<'row'<'col-sm-12'tr>>" +
+            "<'row'<'col-sm-2'l><'col-sm-3'i><'col-sm-7'p>>";
+        var t = $("#" + tableName).dataTable({
+            "dom": domCustomized,
+            //autoWidth: false,
+            deferRender: true,
+            filter: false,
+            processing: true,
+            serverSide: true,
+            ordering: false,
+            scrollY: height,
+            scrollX: true,
+            scrollCollapse: true,
+            scroller: true,
+            searching: true,
+            info:true,
+            paging: true,
+            paginationType: "full_numbers",
+            lengthMenu: [[10,20, 50, 100, 99999999], [10,20, 50, 100, "All"]],
+            pageLength: 10,
+            lengthChange: true, //fixedColumns: { leftColumns: 2 },
+            serverMethod: "POST",
+            ajax: {
+                url: url
+            },
+            language: {
+                url: '/Content/Datatables/Lang/Lang_' + $('body').attr("LangID") + ".txt"
+            },
+            //columns: [
+            //    {
+            //        "data": "ECDescription",
+            //        "width": "15%",
+            //    }
+            //],
+            columnDefs: defs,
+            fnServerParams: function (data) {
+                data.GNECO = $("#GNECO").val();
+                data.FlexECO = $("#FlexECO").val();
+                data.Status = $('#Status option:selected').text();
+                data.CustomerProject = $('#CustomerProjectID option:selected').text();
+                data.Month = $("#Month").val();
+                data.Year = $("#Year").val();
+            }
+        });
+    }
+
+
+
+    function postCancel(url, tableName) {
+        var ids = "";
+
+        var message_lang = "Are you sure you want to cancel the selected Task Orders?";
+        var title_lang = "Confirm";
+        var delete_lang = "Yes";
+        var cancel_lang = "No";
+        var msg_info = "Please choose the data which you want to cancel!";
+        var info_lang = "Information"
+        if ($('body').attr("LangID") != "1") {
+            message_lang = "是否确认取消所选中的工单?";
+            title_lang = " 确认";
+            delete_lang = "确定";
+            cancel_lang = "取消";
+            msg_info = "请选择要取消的工单!";
+            info_lang = "提示";
+        }
+        $.each($("#" + tableName + " tbody input[name='selectid']:checked"), function (idx, item) {
+            ids += $(item).val() + ",";
+        });
+        if (ids != "") {
+            ids = ids.substring(0, ids.length - 1);
+            bootbox.confirm({
+                message: message_lang, title: title_lang,
+                buttons: {
+                    confirm: {
+                        label: delete_lang,
+                        className: 'btn-danger'
+                    },
+                    cancel: {
+                        label: cancel_lang,
+                        className: 'btn-default'
+                    }
+                },
+                callback: function (result) {
+                    if (result) {
+                        $.post(url, { ids: ids }, function (result) {
+                            if (result.IsSuccess) {
+                                $("#" + tableName).DataTable().ajax.reload();
+                            }
+                            else {
+                                if (result.Msg) {
+                                    var m_ul = "<ul>";
+                                    var flag = false;
+                                    $.each(result.Msg, function (idx, msg) {
+                                        m_ul += "<li>" + msg + "</li>";
+                                        flag = true;
+                                    });
+                                    m_ul += "</ul>";
+                                    if (flag) { bootbox.alert({ message: m_ul, title: "Error" }); }
+                                }
+                            }
+                        });
+                    }
+                }
+            });
+        }
+        else {
+            bootbox.alert({ message: msg_info, title: info_lang })
+        }
+    }
+
+
+
+    //加载明细数据列表
+    function LoadData(Num) {
+        $("#tab_Detail thead").empty();
+        $("#tab_Detail tbody").empty();
+        $("#a").show();
+        $("#b").hide();
+        $.post('@Url.Action("LoadDetail")', { Num: Num }, function (result) {
+
+            var ord;
+            var Pro;
+            var UTILTIME;
+            var LOADTIME;
+            $("#tab_Detail thead").append("<tr>");
+            $.each(result.cols, function (idx, item) {
+                if (item == "ID") {
+                    $("#tab_Detail thead tr").append('<th style="width:12px"></th>');
+                }
+                else {
+                    $("#tab_Detail thead tr").append('<th>' + item + '</th>');
+                }
+
+            });
+            $.each(result.data, function (idx, item) {
+                var rowHtml = "<tr>";
+                $.each(result.cols, function (i, citem) {
+                    if (citem == "ID") {
+                        rowHtml += '<td><input type="checkbox" name="selectid" value="' + item[citem] + '" /></td>';
+                    }
+
+                    else {
+                        rowHtml += '<td><div style="max-width:250px;word-wrap : break-word" >' + (item[citem] == null ? "" : item[citem]) + "</div></td>"
+                    }
+
+                });
+                rowHtml += "</>";
+                $("#tab_Detail tbody").append(rowHtml);
+            })
+        })
+    }
+
+    function Modify(id) {
+        $("#_Dialog").load('@Url.Action("Edit")', { ID: id }, function () {
+            $(this).modal("show");
+        });
+    }
+
+    // 使后打开的模态窗优先级高
+
+    $("#_Dialog").on("show.bs.modal", ".modal", function (event) {
+
+        var zIndex = 1040 + 10 * $(".modal:visible").length;
+
+        $(this).css("z-index", zIndex);
+
+    });
+
+    function getKey(event) {
+        if (event.keyCode == 13) {
+            //$('#btnSearch').click();
+            $("#" + _tableName).DataTable().ajax.reload();
+        }
+    }
+
+</script>

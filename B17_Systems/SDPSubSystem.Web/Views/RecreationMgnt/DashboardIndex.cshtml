@@ -1,0 +1,111 @@
+﻿@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .btn-box {
+        width: 120px;
+        height: 80px;
+        margin: 10px;
+        text-align: center;
+        word-wrap: break-word;
+        background-color: darkseagreen;
+        color: white;
+        float: left;
+        padding-top: 25px;
+        box-shadow: 3px 3px 5px #888888;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    .btn-box-legend {
+        width: 20px;
+        height: 10px;
+        box-shadow: 1px 1px 2px #888888;
+        border-radius: 3px;
+    }
+</style>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="panel">
+                <div class="panel-heading">
+                    @*<h5 class="panel-title" style="float: right;">归还登记</h5>*@
+                    <div class="row pull-right">
+                        <div class="col-lg-2">闲置</div>
+                        <div class="col-lg-2">
+                            <div class="btn-box-legend" style="background-color:green"></div>
+                        </div>
+                        @*<div class="col-sm-1"><button type="button" class="btn btn-success"><span style="color:black"></span></button></div>*@
+                        <div class="col-lg-2" style="white-space: nowrap;">运行中</div>
+                        <div class="col-lg-2">
+                            <div class="btn-box-legend" style="background-color:red"></div>
+                        </div>
+                        <div class="col-lg-2" style="white-space: nowrap;">维修中</div>
+                        <div class="col-lg-2">
+                            <div class="btn-box-legend" style="background-color:#e0bc47"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body" id="dashboard">
+                    @*<div class="btn-box" style="background-color:coral">
+                <div class="col-sm-12">新员工待分班</div>
+                <div id="waitforshift" class="col-sm-12"></div>
+            </div>
+            <div class="btn-box" style="background-color:cornflowerblue">
+                <div class="col-sm-12">IE计划人数</div>
+                <div id="requestcount" class="col-sm-12"></div>
+            </div>
+            <div class="btn-box" style="background-color:darkolivegreen">
+                <div class="col-sm-12">员工总数</div>
+                <div id="employeecount" class="col-sm-12"></div>
+            </div>
+            <div class="btn-box" style="background-color:#e0bc47">
+                <div class="col-sm-12">DL_P缺勤人数</div>
+                <div id="leavecount" class="col-sm-12"></div>
+            </div>
+            <div class="btn-box" style="background-color:#e0bc47">
+                <div class="col-sm-12">DL_NP缺勤人数</div>
+                <div id="leavecountNP" class="col-sm-12"></div>
+            </div>
+            <div class="btn-box" style="background-color:#b29f9f">
+                <div class="col-sm-12">离职人数</div>
+                <div id="resignRate" class="col-sm-12"></div>
+            </div>*@
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<div class="modal fade bs-example-modal-lg" id="_Dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+
+<script type="text/javascript">
+    $(function () {
+        getdata();
+        setInterval(getdata, 1000);
+    })
+    function getdata() {
+        //var index = layer.load(0, { shade: false }); //0代表加载的风格，支持0-2
+        $.post('@Url.Action("GetDashboardData")', null, function (result) {
+            //console.log(result);
+            //debugger;
+            $("#dashboard").empty();
+            for (var i = 0; i < result.DashboardData.length; i++){
+
+                var color = 'green';
+                if (result.DashboardData[i].StatusID == '1') {
+                    color = 'red';
+                } else if (result.DashboardData[i].StatusID == '3') {
+                    color = '#e0bc47';
+                }
+                var div1 = $('<div class="btn-box" style="background-color:' + color+';"></div>');
+                div1.append('<div class="col-sm-12">' + result.DashboardData[i].EquipmentName + '</div>');
+                div1.append('<div class="col-sm-12">' + result.DashboardData[i].BorrowerCName + '</div>');
+                $("#dashboard").append(div1);
+            }
+        });
+        //layer.closeAll('loading');
+    }
+</script>

@@ -1,0 +1,24 @@
+﻿{
+    "decimal":        "",
+    "emptyTable":     "No data available in table",//表格没有数据时展示的文字
+    "info":           "Showing _START_ to _END_ of _TOTAL_ entries",
+    "infoEmpty":      "Showing 0 to 0 of 0 entries",
+    "infoFiltered":   "(filtered from _MAX_ total entries)",
+    "infoPostFix":    "",
+    "thousands":      ",",// thousands separator, 千位数字分隔符
+    "lengthMenu":     "Show _MENU_ entries",
+    "loadingRecords": "Loading...",// 加载数据过程中展示的文字
+    "processing":     "Processing...",// 处理过程中展示的文字
+    "search":         "Search:",// 搜索框提示文字
+    "zeroRecords":    "No matching records found", // 没有找到匹配数据时的提示文字
+    "paginate": { // 分页功能按钮提示文字 
+        "first":      "First",// 第一页
+        "last":       "Last", // 最后一页 
+        "next":       "Next", // 下一页
+        "previous":   "Previous" //  上一页
+    },
+    "aria": {
+        "sortAscending":  ": activate to sort column ascending",//按列升序排序
+        "sortDescending": ": activate to sort column descending"//按列降序排序
+    }
+}

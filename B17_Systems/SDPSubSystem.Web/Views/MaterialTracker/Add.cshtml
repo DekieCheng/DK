@@ -1,0 +1,158 @@
+﻿@{
+    Layout = null;
+}
+@using SDPSubSystem.Web.Common;
+
+<style type="text/css">
+    #resultImage {
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+    }
+</style>
+<div class="modal-dialog" style="width:55%;height:450px;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" style="color:White" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-plus"></span>@Html.GetLang("L000002")</h4>
+        </div>
+        <div class="modal-body">
+            <div id="message-box" style="display:none" class="alert alert-danger fade in" role="alert"><ul></ul></div>
+            <form class="form-horizontal" id="addressadd">
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label" for="PartNumber">AA IPN:</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <select class="form-control selectpicker" style="width:200px;" data-width="200px" data-live-search="true" id="PartNumberAdd" name="PartNumber" data-size="10"></select>
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label" for="ProductionOrderNumber">Work Order:</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <select class="form-control selectpicker" style="width:200px;" data-width="200px" data-live-search="false" id="ProductionOrderNumberAdd" name="ProductionOrderNumber" data-size="10"></select>
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label" for="ProEmployee">生产部员工:</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:200px;" class="form-control" type="text" id="ProEmployee" name="ProEmployee" value="" autocomplete="on"/>
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label" for="QAEmployee">QA员工:</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:200px;" class="form-control" type="text" id="QAEmployee" name="QAEmployee" value="" autocomplete="on"/>
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label" for="MaterialPartNumber">物料 IPN:</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:200px;" class="form-control" type="text" id="MaterialPartNumber" name="MaterialPartNumber" value="" autocomplete="on"/>
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label" for="MaterialQty">物料数量:</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:200px;" class="form-control" type="number" id="MaterialQty" name="MaterialQty" value="" autocomplete="on"/>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button id="btnAppend" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-saved"></span>@Html.GetLang("BT00007")</button>
+            <button id="btnReset" type="button" class="btn btn-success"><span class="glyphicon glyphicon-refresh"></span>重置新增</button>
+            <button id="btnClosePO" type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove-sign"></span>@Html.GetLang("BT00008")</button>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+<input id="_id" type="hidden" value="000000" />
+
+<script type="text/javascript">
+    $(function () {
+
+        $.post('@Url.Action("GetDropDownListForPartNumber")', {}, function (res) {
+
+            var outtypehtml = "";
+            for (var i = 0; i < res.PartNumber.length; i++) {
+                outtypehtml += "<option  value='" + res.PartNumber[i].ID + "' data-name='" + res.PartNumber[i].Name + "'>" + res.PartNumber[i].Name + "</option>";
+            }
+            $("#PartNumberAdd").html(outtypehtml);
+            $('.selectpicker').selectpicker('refresh');//加载select框选择器
+
+        });
+
+        $('#PartNumberAdd').change(function () {
+
+            var PartNumber = $('#PartNumberAdd').val();
+            $.post('@Url.Action("getDetailDropByPartNumber")', { PartNumber: PartNumber }, function (res) {
+                //$('.selectpicker').selectpicker('val', '');
+                //$('.selectpicker').selectpicker('refresh');
+
+                var phtml = "";
+                //console.log(res);
+                for (var i = 0; i < res.ProductionOrderNumber.length; i++) {
+                    if (i==0) {
+                        phtml += "<option  value='" + res.ProductionOrderNumber[i].ID + "' selected='selected' data-name='" + res.ProductionOrderNumber[i].Name + "'>" + res.ProductionOrderNumber[i].Name + "</option>";
+                    } else {
+                        phtml += "<option  value='" + res.ProductionOrderNumber[i].ID + "' data-name='" + res.ProductionOrderNumber[i].Name + "'>" + res.ProductionOrderNumber[i].Name + "</option>";
+                    }
+                }
+                $("#ProductionOrderNumberAdd").html(phtml);
+                $('.selectpicker').selectpicker('refresh');//加载select框选择器
+
+            });
+
+        });
+
+        $("#btnAppend").click(function () {
+            $.post('@Url.Action("SaveAdd")',
+                { poststr: JSON.stringify($('#addressadd').serializeJSON()) },
+                function (result) {
+                    //console.log(result);
+                    //console.log(result.Msg);
+                    if (result.IsSuccess) {
+
+                        //清空物料相关信息
+                        $('#MaterialPartNumber').val('');
+                        $('#MaterialQty').val('');
+
+                        //$("#_Dialog").modal("hide");
+                        $.globalMessenger().post({
+                            message: "操作成功",//提示信息
+                            type: 'info',//消息类型。error、info、success
+                            hideAfter: 2,//多长时间消失
+                            showCloseButton: true,//是否显示关闭按钮
+                            hideOnNavigate: true //是否隐藏导航
+                        });
+
+                        $("#tab_table").DataTable().ajax.reload();
+                    }
+                    else {
+                        if (result.Msg) {
+                            var m_ul = "<ul>";
+                            var flag = false;
+                            $.each(result.Msg, function (idx, msg) {
+                                m_ul += "<li>" + msg + "</li>";
+                                flag = true;
+                            });
+                            m_ul += "</ul>";
+                            if (flag) { bootbox.alert({ message: m_ul, title: "Error" }); }
+                        }
+
+                    }
+
+                });
+        });
+
+        $("#btnReset").click(function () {
+            //清空所有数据
+            $('#PartNumberAdd').val('');
+            $('#PartNumberAdd').change();
+            $('input').val('');
+
+        });
+
+    });
+
+
+
+</script>

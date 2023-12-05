@@ -1,0 +1,121 @@
+﻿
+@{
+    Layout = null;
+}
+@using SDPSubSystem.Web.Common;
+@model SDPSubSystem.Model.ESDAudit.udtEsdSpec
+
+<div class="modal-dialog" style="width:55%;height:450px;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" style="color:White" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-edit"></span>@Html.GetLang("L000003")</h4>
+        </div>
+        <div class="modal-body">
+            <div id="message-box" style="display:none" class="alert alert-danger fade in" role="alert"><ul></ul></div>
+            <form class="form-horizontal" id="addressedit">
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label" for="Specification">@Html.GetLang("TH00042"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="Specification" name="Specification" value="@Model.Specification" />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label" for="Min1">@Html.GetLang("TH00043"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="Min1" name="Min1" value="@Model.Min1" />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label" for="Max1">@Html.GetLang("TH00044"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="Max1" name="Max1" value="@Model.Max1" />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label" for="Unit">@Html.GetLang("TH00045"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="Unit1" name="Unit1" value="@Model.Unit1" />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label" for="Min1">@Html.GetLang("TH00043"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="Min2" name="Min2" value="@Model.Min2" />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label" for="Max2">@Html.GetLang("TH00044"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="Max2" name="Max2" value="@Model.Max2" />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label" for="Unit2">@Html.GetLang("TH00045"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="Unit2" name="Unit2" value="@Model.Unit2" />
+                    </div>
+                </div>
+
+                <input id="_id" type="hidden" value="@Model.ID" />
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button id="btnSave" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-saved"></span>@Html.GetLang("BT00007")</button>
+            <button id="btnClosePO" type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove-sign"></span>@Html.GetLang("BT00008")</button>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+
+
+<script type="text/javascript">
+    $(function () {
+        
+        $("#btnSave").click(function () {
+            var strpost = {
+                ID: $('#_id').val(),
+                Specification: encodeURIComponent($('#Specification').val()),
+                Min1: $('#Min1').val(),
+                Max1: $("#Max1").val(),
+                Unit1: $("#Unit1").val(),
+                Min2: $('#Min2').val(),
+                Max2: $("#Max2").val(),
+                Unit2: $("#Unit2").val()
+            }
+            $.post('@Url.Action("SpecificationSaveEdit")',
+                { poststr: JSON.stringify(strpost) },
+                function (result) {
+                    if (result.IsSuccess) {
+                        $("#tab_table").DataTable().ajax.reload();
+
+                        $.globalMessenger().post({
+                            message: "操作成功",//提示信息
+                            type: 'info',//消息类型。error、info、success
+                            hideAfter: 2,//多长时间消失
+                            showCloseButton: true,//是否显示关闭按钮
+                            hideOnNavigate: true //是否隐藏导航
+                        });
+                    }
+                    else {
+                        if (result.Msg) {
+                            var m_ul = "<ul>";
+                            var flag = false;
+                            $.each(result.Msg, function (idx, msg) {
+                                m_ul += "<li>" + msg + "</li>";
+                                flag = true;
+                            });
+                            m_ul += "</ul>";
+                            if (flag) { bootbox.alert({ message: m_ul, title: "Error" }); }
+                        }
+                    }
+                    $("#_Dialog").modal("hide");
+                    $("#tab_table").DataTable().ajax.reload();
+                    //console.log(result);
+                    $("#_id").val(result.Data);
+                })
+
+            //console.log(poststr);
+        })
+        
+    });
+</script>

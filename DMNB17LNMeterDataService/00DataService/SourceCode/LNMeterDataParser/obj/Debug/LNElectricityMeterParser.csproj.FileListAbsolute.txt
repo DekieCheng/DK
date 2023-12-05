@@ -1,0 +1,9 @@
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNElectricityMeterParser\LNElectricityMeterParser\bin\Debug\LNElectricityMeterParser.dll
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNElectricityMeterParser\LNElectricityMeterParser\bin\Debug\LNElectricityMeterParser.pdb
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNElectricityMeterParser\LNElectricityMeterParser\obj\Debug\LNElectricityMeterParser.csproj.CoreCompileInputs.cache
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNElectricityMeterParser\LNElectricityMeterParser\obj\Debug\LNElectricityMeterParser.dll
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNElectricityMeterParser\LNElectricityMeterParser\obj\Debug\LNElectricityMeterParser.pdb
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\obj\Debug\LNElectricityMeterParser.dll
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\SourceCode\LNMeterDataCollectionSystem\obj\Debug\LNElectricityMeterParser.pdb
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\DLL\LNElectricityMeterParser.dll
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataCollectionSystem\DLL\LNElectricityMeterParser.pdb

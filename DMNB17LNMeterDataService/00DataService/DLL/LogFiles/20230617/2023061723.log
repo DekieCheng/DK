@@ -1,0 +1,120 @@
+2023-06-17 23:58:05.220: ExecutionforChilledWaterFlowMeter started
+2023-06-17 23:58:05.237: Try to read data from host [10.200.2.88:5300] by the command [5B 03 00 01 00 24 18 EB].
+2023-06-17 23:58:05.684: Arrived data length:[77], Data(Hex):[5B 03 48 42 5B FA CE BE 47 C4 72 3E 8F 16 95 44 B6 D2 29 00 0A 7A 81 3F 2B C8 AA FF FF 9D A0 BE CE 00 E7 00 00 AA FA 3F 0E F2 A3 FF FF A3 38 BF 59 9A D3 00 0A 61 C7 3E 88 0E 45 00 00 6D 54 3E D0 6E 58 41 1F 01 04 41 2D 1D 00 2F 10] from host [10.200.2.88:5300] by command [5B 03 00 01 00 24 18 EB]
+2023-06-17 23:58:09.360: Try to read data from host [10.200.2.88:5300] by the command [5A 03 00 01 00 24 19 3A].
+2023-06-17 23:58:10.514: SocketException: [TimedOut:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond] 
+2023-06-17 23:58:13.119: Try to read data from host [10.200.2.88:5300] by the command [5D 03 00 01 00 24 18 8D].
+2023-06-17 23:58:13.581: Arrived data length:[77], Data(Hex):[5D 03 48 43 EF 88 A9 C0 A8 70 27 3F 4B 45 67 44 B5 E9 01 00 49 28 3F 3E B3 BD 5E FF FE AC 42 BF 55 00 78 00 00 1D 56 3F 78 56 E0 FF FF 75 51 BF 2A A6 5E 00 48 EE 72 3F 03 A9 99 00 00 8E F1 3F 22 3B 58 41 27 2B 2C 41 51 AB 00 D0 46] from host [10.200.2.88:5300] by command [5D 03 00 01 00 24 18 8D]
+2023-06-17 23:58:15.609: Try to read data from host [10.200.2.88:5300] by the command [5E 03 00 01 00 24 18 BE].
+2023-06-17 23:58:16.082: Arrived data length:[77], Data(Hex):[5E 03 48 44 32 72 5A C1 01 75 A0 3F 97 81 42 44 B7 10 4E 00 4F D4 AB 3E 8F FF F7 FF FF A0 97 BF 72 01 78 00 00 9C 27 3D 10 26 AA FF FF 5F 76 BE 8D 10 44 00 4F 83 B5 3E AA DA CE 00 00 87 E5 3E 9F 41 FC 41 2B 86 38 41 56 C7 00 E5 47] from host [10.200.2.88:5300] by command [5E 03 00 01 00 24 18 BE]
+2023-06-17 23:58:18.128: Try to read data from host [10.200.2.88:5300] by the command [5C 03 00 01 00 24 19 5C].
+2023-06-17 23:58:18.614: Arrived data length:[77], Data(Hex):[5C 03 48 43 1B 98 53 BF A9 46 FD 3F A1 58 62 44 B6 36 52 00 14 53 F8 3F 0A B9 0C FF FF F4 1F BE 58 00 BF 00 00 C6 DA 3E DA DD E1 FF FF 14 77 BF 7E EF 5E 00 13 21 8A 3E A8 22 DF 00 00 FA 61 3E D6 B9 EC 41 27 3D D4 41 48 AB 00 2B 2E] from host [10.200.2.88:5300] by command [5C 03 00 01 00 24 19 5C]
+2023-06-17 23:58:20.654: Try to read data from host [10.200.2.88:5300] by the command [5F 03 00 01 00 24 19 6F].
+2023-06-17 23:58:25.145: ExecutionforChilledWaterFlowMeter started
+2023-06-17 23:58:25.146: Try to read data from host [10.200.2.88:5300] by the command [5B 03 00 01 00 24 18 EB].
+2023-06-17 23:58:41.832: 2023-06-17 23:58:41.817 >>> App Server: NSCM1654
+Exception Source: Boolean Connect()
+Message: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 10.200.2.88:5300
+Source: LNMeterInfrastructure
+StackTrace:    at TCPIP.LNTcpClient.Connect() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\TCPIP\LNTcpClient.cs:line 109
+   at TCPIP.LNTcpClient.FireMeterClient() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\TCPIP\LNTcpClient.cs:line 269
+2023-06-17 23:58:45.153: ExecutionforChilledWaterFlowMeter started
+2023-06-17 23:58:45.155: Try to read data from host [10.200.2.88:5300] by the command [5B 03 00 01 00 24 18 EB].
+2023-06-17 23:58:46.268: 2023-06-17 23:58:46.267 >>> App Server: NSCM1654
+Exception Source: Boolean Connect()
+Message: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 10.200.2.88:5300
+Source: LNMeterInfrastructure
+StackTrace:    at TCPIP.LNTcpClient.Connect() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\TCPIP\LNTcpClient.cs:line 109
+   at TCPIP.LNTcpClient.FireMeterClient() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\TCPIP\LNTcpClient.cs:line 269
+2023-06-17 23:59:02.967: Re-connect to the remote host [10.200.2.88:5300] for the 0 times
+2023-06-17 23:59:04.994: ExecutionforChilledWaterFlowMeter time : 59772
+
+2023-06-17 23:59:05.161: ExecutionforChilledWaterFlowMeter started
+2023-06-17 23:59:05.162: Try to read data from host [10.200.2.88:5300] by the command [5B 03 00 01 00 24 18 EB].
+2023-06-17 23:59:05.616: Arrived data length:[77], Data(Hex):[5D 03 48 43 EF 67 7B C0 AD D8 1C 3F 4A 42 42 44 B5 E9 08 00 49 E4 F6 3E 99 BD 5E FF FE AC 42 BF 55 00 78 00 00 1D 56 3F 78 56 E0 FF FF 65 FE BF 3E A6 65 00 48 99 A1 3E EE A9 99 00 00 7F 9E 3F 36 C6 18 41 25 0C 30 41 51 55 00 7E 40] from host [10.200.2.88:5300] by command [5B 03 00 01 00 24 18 EB]
+2023-06-17 23:59:06.273: 2023-06-17 23:59:06.273 >>> App Server: NSCM1654
+Exception Source: Boolean Connect()
+Message: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 10.200.2.88:5300
+Source: LNMeterInfrastructure
+StackTrace:    at TCPIP.LNTcpClient.Connect() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\TCPIP\LNTcpClient.cs:line 109
+   at TCPIP.LNTcpClient.FireMeterClient() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\TCPIP\LNTcpClient.cs:line 269
+2023-06-17 23:59:07.405: Re-connect to the remote host [10.200.2.88:5300] for the 0 times
+2023-06-17 23:59:07.646: Try to read data from host [10.200.2.88:5300] by the command [5A 03 00 01 00 24 19 3A].
+2023-06-17 23:59:08.301: Try to read data from host [10.200.2.88:5300] by the command [5A 03 00 01 00 24 19 3A].
+2023-06-17 23:59:08.763: Arrived data length:[77], Data(Hex):[5A 03 48 43 E7 9E 70 C0 C5 31 EC 3F 44 CA 0E 44 B6 7F 1D 00 44 9A 81 3F 01 42 69 FF FF 17 DD BE EA 00 8A 00 00 5C 55 3F 1E 5F FB FF FF 78 2C BE 56 C1 86 00 43 E7 E0 3D 47 A0 8F 00 00 F3 68 3F 53 5D 44 41 2A 5C 80 41 5D AB 00 5E A3] from host [10.200.2.88:5300] by command [5A 03 00 01 00 24 19 3A]
+2023-06-17 23:59:08.766: Arrived data length:[77], Data(Hex):[5A 03 48 43 E7 9E 70 C0 C5 31 EC 3F 44 CA 0E 44 B6 7F 1D 00 44 9A 81 3F 01 42 69 FF FF 17 DD BE EA 00 8A 00 00 5C 55 3F 1E 5F FB FF FF 78 2C BE 56 C1 86 00 43 E7 E0 3D 47 A0 8F 00 00 F3 68 3F 53 5D 44 41 2A 5C 80 41 5D AB 00 5E A3] from host [10.200.2.88:5300] by command [5A 03 00 01 00 24 19 3A]
+2023-06-17 23:59:09.442: Try to read data from host [10.200.2.88:5300] by the command [5A 03 00 01 00 24 19 3A].
+2023-06-17 23:59:10.091: Arrived data length:[77], Data(Hex):[5D 03 48 43 F0 FB 65 C0 AB 79 F5 3F 4C 41 E3 44 B5 E9 08 00 49 A9 8C 3F 66 BD 5E FF FE AC 42 BF 55 00 78 00 00 1D 56 3F 78 56 E0 FF FF 1F 4D BF 40 A6 66 00 48 1F 10 3D 88 A9 99 00 00 38 ED 3F 38 5B 4C 41 26 EE F0 41 50 55 00 D0 B7] from host [10.200.2.88:5300] by command [5A 03 00 01 00 24 19 3A]
+2023-06-17 23:59:10.774: Try to read data from host [10.200.2.88:5300] by the command [5D 03 00 01 00 24 18 8D].
+2023-06-17 23:59:10.778: Try to read data from host [10.200.2.88:5300] by the command [5D 03 00 01 00 24 18 8D].
+2023-06-17 23:59:11.847: SocketException: [TimedOut:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond] 
+2023-06-17 23:59:12.100: Try to read data from host [10.200.2.88:5300] by the command [5D 03 00 01 00 24 18 8D].
+2023-06-17 23:59:12.188: Arrived data length:[77], Data(Hex):[5D 03 48 43 F1 7E 66 C0 AE 06 16 3F 4D 42 59 44 B5 E9 09 00 49 22 AE 3E 72 BD 5E FF FE AC 42 BF 55 00 78 00 00 1D 56 3F 78 56 E0 FF FF 16 64 BF 41 A6 66 00 48 C6 03 3E CD A9 99 00 00 30 04 3F 39 D6 68 41 25 EB 98 41 50 00 00 CB AB] from host [10.200.2.88:5300] by command [5D 03 00 01 00 24 18 8D]
+2023-06-17 23:59:12.398: Arrived data length:[77], Data(Hex):[5E 03 48 44 33 9A B0 C1 07 5D D2 3F 98 81 48 44 B7 10 59 00 4F E2 BE 3F 04 FF F7 FF FF A0 97 BF 72 01 78 00 00 9C 27 3D 10 26 AA FF FF 49 2A BE CC 10 4F 00 4F 3A 40 3F 12 DA CE 00 00 71 99 3E DE E2 1C 41 28 EF 88 41 55 56 00 64 53] from host [10.200.2.88:5300] by command [5D 03 00 01 00 24 18 8D]
+2023-06-17 23:59:14.241: Try to read data from host [10.200.2.88:5300] by the command [5E 03 00 01 00 24 18 BE].
+2023-06-17 23:59:14.407: Try to read data from host [10.200.2.88:5300] by the command [5E 03 00 01 00 24 18 BE].
+2023-06-17 23:59:14.451: Try to read data from host [10.200.2.88:5300] by the command [5E 03 00 01 00 24 18 BE].
+2023-06-17 23:59:14.658: Arrived data length:[77], Data(Hex):[5E 03 48 44 32 21 E6 C0 FB 64 84 3F 97 82 BC 44 B7 10 59 00 4F B3 88 3F 6A FF F7 FF FF A0 97 BF 72 01 78 00 00 9C 27 3D 10 26 AA FF FF 96 07 BE CE 10 4F 00 4F 0B 0A 3F 78 DA CE 00 00 BE 76 3E E0 45 90 41 29 41 CC 41 53 1D 00 81 D2] from host [10.200.2.88:5300] by command [5E 03 00 01 00 24 18 BE]
+2023-06-17 23:59:15.747: Arrived data length:[20], Data(Hex):[5E 03 48 44 31 8C DF C0 F5 03 1A 3F 97 82 C3 44 B7 10 5A 00] from host [10.200.2.88:5300] by command [5E 03 00 01 00 24 18 BE]
+2023-06-17 23:59:15.779: Arrived data length:[20], Data(Hex):[5E 03 48 44 31 8C DF C0 F5 03 1A 3F 97 82 C3 44 B7 10 5A 00] from host [10.200.2.88:5300] by command [5E 03 00 01 00 24 18 BE]
+2023-06-17 23:59:16.091: Exception Error Message:Exception has been thrown by the target of an invocation. for remote host [10.200.2.88:5300]
+2023-06-17 23:59:16.092: Exception Error Message:Exception has been thrown by the target of an invocation. for remote host [10.200.2.88:5300]
+2023-06-17 23:59:16.097: 2023-06-17 23:59:16.092 >>> App Server: NSCM1654
+Exception Source: System.Collections.Hashtable ProcessToParserReceivedData(Model.LNMeterCategory, System.Collections.Hashtable)
+Message: Exception has been thrown by the target of an invocation.
+Source: LNMeterDataServiceSimulator
+StackTrace:    at ServiceMgr.LNSvrMgr.ProcessToParserReceivedData(LNMeterCategory lNMeterCategory, Hashtable orgReceivedDecData) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\00DataService\SourceCode\LNMeterDataServiceSimulator\LNMeterDataServiceSimulator\ServiceMgr\LNSvrMgr.cs:line 65
+   at ServiceMgr.LNSvrMgr.ToReadDatafromHostforChilledWaterFlowMeter(LNMeterCategory lNMeterCategory, LNChilledWaterFlowMeter lNChilledWaterFlowMeter) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\00DataService\SourceCode\LNMeterDataServiceSimulator\LNMeterDataServiceSimulator\ServiceMgr\LNSvrMgr.cs:line 599
+Inner Exception:Index was outside the bounds of the array.
+2023-06-17 23:59:16.098: 2023-06-17 23:59:16.092 >>> App Server: NSCM1654
+Exception Source: System.Collections.Hashtable ProcessToParserReceivedData(Model.LNMeterCategory, System.Collections.Hashtable)
+Message: Exception has been thrown by the target of an invocation.
+Source: LNMeterDataServiceSimulator
+StackTrace:    at ServiceMgr.LNSvrMgr.ProcessToParserReceivedData(LNMeterCategory lNMeterCategory, Hashtable orgReceivedDecData) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\00DataService\SourceCode\LNMeterDataServiceSimulator\LNMeterDataServiceSimulator\ServiceMgr\LNSvrMgr.cs:line 65
+   at ServiceMgr.LNSvrMgr.ToReadDatafromHostforChilledWaterFlowMeter(LNMeterCategory lNMeterCategory, LNChilledWaterFlowMeter lNChilledWaterFlowMeter) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\00DataService\SourceCode\LNMeterDataServiceSimulator\LNMeterDataServiceSimulator\ServiceMgr\LNSvrMgr.cs:line 599
+Inner Exception:Index was outside the bounds of the array.
+2023-06-17 23:59:16.692: Try to read data from host [10.200.2.88:5300] by the command [5C 03 00 01 00 24 19 5C].
+2023-06-17 23:59:18.033: Arrived data length:[58], Data(Hex):[5A 03 48 43 E7 0D AA C0 CB 31 44 3F 44 C8 66 44 B6 7F 1E 00 44 5B C1 3F 39 42 69 FF FF 17 DD BE EA 00 8A 00 00 5C 55 3F 1E 5F FB FF FF 6F 06 BE 67 C1 87 00 43 7F 77 3E 88 E0] from host [10.200.2.88:5300] by command [5C 03 00 01 00 24 19 5C]
+2023-06-17 23:59:18.185: Try to read data from host [10.200.2.88:5300] by the command [5C 03 00 01 00 24 19 5C].
+2023-06-17 23:59:18.185: Exception Error Message:Exception has been thrown by the target of an invocation. for remote host [10.200.2.88:5300]
+2023-06-17 23:59:18.185: 2023-06-17 23:59:18.185 >>> App Server: NSCM1654
+Exception Source: System.Collections.Hashtable ProcessToParserReceivedData(Model.LNMeterCategory, System.Collections.Hashtable)
+Message: Exception has been thrown by the target of an invocation.
+Source: LNMeterDataServiceSimulator
+StackTrace:    at ServiceMgr.LNSvrMgr.ProcessToParserReceivedData(LNMeterCategory lNMeterCategory, Hashtable orgReceivedDecData) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\00DataService\SourceCode\LNMeterDataServiceSimulator\LNMeterDataServiceSimulator\ServiceMgr\LNSvrMgr.cs:line 65
+   at ServiceMgr.LNSvrMgr.ToReadDatafromHostforChilledWaterFlowMeter(LNMeterCategory lNMeterCategory, LNChilledWaterFlowMeter lNChilledWaterFlowMeter) in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\00DataService\SourceCode\LNMeterDataServiceSimulator\LNMeterDataServiceSimulator\ServiceMgr\LNSvrMgr.cs:line 599
+Inner Exception:Index was outside the bounds of the array.
+2023-06-17 23:59:18.272: Try to read data from host [10.200.2.88:5300] by the command [5C 03 00 01 00 24 19 5C].
+2023-06-17 23:59:18.679: Arrived data length:[77], Data(Hex):[5C 03 48 43 1C C1 A3 BF A6 C7 4E 3F A1 4A F0 44 B6 36 55 00 14 2D 17 3E 06 B9 0C FF FF F4 1F BE 58 00 BF 00 00 C6 DA 3E DA DD E0 FF FF 0E 55 BC 71 EF 60 00 13 48 14 3F 6B 22 DF 00 00 59 EC 3E E2 2C 88 41 26 0B 38 41 46 AB 00 EA E3] from host [10.200.2.88:5300] by command [5C 03 00 01 00 24 19 5C]
+2023-06-17 23:59:18.683: Arrived data length:[77], Data(Hex):[5C 03 48 43 1C C1 A3 BF A6 C7 4E 3F A1 4A F0 44 B6 36 55 00 14 2D 17 3E 06 B9 0C FF FF F4 1F BE 58 00 BF 00 00 C6 DA 3E DA DD E0 FF FF 0E 55 BC 71 EF 60 00 13 48 14 3F 6B 22 DF 00 00 59 EC 3E E2 2C 88 41 26 0B 38 41 46 AB 00 EA E3] from host [10.200.2.88:5300] by command [5C 03 00 01 00 24 19 5C]
+2023-06-17 23:59:20.188: Try to read data from host [10.200.2.88:5300] by the command [5F 03 00 01 00 24 19 6F].
+2023-06-17 23:59:20.707: Try to read data from host [10.200.2.88:5300] by the command [5F 03 00 01 00 24 19 6F].
+2023-06-17 23:59:20.710: Try to read data from host [10.200.2.88:5300] by the command [5F 03 00 01 00 24 19 6F].
+2023-06-17 23:59:25.158: ExecutionforChilledWaterFlowMeter started
+2023-06-17 23:59:25.160: Try to read data from host [10.200.2.88:5300] by the command [5B 03 00 01 00 24 18 EB].
+2023-06-17 23:59:41.311: 2023-06-17 23:59:41.311 >>> App Server: NSCM1654
+Exception Source: Boolean Connect()
+Message: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 10.200.2.88:5300
+Source: LNMeterInfrastructure
+StackTrace:    at TCPIP.LNTcpClient.Connect() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\TCPIP\LNTcpClient.cs:line 109
+   at TCPIP.LNTcpClient.FireMeterClient() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\TCPIP\LNTcpClient.cs:line 269
+2023-06-17 23:59:41.950: 2023-06-17 23:59:41.950 >>> App Server: NSCM1654
+Exception Source: Boolean Connect()
+Message: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 10.200.2.88:5300
+Source: LNMeterInfrastructure
+StackTrace:    at TCPIP.LNTcpClient.Connect() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\TCPIP\LNTcpClient.cs:line 109
+   at TCPIP.LNTcpClient.FireMeterClient() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\TCPIP\LNTcpClient.cs:line 269
+2023-06-17 23:59:41.953: 2023-06-17 23:59:41.953 >>> App Server: NSCM1654
+Exception Source: Boolean Connect()
+Message: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 10.200.2.88:5300
+Source: LNMeterInfrastructure
+StackTrace:    at TCPIP.LNTcpClient.Connect() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\TCPIP\LNTcpClient.cs:line 109
+   at TCPIP.LNTcpClient.FireMeterClient() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\TCPIP\LNTcpClient.cs:line 269
+2023-06-17 23:59:45.161: ExecutionforChilledWaterFlowMeter started
+2023-06-17 23:59:45.163: Try to read data from host [10.200.2.88:5300] by the command [5B 03 00 01 00 24 18 EB].
+2023-06-17 23:59:46.282: 2023-06-17 23:59:46.282 >>> App Server: NSCM1654
+Exception Source: Boolean Connect()
+Message: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 10.200.2.88:5300
+Source: LNMeterInfrastructure
+StackTrace:    at TCPIP.LNTcpClient.Connect() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\TCPIP\LNTcpClient.cs:line 109
+   at TCPIP.LNTcpClient.FireMeterClient() in C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\SourceCode\LNMeterInfrastructure\LNMeterInfrastructure\TCPIP\LNTcpClient.cs:line 269

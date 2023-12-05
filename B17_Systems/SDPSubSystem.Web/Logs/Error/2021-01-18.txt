@@ -1,0 +1,1 @@
+2021-01-18 09:53:59,511  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType£ºNullReferenceException , Content£ºObject reference not set to an instance of an object. , Function£ºSystem.Web.Mvc.ActionResult AttritionByLine() , Object£ºSDPSubSystem.Web , Controller£ºattrition , Action£ºAttritionByLine ; 

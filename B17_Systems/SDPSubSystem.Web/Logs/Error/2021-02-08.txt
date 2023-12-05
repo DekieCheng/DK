@@ -1,0 +1,2 @@
+2021-02-08 11:45:54,119  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType:IndexOutOfRangeException , Content:Cannot find table 0. , Function:System.Data.DataTable get_Item(Int32) , Object:System.Data , Controller:attrition , Action:GetstationData ; 
+2021-02-08 11:46:07,231  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType:IndexOutOfRangeException , Content:Cannot find table 0. , Function:System.Data.DataTable get_Item(Int32) , Object:System.Data , Controller:attrition , Action:GetstationData ; 

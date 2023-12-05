@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{84E4C145-0353-4EE6-9B4A-32665ED15E0A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{2EFBD0F3-C1B5-4E35-93F2-15F91A9526F4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{8A448D1C-0FAD-431C-B889-9F44532EE557}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDPSubSystem.Web", "SDPSubSystem.Web\SDPSubSystem.Web.csproj", "{B384588B-6CBD-4922-AA8C-74011630B4B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDPSubSystem.Common", "SDPSubSystem.Common\SDPSubSystem.Common.csproj", "{2BEEF8DC-7ED0-4031-B220-6C6DECDA6CCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDPSubSystem.Data", "SDPSubSystem.Data\SDPSubSystem.Data.csproj", "{CE82D458-94E8-4488-A365-427D3346C268}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDPSubSystem.Model", "SDPSubSystem.Model\SDPSubSystem.Model.csproj", "{E7BD6D95-1483-4F1E-84FD-81D49D9D99A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDPSubSystem.Services", "SDPSubSystem.Services\SDPSubSystem.Services.csproj", "{70932C95-2CE3-4E77-9305-C646F67352BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B384588B-6CBD-4922-AA8C-74011630B4B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B384588B-6CBD-4922-AA8C-74011630B4B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B384588B-6CBD-4922-AA8C-74011630B4B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B384588B-6CBD-4922-AA8C-74011630B4B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BEEF8DC-7ED0-4031-B220-6C6DECDA6CCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BEEF8DC-7ED0-4031-B220-6C6DECDA6CCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BEEF8DC-7ED0-4031-B220-6C6DECDA6CCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BEEF8DC-7ED0-4031-B220-6C6DECDA6CCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE82D458-94E8-4488-A365-427D3346C268}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE82D458-94E8-4488-A365-427D3346C268}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE82D458-94E8-4488-A365-427D3346C268}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE82D458-94E8-4488-A365-427D3346C268}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7BD6D95-1483-4F1E-84FD-81D49D9D99A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7BD6D95-1483-4F1E-84FD-81D49D9D99A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7BD6D95-1483-4F1E-84FD-81D49D9D99A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7BD6D95-1483-4F1E-84FD-81D49D9D99A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70932C95-2CE3-4E77-9305-C646F67352BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70932C95-2CE3-4E77-9305-C646F67352BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70932C95-2CE3-4E77-9305-C646F67352BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70932C95-2CE3-4E77-9305-C646F67352BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B384588B-6CBD-4922-AA8C-74011630B4B1} = {8A448D1C-0FAD-431C-B889-9F44532EE557}
+		{2BEEF8DC-7ED0-4031-B220-6C6DECDA6CCA} = {84E4C145-0353-4EE6-9B4A-32665ED15E0A}
+		{CE82D458-94E8-4488-A365-427D3346C268} = {84E4C145-0353-4EE6-9B4A-32665ED15E0A}
+		{E7BD6D95-1483-4F1E-84FD-81D49D9D99A5} = {84E4C145-0353-4EE6-9B4A-32665ED15E0A}
+		{70932C95-2CE3-4E77-9305-C646F67352BD} = {2EFBD0F3-C1B5-4E35-93F2-15F91A9526F4}
+	EndGlobalSection
+EndGlobal

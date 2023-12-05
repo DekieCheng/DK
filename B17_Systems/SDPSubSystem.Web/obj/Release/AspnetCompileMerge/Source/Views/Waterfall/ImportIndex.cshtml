@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_LayoutJquery.cshtml";
+}
+@using SDPSubSystem.Web.Common;
+
+<style>
+    .eco table tbody tr td {
+        width: 40px !important;
+        word-wrap: break-word;
+    }
+
+    .eco table thead th {
+        vertical-align: central !important;
+        color: black !important;
+    }
+</style>
+<div class="container-fluid">
+    <div class="row" style="padding-top:5px;padding-bottom:5px">
+        <div class="col-sm-6">
+            <button type="button" id="btnImport" class="btn btn-primary"><span class="glyphicon glyphicon-import"></span>@Html.GetLang("BT00004")</button>
+
+        </div>
+        <div class="col-sm-6">
+            
+        </div>
+    </div>
+    
+    
+</div>
+<div class="modal fade bs-example-modal-lg" id="_Dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+@*<input id="code"  type="hidden" value=""/>*@
+
+<script type="text/javascript">
+
+    $('#btnImport').x_import({
+            saveUrl: '@Url.Action("Import")', template: '@Url.Content("~/Template/WaterfallImportTemplate.xlsx")', callback: function () {
+                $("#tab_table").DataTable().ajax.reload();
+
+            }
+    })
+
+</script>

@@ -1,0 +1,90 @@
+﻿
+@{
+    Layout = null;
+}
+@model System.Data.DataTable
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>Flex B17 用水数据</title>
+    <!--<link rel="stylesheet" type="text/css" href="./css/app.css" />-->
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/FE/css/app.css")" />
+</head>
+
+<body>
+    <header id="header">
+        <div class="row">
+            <h3 class="header-title">Flex B17 用水数据</h3>
+
+        </div>
+    </header>
+
+    <div id="container">
+        <div id="flexCon">
+            <div class="flex-left">
+                <div class="flex-cell flex-cell-1">
+                    <div class="chart-wrapper">
+                        <h3 class="chart-title">B17厂房总用水量</h3>
+                        <div class="chart-div" id="block1">
+                            <div class="chart-loader">
+                                <div class="loader"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="@Url.Content("~/Content/FE/js/jquery-1.10.2.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/FE/js/plugin/countUp.min.js")"></script>
+    <script src="@Url.Content("~/Content/FE/js/echarts-4.2.1.min.js")"></script>
+    <!-- 主题 -->
+    <script type="text/javascript" src="@Url.Content("~/Content/FE/js/plugin/echarts-theme-shine.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/FE/js/plugin/echarts-theme-macarons.js")"></script>
+    <!-- 图表js -->
+    @*<script type="text/javascript" src="@Url.Content("~/Content/FE/js/echarts-map.js")"></script>*@
+    <script type="text/javascript" src="@Url.Content("~/Content/FE/js/echarts-block1.js")"></script>
+
+    <!--<script src="./js/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="./js/plugin/countUp.min.js"></script>
+    <script src="./js/echarts-4.2.1.min.js"></script>-->
+    <!-- 主题 -->
+    <!--<script type="text/javascript" src="./js/plugin/echarts-theme-shine.js"></script>
+    <script type="text/javascript" src="./js/plugin/echarts-theme-macarons.js"></script>-->
+    <!-- 图表js -->
+
+    <script type="text/javascript">
+
+    //var ajaxBaseUrl = './';
+    //var ajaxBaseUrl = '@Url.Content("~/Content/FE/")';
+
+    $(function () {
+
+        //获取当天日期
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = now.getMonth() + 1;
+        const day = now.getDate();
+        //$("#nowDate").html(year + "年" + month + "月" + day + "日");
+
+        //loadMap();
+        $.post('@Url.Action("GetData")', {  }, function (result) {
+            //debugger;
+            loadBlock1(result.Block1);
+        });
+    });
+
+    </script>
+</body>
+
+</html>
+@*<script language="JavaScript">
+        setTimeout(function () { location.reload() }, 60000); //指定1秒刷新一次
+    </script>*@
+
+

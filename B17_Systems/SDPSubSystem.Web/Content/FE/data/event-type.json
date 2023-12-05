@@ -1,0 +1,80 @@
+[
+    {
+        "name": "农牧渔",
+        "dealt": 5,
+        "undeal": 10,
+        "dealing": 3
+    },
+    {
+        "name": "违规经营",
+        "dealt": 8,
+        "undeal": 2,
+        "dealing": 3
+    },
+    {
+        "name": "安全隐患",
+        "dealt": 2,
+        "undeal": 3,
+        "dealing": 5
+    },
+    {
+        "name": "食药安全",
+        "dealt": 5,
+        "undeal": 3,
+        "dealing": 7
+    },
+    {
+        "name": "教育",
+        "dealt": 3,
+        "undeal": 2,
+        "dealing": 5
+    },
+    {
+        "name": "草原生态",
+        "dealt": 4,
+        "undeal": 3,
+        "dealing": 4
+    },
+    {
+        "name": "水资源",
+        "dealt": 2,
+        "undeal": 3,
+        "dealing": 5
+    },
+    {
+        "name": "矛盾纠纷",
+        "dealt": 7,
+        "undeal": 5,
+        "dealing": 6
+    },
+    {
+        "name": "社会治安",
+        "dealt": 4,
+        "undeal": 5,
+        "dealing": 3
+    },
+    {
+        "name": "城市设施",
+        "dealt": 12,
+        "undeal": 15,
+        "dealing": 14
+    },
+    {
+        "name": "市容市貌",
+        "dealt": 5,
+        "undeal": 4,
+        "dealing": 4
+    },
+    {
+        "name": "表扬",
+        "dealt": 2,
+        "undeal": 3,
+        "dealing": 6
+    },
+    {
+        "name": "其他",
+        "dealt": 8,
+        "undeal": 10,
+        "dealing": 3
+    }
+]

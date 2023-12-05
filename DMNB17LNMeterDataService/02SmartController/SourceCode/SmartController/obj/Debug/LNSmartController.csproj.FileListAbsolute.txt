@@ -1,0 +1,10 @@
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\02SmartController\DLL\LNSmartController.exe.config
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\02SmartController\DLL\LNSmartController.exe
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\02SmartController\DLL\LNSmartController.pdb
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\02SmartController\SourceCode\SmartController\obj\Debug\LNSmartController.csproj.GenerateResource.cache
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\02SmartController\SourceCode\SmartController\obj\Debug\LNSmartController.csproj.CoreCompileInputs.cache
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\02SmartController\SourceCode\SmartController\obj\Debug\LNSmartController.exe
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\02SmartController\SourceCode\SmartController\obj\Debug\LNSmartController.pdb
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\02SmartController\SourceCode\SmartController\obj\Debug\LNSmartController.frmLNSmartController.resources
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\02SmartController\SourceCode\SmartController\obj\Debug\LNSmartController.csproj.CopyComplete
+C:\00work\02sc-cfd-git\DMN-B17-FLEXPMxxxxx-LNMeterDataService\02SmartController\SourceCode\SmartController\obj\Debug\LNSmartController.csproj.AssemblyReference.cache

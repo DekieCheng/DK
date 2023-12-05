@@ -1,0 +1,25 @@
+2021-08-07 09:06:56,822  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType£ºInvalidOperationException , Content£ºThe view 'DeviceIndex' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/ESDAudit/DeviceIndex.aspx
+~/Views/ESDAudit/DeviceIndex.ascx
+~/Views/Shared/DeviceIndex.aspx
+~/Views/Shared/DeviceIndex.ascx
+~/Views/ESDAudit/DeviceIndex.cshtml
+~/Views/ESDAudit/DeviceIndex.vbhtml
+~/Views/Shared/DeviceIndex.cshtml
+~/Views/Shared/DeviceIndex.vbhtml , Function£ºSystem.Web.Mvc.ViewEngineResult FindView(System.Web.Mvc.ControllerContext) , Object£ºSystem.Web.Mvc , Controller£ºESDAudit , Action£ºDeviceIndex ; 
+2021-08-07 09:07:13,470  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType£ºInvalidOperationException , Content£ºThe view 'DeviceIndex' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/ESDAudit/DeviceIndex.aspx
+~/Views/ESDAudit/DeviceIndex.ascx
+~/Views/Shared/DeviceIndex.aspx
+~/Views/Shared/DeviceIndex.ascx
+~/Views/ESDAudit/DeviceIndex.cshtml
+~/Views/ESDAudit/DeviceIndex.vbhtml
+~/Views/Shared/DeviceIndex.cshtml
+~/Views/Shared/DeviceIndex.vbhtml , Function£ºSystem.Web.Mvc.ViewEngineResult FindView(System.Web.Mvc.ControllerContext) , Object£ºSystem.Web.Mvc , Controller£ºESDAudit , Action£ºDeviceIndex ; 
+2021-08-07 10:05:29,606  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType£ºArgumentException , Content£ºColumn 'ID' does not belong to table bb. , Function£ºSystem.Data.DataColumn GetDataColumn(System.String) , Object£ºSystem.Data , Controller£ºESDAudit , Action£ºDeviceAdd ; 
+2021-08-07 10:09:18,224  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType£ºArgumentException , Content£ºColumn 'ID' does not belong to table bb. , Function£ºSystem.Data.DataColumn GetDataColumn(System.String) , Object£ºSystem.Data , Controller£ºESDAudit , Action£ºDeviceAdd ; 
+2021-08-07 10:10:50,377  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType£ºArgumentException , Content£ºColumn 'ID' does not belong to table bb. , Function£ºSystem.Data.DataColumn GetDataColumn(System.String) , Object£ºSystem.Data , Controller£ºESDAudit , Action£ºDeviceAdd ; 
+2021-08-07 10:12:17,840  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType£ºArgumentException , Content£ºColumn 'ID' does not belong to table bb1. , Function£ºSystem.Data.DataColumn GetDataColumn(System.String) , Object£ºSystem.Data , Controller£ºESDAudit , Action£ºDeviceEdit ; 
+2021-08-07 10:13:02,710  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType£ºInvalidOperationException , Content£ºThe ViewData item that has the key 'DeviceTypeID' is of type 'System.Int32' but must be of type 'IEnumerable<SelectListItem>'. , Function£ºSystem.Collections.Generic.IEnumerable`1[System.Web.Mvc.SelectListItem] GetSelectData(System.Web.Mvc.HtmlHelper, System.String) , Object£ºSystem.Web.Mvc , Controller£ºESDAudit , Action£ºDeviceEdit ; 
+2021-08-07 14:28:05,905  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType£ºSqlException , Content£ºInvalid object name 'udtEsdTestRecord'. , Function£ºVoid OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action]) , Object£º.Net SqlClient Data Provider , Controller£ºESDAudit , Action£ºTestload ; 
+2021-08-07 14:33:10,300  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType£ºInvalidOperationException , Content£ºThere is no ViewData item of type 'IEnumerable<SelectListItem>' that has the key 'DeviceTypeID'. , Function£ºSystem.Collections.Generic.IEnumerable`1[System.Web.Mvc.SelectListItem] GetSelectData(System.Web.Mvc.HtmlHelper, System.String) , Object£ºSystem.Web.Mvc , Controller£ºESDAudit , Action£ºTestAdd ; 

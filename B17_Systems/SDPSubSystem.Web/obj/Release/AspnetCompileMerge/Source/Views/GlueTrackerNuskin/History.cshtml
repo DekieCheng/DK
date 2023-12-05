@@ -1,0 +1,104 @@
+﻿@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_LayoutJquery.cshtml";
+}
+<div class="container-fluid">
+    
+    <div class="row" style="margin:0 0;padding:0 0;">
+        <div class="col-sm-12" style="margin:0 0;padding:0 0;">
+            <table id="GlueTable" class="table table-striped table-hover table-bordered tableWidth">
+                <thead></thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<style type="text/css">
+    .title {
+        color: black;
+        font-size: 14px;
+        font-weight: bold;
+        background-color: white;
+        font-family: Microsoft YaHei;
+        text-align: center;
+    }
+
+    .text_format {
+        text-align: center;
+        font-size: 12px;
+        font-weight: bold;
+        width: 20px !important;
+    }
+
+    .tbSelectCss {
+        background-color: #d5f4fe !important;
+    }
+</style>
+<script type="text/javascript">
+
+    $(function () {
+        $.post('@Url.Action("GetHistoryData")', {  }, function (result) {
+            loadTable(result.Glue, "GlueTable");
+        })
+    })
+
+    function loadTable(data, divtable) {
+        $('#' + divtable + ' thead').empty();
+        //debugger
+        $.each(data, function (idx, item) {
+            var tr;
+            tr = $('<tr></tr>');
+
+            $.each(item, function (key, val) {
+                tr.append('<th class="title">' + key + '</th>');
+            });
+
+            $('#' + divtable + ' thead').append(tr);
+            return false;
+        })
+
+        $('#' + divtable + ' tbody').empty();
+
+        $.each(data, function (idx, item) {
+            var tr;
+            tr = $('<tr ></tr>');
+            $.each(item, function (key, val) {
+                //debugger
+                if (val == undefined) {
+                    tr.append('<td class="text_format" ></td>');
+                } else {
+                    tr.append('<td class="text_format" >' + val + '</td>');
+                }
+            });
+
+            $('#' + divtable + ' tbody').append(tr);
+        });
+
+        var height = document.body.clientHeight -35;
+
+        var table = $('#GlueTable').DataTable({
+            scrollY: height,
+            scrollX: "1000px",
+            scrollCollapse: true,
+            paging: false,
+            //fixedColumns: { leftColumns: 4 },
+            ordering: false,
+            searching: false,
+            info: false,
+            createdRow: function (row, data, dataIndex) {
+                //debugger
+                $(row).attr('onclick', 'javascript:changeColorByClick(this);');
+                $(row).attr('background-color', '#76EEC6');
+            }
+        });
+    }
+
+    function changeColorByClick(obj) {
+        //var _itemVal = obj.cells[1].innerHTML;
+        //debugger
+        //变色，消除原来的变色
+        $(obj).addClass("tbSelectCss");
+        $(obj).siblings().removeClass("tbSelectCss");
+    }
+
+</script>

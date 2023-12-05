@@ -1,0 +1,36 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SDPSubSystem.Model.ECTracker
+{
+    public class udtECOtracker
+    {
+        public int ID { get; set; }
+        public string GNECO { get; set; }
+        public string FlexECO { get; set; }
+        public string ECType { get; set; }
+        public string ChangeType { get; set; }
+        public string ECReceivedDate { get; set; }
+        public string CustomerProject { get; set; }
+        public string ECDescription { get; set; }
+        public string ChangeReason { get; set; }
+        public string AffectedPartBOMPN { get; set; }
+        public string AffectedPartBOMDoc { get; set; }
+        public string OldRev { get; set; }
+        public string NewRev { get; set; }
+        public string Requestor { get; set; }
+        public string AgileApprovedorrejectedbyDepCFT { get; set; }
+        public string ReasonRejected { get; set; }
+        public string CustomerApproval { get; set; }
+        public string ECImplementationDate { get; set; }
+        public string EstimateImplementationDate { get; set; }
+        public string ActualImplementationDate { get; set; }
+        public string Status { get; set; }
+        public string Owner { get; set; }
+        public string MaterialPurge { get; set; }
+        public string Remarks { get; set; }
+    }
+}

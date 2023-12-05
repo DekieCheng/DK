@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <data code="E000001">Item can't not be empty!</data>
+  <data code="E000002">Item has exceeded the specified length!</data>
+  <data code="E000003">The account and password entered are incorrect!</data>
+  <data code="E000004">No data to submit!</data>
+  <data code="E000005">Failed to Delete!</data>
+  <data code="E000006">Please select the role on the left!</data>
+  <data code="E000007">Item have been exist!</data>
+  <data code="E000008">item must be >0</data>
+  <data code="E000009">Successful data processing</data>
+  <data code="E000010">Are you sure you want to remove the item?</data>
+  <data code="E000011">Item is not exist</data>
+  <data code="E000012">Record have been exist</data>
+  <data code="E000013">Data processing failed, please try again</data>
+  <data code="E000014">Unknown exception</data>
+  <data code="E000015">Only supports unique record processing, please select a unique record</data>
+  <data code="E000016">Are you sure you want to delete the selected data?</data>
+  <data code="E000017">please select the data which you want to do!</data>
+  <data code="E000018">The imported file does not match the template</data>
+  <data code="E000019">ID={0} Field={1}, Value is incorrect</data>
+  <data code="E000020">Are you sure you want to process the selected data?</data>
+  <data code="E000021">Data processing failed,please check the configuration.</data>
+  
+  <data code="L000001">Function Menus</data>
+  <data code="L000002">Add Record</data>
+  <data code="L000003">Edit Record</data>
+  <data code="L000004">Roles</data>
+  <data code="L000005">Menus</data>
+  <data code="L000006">The current page can not to be marked as my favorite function.</data>
+  <data code="L000007">Marked as my favorite function</data>
+  <data code="L000008">Common features I tag</data>
+  <data code="L000009">Confirm</data>
+  <data code="L000010">Error</data>
+  <data code="L000011">Info</data>
+  <data code="L000012">Home</data>
+  <data code="L000013">Field</data>
+  <data code="L000014">Symbol</data>
+  <data code="L000015">Value</data>
+  <data code="L000016">Operation</data>
+  <data code="L000017">Relation</data>
+  <data code="L000018">Template</data>
+  <data code="L000019">Language</data>
+  <data code="L000020">User</data>
+  <data code="L000021">Lines</data>
+  <!--按钮部分-->
+  <data code="BT00001">Add</data>
+  <data code="BT00002">Edit</data>
+  <data code="BT00003">Delete</data>
+  <data code="BT00004">Import</data>
+  <data code="BT00005">Export</data>
+  <data code="BT00006">Search</data>
+  <data code="BT00007">Save</data>
+  <data code="BT00008">Close</data>
+  <data code="BT00009">Remove</data>
+  <data code="BT00010">Cancel</data>
+  <data code="BT00011">Exist</data>
+</root>
+

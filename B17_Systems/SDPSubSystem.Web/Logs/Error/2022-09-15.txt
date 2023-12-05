@@ -1,0 +1,31 @@
+2022-09-15 10:10:40,561  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType£ºNullReferenceException , Content£ºObject reference not set to an instance of an object. , Function£ºVoid Execute() , Object£ºApp_Web_yvujwlnp , Controller£ºHome , Action£ºIndex ; 
+2022-09-15 13:35:09,316  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType£ºSqlException , Content£ºIncorrect syntax near the keyword 'into'.
+Incorrect syntax near 'p'.
+Incorrect syntax near the keyword 'from'. , Function£ºVoid OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action]) , Object£º.Net SqlClient Data Provider , Controller£ºWaterfall , Action£ºGetMPSWaterfallDataByCondition ; 
+2022-09-15 14:20:19,595  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType£ºSqlException , Content£ºIncorrect syntax near the keyword 'into'.
+Incorrect syntax near 'p'.
+Incorrect syntax near the keyword 'from'. , Function£ºVoid OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action]) , Object£º.Net SqlClient Data Provider , Controller£ºWaterfall , Action£ºdownload ; 
+2022-09-15 14:23:13,589  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType£ºSqlException , Content£ºIncorrect syntax near the keyword 'into'.
+Incorrect syntax near 'p'.
+Incorrect syntax near the keyword 'from'. , Function£ºVoid OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action]) , Object£º.Net SqlClient Data Provider , Controller£ºWaterfall , Action£ºdownload ; 
+2022-09-15 14:24:01,287  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType£ºSqlException , Content£ºIncorrect syntax near the keyword 'into'.
+Incorrect syntax near 'p'.
+Incorrect syntax near the keyword 'from'. , Function£ºVoid OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action]) , Object£º.Net SqlClient Data Provider , Controller£ºWaterfall , Action£ºdownload ; 
+2022-09-15 14:39:10,686  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType£ºSqlException , Content£ºIncorrect syntax near the keyword 'into'.
+Incorrect syntax near 'p'.
+Incorrect syntax near the keyword 'from'. , Function£ºVoid OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action]) , Object£º.Net SqlClient Data Provider , Controller£ºWaterfall , Action£ºdownload ; 
+2022-09-15 14:39:32,491  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType£ºSqlException , Content£ºIncorrect syntax near the keyword 'into'.
+Incorrect syntax near 'p'.
+Incorrect syntax near the keyword 'from'. , Function£ºVoid OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action]) , Object£º.Net SqlClient Data Provider , Controller£ºWaterfall , Action£ºdownload ; 
+2022-09-15 14:39:44,247  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType£ºSqlException , Content£ºIncorrect syntax near the keyword 'into'.
+Incorrect syntax near 'p'.
+Incorrect syntax near the keyword 'from'. , Function£ºVoid OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action]) , Object£º.Net SqlClient Data Provider , Controller£ºWaterfall , Action£ºdownload ; 
+2022-09-15 14:56:07,887  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType£ºSqlException , Content£ºIncorrect syntax near the keyword 'into'.
+Incorrect syntax near 'p'.
+Incorrect syntax near the keyword 'from'. , Function£ºVoid OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action]) , Object£º.Net SqlClient Data Provider , Controller£ºWaterfall , Action£ºdownload ; 
+2022-09-15 14:57:44,171  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType£ºSqlException , Content£ºIncorrect syntax near the keyword 'into'.
+Incorrect syntax near 'p'.
+Incorrect syntax near the keyword 'from'. , Function£ºVoid OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action]) , Object£º.Net SqlClient Data Provider , Controller£ºWaterfall , Action£ºdownload ; 
+2022-09-15 14:58:14,062  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType£ºSqlException , Content£ºIncorrect syntax near the keyword 'into'.
+Incorrect syntax near 'p'.
+Incorrect syntax near the keyword 'from'. , Function£ºVoid OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action]) , Object£º.Net SqlClient Data Provider , Controller£ºWaterfall , Action£ºdownload ; 

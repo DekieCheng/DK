@@ -1,0 +1,386 @@
+﻿@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using SDPSubSystem.Web.Common;
+
+
+<div class="container-fluid">
+    <div class="panel panel-default">
+        <div class="panel-body form-inline">
+            <div class="form-group" style="margin: 0 0;padding:0 0;">
+                <label class="control-label" for="dateFrom">开始日期:</label>
+                <input id="dateFrom" class="form-control" data-date-format="yyyy-mm-dd" style="width:100px" autocomplete="off" />
+            </div>
+            <div class="form-group" style="margin: 0 0;padding-left:10px;">
+                <label class="control-label" for="dateTo">结束日期:</label>
+                <input id="dateTo" class="form-control" data-date-format="yyyy-mm-dd" style="width:100px" autocomplete="off" />
+            </div>
+            <div class="form-group" style="margin: 0 0;padding-left:10px;">
+                <label class="control-label" for="Project">Project:</label>
+                <select class="form-control selectpicker" style="width:100px;" data-width="100px" data-live-search="true" id="Project" name="Project" title="" data-size="10"></select>
+            </div>
+            <div class="form-group" style="margin: 0 0;padding-left:10px;">
+                <label class="control-label" for="FG">FG:</label>
+                <select class="form-control selectpicker" style="width:100px;" data-width="300px" data-live-search="true" id="FG" name="FG" title="" data-size="10"></select>
+            </div>
+
+
+            <div class="form-group" style="margin: 0 0;padding-left:10px;">
+                <button id="btnSearch" class="btn btn-danger "><span class="glyphicon glyphicon-search"></span>@Html.GetLang("BT00006")</button>
+
+                <button class="btn btn-primary" id="btnDownload" type="button"><span class="glyphicon glyphicon-export"></span>@Html.GetLang("BT00005")</button>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="waterfall">
+        <table id="tab_table" class="table table-hover table-bordered">
+            <thead></thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+
+</div>
+<div class="lineProgress">
+    <span></span>
+</div>
+<div class="modal fade bs-example-modal-lg" id="_Dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+@*<input id="code"  type="hidden" value=""/>*@
+
+
+<style type="text/css">
+    .title {
+        color: black;
+        font-size: 14px;
+        font-weight: bold;
+        background-color: white;
+        font-family: Microsoft YaHei;
+        text-align: center;
+    }
+
+    .text_format {
+        text-align: center;
+        font-size: 12px;
+        font-weight: bold;
+        width: 20px !important;
+    }
+
+    .text_format2 {
+        text-align: center;
+        font-size: 12px;
+        font-weight: bold;
+        width: 20px !important;
+        background-color: #D9D9D9;
+    }
+
+    .text_format3 {
+        text-align: center;
+        font-size: 12px;
+        font-weight: bold;
+        width: 20px !important;
+        /*background-color: #A9D08E;*/
+    }
+
+    .tbSelectCss {
+        background-color: #d5f4fe !important;
+    }
+
+    /* 进度线 */
+    .lineProgress {
+        width: 402px;
+        height: 7px;
+        background: #D9D9D9;
+        position: relative;
+        margin: 40px 0 64px;
+    }
+
+    .lineProgress span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 7px;
+        background: #4B95F8;
+        transition: width 10s ease-out;
+    }
+</style>
+
+<script type="text/javascript">
+
+    $(function () {
+        var startDate = new Date();
+        var endDate = new Date();
+        $("#dateFrom").datetimepicker({
+            minView: "month", //日期时间选择器所能够提供的最精确的时间选择视图
+            maxView: "decade",//日期时间选择器最高能展示的选择范围视图
+            format: 'yyyy-mm-dd',
+            todayBtn: true,
+            autoclose: true,
+            //startDate: date,
+            todayHighlight: true,
+            keyboardNavigation: true,
+            forceParse: true,
+            initialDate: new Date(),
+            weekStart: 1,
+            //daysOfWeekDisabled:'0'
+        }).on('changeDate', function (ev) {
+            startDate = ev.date;
+            $('#dateTo').datetimepicker('setStartDate', startDate);
+
+        });
+        $("#dateTo").datetimepicker({
+            minView: "month", //日期时间选择器所能够提供的最精确的时间选择视图
+            maxView: "decade",//日期时间选择器最高能展示的选择范围视图
+            format: 'yyyy-mm-dd',
+            todayBtn: true,
+            autoclose: true,
+            startDate: startDate,
+            todayHighlight: true,
+            keyboardNavigation: true,
+            forceParse: true,
+            initialDate: new Date(),
+            weekStart: 1,
+            //daysOfWeekDisabled:'0'
+        }).on('changeDate', function (ev) {
+            endDate = ev.date;
+            $('#dateFrom').datetimepicker('setEndDate', endDate);
+        });
+
+        $.post('@Url.Action("getProject")', {}, function (res) {
+            //$('.selectpicker').selectpicker('val', '');
+            //$('.selectpicker').selectpicker('refresh');
+
+            var phtml = "";
+            //console.log(res);
+            for (var i = 0; i < res.Project.length; i++) {
+                phtml += "<option  value='" + res.Project[i].ID + "' data-name='" + res.Project[i].Name + "'>" + res.Project[i].Name + "</option>";
+            }
+            $("#Project").html(phtml);
+            $('.selectpicker').selectpicker('refresh');//加载select框选择器
+
+        });
+
+        $('#Project').change(function () {
+
+            var project = $('#Project').val();
+            $.post('@Url.Action("getDetailDropByProject")', { Project: project }, function (res) {
+                //$('.selectpicker').selectpicker('val', '');
+                //$('.selectpicker').selectpicker('refresh');
+
+                var FG = $("#FG").val();
+                var phtml = "";
+                //console.log(res);
+                for (var i = 0; i < res.FG.length; i++) {
+                    if (FG == res.FG[i].ID) {
+                        phtml += "<option  value='" + res.FG[i].ID + "' selected='selected' data-name='" + res.FG[i].Name + "'>" + res.FG[i].Name + "</option>";
+                    } else {
+                        phtml += "<option  value='" + res.FG[i].ID + "' data-name='" + res.FG[i].Name + "'>" + res.FG[i].Name + "</option>";
+                    }
+                }
+                $("#FG").html(phtml);
+                $('.selectpicker').selectpicker('refresh');//加载select框选择器
+
+
+            })
+
+        });
+
+
+        $('#btnDownload').bind("click", function () {
+
+            var dateFromVal = $("#dateFrom").val();
+            var dateToVal = $("#dateTo").val();
+            var ProjectVal = $("#Project").val();
+            var FGVal = $("#FG").val();
+            //debugger;
+            if (isNull(dateFromVal) || isNull(dateToVal)) {
+
+                $.globalMessenger().post({
+                    message: "Please make the query criteria complete",//提示信息
+                    type: 'info',//消息类型。error、info、success
+                    hideAfter: 5,//多长时间消失
+                    showCloseButton: true,//是否显示关闭按钮
+                    hideOnNavigate: true //是否隐藏导航
+                });
+                //alert("Please make the query criteria complete");
+                return;
+            }
+
+            $.fileDownload("@Url.Action("download")", {
+                httpMethod: 'post',
+                // 因为这个插件貌似只支持URL参数,所以要用jquery param将js对象转成URL参数
+                //data: {
+                //    postStr: postStr
+                //},
+                data: {
+                    DateFrom: $("#dateFrom").val(),
+                    DateTo: $("#dateTo").val(),
+                    Project: $("#Project").val(),
+                    FG: $("#FG").val()
+                },
+                // data: $.param(params),
+                prepareCallback: function (url) {
+                    //console.log("正在导出...");
+                },
+                //要想成功回调失败和成功方法，要在响应首部加 response.setHeader("Set-Cookie", "fileDownload=true; path=/");
+                successCallback: function (url) {
+                    $.globalMessenger().post({
+                        message: "操作成功",//提示信息
+                        type: 'info',//消息类型。error、info、success
+                        hideAfter: 5,//多长时间消失
+                        showCloseButton: true,//是否显示关闭按钮
+                        hideOnNavigate: true //是否隐藏导航
+                    });
+                },
+                failCallback: function (html, url) {
+                    console.log("导出失败");
+                }
+            })
+        });
+
+    });
+
+    $("#btnSearch").click(function () {
+        var dateFromVal = $("#dateFrom").val();
+        var dateToVal = $("#dateTo").val();
+        var ProjectVal = $("#Project").val();
+        var FGVal = $("#FG").val();
+        //debugger;
+        if (isNull(dateFromVal) || isNull(dateToVal) ) {
+
+            $.globalMessenger().post({
+                message: "Please make the query criteria complete",//提示信息
+                type: 'info',//消息类型。error、info、success
+                hideAfter: 5,//多长时间消失
+                showCloseButton: true,//是否显示关闭按钮
+                hideOnNavigate: true //是否隐藏导航
+            });
+            //alert("Please make the query criteria complete");
+            return;
+        }
+
+
+        $.post('@Url.Action("GetMPSWaterfallDataByCondition")', {
+            DateFrom: dateFromVal,
+            DateTo: dateToVal,
+            Project: ProjectVal,
+            FG: FGVal
+        }, function (result) {
+            loadTable(result.MPS, "tab_table");
+        });
+
+
+    });
+
+
+    function loadTable(data, divtable) {
+        if ($('#tab_table tbody').html() != "") {
+            $('#tab_table').dataTable().fnDestroy();
+        }
+
+        $('#' + divtable + ' thead').empty();
+        //debugger
+        $.each(data, function (idx, item) {
+            var tr;
+            tr = $('<tr></tr>');
+
+            $.each(item, function (key, val) {
+                tr.append('<th class="title">' + key + '</th>');
+            });
+
+            $('#' + divtable + ' thead').append(tr);
+            return false;
+        })
+
+        $('#' + divtable + ' tbody').empty();
+
+        var demandName = '';
+        $.each(data, function (idx, item) {
+            var tr;
+            tr = $('<tr ></tr>');
+            //debugger
+            $.each(item, function (key, val) {
+                //debugger
+
+                if (key == 'Data') {
+                    demandName = val;
+                }
+
+                if (val == undefined) {
+                    tr.append('<td class="text_format" ></td>');
+                } else {
+                    if (key.indexOf('-') != -1) {
+                        debugger
+                        if (key < demandName) {
+                            tr.append('<td class="text_format2" >' + val + '</td>');
+                        } else {
+                            tr.append('<td class="text_format3" >' + val + '</td>');
+                        }
+                    } else {
+                        tr.append('<td class="text_format" >' + val + '</td>');
+                    }
+                }
+            });
+
+            $('#' + divtable + ' tbody').append(tr);
+        });
+
+        var height = document.body.clientHeight - 120;
+        var domCustomized = "<'row'<'col-sm-3'l><'col-sm-3'i><'col-sm-5'><'col-sm-1'>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row'<'col-sm-5'i><'col-sm-7'p>>";
+        debugger;
+        var table = $('#' + divtable).DataTable({
+            dom: domCustomized,
+            scrollY: height,
+            scrollX: "1000px",
+            scrollCollapse: true,
+            paging: true,
+            fixedHeader: true,
+            fixedColumns: { leftColumns: 2 },
+            ordering: true,
+            searching: false,
+            info: true,
+            createdRow: function (row, data, dataIndex) {
+                //debugger
+                $(row).attr('onclick', 'javascript:changeColorByClick(this);');
+                $(row).attr('background-color', '#76EEC6');
+            },
+            language: {
+                searchPlaceholder: 'All columns matched...',
+                lengthMenu: '<select class="form-control input-xsmall">' + '<option value="5">5</option>' + '<option value="10">10</option>' + '<option value="20">20</option>' + '<option value="30">30</option>' + '<option value="40">40</option>' + '<option value="50">50</option>' + '<option value="-1">All</option>' + '</select> Entries', //左上角的分页大小显示
+                processing: "载入中",  //处理页面数据的时候的显示
+                paginate: { //分页的样式文本内容
+                    previous: "《《",
+                    next: "》》",
+                },
+                zeroRecords: "没有内容",  //table tbody内容为空时，tbody的内容
+                //下面三者构成了总体的左下角的内容
+                info: "Total Pages : _PAGES_ , Show : From _START_ to _END_ , Total Items : _TOTAL_ ",  //左下角的信息显示，大写的词为关键字。
+                infoEmpty: "0 Entry", //筛选为空时左下角的显示
+                infoFiltered: ""    //筛选之后的左下角筛选提示(另一个是分页信息显示，在上面的info中已经设置，所以可以不显示)
+            }
+        });
+    }
+
+    function changeColorByClick(obj) {
+        //var _itemVal = obj.cells[1].innerHTML;
+        //debugger
+        //变色，消除原来的变色
+        $(obj).addClass("tbSelectCss");
+        $(obj).siblings().removeClass("tbSelectCss");
+    }
+
+    function getKey(event) {
+        if (event.keyCode == 13) {
+            //$('#btnSearch').click();
+            $("#" + _tableName).DataTable().ajax.reload();
+        }
+    }
+
+</script>

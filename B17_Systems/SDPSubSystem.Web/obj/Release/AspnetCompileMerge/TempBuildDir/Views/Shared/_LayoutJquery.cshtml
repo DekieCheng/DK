@@ -1,0 +1,131 @@
+﻿@using SDPSubSystem.Web.Common;
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=11">
+    <title>SDP System</title>
+
+    <link href="@Url.Content("~/Content/B11Site.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/Font-Awesome3.2.1/css/font-awesome.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/zTree.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/Layer/theme/default/layer.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/zTree.theme.metro.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/DataTables/css/fixedColumns.dataTables.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/DataTables/css/fixedColumns.bootstrap.min.css")" rel="stylesheet" />
+
+    @*-------------------------------------------------------------*@
+    @*dataTable框架，使用bootstrap样式必须引入以下css*@
+    <link href="@Url.Content("~/Content/bootstrap-3.3.5-dist/css/bootstrap.css")" rel="stylesheet" />
+
+    <!--change to use dataTables.juery-->
+    <link href="@Url.Content("~/Content/DataTables/css/jquery.dataTables.min.css")" rel="stylesheet" />
+
+    <!--cancel to use dataTables.bootstrap-->
+    @*<link href="@Url.Content("~/Content/DataTables/css/dataTables.bootstrap.css")" rel="stylesheet" />*@
+    @*-------------------------------------------------------------*@
+
+    <link href="@Url.Content("~/Content/bootstrap-datetimepicker.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/bootstrap-treeview.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/bootstrap-select.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/bootstrap-fileinput/css/fileinput.min.css")" rel="stylesheet" />
+
+    <link href="@Url.Content("~/Content/messenger.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/messenger-theme-future.css")" rel="stylesheet" type="text/css" />
+
+    <!--juery UI-->
+    <link href="@Url.Content("~/Content/jquery-ui-1.13.0.custom/jquery-ui.css")" rel="stylesheet" type="text/css" />
+
+
+    <link href="@Url.Content("~/Content/jquery.autocomplete.css")" rel="stylesheet" type="text/css" />
+
+
+    @*<link href="@Url.Content("~/Content/style.css")" rel="stylesheet" type="text/css" />*@
+
+
+    @*-------------------------------------------------------------*@
+    @*dataTable框架，使用bootstrap样式必须引入以下四个js库*@
+    @*<script src="@Url.Content("~/Scripts/jquery-3.3.1.js")"></script>
+        <script src="@Url.Content("~/Scripts/bootstrap.js")"></script>
+        <script src="@Url.Content("~/Scripts/jquery.dataTables.js")"></script>
+        <script src="@Url.Content("~/Scripts/dataTables.bootstrap.js")"></script>*@
+    <script src="@Url.Content("~/Scripts/jquery-3.3.1.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.dataTables.min.js")"></script>
+
+    <!--cancel to use dataTables.bootstrap-->
+    @*<script src="@Url.Content("~/Scripts/dataTables.bootstrap.min.js")"></script>*@
+    @*-------------------------------------------------------------*@
+
+    <script src="@Url.Content("~/Scripts/jquery.cookie.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.ztree.all-3.5.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.x_import.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.table2excel.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.x_modal.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.serializejson.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.fileDownload.js")"></script>
+
+    <script src="@Url.Content("~/Content/Layer/layer.js")"></script>
+
+    <script src="@Url.Content("~/Scripts/dataTables.fixedColumns.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap-select.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap-datetimepicker.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap-treeview.min.js")"></script>
+
+    <script src="@Url.Content("~/Scripts/fileinput.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/echarts_5.0.min.js")"></script>
+
+    <script src="@Url.Content("~/Scripts/common.js")"></script>
+    <script src="@Url.Content("~/Scripts/numeral.js")"></script>
+    <script src="@Url.Content("~/Scripts/json2.js")"></script>
+    <script src="@Url.Content("~/Scripts/JSLINQ.js")"></script>
+    <script src="@Url.Content("~/Scripts/bootbox.min.js")"></script>
+
+    @*-------------------------------------------------------------*@
+    @*attrition项目中引用了，不能删*@
+    <script src="@Url.Content("~/Scripts/jslinq.min.js")"></script>
+    @*-------------------------------------------------------------*@
+
+    @*-------------------------------------------------------------*@
+    @*echarts视频中有介绍，暂时用不到*@
+    <script src="@Url.Content("~/Scripts/flexible.js")"></script>
+    @*-------------------------------------------------------------*@
+
+    @*-------------------------------------------------------------*@
+    @*dataTable框架中的扩展功能--按钮，必须引入以下三个库*@
+    <script src="@Url.Content("~/Scripts/dataTables.buttons.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/buttons.html5.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jszip.min.js")"></script>
+    @*-------------------------------------------------------------*@
+
+    <script src="@Url.Content("~/Scripts/messenger.js")"></script>
+
+    <!--juery UI-JS-->
+    <script src="@Url.Content("~/Content/jquery-ui-1.13.0.custom/jquery-ui.js")"></script>
+
+    <!--autocomplete-->
+    @*<script src="@Url.Content("~/Scripts/jquery.autocomplete.js")"></script>*@
+    @*<script src="@Url.Content("~/Scripts/jquery.mockjax.js")"></script>*@
+
+    <style>
+        th {
+            background-color: #337ab7;
+            color: white;
+        }
+
+        td {
+            word-break: keep-all;
+            white-space: nowrap;
+            font-size: 10pt;
+        }
+
+        body {
+            overflow: auto;
+        }
+    </style>
+</head>
+<body LangID="@Html.GetLangID().ToString()">
+    @RenderBody()
+</body>
+</html>

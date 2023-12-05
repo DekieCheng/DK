@@ -1,0 +1,239 @@
+﻿@using SDPSubSystem.Web.Common;
+@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container-fluid">
+    @*<div style="padding-top:5px;padding-bottom:5px;padding-left:5px;">
+            <table id="tab_table" class="table table-hover table-bordered tableWidth">
+                <thead></thead>
+                <tbody></tbody>
+            </table>
+
+        </div>*@
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="panel panel-primary">
+
+                <div class="panel-body">
+                    <div id="line" style="height:800px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade bs-example-modal-lg" id="_Dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+
+<input id="givenVal" style="display:none" value="" />
+<style type="text/css">
+
+    td {
+        border: 1px solid black;
+        height: 30px;
+        font-size: 18px;
+        font-weight: 300;
+    }
+
+
+    .bb {
+        font-weight: bold;
+        font-size: 20px;
+        text-align: center !important;
+    }
+
+    .title {
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        background-color: #009add;
+        font-family: Microsoft YaHei;
+        text-align: center;
+    }
+</style>
+
+<script type="text/javascript">
+
+
+    $(function () {
+        update();
+    });
+
+    function update() {
+        $.post('@Url.Action("DLERateLoad")', null, function (result) {
+            //debugger
+            //gentable(result.Data, "tab_table");
+            loadChart(result, "line");
+        });
+
+    }
+
+    function gentable(data, divtable) {
+        //debugger
+        $('#' + divtable + ' thead').empty();
+        $.each(data, function (idx, item) {
+            var tr;
+            tr = $('<tr></tr>');
+
+            $.each(item, function (key, val) {
+                tr.append('<th class="title">' + key + '</th>');
+            });
+
+            $('#' + divtable + ' thead').append(tr);
+            return false;
+        });
+
+        $('#' + divtable + ' tbody').empty();
+        $.each(data, function (idx, item) {
+            var tr;
+            tr = $('<tr ></tr>');
+            $.each(item, function (key, val) {
+                tr.append('<td class="text_format2">' + val + '</td>');
+            });
+            $('#' + divtable + ' tbody').append(tr);
+        });
+
+
+    }
+
+
+    function loadChart(data, divname) {
+        var chart = echarts.init(document.getElementById(divname));
+        var Data = data.Data;
+        debugger
+        var xDatat = [];
+        var barDatat = [];
+        var linedataForTargetT = [];
+        $.each(Data, function (key, val) {
+            debugger
+            xDatat.push(val.Item);
+            barDatat.push(val.Week);
+            linedataForTargetT.push(val.Target);
+        });
+
+
+        var option = {
+            tooltip: {//提示文字的格式
+                show: true,
+                trigger: 'axis',
+                axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                    type: 'line'        // 默认为直线，可选为：'line' | 'shadow'
+                },
+            },
+            title: {
+                text: 'DL E Rate',
+                subtext: '',
+                left: 'center',
+                textStyle: {
+                    color: 'black'
+                }
+            },
+            legend: {
+                show: true,
+                top: "bottom",
+            },
+            xAxis: {
+                type: 'category',
+                name: '',
+                splitLine: { show: false },
+                data: xDatat,
+                //boundaryGap:false,
+                axisLabel: {//坐标轴刻度标签的相关设置。
+                    interval: 0,
+                    rotate: "20"
+                },
+                nameTextStyle: {
+                    color: "blue",
+                    fontSize: 12,
+                    //padding: 10
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '10%',
+                containLabel: true
+            },
+            //toolbox: {
+            //    feature: {
+            //        saveAsImage: {}
+            //    }
+            //},
+            yAxis: [
+                {
+                    type: 'value',
+                    show: true,
+                    name: '',
+                    position: 'left',
+                    nameLocation: 'end',
+                    nameTextStyle: {
+                        color: "blue",
+                        fontSize: 12,
+                        //padding: 10
+                    },
+                    axisLabel: {
+                        formatter: '{value}%'
+                    },
+                    splitNumber: 6,
+                    min: 0,
+                    max: 120,
+                    splitLine: {
+                        show: true
+                    }
+                }],
+            series: [
+                {
+                    type: 'bar',
+                    yAxisIndex: 0,
+                    name: 'Actual',
+                    data: barDatat,
+                    itemStyle: {
+                        normal: {
+                            color: function (param) {
+                                return '#009add';
+                            }
+                        }
+                    },
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'top',
+                            color: 'black',
+                            formatter: '{c}%',
+                            fontSize:18
+                        }
+                    }
+                },
+                {
+                    type: 'line',
+                    yAxisIndex: 0,
+                    name: 'Target',
+                    symbol: 'circle',
+                    symbolSize: 8,
+                    lineStyle: {
+                        color: 'orange',
+                        width: 4,
+                        //type: 'dashed'
+                    },
+                    data: linedataForTargetT,
+                    itemStyle: {
+                        color: 'orange'
+                    },
+                    label: {
+                        normal: {
+                            show: false,
+                            position: 'inside',
+                            formatter: '{c}%',
+                            color: 'black',
+                            fontSize: 18
+                        }
+                    }
+                }
+           ]
+        }
+
+        chart.setOption(option);
+        return chart;
+    }
+
+</script>
+

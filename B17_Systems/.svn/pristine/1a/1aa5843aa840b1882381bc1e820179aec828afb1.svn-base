@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+<!--信息提示-->
+  <data code="E000001">元素不能为空!</data>
+  <data code="E000002">元素已经超出指定长度!</data>
+  <data code="E000003">输入的帐号密码不正确!</data>
+  <data code="E000004">没有提交数据!</data>
+  <data code="E000005">删除失败!</data>
+  <data code="E000006">请选择左边角色!</data>
+  <data code="E000007">元素已经存在!</data>
+  <data code="E000008">元素必须大于0</data>
+  <data code="E000009">数据处理成功</data>
+  <data code="E000010">确认要移除该元素对象吗?</data>
+  <data code="E000011">元素对象不存在</data>
+  <data code="E000012">记录已经存在</data>
+  <data code="E000013">数据处理失败，请重试</data>
+  <data code="E000014">未知异常</data>
+  <data code="E000015">只支持唯一的记录处理，请选择唯一的记录</data>
+  <data code="E000016">是否确认删除所选中的数据?</data>
+  <data code="E000017">请选择要操作的数据!</data>
+  <data code="E000018">导入的文件与模板不匹配</data>
+  <data code="E000019">ID={0} 字段={1},值不正确</data>
+  <data code="E000020">确定要处理选中的数据吗?</data>
+  <data code="E000021">数据加载失败，请查看配置是否正确</data>
+<!--标签部分-->
+  <data code="L000001">功能菜单</data>
+  <data code="L000002">新增数据</data>
+  <data code="L000003">编辑数据</data>
+  <data code="L000004">角色</data>
+  <data code="L000005">菜单</data>
+  <data code="L000006">该页面不能标记为我的常用功能</data>
+  <data code="L000007">标记为我的常用功能</data>
+  <data code="L000008">我标记的常用功能</data>
+  <data code="L000009">确认</data>
+  <data code="L000010">错误</data>
+  <data code="L000011">提示</data>
+  <data code="L000012">主页</data>
+  <data code="L000013">字段</data>
+  <data code="L000014">操作符</data>
+  <data code="L000015">值</data>
+  <data code="L000016">操作</data>
+  <data code="L000017">关系</data>
+  <data code="L000018">模板</data>
+  <data code="L000019">语言</data>
+  <data code="L000020">用户</data>
+  <data code="L000021">产线</data>
+<!--按钮部分-->
+  <data code="BT00001">新增</data>
+  <data code="BT00002">编辑</data>
+  <data code="BT00003">删除</data>
+  <data code="BT00004">导入</data>
+  <data code="BT00005">导出</data>
+  <data code="BT00006">查询</data>
+  <data code="BT00007">保存</data>
+  <data code="BT00008">关闭</data>
+  <data code="BT00009">移除</data>
+  <data code="BT00010">取消</data>
+  <data code="BT00011">退出</data>
+</root>

@@ -1,0 +1,158 @@
+﻿@{
+    Layout = null;
+}
+@using SDPSubSystem.Web.Common;
+
+<style type="text/css">
+    #resultImage {
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+    }
+</style>
+<div class="modal-dialog" style="width:55%;height:450px;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" style="color:White" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-plus"></span>@Html.GetLang("L000033")</h4>
+        </div>
+        <div class="modal-body">
+            <div id="message-box" style="display:none" class="alert alert-danger fade in" role="alert"><ul></ul></div>
+            <form class="form-horizontal" id="addressadd">
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label" for="FlexID">@Html.GetLang("TH00049"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:100%;" class="form-control" type="text" id="FlexID" name="FlexID" value="" />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label" for="TestValue1">@Html.GetLang("TH00051"):</label>
+                    <div class="col-sm-8 input-group" style="padding-top:10px">
+                        <input style="width:100%;" class="form-control" type="text" id="TestValue1" name="TestValue1" value="" placeholder="电阻：（格式：10的5次方--10E5）；无单位的值，填在此空" aria-describedby="basic-addon1">
+                        <span class="input-group-addon" id="basic-addon1">Ω</span>
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label" for="TestValue2">@Html.GetLang("TH00054"):</label>
+                    <div class="col-sm-8 input-group" style="padding-top:10px">
+                        <input style="width:100%;" class="form-control" type="text" id="TestValue2" name="TestValue2" value="" placeholder="电压" aria-describedby="basic-addon2" />
+                        <span class="input-group-addon" id="basic-addon2">V</span>
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <button id="btnVerify" class="btn btn-danger" type="button" style="width:150px;"><span class="glyphicon glyphicon-hand-right"></span> @Html.GetLang("BT00017")</button>
+                    </div>
+                </div>
+                <div id="ownerDiv" class="form-group" style="margin: 0 0;padding:0 0;display:none">
+                    <label class="col-sm-4 control-label" for="Owner"><span style="color:orangered;font-size: 18px;">@Html.GetLang("TH00053"):</span></label>
+                    <div class="col-sm-8" style="padding-top:10px;">
+                        <input style="width:100%;" class="form-control" type="text" id="Owner" name="Owner" value="" placeholder="@Html.GetLang("E000025")" />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label" for="resultImage">@Html.GetLang("TH00052"):</label>
+                    <div id="resultImage" class="col-sm-8" style="padding-top:10px;width:100%;height:100px;background-image: url('../../Content/Image/none.jpg')">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button id="btnAppend" type="button" class="btn btn-primary" disabled><span class="glyphicon glyphicon-floppy-saved"></span>@Html.GetLang("BT00018")</button>
+            <button id="btnClosePO" type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove-sign"></span>@Html.GetLang("BT00008")</button>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+<input id="_id" type="hidden" value="000000" />
+
+<script type="text/javascript">
+    $(function () {
+
+        $("#btnVerify").click(function () {
+            $.post('@Url.Action("TestVerifySaveAdd")',
+            { poststr: JSON.stringify($('#addressadd').serializeJSON()) },
+            function (result) {
+                //console.log(result);
+                //console.log(result.Msg);
+                if (result.IsSuccess) {
+
+                    $('#resultImage').css('background-image', 'url("../../Content/Image/PASS.jpg")');
+                    $('#ownerDiv').css('display', 'none');
+                    $('#btnAppend').attr("disabled", true);
+                    //$("#_Dialog").modal("hide");
+                    $("#tab_table").DataTable().ajax.reload();
+                }
+                else {
+                    $.each(result.ControlMessage, function (key, value) {
+                        //debugger;
+                        if (value == '202') {
+                            //debugger;
+                            if (result.Msg) {
+                                var m_ul = "<ul>";
+                                var flag = false;
+                                $.each(result.Msg, function (idx, msg) {
+                                    m_ul += "<li>" + msg + "</li>";
+                                    flag = true;
+                                });
+                                m_ul += "</ul>";
+                                if (flag) { bootbox.alert({ message: m_ul, title: "Error" }); }
+                            }
+                        } else if(value=='201'){
+                            //debugger;
+                            $('#resultImage').css('background-image', 'url("../../Content/Image/FAIL.jpg")');
+                            $('#ownerDiv').css('display', 'block');
+                            $('#btnAppend').removeAttr("disabled");
+                            $("#tab_table").DataTable().ajax.reload();
+
+                            //console.log(result);
+                            $("#_id").val(result.Msg);
+                        }
+                    });
+                    
+                }
+
+            });
+        })
+
+
+        $('#btnAppend').click(function () {
+            var strpost = {
+                ID: $('#_id').val(),
+                Owner: $('#Owner').val()
+            }
+            debugger;
+            $.post('@Url.Action("TestSaveAddOwner")',{ poststr: JSON.stringify(strpost) },function (result) {
+                if (result.IsSuccess) {
+                    //不关闭模态框，原因：还可以继续测
+                    //$("#_Dialog").modal("hide");
+                    $("#tab_table").DataTable().ajax.reload();
+
+                    $.globalMessenger().post({
+                        message: "保存成功",//提示信息
+                        type: 'info',//消息类型。error、info、success
+                        hideAfter: 2,//多长时间消失
+                        showCloseButton: true,//是否显示关闭按钮
+                        hideOnNavigate: true //是否隐藏导航
+                    });
+                }
+                else {
+                    if (result.Msg) {
+                        var m_ul = "<ul>";
+                        var flag = false;
+                        $.each(result.Msg, function (idx, msg) {
+                            m_ul += "<li>" + msg + "</li>";
+                            flag = true;
+                        });
+                        m_ul += "</ul>";
+                        if (flag) { bootbox.alert({ message: m_ul, title: "Error" }); }
+                    }
+                }
+            });
+        })
+
+    });
+
+
+
+</script>

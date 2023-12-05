@@ -1,0 +1,131 @@
+﻿@{
+    Layout = null;
+}
+@using SDPSubSystem.Web.Common;
+
+<div class="modal-dialog" style="width: 55%; height: 400px;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" style="color:White" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-edit"></span>@Html.GetLang("L000003")</h4>
+        </div>
+        <div class="modal-body">
+            <div id="message-box" style="display:none" class="alert alert-danger fade in" role="alert"><ul></ul></div>
+            <form class="form-horizontal" id="addressEdit">
+
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label" for="Name">Name:</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:80%;" class="form-control" type="text" id="Name" name="Name" value='@ViewData["Name"]' />
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label" for="ItemPreFixed">ItemPreFixed:</label>
+                    <div class="col-sm-8" style="padding-top: 10px">
+                        <input style="width:80%;" class="form-control" type="text" id="ItemPreFixed" name="ItemPreFixed" value="@ViewData["ItemPreFixed"]" />
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label" for="Approver1">PM Group:</label>
+                    <div class="col-sm-8" style="padding-top: 10px">
+                        <select class="form-control selectpicker" style="width:100px;" data-width="300px" data-live-search="true" id="Approver1" name="Approver1" title="" data-size="10">
+                            <option value="@ViewData["Approver1"]"></option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label" for="Approver2">Material Leader Group:</label>
+                    <div class="col-sm-8" style="padding-top: 10px">
+                        <select class="form-control selectpicker" style="width:100px;" data-width="300px" data-live-search="true" id="Approver2" name="Approver2" title="" data-size="10">
+                            <option value="@ViewData["Approver2"]"></option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <input id="_id" name="ID" type="hidden" value='@ViewData["ID"]' />
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button id="btnEditSave" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span>@Html.GetLang("BT00007")</button>
+            <button id="btnClosePO" type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-plus-sign"></span>@Html.GetLang("BT00008")</button>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+
+
+<script type="text/javascript">
+    $(function () {
+        $(".modal-dialog").draggable();
+
+        $.post('@Url.Action("getDetailDropForApprover")', {}, function (res) {
+            //$('.selectpicker').selectpicker('val', '');
+
+            debugger;
+            var approver1Id = $("#Approver1").val();
+            var phtml = "";
+            //console.log(res);
+            for (var i = 0; i < res.Approver1.length; i++) {
+                if (approver1Id == res.Approver1[i].ID) {
+                    phtml += "<option  value='" + res.Approver1[i].ID + "' selected='selected' data-name='" + res.Approver1[i].Name + "'>" + res.Approver1[i].Name + "</option>";
+                } else {
+                    phtml += "<option  value='" + res.Approver1[i].ID + "' data-name='" + res.Approver1[i].Name + "'>" + res.Approver1[i].Name + "</option>";
+                }
+            }
+            $("#Approver1").html(phtml);
+
+            var approver2Id = $("#Approver2").val();
+            var dhtml = "";
+            //console.log(res);
+            for (var i = 0; i < res.Approver2.length; i++) {
+                if (approver2Id == res.Approver2[i].ID) {
+                    dhtml += "<option  value='" + res.Approver2[i].ID + "' selected='selected' data-name='" + res.Approver2[i].Name + "'>" + res.Approver2[i].Name + "</option>";
+                } else {
+                    dhtml += "<option  value='" + res.Approver2[i].ID + "' data-name='" + res.Approver2[i].Name + "'>" + res.Approver2[i].Name + "</option>";
+                }
+            }
+            $("#Approver2").html(dhtml);
+
+            $('.selectpicker').selectpicker('refresh');//加载select框选择器
+
+
+        });
+
+        $("#btnEditSave").click(function () {
+            //var poststr = JSON.stringify($('#shippingform').serializeJSON());
+            $.post('@Url.Action("SaveEdit")',
+                { poststr: JSON.stringify($('#addressEdit').serializeJSON()) },
+                function (result) {
+                    if (result.IsSuccess) {
+
+                        $.globalMessenger().post({
+                            message: "Edit Success",//提示信息
+                            type: 'info',//消息类型。error、info、success
+                            hideAfter: 5,//多长时间消失
+                            showCloseButton: true,//是否显示关闭按钮
+                            hideOnNavigate: true //是否隐藏导航
+                        });
+                    }
+                    else {
+                        if (result.Msg) {
+                            var m_ul = "<ul>";
+                            var flag = false;
+                            $.each(result.Msg, function (idx, msg) {
+                                m_ul += "<li>" + msg + "</li>";
+                                flag = true;
+                            });
+                            m_ul += "</ul>";
+                            if (flag) { bootbox.alert({ message: m_ul, title: "Error" }); }
+                        }
+                    }
+
+                    $("#_Dialog").modal("hide");
+                });
+        });
+
+
+    });
+</script>

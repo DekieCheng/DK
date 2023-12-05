@@ -1,0 +1,16 @@
+2021-08-13 10:14:54,879  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType£ºInvalidOperationException , Content£ºThe view 'SummaryByOwner' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/ESDAudit/SummaryByOwner.aspx
+~/Views/ESDAudit/SummaryByOwner.ascx
+~/Views/Shared/SummaryByOwner.aspx
+~/Views/Shared/SummaryByOwner.ascx
+~/Views/ESDAudit/SummaryByOwner.cshtml
+~/Views/ESDAudit/SummaryByOwner.vbhtml
+~/Views/Shared/SummaryByOwner.cshtml
+~/Views/Shared/SummaryByOwner.vbhtml , Function£ºSystem.Web.Mvc.ViewEngineResult FindView(System.Web.Mvc.ControllerContext) , Object£ºSystem.Web.Mvc , Controller£ºESDAudit , Action£ºSummaryByOwner ; 
+2021-08-13 10:33:23,477  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType£ºFormatException , Content£ºInput string was not in a correct format. , Function£ºVoid StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean) , Object£ºmscorlib , Controller£ºESDAudit , Action£ºSummaryByOwnerLoadList ; 
+2021-08-13 10:40:53,365  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType£ºFormatException , Content£ºInput string was not in a correct format. , Function£ºVoid StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean) , Object£ºmscorlib , Controller£ºESDAudit , Action£ºSummaryByOwnerLoadList ; 
+2021-08-13 13:31:38,582  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType£ºNullReferenceException , Content£ºObject reference not set to an instance of an object. , Function£ºVoid Execute() , Object£ºApp_Web_xftyrfvj , Controller£ºESDAudit , Action£ºTestESDSummaryByOwnerTestEdit ; 
+2021-08-13 13:46:10,347  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType£ºArgumentException , Content£ºThe parameters dictionary contains a null entry for parameter 'ID' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult TestESDSummaryByOwnerTestEdit(Int32)' in 'SDPSubSystem.Web.Controllers.ESDAuditController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters , Function£ºSystem.Object ExtractParameterFromDictionary(System.Reflection.ParameterInfo, System.Collections.Generic.IDictionary`2[System.String,System.Object], System.Reflection.MethodInfo) , Object£ºSystem.Web.Mvc , Controller£ºESDAudit , Action£ºTestESDSummaryByOwnerTestEdit ; 
+2021-08-13 13:46:32,178  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType£ºFormatException , Content£ºString was not recognized as a valid DateTime. , Function£ºSystem.DateTime Parse(System.String, System.Globalization.DateTimeFormatInfo, System.Globalization.DateTimeStyles) , Object£ºmscorlib , Controller£ºESDAudit , Action£ºTestESDSummaryByOwnerTestEdit ; 
+2021-08-13 13:48:16,891  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType£ºFormatException , Content£ºString was not recognized as a valid DateTime. , Function£ºSystem.DateTime Parse(System.String, System.Globalization.DateTimeFormatInfo, System.Globalization.DateTimeStyles) , Object£ºmscorlib , Controller£ºESDAudit , Action£ºTestESDSummaryByOwnerTestEdit ; 

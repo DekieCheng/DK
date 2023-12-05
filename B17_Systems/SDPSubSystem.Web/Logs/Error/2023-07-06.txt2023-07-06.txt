@@ -1,0 +1,1 @@
+2023-07-06 13:38:46,038  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType£ºArgumentException , Content£ºThe SqlParameter is already contained by another SqlParameterCollection. , Function£ºVoid Validate(Int32, System.Object) , Object£ºSystem.Data , Controller£ºFEElectricityDashboard , Action£ºGetData ; 

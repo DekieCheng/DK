@@ -1,0 +1,455 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using SDPSubSystem.Web.Common;
+
+<style type="text/css">
+    #resultImage {
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+    }
+
+    td {
+        text-align: center
+    }
+
+    .layoutstyle{
+        padding-left:20px;
+    }
+</style>
+
+<form class="form-horizontal" id="addressadd">
+    <div class="form-group" style="margin: 0 0;padding:20px 10% 0;">
+        <label class="col-sm-2 control-label" for="CurrPN">
+            当前型号：
+        </label>
+        <div class="col-sm-2" style="padding-top:10px">
+            <input class="form-control" type="text" id="CurrPN" name="CurrPN" value="" />
+        </div>
+        <label class="col-sm-2 control-label" for="SpecID">
+            转线型号：
+        </label>
+        <div class="col-sm-4" style="padding-top:10px">
+            <input class="form-control" type="text" id="NextPN" name="NextPN" value="" />
+        </div>
+    </div>
+    <div class="form-group" style="margin: 0 0;padding:10px 10% 0;">
+        <label class="col-sm-2 control-label" for="Line">线别:</label>
+        <div class="col-sm-2" style="padding-top:10px">
+            <select class="form-control selectpicker" @*style="width:380px;" data-width="380px"*@ data-live-search="true" id="Line" name="Line" title="Line" data-size="10"></select>
+        </div>
+
+        <label class="col-sm-2 control-label" for="Project">项目:</label>
+        <div class="col-sm-2" style="padding-top:10px">
+            <select class="form-control selectpicker" @*style="width:380px;" data-width="380px"*@ data-live-search="true" id="Project" name="Project" title="" data-size="10"></select>
+        </div>
+
+        <label class="col-sm-2 control-label" for="FFWO">FF工单号:</label>
+        <div class="col-sm-2" style="padding-top:10px">
+            <input class="form-control" type="text" id="FFWO" name="FFWO" value="" />
+        </div>
+    </div>
+    <div class="form-group" style="margin: 0 0;padding:20px 10% 0;">
+        <table style="width: 100%" border="1">
+            <tr>
+                <td colspan="2">
+                    C/O team
+                </td>
+                <td colspan="2">
+                    EE
+                </td>
+                <td>PE</td>
+                <td>Prod</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="3"><a href="#" id="addTable">添加料单Table</a></td>
+                <td>
+                    EE1:
+                </td>
+                <td>
+                    <input id="EE1" name="EECHECK1" readonly type="text" style="width: auto!important" onclick="showpage2($(this).attr('id'))" />
+                </td>
+                <td rowspan="3">
+                    <input id="PE" name="PECHECK1" readonly type="text" style="width: auto!important" onclick="showpage2($(this).attr('id'))" />
+                </td>
+                <td rowspan="3">
+                    <input id="Production" name="ProCHECK1" readonly type="text" style="width: auto!important" onclick="showpage2($(this).attr('id'))" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    EE2:
+                </td>
+                <td>
+                    <input id="EE2" name="EECHECK2" readonly type="text" style="width: auto!important" onclick="showpage2($(this).attr('id'))" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    EE3:
+                </td>
+                <td>
+                    <input id="EE3" name="EECHECK3" readonly type="text" style="width: auto!important" onclick="showpage2($(this).attr('id'))" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="form-group COTable" style="display:none;margin: 0 0;padding:20px 10%;">
+
+        <div class="panel panel-default">
+            <div class="panel-heading"><strong>料单Table:</strong></div>
+            <div class="panel-body">
+                <div action="">
+                    Table: <input type="text" id="tableName">
+                    责任人: <input id="responsible" readonly type="text" style="width: auto!important" onclick="showpage2($(this).attr('id'))" />
+
+                    <a href="#" id="add">添加一条数据</a>
+
+                </div>
+            </div>
+            <table id="example" style="width: 30%;" border="1">
+                <thead>
+                    <tr>
+                        <th style="width: 30px; text-align: center;">Action</th>
+                        <th style="text-align:center;">Table</th>
+                        <th style="text-align:center;">责任人</th>
+                    </tr>
+                </thead>
+            </table>
+
+        </div>
+
+    </div>
+    <div class="form-group" style="display:block;margin: 0 0;padding:10px;">
+        <div class="col-sm-12" style="padding-top: 10px; padding-left: 40%">
+            <input class="btn btn-primary" style="width: 220px;" id="Submit" type="button" value="Submit" />
+        </div>
+    </div>
+
+    <input id="_id" name="ID" type="hidden" value="" />
+
+</form>
+<div id="dialog" title="用户名密码输入">
+    <div>
+        <div style="padding: 15px; font-size: 20px; text-align: center">
+            <label id="dpment"></label>
+            签到
+        </div>
+        <div class="form-group-sm">
+            <label>用户名</label>
+            <input id="userad" type="text" class="form-control" />
+        </div>
+        <div class="form-group-sm">
+            <label>密码</label>
+            <input id="userpwd" type="password" class="form-control" />
+        </div>
+        <div class="form-group-sm" style="margin: 10px 0px">
+            <a class="btn btn-primary btn-block" onclick="signatrue()">Submit</a>
+        </div>
+        <div style="margin: 10px">
+            <p style="color: red">请输入AD账号签到.</p>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $(function () {
+        $('#dialog').dialog({
+            autoOpen: false,
+            height: 400,
+            width: 600,
+            modal: true
+        })
+
+        getDropdownList();
+
+        $("#addTable").click(function () {
+
+            var proj = $('#Project option:selected').text();
+            //debugger
+            if (isNull(proj)) {
+                layer.alert('请先选择项目');
+                return;
+            }
+
+            $(".COTable").css("display", 'block');
+
+            //新增一条记录,返回manID
+            $.post('@Url.Action("CreateNewRecord")', { Project: proj }, function (result) {
+                //debugger
+                if (result.IsSuccess) {
+
+                    $('#_id').val(result.Msg);
+
+                }
+                else {
+                    if (result.Msg) {
+                        var m_ul = "<ul>";
+                        var flag = false;
+                        $.each(result.Msg, function (idx, msg) {
+                            m_ul += "<li>" + msg + "</li>";
+                            flag = true;
+                        });
+                        m_ul += "</ul>";
+                        if (flag) { bootbox.alert({ message: m_ul, title: "Error" }); }
+                    }
+                }
+
+            });
+
+        });
+
+        var domCustomized = "<'row layoutstyle'<'col-sm-12'tr>>";
+        let table = $('#example').DataTable({
+            data: [],
+            "dom": domCustomized,
+            ordering: false,
+        });
+
+
+        $("#add").click(function () {
+            if (isNull($("#tableName").val())) {
+                layer.alert('Table不能为空');
+                return;
+            }
+
+            if (isNull($("#responsible").val())) {
+                layer.alert('责任人不能够为空');
+                return;
+            }
+
+            //table.row.add([
+            //    '<a style="color:darkred;cursor:pointer;margin-left:10px" onclick="del(' + $("#tableName").val() + ',\'' + $("#responsible").val() + '\')"><i class="fa fa-trash-o" style="margin:0;font-size:1.5em"></i></a>',
+            //    $("#tableName").val(),
+            //    $("#responsible").val()
+            //]).draw();
+
+            //请求后台把数据添加到数据库
+            var strpost = {
+                ID: $('#_id').val(),
+                Table: $("#tableName").val(),
+                CO: $("#responsible").val(),
+                Project: $("#Project option:selected").text(),
+            }
+            //debugger
+            $.post('@Url.Action("SaveTableRecord")', { poststr: JSON.stringify(strpost) }, function (result) {
+                //debugger
+                if (result.IsSuccess) {
+                    $.post('@Url.Action("LoadTable")', { code: $('#_id').val(), project: $('#Project option:selected').text() }, function (result) {
+                        gentable(result.TableData, "example");
+                    })
+                }
+                else {
+                    if (result.Msg) {
+                        var m_ul = "<ul>";
+                        var flag = false;
+                        $.each(result.Msg, function (idx, msg) {
+                            m_ul += "<li>" + msg + "</li>";
+                            flag = true;
+                        });
+                        m_ul += "</ul>";
+                        if (flag) { bootbox.alert({ message: m_ul, title: "Error" }); }
+                    }
+                }
+            });
+        });
+
+        $("#Submit").click(function () {
+            //debugger
+            //window.open('@Url.Action("Index")', '_self', '', true);
+            //var myWindow;
+            //myWindow = window.open('@Url.Action("Index")', '_self', '', true);
+            //window.close();
+
+
+
+            $.post('@Url.Action("SaveAdd")', { poststr: JSON.stringify($('#addressadd').serializeJSON()) }, function (result) {
+                //console.log(result);
+                //console.log(result.Msg);
+                //debugger
+                if (result.IsSuccess) {
+
+                    $.globalMessenger().post({
+                        message: "@Html.GetLang("E000024")",//提示信息
+                        type: 'info',//消息类型。error、info、success
+                        hideAfter: 2,//多长时间消失
+                        showCloseButton: true,//是否显示关闭按钮
+                        hideOnNavigate: true //是否隐藏导航
+                    });
+
+                    //location.href = '@Url.Action("Index"),"转线记录"';
+                    //window.open('@Url.Action("Index")', '_self', '', true).close();
+
+                    setTimeout(locationCustomized, 3000);//延迟3秒刷新页面
+
+
+                }
+                else {
+                    if (result.Msg) {
+                        var m_ul = "<ul>";
+                        var flag = false;
+                        $.each(result.Msg, function (idx, msg) {
+                            m_ul += "<li>" + msg + "</li>";
+                            flag = true;
+                        });
+                        m_ul += "</ul>";
+                        if (flag) { bootbox.alert({ message: m_ul, title: "Error" }); }
+                    }
+
+                }
+
+            });
+        });
+
+    });
+
+    function locationCustomized() {
+
+        //关闭页面的逻辑，参考：https://www.cnblogs.com/guo-xu/p/12064088.html
+        window.location.href = "about:blank";
+        window.close();
+
+        var nowTab = $("div.tab-inner-contailner > ul > li.active", parent.document);
+        //debugger
+        nowTab.prev().click();
+        nowTab.remove();
+    }
+
+    function gentable(data, divtable) {
+        if ($('#' + divtable + ' tbody').html() != "") {
+            $('#' + divtable ).dataTable().fnDestroy();
+        }
+
+        $('#' + divtable + ' tbody').empty();
+        $.each(data, function (idx, item) {
+            //debugger;
+            var tr;
+            tr = $('<tr ></tr>');
+            tr.append('<td><a style="color:darkred;cursor:pointer;margin-left:10px" onclick="del(\'' + item.id + '\')" > <i class="fa fa-trash-o" style="margin:0;font-size:1.5em"></i></a></td>');
+            $.each(item, function (key, val) {
+                //debugger
+                if (key=='id') {
+                    return;
+                }
+                tr.append('<td class="text_format">' + val + '</td>');
+            });
+            $('#' + divtable + ' tbody').append(tr);
+        });
+
+    }
+
+    function del(id) {
+        var strpost = {
+                ID: id,
+                Project: $('#Project option:selected').text(),
+        }
+
+            $.post('@Url.Action("DeleteTable")', { poststr: JSON.stringify(strpost) }, function (result) {
+                //debugger
+                if (result.IsSuccess) {
+                    $.post('@Url.Action("LoadTable")', { code: $('#_id').val(), project: $('#Project option:selected').text() }, function (result) {
+                        gentable(result.TableData, "example");
+                    })
+                }
+                else {
+                    if (result.Msg) {
+                        var m_ul = "<ul>";
+                        var flag = false;
+                        $.each(result.Msg, function (idx, msg) {
+                            m_ul += "<li>" + msg + "</li>";
+                            flag = true;
+                        });
+                        m_ul += "</ul>";
+                        if (flag) { bootbox.alert({ message: m_ul, title: "Error" }); }
+                    }
+                }
+            });
+    }
+
+    function getDropdownList() {
+        $.post('@Url.Action("getDetailDrop")', {}, function (res) {
+            //$('.selectpicker').selectpicker('val', '');
+            //$('.selectpicker').selectpicker('refresh');
+
+            var lineid = $("#Line").val();
+            var phtml = "";
+            //console.log(res);
+            for (var i = 0; i < res.Line.length; i++) {
+                if (lineid == res.Line[i].Name) {
+                    phtml += "<option  value='" + res.Line[i].Name + "' selected='selected' data-name='" + res.Line[i].Name + "'>" + res.Line[i].Name + "</option>";
+                } else {
+                    phtml += "<option  value='" + res.Line[i].Name + "' data-name='" + res.Line[i].Name + "'>" + res.Line[i].Name + "</option>";
+                }
+            }
+            $("#Line").html(phtml);
+            $('.selectpicker').selectpicker('refresh');//加载select框选择器
+
+
+
+            var projectid = $("#Project").val();
+            var outtypehtml = "";
+            for (var i = 0; i < res.Project.length; i++) {
+                if (projectid == res.Project[i].Name) {
+                    outtypehtml += "<option  value='" + res.Project[i].Name + "' selected='selected' data-name='" + res.Project[i].Name + "'>" + res.Project[i].Name + "</option>";
+                } else {
+                    outtypehtml += "<option  value='" + res.Project[i].Name + "' data-name='" + res.Project[i].Name + "'>" + res.Project[i].Name + "</option>";
+                }
+            }
+            $("#Project").html(outtypehtml);
+            $('.selectpicker').selectpicker('refresh');//加载select框选择器
+
+        })
+    }
+
+    function showpage2(id) {
+
+        $('#dpment').html(id);
+        $('#dialog').dialog('open');
+
+    }
+
+    function signatrue() {
+        var userad = $('#userad').val();
+        var userpwd = $('#userpwd').val();
+        var dpment = $('#dpment').html();
+
+        $.post('@Url.Action("VerifyUser")', { Userad: userad, Userpwd: userpwd }, function (result) {
+            if (result.IsSuccess) {
+
+                $.globalMessenger().post({
+                    message: "@Html.GetLang("E000024")",//提示信息
+                    type: 'info',//消息类型。error、info、success
+                    hideAfter: 2,//多长时间消失
+                    showCloseButton: true,//是否显示关闭按钮
+                    hideOnNavigate: true //是否隐藏导航
+                });
+
+                $.post('@Url.Action("GetUserInfo")', { Userad: userad }, function (res) {
+
+                    $('#' + dpment).val(res.User);
+
+                });
+
+            }
+            else {
+                if (result.Msg) {
+                    var m_ul = "<ul>";
+                    var flag = false;
+                    $.each(result.Msg, function (idx, msg) {
+                        m_ul += "<li>" + msg + "</li>";
+                        flag = true;
+                    });
+                    m_ul += "</ul>";
+                    if (flag) { bootbox.alert({ message: m_ul, title: "Error" }); }
+                }
+            }
+            $('#userpwd').val('');
+            $('#dialog').dialog('close');
+        })
+
+
+    }
+
+</script>

@@ -1,0 +1,9 @@
+2021-03-11 14:09:19,622  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType:SqlException , Content:Invalid column name '\'. , Function:Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action]) , Object:.Net SqlClient Data Provider , Controller:attrition , Action:GetstationData ; 
+2021-03-11 14:34:37,696  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType:SqlException , Content:Invalid column name '\'.
+Invalid column name '\'.
+Invalid column name '\'.
+Invalid column name '\'. , Function:Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action]) , Object:.Net SqlClient Data Provider , Controller:attrition , Action:GetstationData ; 
+2021-03-11 14:35:46,729  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType:SqlException , Content:Invalid column name '\'.
+Invalid column name '\'.
+Invalid column name '\'.
+Invalid column name '\'. , Function:Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action]) , Object:.Net SqlClient Data Provider , Controller:attrition , Action:GetstationData ; 

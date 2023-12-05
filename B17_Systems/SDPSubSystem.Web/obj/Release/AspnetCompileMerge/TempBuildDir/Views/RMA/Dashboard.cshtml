@@ -1,0 +1,340 @@
+﻿@using SDPSubSystem.Web.Common;
+@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="form-inline" style="padding:10px 0;">
+        <label class="control-label" for="dateFrom">DateFrom:</label>
+        <input id="dateFrom" class="form-control" data-date-format="yyyy-mm-dd" style="width:200px" autocomplete="on" />
+
+        <label class="control-label" for="dateTo">DateTo:</label>
+        <input id="dateTo" class="form-control" data-date-format="yyyy-mm-dd" style="width:200px" autocomplete="on" />
+
+        <label class="control-label">@Html.GetLang("L000034"):</label>
+        <select class="form-control selectpicker" style="width:180px;" data-width="180px" data-live-search="true" id="Customer" name="Customer" title="Choose one of the following..." data-size="10">
+            <option value=""></option>
+        </select>
+
+        <label class="control-label">Model:</label>
+        <select class="form-control selectpicker" style="width:180px;" data-width="180px" data-live-search="true" id="Model" name="Model" title="Choose one of the following..." data-size="10" multiple>
+            <option value=""></option>
+        </select>
+
+        <button id="btnSearch" class="btn btn-danger "><span class="glyphicon glyphicon-search"></span>@Html.GetLang("BT00006")</button>
+
+    </div>
+
+    <div id="line" style="height:500px;"></div>
+</div>
+<div class="modal fade bs-example-modal-lg" id="_Dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+<input id="code" type="hidden" value="" />
+
+
+
+
+<script type="text/javascript">
+
+    $(function () {
+
+        var startDate = new Date();
+        var endDate = new Date();
+        $("#dateFrom").datetimepicker({
+            minView: "month", //日期时间选择器所能够提供的最精确的时间选择视图
+            maxView: "decade",//日期时间选择器最高能展示的选择范围视图
+            format: 'yyyy-mm-dd',
+            todayBtn: true,
+            autoclose: true,
+            //startDate: date,
+            todayHighlight: true,
+            keyboardNavigation: true,
+            forceParse: true,
+            initialDate: new Date(),
+            weekStart: 1,
+            //daysOfWeekDisabled:'0'
+        }).on('changeDate', function (ev) {
+            startDate = ev.date;
+            $('#dateTo').datetimepicker('setStartDate', startDate);
+
+        });
+        $("#dateTo").datetimepicker({
+            minView: "month", //日期时间选择器所能够提供的最精确的时间选择视图
+            maxView: "decade",//日期时间选择器最高能展示的选择范围视图
+            format: 'yyyy-mm-dd',
+            todayBtn: true,
+            autoclose: true,
+            startDate: startDate,
+            todayHighlight: true,
+            keyboardNavigation: true,
+            forceParse: true,
+            initialDate: new Date(),
+            weekStart: 1,
+            //daysOfWeekDisabled:'0'
+        }).on('changeDate', function (ev) {
+            endDate = ev.date;
+            $('#dateFrom').datetimepicker('setEndDate', endDate);
+        });
+
+        $.post('@Url.Action("getDetailDropForCustomer")', {}, function (res) {
+
+            var phtml = "";
+            for (var i = 0; i < res.Customer.length; i++) {
+                if (i == 0) {
+                    phtml += "<option  value='" + res.Customer[i].ID + "' selected='selected' data-name='" + res.Customer[i].Name + "'>" + res.Customer[i].Name + "</option>";
+                } else {
+                    phtml += "<option  value='" + res.Customer[i].ID + "' data-name='" + res.Customer[i].Name + "'>" + res.Customer[i].Name + "</option>";
+                }
+            }
+            $("#Customer").html(phtml);
+            $('.selectpicker').selectpicker('refresh');//加载select框选择器
+
+        });
+
+        $('#Customer').change(function () {
+            $.post('@Url.Action("getDetailDropForModel")', { Customer: $('#Customer').val() }, function (res) {
+                var phtml = "";
+                for (var i = 0; i < res.Model.length; i++) {
+                    if (i == 0) {
+                        phtml += "<option  value='" + res.Model[i].ID + "' selected='selected' data-name='" + res.Model[i].Name + "'>" + res.Model[i].Name + "</option>";
+                    } else {
+                        phtml += "<option  value='" + res.Model[i].ID + "' data-name='" + res.Model[i].Name + "'>" + res.Model[i].Name + "</option>";
+                    }
+                }
+                $("#Model").html(phtml);
+                $('.selectpicker').selectpicker('refresh');//加载select框选择器
+
+            });
+        });
+
+        update();
+
+
+    });
+
+
+
+    $("#btnSearch").click(function () {
+        update();
+    });
+
+    //当Model下拉框被改变时，All被选中的话，就删除其他选中项，如果All没被选中的话，其他选中项不被删除
+    $('#Model').on('change', function () {
+
+        var firstSelectedValue = '';
+        var selectedValue = $('#Model').find("option:selected");
+        if (selectedValue.length > 0) {
+            firstSelectedValue = selectedValue[0].textContent;
+        }
+        if (firstSelectedValue == 'All') {
+            $("#Model").val('');
+            $("#Model").selectpicker('refresh');
+        }
+
+    })
+
+    function update() {
+        var strpost = {
+            dateFrom: $("#dateFrom").val(),
+            dateTo: $("#dateTo").val(),
+            Customer: $("#Customer").val(),
+            //Model: $("#Model").val(),
+            Model: arrToStr($('#Model').find("option:selected")),
+        }
+        $.post('@Url.Action("DashboardLoad")', { poststr: JSON.stringify(strpost) }, function (result) {
+            //debugger
+            //gentable(result.Data, "tab_table");
+            loadChart(result, "line");
+        });
+
+    }
+
+
+    function loadChart(data, divname) {
+        var chart = echarts.init(document.getElementById(divname));
+        var Data = data.Data;
+        //debugger
+        var xDatat = [];
+        var barDatat = [];
+        var linedataForTargetT = [];
+        $.each(Data, function (key, val) {
+            //debugger
+            xDatat.push(val.Item);
+            barDatat.push(val.qty);
+            linedataForTargetT.push((val.ratio * 100).toFixed(2));
+        });
+
+
+        var option = {
+            tooltip: {//提示文字的格式
+                show: true,
+                trigger: 'axis',
+                axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                    type: 'line'        // 默认为直线，可选为：'line' | 'shadow'
+                },
+            },
+            title: {
+                text: 'RMA Defect Distribution Dashboard',
+                subtext: '',
+                left: 'center',
+                textStyle: {
+                    color: 'black'
+                }
+            },
+            legend: {
+                show: true,
+                top: "bottom",
+            },
+            xAxis: {
+                type: 'category',
+                name: '',
+                splitLine: { show: false },
+                data: xDatat,
+                //boundaryGap:false,
+                axisLabel: {//坐标轴刻度标签的相关设置。
+                    interval: 0,
+                    rotate: "20"
+                },
+                nameTextStyle: {
+                    color: "blue",
+                    fontSize: 12,
+                    //padding: 10
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '10%',
+                containLabel: true
+            },
+            //toolbox: {
+            //    feature: {
+            //        saveAsImage: {}
+            //    }
+            //},
+            yAxis: [
+                {
+                    type: 'value',
+                    show: true,
+                    name: '',
+                    position: 'left',
+                    nameLocation: 'end',
+                    nameTextStyle: {
+                        color: "blue",
+                        fontSize: 12,
+                        //padding: 10
+                    },
+                    axisLabel: {
+                        formatter: '{value}'
+                    },
+                    splitNumber: 6,
+                    min: 0,
+                    //max: 120,
+                    splitLine: {
+                        show: true
+                    }
+                },
+                {
+                    type: 'value',
+                    show: true,
+                    name: '',
+                    position: 'right',
+                    nameLocation: 'end',
+                    nameTextStyle: {
+                        color: "blue",
+                        fontSize: 12,
+                        //padding: 10
+                    },
+                    axisLabel: {
+                        formatter: '{value}%'
+                    },
+                    splitNumber: 6,
+                    min: 0,
+                    //max: 120,
+                    splitLine: {
+                        show: false
+                    }
+                }],
+            series: [
+                {
+                    type: 'bar',
+                    yAxisIndex: 0,
+                    name: 'Defect QTY',
+                    data: barDatat,
+                    itemStyle: {
+                        normal: {
+                            color: function (param) {
+                                return '#009add';
+                            }
+                        }
+                    },
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'inside',
+                            color: 'white',
+                            formatter: '{c}',
+                            fontSize: 16
+                        }
+                    }
+                },
+                {
+                    type: 'line',
+                    yAxisIndex: 1,
+                    name: 'F/R%',
+                    symbol: 'circle',
+                    symbolSize: 8,
+                    lineStyle: {
+                        color: 'orange',
+                        width: 4,
+                        //type: 'dashed'
+                    },
+                    data: linedataForTargetT,
+                    itemStyle: {
+                        color: 'orange'
+                    },
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'insideTopRight',
+                            formatter: (params) => {
+                                //自定义逻辑，返回指定格式即可
+                                return params.value == 0 ? "" : ['{img|' + params.value+'%}'];
+                            },
+                            //formatter: '{c}%',
+                            color: 'red',
+                            fontSize: 16,
+                            rich: {
+                                img: {
+                                    //backgroundColor: {
+                                    //    image: '/xx/xx.png' //注意路径带不带/
+                                    //},
+                                    backgroundColor: 'white',
+                                    color: "red",
+                                    height: 18,
+                                    width: 38,
+                                    borderColor: 'black',
+                                    borderWidth: 1,
+                                    borderType: 'solid',
+                                    borderRadius:1,
+                                    align: 'center'
+                                }
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+
+        chart.setOption(option);
+        chart.on('click', function (param) {
+            
+            parent.AddTab('6e6b1673-5dcb-441f-a649-3c57442719a6', 'Detail Distribution', '/RMA/JumpIndex');
+
+
+        });
+        return chart;
+    }
+
+</script>
+

@@ -1,0 +1,257 @@
+﻿@{
+    Layout = null;
+}
+@using SDPSubSystem.Web.Common;
+@model SDPSubSystem.Model.SMTBackEndAutoKitting.udtEXBuildPlan
+
+<div class="modal-dialog" style="width:60%;height:400px;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" style="color:White" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-plus"></span>@Html.GetLang("L000003")</h4>
+        </div>
+        <div class="modal-body">
+            <div id="message-box" style="display:none" class="alert alert-danger fade in" role="alert"><ul></ul></div>
+            <form class="form-horizontal" id="addressedit">
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">@Html.GetLang("TH00015"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input id="_date" name="Date" class="form-control" data-date-format="yyyy-mm-dd" style="width:380px" disabled />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">@Html.GetLang("TH00016"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="ShiftCode" name="ShiftCode" value="@Model.ShiftCode" disabled />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">@Html.GetLang("TH00008"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="LineEdit" name="LineEdit" value="@Model.Line" disabled />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">@Html.GetLang("TH00014"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="Project" name="Project" value="@Model.Project" disabled />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">@Html.GetLang("TH00009"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        @*<select class="form-control selectpicker" style="width:380px;" data-width="380px" data-live-search="true" id="Model" name="Model" title="Choose one of the following..." data-size="10"></select>*@
+                        <input style="width:380px;" class="form-control" type="text" id="Model" name="Model" value="@Model.Model" disabled />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">@Html.GetLang("TH00017"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="PlanQty" name="PlanQty" value="@Model.PlanQty" />
+                    </div>
+                </div>
+                <div class="form-inline" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">@Html.GetLang("TH00018"):</label>
+                    <div class="col-sm-8 x" style="padding-top:10px">
+                        <input style="width:180px;" class="form-control" type="text" id="SortID" name="SortID" value="@Model.SortID" />
+                        <label class="checkbox-inline">
+                            <input id="synchroProduce" type="checkbox" value="option">@Html.GetLang("L000022")
+                        </label>
+                    </div>
+                </div>
+                <div id="exitPlans" class="container" style="margin: 0 0;padding:0 0;display:none ">
+                    <label class="control-label">@Html.GetLang("L000023"):</label>
+                    <table id="tab_table_edit" class="table table-striped table-hover table-bordered tableWidth ">
+                        <thead>
+                            <tr>
+                                <th style="width:12px"><input type="checkbox" id="selectAlls" /></th>
+                                <th>@Html.GetLang("TH00015")</th>
+                                <th>@Html.GetLang("TH00016")</th>
+                                <th>@Html.GetLang("TH00008")</th>
+                                <th>@Html.GetLang("TH00014")</th>
+                                <th>@Html.GetLang("TH00009")</th>
+                                <th>@Html.GetLang("TH00017")</th>
+                                <th>@Html.GetLang("TH00018")</th>
+                                <th>@Html.GetLang("TH00019")</th>
+                                <th>@Html.GetLang("TH00020")</th>
+                                <th>@Html.GetLang("TH00005")</th>
+                                <th>@Html.GetLang("TH00006")</th>
+                                <th>@Html.GetLang("TH00007")</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">@Html.GetLang("TH00019"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="IssueQty" name="IssueQty" value="@Model.IssueQty" disabled />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">@Html.GetLang("TH00020"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="FinishedQty" name="FinishedQty" value="@Model.FinishedQty" disabled />
+                    </div>
+                </div>
+                <div id="UpdateFinishedQty_div" class="form-group" style="margin: 0 0;padding:0 0;display:none" >
+                    <label class="col-sm-4 control-label">@Html.GetLang("TH00021"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="UpdateFinishedQty" name="UpdateFinishedQty" value="" />
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button id="btnSave" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-saved"></span>@Html.GetLang("BT00007")</button>
+            <button id="btnClosePO" type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove-sign"></span>@Html.GetLang("BT00008")</button>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+<input id="_id" type="hidden" value="@Model.ID" />
+<input id="_model" type="hidden" value="@Model.PlanDate" />
+<input id="_needManualOutput" type="hidden" value="@Model.needManualOutput" />
+
+<script type="text/javascript">
+
+    $("#_date").datetimepicker({
+        minView: "month", //选择日期后，不会再跳转去选择时分秒
+        format: 'yyyy-mm-dd',
+        todayBtn: 1,
+        autoclose: 1,
+    });
+
+    $(function () {
+
+        var manual = $('#_needManualOutput').val();
+        debugger;
+        if (manual === 'True') {
+            $('#UpdateFinishedQty_div').css('display', 'block');
+        }
+
+        $('#selectAlls').click(function () {
+            if ($(this).is(":checked")) {
+                $('#tab_table_edit tbody input[name="selectid"]').prop("checked", true);
+            }
+            else {
+                $('#tab_table_edit tbody input[name="selectid"]').prop("checked", false);
+            }
+        })
+
+        @*$("#btnselect").click(function () {
+            $("#_AddDialog").load('@Url.Action("selectpo")', { Flag: 'Add' }, function () {
+                $("#_AddDialog").modal("show");
+            });
+        })*@
+        //$('#DateTimeFrame').datetimepicker({
+        //    format: 'yyyy-mm',
+        //    weekStart: 1,
+        //    autoclose: true,
+        //    startView: 3,
+        //    minView: 3,
+        //    forceParse: false,
+        //    language: 'cn'
+        //});
+
+        $('#_date').val($('#_model').val());
+
+        //$('#tab_table_edit tbody tr').off('click');
+        $('#tab_table_edit tbody').on('click', 'tr', function () {
+            //var approveID = table.row(this).data().ID;
+            var itemsLength = $("#tab_table_edit tbody input[name='selectid']:checked").length;
+            //console.log(itemsLength);
+            //debugger;
+            if (itemsLength > 1) {
+                alert("@Html.GetLang("E000015")");
+            }else if (itemsLength == 1) {
+                var id = $("#tab_table_edit tbody input[name='selectid']:checked").val();
+                $.post('@Url.Action("GetBuildPlanAddSortID")', { ID: id }, function (result) {
+                    $('#SortID').val(result.SortID);
+                })
+                document.getElementById('exitPlans').style.display = "none";
+                $('#SortID').attr("disabled", true);
+            } else {
+                alert("@Html.GetLang("E000017")");
+            }
+        });
+
+        $("#synchroProduce").click(function () {
+            if ($(this).is(":checked") == true) {
+                //var Code1_PlanDate = $("#date").val();
+                //var Code2_ShiftCode = $('#Shift option:selected').text();
+                //var Code3_LineID = $("#Line").val();
+                //debugger;
+                //选中触发事件
+                document.getElementById('exitPlans').style.display = "";
+
+                var _cols = ["ID", "Date", "Shift", "Line", "Project", "Model", "PlanQty", "SortID", "IssueQty", "FinishedQty", "Status", "CreationTime", "LastUpdate"];
+                var _editcol = "";
+                var _tableName = "tab_table_edit";
+                if ($('#tab_table_edit tbody').html() != "") {
+                    $('#tab_table_edit').dataTable().fnDestroy();
+                }
+                postLoadTableByBuildPlanAdd('@Url.Action("BuildPlanLoad")', _tableName, _cols, _editcol, '@Url.Action("BuildPlanEdit")');
+            } else {
+                //取消选中触发事件
+                //debugger;
+                $('#SortID').attr('disabled', false);
+            }
+        });
+
+        $("#btnSave").click(function () {
+            var strpost = {
+                ID: $('#_id').val(),
+                PlanQty: $('#PlanQty').val(),
+                SortID: $("#SortID").val(),
+                UpdateFinishedQty: $("#UpdateFinishedQty").val()
+            }
+            $.post('@Url.Action("BuildPlanSaveEdit")',
+                { poststr: JSON.stringify(strpost) },
+                function (result) {
+                    $("#_Dialog").modal("hide");
+                    $("#tab_table").DataTable().ajax.reload();
+                    $("#_id").val(result.Data);
+                })
+
+            //console.log(poststr);
+        })
+
+        @*$('#PJID').change(function () {
+            var pjid = $('#PJID').val();
+            $.post('@Url.Action("GetBuildPlanAddModelDropDownList")', { PJID: pjid }, function (res) {
+                //$('.selectpicker').selectpicker('val', '');
+                //$('.selectpicker').selectpicker('refresh');
+
+                var partid = $("#Model").val();
+                var phtml = "";
+                //console.log(res);
+                for (var i = 0; i < res.Model.length; i++) {
+                    if (partid == res.Model[i].ID) {
+                        phtml += "<option  value='" + res.Model[i].ID + "' selected='selected' data-name='" + res.Model[i].Name + "'>" + res.Model[i].Name + "</option>";
+                    } else {
+                        phtml += "<option  value='" + res.Model[i].ID + "' data-name='" + res.Model[i].Name + "'>" + res.Model[i].Name + "</option>";
+                    }
+                }
+                $("#Model").html(phtml);
+                $('.selectpicker').selectpicker('refresh');//加载select框选择器
+
+
+            })
+
+        })*@
+    });
+
+    @*function getKeyAddPage(event) {
+        if (event.keyCode == 13) {
+            //$('#btnSearch').click();
+            $.post('@Url.Action("BuildPlanSaveAdd")',
+                { poststr: JSON.stringify($('#addressadd').serializeJSON()) },
+                function (result) {
+                    $("#_Dialog").modal("hide");
+                    $("#tab_table").DataTable().ajax.reload();
+                    //console.log(result);
+                    $("#_id").val(result.Data);
+                })
+        }
+    }*@
+</script>

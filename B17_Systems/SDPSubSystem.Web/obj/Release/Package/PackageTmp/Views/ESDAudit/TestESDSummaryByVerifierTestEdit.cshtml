@@ -1,0 +1,116 @@
+﻿@{
+    Layout = null;
+}
+@using SDPSubSystem.Web.Common;
+@model SDPSubSystem.Model.ESDAudit.udtEsdTestRecord
+
+<div class="modal-dialog" style="width:55%;height:450px;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" style="color:White" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-plus"></span>@Html.GetLang("L000003")</h4>
+        </div>
+        <div class="modal-body">
+            <div id="message-box" style="display:none" class="alert alert-danger fade in" role="alert"><ul></ul></div>
+            <form class="form-horizontal" id="addressadd">
+                <div class="form-group" style="margin: 0 0;padding:0 0">
+                    <label class="col-sm-4 control-label" for="VerifyResult">@Html.GetLang("TH00062"):</label>
+                    <div class="col-sm-8" style="padding-top:10px;">
+                        <input style="width:100%;" class="form-control" type="text" id="VerifyResult" name="VerifyResult" value="@Model.VerifyResult" placeholder="" />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0">
+                    <label class="col-sm-4 control-label" for="Status">@Html.GetLang("TH00005"):</label>
+                    <div class="col-sm-8" style="padding-top:10px;">
+                        <input style="width:100%;" class="form-control" type="text" id="Status" name="Status" value="@Model.Status" placeholder="" />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0">
+                    <label class="col-sm-4 control-label" for="Remark">@Html.GetLang("TH00063"):</label>
+                    <div class="col-sm-8" style="padding-top:10px;">
+                        <input style="width:100%;" class="form-control" type="text" id="Remark" name="Remark" value="@Model.Remark" placeholder="" />
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button id="btnAppend" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-saved"></span>@Html.GetLang("BT00007")</button>
+            <button id="btnClosePO" type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove-sign"></span>@Html.GetLang("BT00008")</button>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+<input id="_id" type="hidden" value="@ViewData["TestID"]" />
+
+<script type="text/javascript">
+    $(function () {
+
+        //$(".form_datetime").datetimepicker({
+        //    format: "yyyy-mm-dd hh:ii",
+        //    autoclose: true,
+        //    todayBtn: true,
+        //    language: 'zh-CN',
+        //    pickerPosition: "bottom-left"
+        //});
+
+        $("#CompletionDate").datetimepicker({
+            minView: "hour", //日期时间选择器所能够提供的最精确的时间选择视图
+            maxView: "month",//日期时间选择器最高能展示的选择范围视图
+            format: 'yyyy-mm-dd hh:ii:ss',
+            todayBtn: true,
+            autoclose: true,
+            //startDate: startDate,
+            todayHighlight: true,
+            keyboardNavigation: true,
+            forceParse: true,
+            initialDate: new Date(),
+            weekStart: 1,
+            //daysOfWeekDisabled:'0'
+        }).on('changeDate', function (ev) {
+
+        });
+
+        $("#btnAppend").click(function () {
+            var strpost = {
+                ID: $('#_id').val(),
+                VerifyResult: $('#VerifyResult').val(),
+                Status: $('#Status').val(),
+                Remark: $('#Remark').val(),
+            }
+            $.post('@Url.Action("TestSaveAddSummaryByVerifier")',
+                { poststr: JSON.stringify(strpost) },
+            function (result) {
+                //debugger;
+                if (result.IsSuccess) {
+                    $("#tab_table").DataTable().ajax.reload();
+
+                    $.globalMessenger().post({
+                        message: "操作成功",//提示信息
+                        type: 'info',//消息类型。error、info、success
+                        hideAfter: 2,//多长时间消失
+                        showCloseButton: true,//是否显示关闭按钮
+                        hideOnNavigate: true //是否隐藏导航
+                    });
+                    $("#_Dialog").modal("hide");
+                    $("#tab_table").DataTable().ajax.reload();
+                }
+                else {
+                    if (result.Msg) {
+                        var m_ul = "<ul>";
+                        var flag = false;
+                        $.each(result.Msg, function (idx, msg) {
+                            m_ul += "<li>" + msg + "</li>";
+                            flag = true;
+                        });
+                        m_ul += "</ul>";
+                        if (flag) { bootbox.alert({ message: m_ul, title: "Error" }); }
+                    }
+                }
+                //console.log(result);
+                $("#_id").val(result.Data);
+            });
+        })
+
+    });
+
+</script>

@@ -1,0 +1,194 @@
+﻿@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_LayoutJquery.cshtml";
+}
+@using SDPSubSystem.Web.Common;
+
+<style>
+    .eco table tbody tr td {
+        width: 40px !important;
+        word-wrap: break-word;
+    }
+
+    .eco table thead th {
+        vertical-align: central !important;
+        color: black !important;
+    }
+
+    .ItemsTableCss thead th {
+        font-weight: bold !important;
+        background-color:darksalmon;
+        color: black;
+    }
+    td.details-control {
+        background: url('../../Content/resources/details_open.png') no-repeat center center;
+        cursor: pointer;
+    }
+
+    tr.shown td.details-control {
+        background: url('../../Content/resources/details_close.png') no-repeat center center;
+    }
+
+</style>
+<div class="container-fluid">
+    <div class="row" style="padding-top:5px;padding-bottom:5px">
+        <div class="col-sm-6">
+            
+
+        </div>
+        <div class="input-group col-sm-6">
+            <input type="text" class="form-control" id="code" placeholder="@Html.GetLang("E000022")" style="width:200px;float:right" onkeypress="getKey(event);">
+            <span class="input-group-btn">
+                <button id="btnSearch" class="btn btn-primary "><span class="glyphicon glyphicon-search"></span>@Html.GetLang("BT00006")</button>
+            </span>
+        </div>
+    </div>
+    <div class="eco">
+        <table id="tab_table" class="table table-hover table-striped table-bordered" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    @*<th><input type="checkbox" id="selectAll" disabled /></th>*@
+                    <th>Items</th>
+                    <th>P/N</th>
+                    <th>Part Description</th>
+                    <th>Baan Usage</th>
+                    <th>Last Update</th>
+                    <th>Last UserID</th>
+                    <th>Device PartNumber</th>
+                    <th style="background-color: mediumseagreen">Station Type Name</th>
+                    <th style="background-color:chocolate">Current Usage</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    
+
+</div>
+<div class="modal fade bs-example-modal-lg" id="_Dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+@*<input id="code"  type="hidden" value=""/>*@
+
+<script type="text/javascript">
+    var counttable = 0;
+    var _cols = ["ID", "GluePartNumber", "PartDescription", "BaanUsage", "LastUpdate", "LastUserID", "DevicePartNumber", "StationTypeName", "CurrentUsage"];
+    var _editcol = "GluePartNumber";
+    var _tableName = "tab_table";
+    $(function () {
+
+        $.ajaxSetup({ cache: false, async: true })
+        $('#selectAll').click(function () {
+            if ($(this).is(":checked")) {
+                $('#tab_table tbody input[name="selectid"]').prop("checked", true);
+            }
+            else {
+                $('#tab_table tbody input[name="selectid"]').prop("checked", false);
+            }
+        });
+
+        
+        postLoadGlueTracker('@Url.Action("MainLoad")', _tableName, _cols, _editcol, '@Url.Action("MainEdit")');
+
+        $("#btnSearch").click(function () {
+            $("#" + _tableName).DataTable().ajax.reload();
+        });
+
+
+    });
+
+
+    function postLoadGlueTracker(url, tableName, cols, editcol, editUrl) {
+        var height = parseInt($("body").css("height").replace("px", "")) - 140;
+        var defs = [];
+        for (var i = 0; i < cols.length; i++) {
+            //debugger
+            if (cols[i] == editcol) {
+                defs.push({
+                    "className": "text-left", "targets": i, "orderable": false, "data": cols[i], "render": function (data, type, full, meta) {
+                        var str = "javascript" + ":postEdit(" + full.ID + ",'" + encodeURIComponent(editUrl) + "')";
+                        return '<a href="#" onclick="' + str + '">' + data + '</a>';
+                    }
+                });
+            }
+            else if (cols[i] == "ID") {
+                defs.push({
+                    "className": "text-left", "targets": i, "orderable": false, "data": cols[i], "render": function (data, type, full, meta) {
+                        //var flag;
+                        //flag = ((full.StatusID == 0) ? '' : 'disabled');
+                        //return '<input type="checkbox" name="selectid" value="' + data + '" ' + flag + '/>';
+                        return data;
+                    }
+                });
+            }
+            else {
+                defs.push({
+                    "className": "text-left", "targets": i, "orderable": false, "data": cols[i], "render": function (data, type, full, meta) {
+
+                        return data||'';
+                    }
+                });
+            }
+
+
+        }
+        var domCustomized = "<'row'<'col-sm-12'tr>>" +
+            "<'row'<'col-sm-2'l><'col-sm-3'i><'col-sm-7'p>>";
+        var t = $("#" + tableName).dataTable({
+            "dom": domCustomized,
+            //autoWidth: false,
+            deferRender: true,
+            filter: false,
+            processing: true,
+            serverSide: true,
+            order: [],
+            scrollY: height,
+            scrollX: true,
+            scrollCollapse: true,
+            scroller: true,
+            searching: true,
+            info:true,
+            paging: true,
+            paginationType: "full_numbers",
+            lengthMenu: [[10,20, 50, 100, 99999999], [10,20, 50, 100, "All"]],
+            pageLength: 10,
+            lengthChange: true, //fixedColumns: { leftColumns: 2 },
+            serverMethod: "POST",
+            ajax: {
+                url: url
+            },
+            language: {
+                url: '/Content/Datatables/Lang/Lang_' + $('body').attr("LangID") + ".txt"
+            },
+            //columns: [
+            //    {
+            //        "data": "ECDescription",
+            //        "width": "15%",
+            //    }
+            //],
+            columnDefs: defs,
+            fnServerParams: function (data) {
+                data.code = $("#code").val();
+            },
+
+        });
+    }
+
+
+    // 使后打开的模态窗优先级高
+
+    $("#_Dialog").on("show.bs.modal", ".modal", function (event) {
+
+        var zIndex = 1040 + 10 * $(".modal:visible").length;
+
+        $(this).css("z-index", zIndex);
+
+    });
+
+    function getKey(event) {
+        if (event.keyCode == 13) {
+            //$('#btnSearch').click();
+            $("#" + _tableName).DataTable().ajax.reload();
+        }
+    }
+
+</script>

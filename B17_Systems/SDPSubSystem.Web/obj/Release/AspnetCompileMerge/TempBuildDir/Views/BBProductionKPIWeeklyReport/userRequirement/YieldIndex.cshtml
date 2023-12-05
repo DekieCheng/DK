@@ -1,0 +1,159 @@
+﻿@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using SDPSubSystem.Web.Common;
+
+<div class="container-fluid">
+    <div class="panel panel-primary">
+        <div class="panel-body">
+            <div id="Chart" style="height: 800px; "></div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+    $(function () {
+        $.post('@Url.Action("YieldLoad")', {}, function (result) {
+            //console.log(result);
+            loadChart(result, "Chart");
+        })
+    });
+
+    function loadChart(data, divname) {
+        var chart = echarts.init(document.getElementById(divname));
+        linqobj = jslinq(data.Data);
+        //debugger
+        var xAxisData = linqobj.select(function (el) {
+            return el.Item;
+        }).toList();
+        var serialData = linqobj.select(function (el) {
+            return el.Second.toFixed(2);
+        }).toList();
+        var serialData2 = linqobj.select(function (el) {
+            return el.Actual.toFixed(2);
+        }).toList();
+
+        var title = data.Title[0].Column1;
+        debugger
+
+        var option = {
+            color: ['#f1b52c', '#009add'],
+            tooltip: {
+                show: true,
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            title: {
+                text: title,
+                subtext: '',
+                left: 'center',
+                textStyle: {
+                    color: 'black'
+                }
+            },
+            legend: {
+                show: true,
+                top: "bottom",
+                padding: 5
+            },
+            xAxis: {
+                type: 'category',
+                name: '',
+                splitLine: { show: false },
+                data: xAxisData,
+                axisLabel: {
+                    interval: 0,
+                    rotate: "0",
+                    color: 'black'
+                },
+                nameTextStyle: {
+                    color: "blue",
+                    fontSize: 12
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                top: '6%',
+                containLabel: true
+            },
+            yAxis: [
+                {
+                    type: 'value',
+                    show: true,
+                    name: '',
+                    position: 'left',
+                    nameLocation: 'end',
+                    nameTextStyle: {
+                        color: "blue",
+                        fontSize: 12
+                    },
+                    axisLabel: {
+                        color: 'black',
+                        formatter: function (value, index) {
+                            return value.toFixed(2)+'%';
+                        }
+                    },
+                    axisTick: {
+                        show: false
+                    },
+                    axisLine: {
+                        show:false
+                    },
+                    splitNumber: 10,
+                    splitLine: {
+                        show: false
+                    }
+                }
+            ],
+            series: [
+                {
+                    type: 'bar',
+                    yAxisIndex: 0,
+                    name: 'Second Yield',
+                    data: serialData,
+                    barGap: '40%',//不同系列的柱间距离，为百分比（如 '30%'，表示柱子宽度的 30%）
+                    barMaxWidth: '30%',
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'top',
+                            formatter: '{c}%',
+                            color: 'black'
+                        }
+                    }
+                },
+                {
+                    type: 'bar',
+                    yAxisIndex: 0,
+                    name: 'Actual  ETE yield %',
+                    data: serialData2,
+                    barGap: '40%',
+                    barMaxWidth: '30%',
+                    emphasis: {
+                        focus: 'series'
+                    },
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'top',
+                            formatter: '{c}%',
+                            color: 'black'
+                        }
+                    }
+                }
+            ]
+        }
+
+        chart.setOption(option);
+
+
+    }
+</script>

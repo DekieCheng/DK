@@ -1,0 +1,681 @@
+﻿@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .sys-box {
+        width: 250px;
+        height: 180px;
+        text-align: center;
+        word-wrap: break-word;
+        background-color: #434343;
+        color: black;
+        float: left;
+        padding-top: 0px;
+        /*box-shadow: 1px 1px 1px #888888;*/
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    td {
+        color: black;
+        font-family: Microsoft YaHei;
+    }
+
+    .title {
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        background-color: #00b0f0;
+        font-family: Microsoft YaHei;
+        text-align: center;
+    }
+
+    .text_format {
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .text_format2 {
+        text-align: center;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+</style>
+
+<div>
+    <div class="container-fluid">
+        <div class="row" style="padding-top:5px;padding-bottom:5px;padding-left:5px;">
+            <div class="col-sm-12" style="margin:0 0;padding:0 0;">
+                @*<label style="margin:0 0;padding:0 0;font-size:20px;">B17:</label>*@
+                <label class="control-label">Building:</label>
+                <select class="form-control selectpicker" style="width:200px;" data-width="70px" data-live-search="false" id="Building" name="Building" data-size="10"></select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="panel panel-primary">
+
+                    <div class="panel-body">
+                        <div id="line" style="height:270px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="padding-top:5px;padding-bottom:5px;padding-left:5px;">
+        <table id="tab_table" class="table table-striped table-hover table-bordered tableWidth">
+            <thead></thead>
+            <tbody></tbody>
+        </table>
+
+    </div>
+
+</div>
+
+<script type="text/javascript">
+
+    //var _cols = ["Component", "Vacuum", "ident", "total", "attritionrate"]
+    $(function () {
+
+        $.post('@Url.Action("GetDashboardIndexDropDownList")', {}, function (res) {
+            
+            var outtypehtml = "";
+            for (var i = 0; i < res.Building.length; i++) {
+                if (res.Building[i].ID == 0) {
+                    outtypehtml += "<option  value='" + res.Building[i].ID + "' selected='selected' data-name='" + res.Building[i].Name + "'>" + res.Building[i].Name + "</option>";
+                } else {
+                    outtypehtml += "<option  value='" + res.Building[i].ID + "' data-name='" + res.Building[i].Name + "'>" + res.Building[i].Name + "</option>";
+                }
+            }
+            $("#Building").html(outtypehtml);
+            
+
+            $('.selectpicker').selectpicker('refresh');//加载select框选择器
+                
+        })
+
+        setTimeout("update()", 5000);
+        window.clearTimeout;
+
+        $('#Building').on('change', function () {
+            update();
+        })
+        
+    })
+
+    function update() {
+        var buildingName = $('#Building option:selected').text();
+        $.post('@Url.Action("GetDesktopData")', { Building: buildingName }, function (result) {
+            gentable(result, "tab_table");
+        })
+
+        $.post('@Url.Action("GetDesktopLineData")', { Building: buildingName }, function (result) {
+            loadChart(result.Data.Line,"line");
+        })
+    }
+
+    //var height = parseInt($("tab_table").css("height"))-30;
+
+    function gentable(data, divtable) {
+
+        $('#' + divtable + ' thead').empty();
+        $.each(data.Data.AD, function (idx, item) {
+            var tr;
+            tr = $('<tr></tr>');
+
+            $.each(item, function (key, val) {
+                tr.append('<th class="title">' + key + '</th>');
+            });
+
+            $('#' + divtable + ' thead').append(tr);
+            return false;
+        })
+
+        $('#' + divtable + ' tbody').empty();
+        var count = 0;
+        $.each(data.Data.AD, function (idx, item) {
+            var tr;
+            tr = $('<tr ></tr>');
+            $.each(item, function (key, val) {
+                if (!isNaN(val)) {
+                    var fail_style = "";
+                    if (val < 0.96) {
+                        fail_style = "background-color: #FF3030;";
+                    }
+
+                    tr.append('<td class="text_format" style="' + fail_style +'" onclick="getFailedData($(this))">' + (val * 100).toFixed(2) + '%' + '</td>');
+                } else {
+                    if (val == 'AD') {
+                        if (count == 0) {
+                            tr.append('<td class="text_format2" rowspan="' + data.Data.AD.length+'">' + val + '</td>');
+                        }
+
+
+                    } else {
+
+                        tr.append('<td class="text_format2">' + val + '</td>');
+                    }
+
+                }
+            });
+            count++;
+            $('#' + divtable + ' tbody').append(tr);
+        });
+
+        //debugger;
+
+        //console.log(count);
+        ////$('#ad0').attr('rowspan', '4');
+        ////$('#ad1').attr('display', 'none');
+        ////$('#ad2').attr('display', 'none');
+        ////$('#ad3').attr('display', 'none');
+        count = 0;
+
+        //table_rowSpan(divtable,1,0,4);
+        //$('#' + divtable + ' tbody tr:first td:first').attr("rowspan", "4");
+        //$('#' + divtable + ' tbody tr:first td').eq(1).attr()
+        $.each(data.Data.NONAD, function (idx, item) {
+            var tr;
+            tr = $('<tr ></tr>');
+            $.each(item, function (key, val) {
+                if (!isNaN(val)) {
+                    var fail_style = "";
+                    if (val < 0.96) {
+                        fail_style = "background-color: #FF3030;";
+                    }
+                    tr.append('<td class="text_format" style="' + fail_style + '" onclick="getFailedData($(this))">' + (val * 100).toFixed(2) + '%' + '</td>');
+                } else {
+                    if (val == 'nonAD') {
+                        if (count == 0) {
+                            tr.append('<td class="text_format2" rowspan="4">' + val + '</td>');
+                        }
+
+
+                    } else {
+                        tr.append('<td class="text_format2">' + val + '</td>');
+                    }
+
+                }
+            });
+            count++;
+            $('#' + divtable + ' tbody').append(tr);
+        });
+        //table_rowSpan(divtable, 4, 0, 4);
+
+    }
+
+
+     function getFailedData(_this) {
+         //获取参数的值
+         var source ='';
+         var i=_this.parent().parent().find("tr").index(_this.parent()[0]);
+         if (i < 4) {
+             source = 'AD';
+         } else {
+             source = 'nonAD';
+         }
+         var category = $("table:eq(0) tbody tr:eq(" + i + ") td:eq(0)").text();
+
+         var colnumber = _this.index();
+         var date = '';
+         if (category == 'AD' || category == 'nonAD') {
+             category = $("table:eq(0) tbody tr:eq(" + i + ") td:eq(1)").text();
+             date = $("table:eq(0) thead th:eq(" + colnumber + ")").text();
+         } else {
+             date = $("table:eq(0) thead th:eq(" + (++colnumber) + ")").text();
+         }
+
+         var building = $('#Building option:selected').text();
+
+         //传值
+         window.open('/Desktop/GetDesktopFailedData?source=' + source + '&category=' + category + '&date=' + date + '&building=' + building, 'top');
+     }
+
+    function loadChart(data, divname) {
+        var chart = echarts.init(document.getElementById(divname));
+
+        var ad_flexera = JSLINQ(JSLINQ(data).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD"; }).items).OrderBy(function (item) { return item.Ldate; }).items;
+        var ad_s1 = JSLINQ(JSLINQ(data).Where(function (item) { return item.Category == "S1" && item.Source == "AD"; }).items).OrderBy(function (item) { return item.Ldate; }).items;
+        var ad_solidcore = JSLINQ(JSLINQ(data).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD"; }).items).OrderBy(function (item) { return item.Ldate; }).items;
+        var ad_wsus = JSLINQ(JSLINQ(data).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD"; }).items).OrderBy(function (item) { return item.Ldate; }).items;
+        var nonad_flexera = JSLINQ(JSLINQ(data).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD"; }).items).OrderBy(function (item) { return item.Ldate; }).items;
+        var nonad_s1 = JSLINQ(JSLINQ(data).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD"; }).items).OrderBy(function (item) { return item.Ldate; }).items;
+        var nonad_solidcore = JSLINQ(JSLINQ(data).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD"; }).items).OrderBy(function (item) { return item.Ldate; }).items;
+        var nonad_wsus = JSLINQ(JSLINQ(data).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD"; }).items).OrderBy(function (item) { return item.Ldate; }).items;
+
+
+        var xAxisData = JSLINQ(ad_flexera).Select(function (el) {
+            return el.Ldate;
+        }).items;
+
+        var ad_flexera_serialData = JSLINQ(ad_flexera).Select(function (el) {
+            return (el.rate * 100).toFixed(2);
+        }).items;
+        var ad_s1_serialData = JSLINQ(ad_s1).Select(function (el) {
+            return (el.rate * 100).toFixed(2);
+        }).items;
+        var ad_solidcore_serialData = JSLINQ(ad_solidcore).Select(function (el) {
+            return (el.rate * 100).toFixed(2);
+        }).items;
+        var ad_wsus_serialData = JSLINQ(ad_wsus).Select(function (el) {
+            return (el.rate * 100).toFixed(2);
+        }).items;
+        var nonad_flexera_serialData = JSLINQ(nonad_flexera).Select(function (el) {
+            return (el.rate * 100).toFixed(2);
+        }).items;
+        var nonad_s1_serialData = JSLINQ(nonad_s1).Select(function (el) {
+            return (el.rate * 100).toFixed(2);
+        }).items;
+        var nonad_solidcore_serialData = JSLINQ(nonad_solidcore).Select(function (el) {
+            return (el.rate * 100).toFixed(2);
+        }).items;
+        var nonad_wsus_serialData = JSLINQ(nonad_wsus).Select(function (el) {
+            return (el.rate * 100).toFixed(2);
+        }).items;
+
+
+        var linedata = JSLINQ(ad_flexera).Select(function (el) {
+            return (el.Target * 100).toFixed(2);
+        }).items;
+
+        var linedata2 = JSLINQ(ad_flexera).Select(function (el) {
+            return (el.Target2 * 100).toFixed(2);
+        }).items;
+
+        var option = {
+            tooltip: {//提示文字的格式
+                show: true,
+                trigger: 'axis',
+                axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                    type: 'line'        // 默认为直线，可选为：'line' | 'shadow'
+                },
+                formatter: '{b0}<br/>{a0}: {c0}%<br />{a1}: {c1}%<br />{a2}: {c2}%<br />{a3}: {c3}%<br />{a4}: {c4}%<br />{a5}: {c5}%<br />{a6}: {c6}%<br />{a7}: {c7}%<br />{a8}: {c8}%<br />{a9}: {c9}%'
+                //展示百分比  五条折线
+            },
+            legend: {
+                show: true,
+                top: "top",
+                selected: {
+                    // 选中'系列1'
+                    'AD_Flexera': true,
+                    // 不选中'系列2'
+                    'AD_S1': false,
+                    'AD_Solidcore': false,
+                    'AD_WSUS': false,
+                    'nonAD_Flexera': false,
+                    'nonAD_S1': false,
+                    'nonAD_Solidcore': false,
+                    'nonAD_WSUS': false,
+                    '96%': true,
+                    '99%': true,
+                },
+                data: [
+                    {
+                        name: 'AD_Flexera',
+                        //textStyle: {
+                        //    color: '#FFEC8B'
+                        //}
+                    },
+                    {
+                        name: 'AD_S1',
+                        //textStyle: {
+                        //    color: '#87CEFA'
+                        //}
+                    },
+                    {
+                        name: 'AD_Solidcore',
+                        //textStyle: {
+                        //    color: '#778899'
+                        //}
+                    },
+                    {
+                        name: 'AD_WSUS',
+                        //textStyle: {
+                        //    color: '#00FFFF'
+                        //}
+                    },
+                    {
+                        name: 'nonAD_Flexera',
+                        //textStyle: {
+                        //    color: '#BDB76B'
+                        //}
+                    },
+                    {
+                        name: 'nonAD_S1',
+                        //textStyle: {
+                        //    color: '#8FBC8F'
+                        //}
+                    },
+                    {
+                        name: 'nonAD_Solidcore',
+                        //textStyle: {
+                        //    color: '#EE6A50'
+                        //}
+                    },
+                    {
+                        name: 'nonAD_WSUS',
+                        //textStyle: {
+                        //    color: '#8B668B'
+                        //}
+                    },
+                    {
+                        name: '96%',
+                        //textStyle: {
+                        //    color: '#EE2C2C'
+                        //}
+                    },
+                    {
+                        name: '99%',
+                        //textStyle: {
+                        //    color: '#FFD700'
+                        //}
+                    }
+                ]
+            },
+            xAxis: {
+                type: 'category',
+                name: 'Time',
+                splitLine: { show: false },
+                data: xAxisData,
+                //boundaryGap:false,
+                axisLabel: {//坐标轴刻度标签的相关设置。
+                    interval: 0,
+                    rotate: "25"
+                },
+                nameTextStyle: {
+                    color: "blue",
+                    fontSize: 12,
+                    //padding: 10
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            //toolbox: {
+            //    feature: {
+            //        saveAsImage: {}
+            //    }
+            //},
+            yAxis: {
+                    type:'value',
+                    show: true,
+                    name: 'Coverage',
+                    position: 'left',
+                    nameLocation: 'end',
+                    nameTextStyle: {
+                        color: "blue",
+                        fontSize: 12,
+                        //padding: 10
+                    },
+                    axisLabel: {
+                        formatter: '{value}%'
+                    },
+                    splitNumber: 5,
+                    min:95,
+                    max:100
+             },
+            series: [
+                {
+                    type: 'line',
+                    yAxisIndex: 0,
+                    name: 'AD_Flexera',
+                    smooth: false,
+                    symbol: 'triangle',
+                    symbolSize: 15,
+                    lineStyle: {
+                        color: '#5470C6',
+                        width: 4,
+                        type: 'dashed'
+                    },
+                    data: ad_flexera_serialData,
+                    //itemStyle: {
+                    //    color: '#FFEC8B'
+                    //},
+                    label: {
+                        normal: {
+                            show: true,
+                            //position: 'top',
+                            formatter: function (params) {
+                                return params.data + '%';
+                            },
+                            textStyle: { //数值样式
+                                fontFamily: 'Arial',
+                                //fontSize: 18
+                            }
+                        }
+                    }
+                },
+                {
+                    type: 'line',
+                    yAxisIndex: 0,
+                    name: 'AD_S1',
+                    smooth: false,
+                    symbol: 'pin',
+                    symbolSize: 15,
+                    lineStyle: {
+                        //color: '#5470C6',
+                        width: 4,
+                        type: 'dashed'
+                    },
+                    data: ad_s1_serialData,
+                    //itemStyle: {
+                    //    color: '#87CEFA'
+                    //},
+                    label: {
+                        normal: {
+                            show: true,
+                            //position: 'inside',
+                            formatter: function (params) {
+                                return params.data + '%';
+                            }
+                        }
+                    }
+                },
+                {
+                    type: 'line',
+                    yAxisIndex: 0,
+                    name: 'AD_Solidcore',
+                    symbol: 'arrow',
+                    symbolSize: 15,
+                    smooth: false,
+                    lineStyle: {
+                        //color: '#5470C6',
+                        width: 4,
+                        type: 'dashed'
+                    },
+                    data: ad_solidcore_serialData,
+                    //itemStyle: {
+                    //    color: '#778899'
+                    //},
+                    label: {
+                        normal: {
+                            show: true,
+                            //position: 'inside',
+                            formatter: function (params) {
+                                return params.data + '%';
+                            }
+                        }
+                    }
+                },
+                {
+                    type: 'line',
+                    yAxisIndex: 0,
+                    name: 'AD_WSUS',
+                    smooth: false,
+                    symbol: 'diamond',
+                    symbolSize: 15,
+                    lineStyle: {
+                        //color: '#5470C6',
+                        width: 4,
+                        type: 'dashed'
+                    },
+                    data: ad_wsus_serialData,
+                    //itemStyle: {
+                    //    color: '#00FFFF'
+                    //},
+                    label: {
+                        normal: {
+                            show: true,
+                            //position: 'inside',
+                            formatter: function (params) {
+                                return params.data + '%';
+                            }
+                        }
+                    }
+                },
+                {
+                    type: 'line',
+                    yAxisIndex: 0,
+                    name: 'nonAD_Flexera',
+                    smooth: false,
+                    symbol: 'triangle',
+                    symbolSize: 15,
+                    lineStyle: {
+                        //color: '#5470C6',
+                        width: 4,
+                        type: 'dashed'
+                    },
+                    data: nonad_flexera_serialData,
+                    //itemStyle: {
+                    //    color: '#BDB76B'
+                    //},
+                    label: {
+                        normal: {
+                            show: true,
+                            //position: 'inside',
+                            formatter: function (params) {
+                                return params.data + '%';
+                            }
+                        }
+                    }
+                },
+                {
+                    type: 'line',
+                    yAxisIndex: 0,
+                    name: 'nonAD_S1',
+                    symbol: 'pin',
+                    symbolSize: 15,
+                    smooth: false,
+                    lineStyle: {
+                        //color: '#5470C6',
+                        width: 4,
+                        type: 'dashed'
+                    },
+                    data: nonad_s1_serialData,
+                    //itemStyle: {
+                    //    color: '#8FBC8F'
+                    //},
+                    label: {
+                        normal: {
+                            show: true,
+                            //position: 'inside',
+                            formatter: function (params) {
+                                return params.data + '%';
+                            }
+                        }
+                    }
+                },
+                {
+                    type: 'line',
+                    yAxisIndex: 0,
+                    name: 'nonAD_Solidcore',
+                    symbol: 'arrow',
+                    symbolSize: 15,
+                    smooth: false,
+                    lineStyle: {
+                        //color: '#5470C6',
+                        width: 4,
+                        type: 'dashed'
+                    },
+                    data: nonad_solidcore_serialData,
+                    //itemStyle: {
+                    //    color: '#EE6A50'
+                    //},
+                    label: {
+                        normal: {
+                            show: true,
+                            //position: 'inside',
+                            formatter: function (params) {
+                                return params.data + '%';
+                            }
+                        }
+                    }
+                },
+                {
+                    type: 'line',
+                    yAxisIndex: 0,
+                    name: 'nonAD_WSUS',
+                    symbol: 'diamond',
+                    symbolSize: 15,
+                    smooth: false,
+                    lineStyle: {
+                        //color: '#5470C6',
+                        width: 4,
+                        type: 'dashed'
+                    },
+                    data: nonad_wsus_serialData,
+                    //itemStyle: {
+                    //    color: '#8B668B'
+                    //},
+                    label: {
+                        normal: {
+                            show: true,
+                            //position: 'inside',
+                            formatter: function (params) {
+                                return params.data + '%';
+                            }
+                        }
+                    }
+                },
+                {
+                    type: 'line',
+                    yAxisIndex: 0,
+                    name: '96%',
+                    data: linedata,
+                    symbol: 'none',
+                    itemStyle: {
+                        color: '#EE2C2C'
+                    },
+                    label: {
+                        normal: {
+                            show: false,
+                            //position: 'inside',
+                            formatter: function (params) {
+                                return params.data + '%';
+                            }
+                        }
+                    }
+                },
+                {
+                    type: 'line',
+                    yAxisIndex: 0,
+                    name: '99%',
+                    data: linedata2,
+                    symbol: 'none',
+                    itemStyle: {
+                        color: '#FFD700'
+                    },
+                    label: {
+                        normal: {
+                            show: false,
+                            //position: 'inside',
+                            formatter: function (params) {
+                                return params.data + '%';
+                            }
+                        }
+                    }
+                }
+           ]
+        }
+
+        chart.setOption(option);
+        return chart;
+    }
+
+</script>

@@ -1,0 +1,223 @@
+﻿using NPOI.HSSF.UserModel;
+using NPOI.SS.UserModel;
+using NPOI.XSSF.UserModel;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SDPSubSystem.Common.Opt
+{
+    /// <summary>
+    /// 与Excel相关的操作类
+    /// </summary>
+    public class ExcelOpt
+    {
+        /// <summary>
+        /// 把DataTable 转为内存形式的Excel
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns></returns>
+        public static MemoryStream TableToExcel(DataTable source)
+        {
+            MemoryStream ms = new MemoryStream();
+            HSSFWorkbook book = new HSSFWorkbook();
+            if (source == null) throw new ArgumentNullException("source");
+            ISheet sheet = book.CreateSheet("Sheet1");
+            IRow colRow = sheet.CreateRow(0);//创建标题行
+            for(int i = 0; i < source.Columns.Count; i++)
+            {
+                colRow.CreateCell(i).SetCellValue(source.Columns[i].ColumnName);
+            }
+            for(int i = 0; i < source.Rows.Count; i++)
+            {
+                IRow dataRow = sheet.CreateRow(i + 1);
+                for(int j = 0; j < source.Columns.Count; j++)
+                {
+                    dataRow.CreateCell(j).SetCellValue(Convert.IsDBNull(source.Rows[i][source.Columns[j]]) ? "" : source.Rows[i][source.Columns[j]].ToString());
+                }
+            }
+            book.Write(ms);
+            book.Close();
+            ms.Seek(0, SeekOrigin.Begin);
+            return ms;
+        }
+        /// <summary>
+        /// 根据columns创建模板excel
+        /// </summary>
+        /// <param name="columns"></param>
+        /// <returns></returns>
+        public static MemoryStream CreateTemplate(List<string> columns)
+        {
+            MemoryStream ms = new MemoryStream();
+            HSSFWorkbook book = new HSSFWorkbook();
+            if (columns == null) throw new ArgumentNullException("columns");
+            ISheet sheet = book.CreateSheet("Sheet1");
+            IRow colRow = sheet.CreateRow(0);//创建标题行
+            for (int i = 0; i < columns.Count; i++)
+            {
+                colRow.CreateCell(i).SetCellValue(columns[i]);
+            }
+            book.Write(ms);
+            book.Close();
+            ms.Seek(0, SeekOrigin.Begin);
+            return ms;
+        }
+        /// <summary>
+        /// 把DataSet 转为内存形式的Excel
+        /// </summary>
+        /// <param name="ds"></param>
+        /// <returns></returns>
+        public static MemoryStream DataSetToExcel(DataSet ds)
+        {
+            MemoryStream ms = new MemoryStream();
+            HSSFWorkbook book = new HSSFWorkbook();
+            if (ds == null) throw new ArgumentNullException("ds");
+            for(int i = 0; i < ds.Tables.Count; i++)
+            {
+                DataTable dt = ds.Tables[i];
+                ISheet sheet = book.CreateSheet("Sheet" + (i+1).ToString());
+                IRow colRow = sheet.CreateRow(0);
+                for(int x = 0; x < dt.Columns.Count; x++)
+                {
+                    colRow.CreateCell(x).SetCellValue(dt.Columns[x].ColumnName);
+                }
+                for (int m = 0; m < dt.Rows.Count; m++)
+                {
+                    IRow dataRow = sheet.CreateRow(m + 1);
+                    for (int n = 0; n < dt.Columns.Count; n++)
+                    {
+                        dataRow.CreateCell(n).SetCellValue(Convert.IsDBNull(dt.Rows[i][dt.Columns[n]]) ? "" : dt.Rows[i][dt.Columns[n]].ToString());
+                    }
+                }
+            }
+            book.Write(ms);
+            book.Close();
+            ms.Seek(0, SeekOrigin.Begin);
+            return ms;
+        }
+        /// <summary>
+        /// 读取Excel第一个Sheet填充到DataTable
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
+        public static DataTable ExcelToTable(string fileName)
+        {
+            IWorkbook book;
+            try
+            {
+                using (FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read))
+                {
+                    if (Path.GetExtension(fileName) == ".xlsx")
+                    {
+                        book = new XSSFWorkbook(stream);
+                    }
+                    else
+                    {
+                        book = new HSSFWorkbook(stream);
+                    }
+                }
+            }
+            catch
+            {
+                throw new Exception("Fialed to open the file");
+            }
+            ISheet sheet = book.GetSheetAt(0);
+            IRow colRow = sheet.GetRow(0);
+            DataTable dt = new DataTable();
+            string cellValue = string.Empty;
+            bool isBreak = false;
+            for(int i = 0; i < colRow.LastCellNum; i++)
+            {
+                cellValue = colRow.GetCell(i).StringCellValue;
+                if (string.IsNullOrEmpty(cellValue)) { break; }
+                dt.Columns.Add(new DataColumn(cellValue.Trim().Replace(" ", ""), typeof(string)));
+            }
+            for (int i = 0; i < sheet.LastRowNum; i++)
+            {
+                DataRow dr = dt.NewRow();
+                IRow row = sheet.GetRow(i + 1);
+                for(int j = 0; j < dt.Columns.Count; j++)
+                {
+                    cellValue = row.GetCell(j) == null ? "" : System.Security.SecurityElement.Escape(row.GetCell(j).ToString());
+                    if (j == 0 && string.IsNullOrEmpty(cellValue))
+                    {
+                        isBreak = true;break;  
+                    }
+                    dr[dt.Columns[j]] = cellValue;
+                }
+                if (isBreak) break;
+                dt.Rows.Add(dr);
+            }
+            return dt;
+        }
+        /// <summary>
+        /// 把Excel转为xml
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
+        public static string ExcelToXml(string fileName,Dictionary<string,object> dicHeader)
+        {
+            IWorkbook book;
+            try
+            {
+                using (FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read))
+                {
+                    if (Path.GetExtension(fileName).IndexOf("xlsx")>-1)
+                    {
+                        book = new XSSFWorkbook(stream);
+                    }
+                    else
+                    {
+                        book = new HSSFWorkbook(stream);
+                    }
+                }
+            }
+            catch
+            {
+                throw new Exception("Fialed to open the file");
+            }
+            ISheet sheet = book.GetSheetAt(0);
+            IRow colRow = sheet.GetRow(0);
+            StringBuilder result = new StringBuilder();
+            string sb = string.Empty;
+            List<string> columns = new List<string>();
+            string cellValue = string.Empty;
+            bool isBreak = false;
+            for (int i = 0; i < colRow.LastCellNum; i++)
+            {
+                cellValue = colRow.GetCell(i).StringCellValue;
+                if (string.IsNullOrEmpty(cellValue)) { break; }
+                columns.Add(cellValue);
+            }
+            result.Append("<sdp ");
+            foreach(var d in dicHeader)
+            {
+                result.AppendFormat("{0}=\"{1}\" ", d.Key, d.Value);
+            }
+            result.Append(">");
+            for (int i = 1; i <= sheet.LastRowNum; i++)
+            {
+                sb = "<data ";
+                IRow row = sheet.GetRow(i);
+                for (int j = 0; j < columns.Count; j++)
+                {
+                    cellValue = row.GetCell(j) == null ? "" : System.Security.SecurityElement.Escape(row.GetCell(j).ToString());
+                    if (j == 0 && string.IsNullOrEmpty(cellValue))
+                    {
+                        isBreak = true; break;
+                    }
+                    sb += string.Format("{0}=\"{1}\" ", columns[j], cellValue);
+                }
+                if (isBreak) break;
+                result.Append(sb + " />");
+                
+            }
+            result.Append("</sdp>");
+            return result.ToString();
+        }
+    }
+}

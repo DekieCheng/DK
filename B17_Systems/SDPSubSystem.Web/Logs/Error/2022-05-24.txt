@@ -1,0 +1,3 @@
+2022-05-24 17:37:14,394  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType£ºSqlException , Content£ºInvalid column name 'Borrower'.
+Invalid column name 'Confirmer'.
+Invalid column name 'ID'. , Function£ºVoid OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action]) , Object£º.Net SqlClient Data Provider , Controller£ºRecreationMgnt , Action£ºCheckOutLoad ; 

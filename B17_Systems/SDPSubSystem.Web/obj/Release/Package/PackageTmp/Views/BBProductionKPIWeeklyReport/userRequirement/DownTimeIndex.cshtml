@@ -1,0 +1,322 @@
+﻿@using SDPSubSystem.Web.Common;
+@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="panel panel-primary">
+                <div class="panel-body">
+                    <div id="line" style="height:400px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="panel panel-primary">
+                <div class="panel-body">
+                    <div id="pie" style="height:400px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade bs-example-modal-lg" id="_Dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+
+<input id="givenVal" style="display:none" value="" />
+<style type="text/css">
+
+    td {
+        border: 1px solid black;
+        height: 30px;
+        font-size: 18px;
+        font-weight: 300;
+    }
+
+
+    .bb {
+        font-weight: bold;
+        font-size: 20px;
+        text-align: center !important;
+    }
+
+    .title {
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        background-color: #009add;
+        font-family: Microsoft YaHei;
+        text-align: center;
+    }
+</style>
+
+<script type="text/javascript">
+
+
+    $(function () {
+        update();
+    });
+
+    function update() {
+        $.post('@Url.Action("DownTimeLoad")', null, function (result) {
+            //debugger
+            //gentable(result.Data, "tab_table");
+            loadChart(result.Data, "line");
+            loadChart2(result.Data2, "pie");
+        });
+
+    }
+
+    function loadChart(data, divname) {
+        var chart = echarts.init(document.getElementById(divname));
+        //debugger
+        linqobj = jslinq(data);
+        
+        var xAxisData = linqobj.select(function (el) {
+            return el.Model;
+        }).toList();
+        var serialData = linqobj.select(function (el) {
+            return el.DownTime;
+        }).toList();
+        var linedataForTargetT = linqobj.select(function (el) {
+            return el.Actual;
+        }).toList();
+        
+        var option = {
+            tooltip: {//提示文字的格式
+                show: true,
+                trigger: 'axis',
+                axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                    type: 'line'        // 默认为直线，可选为：'line' | 'shadow'
+                },
+            },
+            title: {
+                text: 'Weekly Down Time Tracking',
+                subtext: '',
+                left: 'center',
+                textStyle: {
+                    color: 'black'
+                }
+            },
+            legend: {
+                show: true,
+                top: "bottom",
+            },
+            xAxis: {
+                type: 'category',
+                name: '',
+                splitLine: { show: false },
+                data: xAxisData,
+                //boundaryGap:false,
+                axisLabel: {//坐标轴刻度标签的相关设置。
+                    interval: 0,
+                    rotate: "0"
+                },
+                nameTextStyle: {
+                    color: "blue",
+                    fontSize: 12,
+                    //padding: 10
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '10%',
+                containLabel: true
+            },
+            //toolbox: {
+            //    feature: {
+            //        saveAsImage: {}
+            //    }
+            //},
+            yAxis: [
+                {
+                    type:'value',
+                    show: true,
+                    name: '',
+                    position: 'left',
+                    nameLocation: 'end',
+                    nameTextStyle: {
+                        color: "blue",
+                        fontSize: 12,
+                        //padding: 10
+                    },
+                    axisLabel: {
+                        //formatter: '{value}'
+                        formatter: function (value, index) {
+                            return value.toFixed(2);
+                        }
+                    },
+                    //splitNumber: 5,
+                    //min:0,
+                    //max: 8,
+                    splitLine: {
+                        show: false
+                    }
+                },
+                {
+                    type: 'value',
+                    show: true,
+                    name: '',
+                    position: 'right',
+                    nameLocation: 'end',
+                    nameTextStyle: {
+                        color: "blue",
+                        fontSize: 12,
+                        //padding: 10
+                    },
+                    axisLabel: {
+                        //formatter: '{value}%'
+                        formatter: function (value, index) {
+                            return value.toFixed(2) + '%';
+                        }
+                    },
+                    splitNumber: 5,
+                    min: 0,
+                    max: 10,
+                    splitLine: {
+                        show: false
+                    }
+                }],
+            series: [
+                {
+                    type: 'bar',
+                    yAxisIndex: 0,
+                    name: 'Down Time',
+                    data: serialData,
+                    itemStyle: {
+                        normal: {
+                            color: function (param) {
+                                return '#009add';
+                            }
+                        }
+                    },
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'top',
+                            color: 'black',
+                            fontSize:18
+                        }
+                    }
+                },
+                {
+                    type: 'line',
+                    yAxisIndex: 1,
+                    name: 'Down Time%',
+                    data: linedataForTargetT,
+                    itemStyle: {
+                        color: 'red'
+                    },
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'inside',
+                            formatter: '{c}%',
+                            color: 'black',
+                            fontSize: 18
+                        }
+                    }
+                }
+           ]
+        }
+
+        chart.setOption(option);
+        return chart;
+    }
+
+
+    function loadChart2(data, divname) {
+        var chart = echarts.init(document.getElementById(divname));
+        //debugger
+        var option = {
+            color: ['#009add', '#005486', '#82bc00', '#006432', '#ba257d', '#7fle5e', '#f1b52c', '#ce6d28'],
+            tooltip: {
+                trigger: 'item',
+                //formatter: '{a} <br/>{b} : {c} ({d}%)'
+                formatter: '{b} : {c} ({d}%)'
+            },
+            title: {
+                text: 'Weekly Down Time',
+                subtext: '',
+                left: 'center',
+                textStyle: {
+                    color: 'black'
+                }
+            },
+            legend: {
+                type: 'scroll',
+                bottom: 10,
+                textStyle: {
+                    color: 'black'
+                },
+                itemGap: 20,
+                //data: data.legendData
+            },
+            stillShowZeroSum: true,
+            series: [
+                {
+                    name: '',
+                    type: 'pie',
+                    radius: ['35%', '65%'],
+                    center: ['50%', '50%'],
+                    data: data,
+                    emphasis: {
+                        itemStyle: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    },
+                    label: {
+                        normal: {
+                            //formatter: ['{d|{d}%}', '{b|{b}}'].join('\n'),
+                            formatter: '{white|{b}}\n{hr|}\n{yellow|{c}h/}{d|{d}%}',
+                            rich: {
+                                yellow: {
+                                    color: "#3bc7ff",
+                                    fontSize: 12,
+                                    padding: [3, 0],
+                                    align: 'center'
+                                },
+                                total: {
+                                    color: "#A2C7F3",
+                                    fontSize: 14,
+                                    align: 'center'
+                                },
+                                white: {
+                                    color: "#a2c7f3",
+                                    align: 'center',
+                                    fontSize: 12,
+                                    padding: [3, 0]
+                                },
+                                d: {
+                                    color: 'rgb(241,246,104)',
+                                    fontSize: 12,
+                                    fontWeight: 'bold',
+
+                                },
+                                b: {
+                                    color: 'rgb(98,137,169)',
+                                    fontSize: 12,
+
+                                },
+                                hr: {
+                                    borderColor: '#a2c7f3',
+                                    width: '100%',
+                                    borderWidth: 1,
+                                    height: 0,
+                                }
+                            },
+                        }
+                    },
+                }
+            ],
+        };
+
+        chart.setOption(option);
+    }
+</script>
+
