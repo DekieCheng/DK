@@ -1,0 +1,1134 @@
+﻿@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .sys-box {
+        width: 250px;
+        height: 180px;
+        text-align: center;
+        word-wrap: break-word;
+        background-color: #434343;
+        color: black;
+        float: left;
+        padding-top: 0px;
+        /*box-shadow: 1px 1px 1px #888888;*/
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    td {
+        vertical-align: middle;
+        text-align: center;
+        color: black;
+        font-family: Microsoft YaHei;
+    }
+
+    /*.title {
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        background-color: #00b0f0;
+        font-family: Microsoft YaHei;
+        vertical-align: middle;
+        text-align: center;
+    }*/
+
+    th {
+        vertical-align: middle;
+        text-align: center;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        background-color: #00b0f0;
+        font-family: Microsoft YaHei;
+    }
+
+    .text_format {
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .text_format2 {
+        text-align: center;
+        font-weight: bold;
+        font-size: 15px;
+    }
+</style>
+
+<div>
+    <div class="container-fluid">
+        <div style="padding-top:5px;padding-bottom:5px;padding-left:0px;">
+            <table id="tab_table" class="table table-striped table-hover table-bordered tableWidth">
+                <thead>
+                    <tr>
+                        <th class="title" rowspan="2">Source</th>
+                        <th class="title" rowspan="2">Category</th>
+                        <th class="title" colspan="3">B11</th>
+                        <th class="title" colspan="3">B15</th>
+                        <th class="title" colspan="3">B17</th>
+                        <th class="title" colspan="3">B7</th>
+                        <th class="title" colspan="3">Summary</th>
+                        <th class="title" colspan="3">Unknown</th>
+                    </tr>
+                    <tr>
+                        <th class="title">Total</th>
+                        <th class="title">Failed</th>
+                        <th class="title">Coverage</th>
+
+                        <th class="title">Total</th>
+                        <th class="title">Failed</th>
+                        <th class="title">Coverage</th>
+
+                        <th class="title">Total</th>
+                        <th class="title">Failed</th>
+                        <th class="title">Coverage</th>
+
+                        <th class="title">Total</th>
+                        <th class="title">Failed</th>
+                        <th class="title">Coverage</th>
+
+                        <th class="title">Total</th>
+                        <th class="title">Failed</th>
+                        <th class="title">Coverage</th>
+
+                        <th class="title">Total</th>
+                        <th class="title">Failed</th>
+                        <th class="title">Coverage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td rowspan="5">AD</td> <td>WSUS</td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td><td></td><td></td><td></td></tr>
+
+                    <tr> <td>Flexera</td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td><td></td><td></td><td></td></tr>
+
+                    <tr> <td>S1</td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td><td></td><td></td><td></td></tr>
+
+                    <tr> <td>Solidcore</td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr> <td>Patch</td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td><td></td><td></td><td></td></tr>
+
+
+                    <tr><td rowspan="5">NonAD</td> <td>WSUS</td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td><td></td><td></td><td></td></tr>
+
+                    <tr> <td>Flexera</td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td><td></td><td></td><td></td></tr>
+
+                    <tr> <td>S1</td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td><td></td><td></td><td></td></tr>
+
+                    <tr> <td>Solidcore</td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr> <td>Patch</td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+
+</div>
+
+<script type="text/javascript">
+
+    //var _cols = ["Component", "Vacuum", "ident", "total", "attritionrate"]
+    $(function () {
+        $.post('@Url.Action("GetCampusDesktopData")', { /*Building: buildingName */ }, function (result) {
+            //debugger;
+            gentable(result, "tab_table");
+        })
+
+    })
+
+
+    //var height = parseInt($("tab_table").css("height"))-30;
+
+    function gentable(result, divtable) {
+        /*
+        //$('#' + divtable + ' thead').empty();
+        var tr = $('<tr></tr>');
+        tr.append('<th class="title" rowspan="2">Source</th>');
+        tr.append('<th class="title" rowspan="2">Category</th>');
+        tr.append('<th class="title" colspan="3">B11</th>');
+        tr.append('<th class="title" colspan="3">B15</th>');
+        tr.append('<th class="title" colspan="3">B17</th>');
+        tr.append('<th class="title" colspan="3">B7</th>');
+
+        var tr1 = $('<tr></tr>');
+        for (var i = 0; i < 4; i++) {
+            tr1.append('<th class="title" >Total</th>');
+            tr1.append('<th class="title" >Failed</th>');
+            tr1.append('<th class="title" >Coverage</th>');
+        }
+
+        $('#' + divtable + ' thead').append(tr);
+        $('#' + divtable + ' thead').append(tr1);
+
+
+
+
+        $('#' + divtable + ' tbody').empty();
+        var count = 0;
+
+        var tbodytt = $('#' + divtable + ' tbody');
+        tbodytt.append('<tr ><td rowspan="4">AD</td> <td>WSUS</td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td></tr>');
+        tbodytt.append('<tr > <td>Flexera</td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td></tr>');
+        tbodytt.append('<tr > <td>S1</td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td></tr>');
+        tbodytt.append('<tr > <td>Solidcore</td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td></tr>');
+
+        tbodytt.append('<tr ><td rowspan="4">NonAD</td> <td>WSUS</td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td></tr>');
+        tbodytt.append('<tr > <td>Flexera</td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td></tr>');
+        tbodytt.append('<tr > <td>S1</td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td></tr>');
+        tbodytt.append('<tr > <td>Solidcore</td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td> <td></td><td></td><td></td></tr>');
+        */
+
+        //debugger;
+        //console.log(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD" && item.Building == "B11"; }).items[0]);
+
+        setValueOfCell(result);
+
+
+
+
+
+        //$("#tab_table tbody").find("tr").each(function () {
+        //    var tdArr = $(this).children();
+        //    var a = tdArr.eq(0).find('input').val();
+        //});
+        //tb.rows[2].cells[1].innerHTML = JSLINQ(result.TotalData).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD" && item.Building == "B11"; }).items[0].Total;
+
+
+    }
+
+    function setValueOfCell(result) {
+        var trList = $("#tab_table tbody").children("tr");
+
+        trList.eq(0).find("td").eq(2).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD" && item.Building == "B11"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD" && item.Building == "B11"; }).items[0].Total : 0);
+        trList.eq(0).find("td").eq(3).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD" && item.Building == "B11"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD" && item.Building == "B11"; }).items[0].Failed : 0);
+        trList.eq(0).find("td").eq(4).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD" && item.Building == "B11"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD" && item.Building == "B11"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(0).find("td").eq(5).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD" && item.Building == "B15"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD" && item.Building == "B15"; }).items[0].Total : 0);
+        trList.eq(0).find("td").eq(6).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD" && item.Building == "B15"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD" && item.Building == "B15"; }).items[0].Failed : 0);
+        trList.eq(0).find("td").eq(7).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD" && item.Building == "B15"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD" && item.Building == "B15"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(0).find("td").eq(8).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD" && item.Building == "B17"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD" && item.Building == "B17"; }).items[0].Total : 0);
+        trList.eq(0).find("td").eq(9).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD" && item.Building == "B17"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD" && item.Building == "B17"; }).items[0].Failed : 0);
+        trList.eq(0).find("td").eq(10).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD" && item.Building == "B17"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD" && item.Building == "B17"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(0).find("td").eq(11).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD" && item.Building == "B7"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD" && item.Building == "B7"; }).items[0].Total : 0);
+        trList.eq(0).find("td").eq(12).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD" && item.Building == "B7"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD" && item.Building == "B7"; }).items[0].Failed : 0);
+        trList.eq(0).find("td").eq(13).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD" && item.Building == "B7"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD" && item.Building == "B7"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(0).find("td").eq(14).text(JSLINQ(result.SumTotalData).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD"; }).items.length > 0 ? JSLINQ(result.SumTotalData).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD"; }).items[0].SumTotal : 0);
+        trList.eq(0).find("td").eq(15).text(JSLINQ(result.SumFailedTotalData).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD" }).items[0] ? JSLINQ(result.SumFailedTotalData).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD"; }).items[0].SumFailedTotal : 0);
+        trList.eq(0).find("td").eq(16).text(JSLINQ(result.SumCoverageData).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD"; }).items[0] ? JSLINQ(result.SumCoverageData).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD"; }).items[0].SumCoverage : 1.0000);
+
+        trList.eq(0).find("td").eq(17).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD" && item.Building == "unknown"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD" && item.Building == "unknown"; }).items[0].Total : 0);
+        trList.eq(0).find("td").eq(18).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD" && item.Building == "unknown"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD" && item.Building == "unknown"; }).items[0].Failed : 0);
+        trList.eq(0).find("td").eq(19).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD" && item.Building == "unknown"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD" && item.Building == "unknown"; }).items[0].Coverage : 1.0000);
+
+
+        trList.eq(1).find("td").eq(1).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD" && item.Building == "B11"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD" && item.Building == "B11"; }).items[0].Total : 0);
+        trList.eq(1).find("td").eq(2).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD" && item.Building == "B11"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD" && item.Building == "B11"; }).items[0].Failed : 0);
+        trList.eq(1).find("td").eq(3).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD" && item.Building == "B11"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD" && item.Building == "B11"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(1).find("td").eq(4).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD" && item.Building == "B15"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD" && item.Building == "B15"; }).items[0].Total : 0);
+        trList.eq(1).find("td").eq(5).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD" && item.Building == "B15"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD" && item.Building == "B15"; }).items[0].Failed : 0);
+        trList.eq(1).find("td").eq(6).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD" && item.Building == "B15"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD" && item.Building == "B15"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(1).find("td").eq(7).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD" && item.Building == "B17"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD" && item.Building == "B17"; }).items[0].Total : 0);
+        trList.eq(1).find("td").eq(8).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD" && item.Building == "B17"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD" && item.Building == "B17"; }).items[0].Failed : 0);
+        trList.eq(1).find("td").eq(9).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD" && item.Building == "B17"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD" && item.Building == "B17"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(1).find("td").eq(10).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD" && item.Building == "B7"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD" && item.Building == "B7"; }).items[0].Total : 0);
+        trList.eq(1).find("td").eq(11).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD" && item.Building == "B7"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD" && item.Building == "B7"; }).items[0].Failed : 0);
+        trList.eq(1).find("td").eq(12).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD" && item.Building == "B7"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD" && item.Building == "B7"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(1).find("td").eq(13).text(JSLINQ(result.SumTotalData).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD"; }).items.length > 0 ? JSLINQ(result.SumTotalData).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD"; }).items[0].SumTotal : 0);
+        trList.eq(1).find("td").eq(14).text(JSLINQ(result.SumFailedTotalData).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD" }).items[0] ? JSLINQ(result.SumFailedTotalData).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD"; }).items[0].SumFailedTotal : 0);
+        trList.eq(1).find("td").eq(15).text(JSLINQ(result.SumCoverageData).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD"; }).items[0] ? JSLINQ(result.SumCoverageData).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD"; }).items[0].SumCoverage : 1.0000);
+
+        trList.eq(1).find("td").eq(16).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD" && item.Building == "unknown"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD" && item.Building == "unknown"; }).items[0].Total : 0);
+        trList.eq(1).find("td").eq(17).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD" && item.Building == "unknown"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD" && item.Building == "unknown"; }).items[0].Failed : 0);
+        trList.eq(1).find("td").eq(18).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD" && item.Building == "unknown"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD" && item.Building == "unknown"; }).items[0].Coverage : 1.0000);
+
+
+
+        trList.eq(2).find("td").eq(1).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "S1" && item.Source == "AD" && item.Building == "B11"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "S1" && item.Source == "AD" && item.Building == "B11"; }).items[0].Total : 0);
+        trList.eq(2).find("td").eq(2).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "S1" && item.Source == "AD" && item.Building == "B11"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "S1" && item.Source == "AD" && item.Building == "B11"; }).items[0].Failed : 0);
+        trList.eq(2).find("td").eq(3).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "S1" && item.Source == "AD" && item.Building == "B11"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "S1" && item.Source == "AD" && item.Building == "B11"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(2).find("td").eq(4).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "S1" && item.Source == "AD" && item.Building == "B15"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "S1" && item.Source == "AD" && item.Building == "B15"; }).items[0].Total : 0);
+        trList.eq(2).find("td").eq(5).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "S1" && item.Source == "AD" && item.Building == "B15"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "S1" && item.Source == "AD" && item.Building == "B15"; }).items[0].Failed : 0);
+        trList.eq(2).find("td").eq(6).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "S1" && item.Source == "AD" && item.Building == "B15"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "S1" && item.Source == "AD" && item.Building == "B15"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(2).find("td").eq(7).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "S1" && item.Source == "AD" && item.Building == "B17"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "S1" && item.Source == "AD" && item.Building == "B17"; }).items[0].Total : 0);
+        trList.eq(2).find("td").eq(8).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "S1" && item.Source == "AD" && item.Building == "B17"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "S1" && item.Source == "AD" && item.Building == "B17"; }).items[0].Failed : 0);
+        trList.eq(2).find("td").eq(9).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "S1" && item.Source == "AD" && item.Building == "B17"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "S1" && item.Source == "AD" && item.Building == "B17"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(2).find("td").eq(10).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "S1" && item.Source == "AD" && item.Building == "B7"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "S1" && item.Source == "AD" && item.Building == "B7"; }).items[0].Total : 0);
+        trList.eq(2).find("td").eq(11).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "S1" && item.Source == "AD" && item.Building == "B7"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "S1" && item.Source == "AD" && item.Building == "B7"; }).items[0].Failed : 0);
+        trList.eq(2).find("td").eq(12).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "S1" && item.Source == "AD" && item.Building == "B7"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "S1" && item.Source == "AD" && item.Building == "B7"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(2).find("td").eq(13).text(JSLINQ(result.SumTotalData).Where(function (item) { return item.Category == "S1" && item.Source == "AD"; }).items.length > 0 ? JSLINQ(result.SumTotalData).Where(function (item) { return item.Category == "S1" && item.Source == "AD"; }).items[0].SumTotal : 0);
+        trList.eq(2).find("td").eq(14).text(JSLINQ(result.SumFailedTotalData).Where(function (item) { return item.Category == "S1" && item.Source == "AD" }).items[0] ? JSLINQ(result.SumFailedTotalData).Where(function (item) { return item.Category == "S1" && item.Source == "AD"; }).items[0].SumFailedTotal : 0);
+        trList.eq(2).find("td").eq(15).text(JSLINQ(result.SumCoverageData).Where(function (item) { return item.Category == "S1" && item.Source == "AD"; }).items[0] ? JSLINQ(result.SumCoverageData).Where(function (item) { return item.Category == "S1" && item.Source == "AD"; }).items[0].SumCoverage : 1.0000);
+
+        trList.eq(2).find("td").eq(16).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "S1" && item.Source == "AD" && item.Building == "unknown"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "S1" && item.Source == "AD" && item.Building == "unknown"; }).items[0].Total : 0);
+        trList.eq(2).find("td").eq(17).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "S1" && item.Source == "AD" && item.Building == "unknown"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "S1" && item.Source == "AD" && item.Building == "unknown"; }).items[0].Failed : 0);
+        trList.eq(2).find("td").eq(18).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "S1" && item.Source == "AD" && item.Building == "unknown"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "S1" && item.Source == "AD" && item.Building == "unknown"; }).items[0].Coverage : 1.0000);
+
+
+        trList.eq(3).find("td").eq(1).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD" && item.Building == "B11"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD" && item.Building == "B11"; }).items[0].Total : 0);
+        trList.eq(3).find("td").eq(2).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD" && item.Building == "B11"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD" && item.Building == "B11"; }).items[0].Failed : 0);
+        trList.eq(3).find("td").eq(3).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD" && item.Building == "B11"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD" && item.Building == "B11"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(3).find("td").eq(4).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD" && item.Building == "B15"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD" && item.Building == "B15"; }).items[0].Total : 0);
+        trList.eq(3).find("td").eq(5).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD" && item.Building == "B15"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD" && item.Building == "B15"; }).items[0].Failed : 0);
+        trList.eq(3).find("td").eq(6).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD" && item.Building == "B15"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD" && item.Building == "B15"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(3).find("td").eq(7).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD" && item.Building == "B17"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD" && item.Building == "B17"; }).items[0].Total : 0);
+        trList.eq(3).find("td").eq(8).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD" && item.Building == "B17"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD" && item.Building == "B17"; }).items[0].Failed : 0);
+        trList.eq(3).find("td").eq(9).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD" && item.Building == "B17"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD" && item.Building == "B17"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(3).find("td").eq(10).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD" && item.Building == "B7"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD" && item.Building == "B7"; }).items[0].Total : 0);
+        trList.eq(3).find("td").eq(11).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD" && item.Building == "B7"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD" && item.Building == "B7"; }).items[0].Failed : 0);
+        trList.eq(3).find("td").eq(12).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD" && item.Building == "B7"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD" && item.Building == "B7"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(3).find("td").eq(13).text(JSLINQ(result.SumTotalData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD"; }).items.length > 0 ? JSLINQ(result.SumTotalData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD"; }).items[0].SumTotal : 0);
+        trList.eq(3).find("td").eq(14).text(JSLINQ(result.SumFailedTotalData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD" }).items[0] ? JSLINQ(result.SumFailedTotalData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD"; }).items[0].SumFailedTotal : 0);
+        trList.eq(3).find("td").eq(15).text(JSLINQ(result.SumCoverageData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD"; }).items[0] ? JSLINQ(result.SumCoverageData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD"; }).items[0].SumCoverage : 1.0000);
+
+        trList.eq(3).find("td").eq(16).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD" && item.Building == "unknown"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD" && item.Building == "unknown"; }).items[0].Total : 0);
+        trList.eq(3).find("td").eq(17).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD" && item.Building == "unknown"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD" && item.Building == "unknown"; }).items[0].Failed : 0);
+        trList.eq(3).find("td").eq(18).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD" && item.Building == "unknown"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD" && item.Building == "unknown"; }).items[0].Coverage : 1.0000);
+
+
+
+        trList.eq(4).find("td").eq(1).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Patch" && item.Source == "AD" && item.Building == "B11"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Patch" && item.Source == "AD" && item.Building == "B11"; }).items[0].Total : 0);
+        trList.eq(4).find("td").eq(2).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Patch" && item.Source == "AD" && item.Building == "B11"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Patch" && item.Source == "AD" && item.Building == "B11"; }).items[0].Failed : 0);
+        trList.eq(4).find("td").eq(3).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Patch" && item.Source == "AD" && item.Building == "B11"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Patch" && item.Source == "AD" && item.Building == "B11"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(4).find("td").eq(4).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Patch" && item.Source == "AD" && item.Building == "B15"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Patch" && item.Source == "AD" && item.Building == "B15"; }).items[0].Total : 0);
+        trList.eq(4).find("td").eq(5).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Patch" && item.Source == "AD" && item.Building == "B15"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Patch" && item.Source == "AD" && item.Building == "B15"; }).items[0].Failed : 0);
+        trList.eq(4).find("td").eq(6).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Patch" && item.Source == "AD" && item.Building == "B15"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Patch" && item.Source == "AD" && item.Building == "B15"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(4).find("td").eq(7).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Patch" && item.Source == "AD" && item.Building == "B17"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Patch" && item.Source == "AD" && item.Building == "B17"; }).items[0].Total : 0);
+        trList.eq(4).find("td").eq(8).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Patch" && item.Source == "AD" && item.Building == "B17"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Patch" && item.Source == "AD" && item.Building == "B17"; }).items[0].Failed : 0);
+        trList.eq(4).find("td").eq(9).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Patch" && item.Source == "AD" && item.Building == "B17"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Patch" && item.Source == "AD" && item.Building == "B17"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(4).find("td").eq(10).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Patch" && item.Source == "AD" && item.Building == "B7"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Patch" && item.Source == "AD" && item.Building == "B7"; }).items[0].Total : 0);
+        trList.eq(4).find("td").eq(11).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Patch" && item.Source == "AD" && item.Building == "B7"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Patch" && item.Source == "AD" && item.Building == "B7"; }).items[0].Failed : 0);
+        trList.eq(4).find("td").eq(12).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Patch" && item.Source == "AD" && item.Building == "B7"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Patch" && item.Source == "AD" && item.Building == "B7"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(4).find("td").eq(13).text(JSLINQ(result.SumTotalData).Where(function (item) { return item.Category == "Patch" && item.Source == "AD"; }).items.length > 0 ? JSLINQ(result.SumTotalData).Where(function (item) { return item.Category == "Patch" && item.Source == "AD"; }).items[0].SumTotal : 0);
+        trList.eq(4).find("td").eq(14).text(JSLINQ(result.SumFailedTotalData).Where(function (item) { return item.Category == "Patch" && item.Source == "AD" }).items[0] ? JSLINQ(result.SumFailedTotalData).Where(function (item) { return item.Category == "Patch" && item.Source == "AD"; }).items[0].SumFailedTotal : 0);
+        trList.eq(4).find("td").eq(15).text(JSLINQ(result.SumCoverageData).Where(function (item) { return item.Category == "Patch" && item.Source == "AD"; }).items[0] ? JSLINQ(result.SumCoverageData).Where(function (item) { return item.Category == "Patch" && item.Source == "AD"; }).items[0].SumCoverage : 1.0000);
+
+        trList.eq(4).find("td").eq(16).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Patch" && item.Source == "AD" && item.Building == "unknown"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Patch" && item.Source == "AD" && item.Building == "unknown"; }).items[0].Total : 0);
+        trList.eq(4).find("td").eq(17).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Patch" && item.Source == "AD" && item.Building == "unknown"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Patch" && item.Source == "AD" && item.Building == "unknown"; }).items[0].Failed : 0);
+        trList.eq(4).find("td").eq(18).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Patch" && item.Source == "AD" && item.Building == "unknown"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Patch" && item.Source == "AD" && item.Building == "unknown"; }).items[0].Coverage : 1.0000);
+
+
+
+
+        trList.eq(5).find("td").eq(2).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD" && item.Building == "B11"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD" && item.Building == "B11"; }).items[0].Total : 0);
+        trList.eq(5).find("td").eq(3).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD" && item.Building == "B11"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD" && item.Building == "B11"; }).items[0].Failed : 0);
+        trList.eq(5).find("td").eq(4).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD" && item.Building == "B11"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD" && item.Building == "B11"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(5).find("td").eq(5).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD" && item.Building == "B15"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD" && item.Building == "B15"; }).items[0].Total : 0);
+        trList.eq(5).find("td").eq(6).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD" && item.Building == "B15"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD" && item.Building == "B15"; }).items[0].Failed : 0);
+        trList.eq(5).find("td").eq(7).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD" && item.Building == "B15"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD" && item.Building == "B15"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(5).find("td").eq(8).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD" && item.Building == "B17"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD" && item.Building == "B17"; }).items[0].Total : 0);
+        trList.eq(5).find("td").eq(9).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD" && item.Building == "B17"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD" && item.Building == "B17"; }).items[0].Failed : 0);
+        trList.eq(5).find("td").eq(10).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD" && item.Building == "B17"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD" && item.Building == "B17"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(5).find("td").eq(11).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD" && item.Building == "B7"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD" && item.Building == "B7"; }).items[0].Total : 0);
+        trList.eq(5).find("td").eq(12).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD" && item.Building == "B7"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD" && item.Building == "B7"; }).items[0].Failed : 0);
+        trList.eq(5).find("td").eq(13).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD" && item.Building == "B7"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD" && item.Building == "B7"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(5).find("td").eq(14).text(JSLINQ(result.SumTotalData).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD"; }).items.length > 0 ? JSLINQ(result.SumTotalData).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD"; }).items[0].SumTotal : 0);
+        trList.eq(5).find("td").eq(15).text(JSLINQ(result.SumFailedTotalData).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD" }).items[0] ? JSLINQ(result.SumFailedTotalData).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD"; }).items[0].SumFailedTotal : 0);
+        trList.eq(5).find("td").eq(16).text(JSLINQ(result.SumCoverageData).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD"; }).items[0] ? JSLINQ(result.SumCoverageData).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD"; }).items[0].SumCoverage : 1.0000);
+
+        trList.eq(5).find("td").eq(17).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD" && item.Building == "unknown"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD" && item.Building == "unknown"; }).items[0].Total : 0);
+        trList.eq(5).find("td").eq(18).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD" && item.Building == "unknown"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD" && item.Building == "unknown"; }).items[0].Failed : 0);
+        trList.eq(5).find("td").eq(19).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD" && item.Building == "unknown"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD" && item.Building == "unknown"; }).items[0].Coverage : 1.0000);
+
+
+        trList.eq(6).find("td").eq(1).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD" && item.Building == "B11"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD" && item.Building == "B11"; }).items[0].Total : 0);
+        trList.eq(6).find("td").eq(2).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD" && item.Building == "B11"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD" && item.Building == "B11"; }).items[0].Failed : 0);
+        trList.eq(6).find("td").eq(3).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD" && item.Building == "B11"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD" && item.Building == "B11"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(6).find("td").eq(4).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD" && item.Building == "B15"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD" && item.Building == "B15"; }).items[0].Total : 0);
+        trList.eq(6).find("td").eq(5).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD" && item.Building == "B15"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD" && item.Building == "B15"; }).items[0].Failed : 0);
+        trList.eq(6).find("td").eq(6).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD" && item.Building == "B15"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD" && item.Building == "B15"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(6).find("td").eq(7).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD" && item.Building == "B17"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD" && item.Building == "B17"; }).items[0].Total : 0);
+        trList.eq(6).find("td").eq(8).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD" && item.Building == "B17"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD" && item.Building == "B17"; }).items[0].Failed : 0);
+        trList.eq(6).find("td").eq(9).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD" && item.Building == "B17"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD" && item.Building == "B17"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(6).find("td").eq(10).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD" && item.Building == "B7"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD" && item.Building == "B7"; }).items[0].Total : 0);
+        trList.eq(6).find("td").eq(11).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD" && item.Building == "B7"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD" && item.Building == "B7"; }).items[0].Failed : 0);
+        trList.eq(6).find("td").eq(12).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD" && item.Building == "B7"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD" && item.Building == "B7"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(6).find("td").eq(13).text(JSLINQ(result.SumTotalData).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD"; }).items.length > 0 ? JSLINQ(result.SumTotalData).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD"; }).items[0].SumTotal : 0);
+        trList.eq(6).find("td").eq(14).text(JSLINQ(result.SumFailedTotalData).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD" }).items[0] ? JSLINQ(result.SumFailedTotalData).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD"; }).items[0].SumFailedTotal : 0);
+        trList.eq(6).find("td").eq(15).text(JSLINQ(result.SumCoverageData).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD"; }).items[0] ? JSLINQ(result.SumCoverageData).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD"; }).items[0].SumCoverage : 1.0000);
+
+        trList.eq(6).find("td").eq(16).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD" && item.Building == "unknown"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD" && item.Building == "unknown"; }).items[0].Total : 0);
+        trList.eq(6).find("td").eq(17).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD" && item.Building == "unknown"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD" && item.Building == "unknown"; }).items[0].Failed : 0);
+        trList.eq(6).find("td").eq(18).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD" && item.Building == "unknown"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD" && item.Building == "unknown"; }).items[0].Coverage : 1.0000);
+
+
+        trList.eq(7).find("td").eq(1).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD" && item.Building == "B11"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD" && item.Building == "B11"; }).items[0].Total : 0);
+        trList.eq(7).find("td").eq(2).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD" && item.Building == "B11"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD" && item.Building == "B11"; }).items[0].Failed : 0);
+        trList.eq(7).find("td").eq(3).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD" && item.Building == "B11"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD" && item.Building == "B11"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(7).find("td").eq(4).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD" && item.Building == "B15"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD" && item.Building == "B15"; }).items[0].Total : 0);
+        trList.eq(7).find("td").eq(5).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD" && item.Building == "B15"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD" && item.Building == "B15"; }).items[0].Failed : 0);
+        trList.eq(7).find("td").eq(6).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD" && item.Building == "B15"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD" && item.Building == "B15"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(7).find("td").eq(7).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD" && item.Building == "B17"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD" && item.Building == "B17"; }).items[0].Total : 0);
+        trList.eq(7).find("td").eq(8).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD" && item.Building == "B17"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD" && item.Building == "B17"; }).items[0].Failed : 0);
+        trList.eq(7).find("td").eq(9).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD" && item.Building == "B17"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD" && item.Building == "B17"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(7).find("td").eq(10).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD" && item.Building == "B7"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD" && item.Building == "B7"; }).items[0].Total : 0);
+        trList.eq(7).find("td").eq(11).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD" && item.Building == "B7"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD" && item.Building == "B7"; }).items[0].Failed : 0);
+        trList.eq(7).find("td").eq(12).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD" && item.Building == "B7"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD" && item.Building == "B7"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(7).find("td").eq(13).text(JSLINQ(result.SumTotalData).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD"; }).items.length > 0 ? JSLINQ(result.SumTotalData).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD"; }).items[0].SumTotal : 0);
+        trList.eq(7).find("td").eq(14).text(JSLINQ(result.SumFailedTotalData).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD" }).items[0] ? JSLINQ(result.SumFailedTotalData).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD"; }).items[0].SumFailedTotal : 0);
+        trList.eq(7).find("td").eq(15).text(JSLINQ(result.SumCoverageData).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD"; }).items[0] ? JSLINQ(result.SumCoverageData).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD"; }).items[0].SumCoverage : 1.0000);
+
+        trList.eq(7).find("td").eq(16).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD" && item.Building == "unknown"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD" && item.Building == "unknown"; }).items[0].Total : 0);
+        trList.eq(7).find("td").eq(17).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD" && item.Building == "unknown"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD" && item.Building == "unknown"; }).items[0].Failed : 0);
+        trList.eq(7).find("td").eq(18).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD" && item.Building == "unknown"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD" && item.Building == "unknown"; }).items[0].Coverage : 1.0000);
+
+
+        trList.eq(8).find("td").eq(1).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD" && item.Building == "B11"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD" && item.Building == "B11"; }).items[0].Total : 0);
+        trList.eq(8).find("td").eq(2).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD" && item.Building == "B11"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD" && item.Building == "B11"; }).items[0].Failed : 0);
+        trList.eq(8).find("td").eq(3).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD" && item.Building == "B11"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD" && item.Building == "B11"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(8).find("td").eq(4).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD" && item.Building == "B15"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD" && item.Building == "B15"; }).items[0].Total : 0);
+        trList.eq(8).find("td").eq(5).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD" && item.Building == "B15"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD" && item.Building == "B15"; }).items[0].Failed : 0);
+        trList.eq(8).find("td").eq(6).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD" && item.Building == "B15"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD" && item.Building == "B15"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(8).find("td").eq(7).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD" && item.Building == "B17"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD" && item.Building == "B17"; }).items[0].Total : 0);
+        trList.eq(8).find("td").eq(8).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD" && item.Building == "B17"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD" && item.Building == "B17"; }).items[0].Failed : 0);
+        trList.eq(8).find("td").eq(9).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD" && item.Building == "B17"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD" && item.Building == "B17"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(8).find("td").eq(10).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD" && item.Building == "B7"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD" && item.Building == "B7"; }).items[0].Total : 0);
+        trList.eq(8).find("td").eq(11).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD" && item.Building == "B7"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD" && item.Building == "B7"; }).items[0].Failed : 0);
+        trList.eq(8).find("td").eq(12).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD" && item.Building == "B7"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD" && item.Building == "B7"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(8).find("td").eq(13).text(JSLINQ(result.SumTotalData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD"; }).items.length > 0 ? JSLINQ(result.SumTotalData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD"; }).items[0].SumTotal : 0);
+        trList.eq(8).find("td").eq(14).text(JSLINQ(result.SumFailedTotalData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD" }).items[0] ? JSLINQ(result.SumFailedTotalData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD"; }).items[0].SumFailedTotal : 0);
+        trList.eq(8).find("td").eq(15).text(JSLINQ(result.SumCoverageData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD"; }).items[0] ? JSLINQ(result.SumCoverageData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD"; }).items[0].SumCoverage : 1.0000);
+
+        trList.eq(8).find("td").eq(16).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD" && item.Building == "unknown"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD" && item.Building == "unknown"; }).items[0].Total : 0);
+        trList.eq(8).find("td").eq(17).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD" && item.Building == "unknown"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD" && item.Building == "unknown"; }).items[0].Failed : 0);
+        trList.eq(8).find("td").eq(18).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD" && item.Building == "unknown"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD" && item.Building == "unknown"; }).items[0].Coverage : 1.0000);
+
+
+        trList.eq(9).find("td").eq(1).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Patch" && item.Source == "nonAD" && item.Building == "B11"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Patch" && item.Source == "nonAD" && item.Building == "B11"; }).items[0].Total : 0);
+        trList.eq(9).find("td").eq(2).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Patch" && item.Source == "nonAD" && item.Building == "B11"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Patch" && item.Source == "nonAD" && item.Building == "B11"; }).items[0].Failed : 0);
+        trList.eq(9).find("td").eq(3).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Patch" && item.Source == "nonAD" && item.Building == "B11"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Patch" && item.Source == "nonAD" && item.Building == "B11"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(9).find("td").eq(4).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Patch" && item.Source == "nonAD" && item.Building == "B15"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Patch" && item.Source == "nonAD" && item.Building == "B15"; }).items[0].Total : 0);
+        trList.eq(9).find("td").eq(5).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Patch" && item.Source == "nonAD" && item.Building == "B15"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Patch" && item.Source == "nonAD" && item.Building == "B15"; }).items[0].Failed : 0);
+        trList.eq(9).find("td").eq(6).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Patch" && item.Source == "nonAD" && item.Building == "B15"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Patch" && item.Source == "nonAD" && item.Building == "B15"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(9).find("td").eq(7).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Patch" && item.Source == "nonAD" && item.Building == "B17"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Patch" && item.Source == "nonAD" && item.Building == "B17"; }).items[0].Total : 0);
+        trList.eq(9).find("td").eq(8).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Patch" && item.Source == "nonAD" && item.Building == "B17"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Patch" && item.Source == "nonAD" && item.Building == "B17"; }).items[0].Failed : 0);
+        trList.eq(9).find("td").eq(9).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Patch" && item.Source == "nonAD" && item.Building == "B17"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Patch" && item.Source == "nonAD" && item.Building == "B17"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(9).find("td").eq(10).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Patch" && item.Source == "nonAD" && item.Building == "B7"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Patch" && item.Source == "nonAD" && item.Building == "B7"; }).items[0].Total : 0);
+        trList.eq(9).find("td").eq(11).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Patch" && item.Source == "nonAD" && item.Building == "B7"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Patch" && item.Source == "nonAD" && item.Building == "B7"; }).items[0].Failed : 0);
+        trList.eq(9).find("td").eq(12).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Patch" && item.Source == "nonAD" && item.Building == "B7"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Patch" && item.Source == "nonAD" && item.Building == "B7"; }).items[0].Coverage : 1.0000);
+
+        trList.eq(9).find("td").eq(13).text(JSLINQ(result.SumTotalData).Where(function (item) { return item.Category == "Patch" && item.Source == "nonAD"; }).items.length > 0 ? JSLINQ(result.SumTotalData).Where(function (item) { return item.Category == "Patch" && item.Source == "nonAD"; }).items[0].SumTotal : 0);
+        trList.eq(9).find("td").eq(14).text(JSLINQ(result.SumFailedTotalData).Where(function (item) { return item.Category == "Patch" && item.Source == "nonAD" }).items[0] ? JSLINQ(result.SumFailedTotalData).Where(function (item) { return item.Category == "Patch" && item.Source == "nonAD"; }).items[0].SumFailedTotal : 0);
+        trList.eq(9).find("td").eq(15).text(JSLINQ(result.SumCoverageData).Where(function (item) { return item.Category == "Patch" && item.Source == "nonAD"; }).items[0] ? JSLINQ(result.SumCoverageData).Where(function (item) { return item.Category == "Patch" && item.Source == "nonAD"; }).items[0].SumCoverage : 1.0000);
+
+        trList.eq(9).find("td").eq(16).text(JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Patch" && item.Source == "nonAD" && item.Building == "unknown"; }).items[0] ? JSLINQ(result.TotalData).Where(function (item) { return item.Category == "Patch" && item.Source == "nonAD" && item.Building == "unknown"; }).items[0].Total : 0);
+        trList.eq(9).find("td").eq(17).text(JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Patch" && item.Source == "nonAD" && item.Building == "unknown"; }).items[0] ? JSLINQ(result.FailedData).Where(function (item) { return item.Category == "Patch" && item.Source == "nonAD" && item.Building == "unknown"; }).items[0].Failed : 0);
+        trList.eq(9).find("td").eq(18).text(JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Patch" && item.Source == "nonAD" && item.Building == "unknown"; }).items[0] ? JSLINQ(result.CoverageByBuilding).Where(function (item) { return item.Category == "Patch" && item.Source == "nonAD" && item.Building == "unknown"; }).items[0].Coverage : 1.0000);
+
+
+        changeColorAndShowFormat();
+
+    }
+
+
+    function changeColorAndShowFormat() {
+        var trLists = $("#tab_table tbody").children("tr");
+        //debugger;
+        for (var i = 0; i < trLists.length; i++) {
+            var tdArr = trLists.eq(i).find("td");
+
+            if (i === 0 || i === 5) {
+
+
+                var a4 = tdArr.eq(4).text();
+                var a7 = tdArr.eq(7).text();
+                var a10 = tdArr.eq(10).text();
+                var a13 = tdArr.eq(13).text();
+                var a16 = tdArr.eq(16).text();
+                var a19 = tdArr.eq(19).text();
+
+                if (a4 > 0.96) {
+                    $("#tab_table tbody").children("tr").eq(i).find('td').eq(4).css('background-color', '#8FD054');
+                }
+                //debugger;
+                tdArr.eq(4).text((Number(a4) * 100).toFixed(2) + '%');
+
+                if (a7 > 0.96) {
+                    $("#tab_table tbody").children("tr").eq(i).find('td').eq(7).css('background-color', '#8FD054');
+                }
+
+                tdArr.eq(7).text((Number(a7) * 100).toFixed(2) + '%');
+
+                if (a10 > 0.96) {
+                    $("#tab_table tbody").children("tr").eq(i).find('td').eq(10).css('background-color', '#8FD054');
+                }
+
+                tdArr.eq(10).text((Number(a10) * 100).toFixed(2) + '%');
+
+                if (a13 > 0.96) {
+                    $("#tab_table tbody").children("tr").eq(i).find('td').eq(13).css('background-color', '#8FD054');
+                }
+
+                tdArr.eq(13).text((Number(a13) * 100).toFixed(2) + '%');
+
+                if (a16 > 0.96) {
+                    $("#tab_table tbody").children("tr").eq(i).find('td').eq(16).css('background-color', '#8FD054');
+                }
+
+                tdArr.eq(16).text((Number(a16) * 100).toFixed(2) + '%');
+
+                if (a19 > 0.96) {
+                    $("#tab_table tbody").children("tr").eq(i).find('td').eq(19).css('background-color', '#8FD054');
+                }
+
+                tdArr.eq(19).text((Number(a19) * 100).toFixed(2) + '%');
+
+                addCustomizedEvent14(tdArr);
+
+            } else {
+                var a3 = tdArr.eq(3).text();
+                var a6 = tdArr.eq(6).text();
+                var a9 = tdArr.eq(9).text();
+                var a12 = tdArr.eq(12).text();
+                var a15 = tdArr.eq(15).text();
+                var a18 = tdArr.eq(18).text();
+
+                if (a3 > 0.96) {
+                    $("#tab_table tbody").children("tr").eq(i).find('td').eq(3).css('background-color', '#8FD054');
+                }
+
+                tdArr.eq(3).text((Number(a3) * 100).toFixed(2) + '%');
+
+                if (a6 > 0.96) {
+                    $("#tab_table tbody").children("tr").eq(i).find('td').eq(6).css('background-color', '#8FD054');
+                }
+
+                tdArr.eq(6).text((Number(a6) * 100).toFixed(2) + '%');
+
+                if (a9 > 0.96) {
+                    $("#tab_table tbody").children("tr").eq(i).find('td').eq(9).css('background-color', '#8FD054');
+                }
+
+                tdArr.eq(9).text((Number(a9) * 100).toFixed(2) + '%');
+
+                if (a12 > 0.96) {
+                    $("#tab_table tbody").children("tr").eq(i).find('td').eq(12).css('background-color', '#8FD054');
+                }
+
+                tdArr.eq(12).text((Number(a12) * 100).toFixed(2) + '%');
+
+                if (a15 > 0.96) {
+                    $("#tab_table tbody").children("tr").eq(i).find('td').eq(15).css('background-color', '#8FD054');
+                }
+
+                tdArr.eq(15).text((Number(a15) * 100).toFixed(2) + '%');
+
+                if (a18 > 0.96) {
+                    $("#tab_table tbody").children("tr").eq(i).find('td').eq(18).css('background-color', '#8FD054');
+                }
+
+                tdArr.eq(18).text((Number(a18) * 100).toFixed(2) + '%');
+
+                addCustomizedEvents(tdArr);
+            }
+
+        }
+    }
+
+    function addCustomizedEvent14(tdArr) {
+        var arr = [];
+        var a3 = tdArr.eq(3);
+        var a6 = tdArr.eq(6);
+        var a9 = tdArr.eq(9);
+        var a12 = tdArr.eq(12);
+        var a15 = tdArr.eq(15);
+        var a18 = tdArr.eq(18);
+
+        arr.push(a3);
+        arr.push(a6);
+        arr.push(a9);
+        arr.push(a12);
+        arr.push(a15);
+        arr.push(a18);
+
+        formatter(arr);
+
+    }
+
+    function formatter(arr) {
+        $.each(arr, function (i, item) {
+            //debugger;
+            item.css('color', '#4169E1');
+            //item.css("border-bottom", "1px solid #FF3E96");
+            $a = $("<a onclick='' style='cursor:pointer;' >" + item.text() + "</a>");
+            item.html('');
+            item.append($a);
+            item.find("a").css("text-decoration", "underline");
+
+            item.click(function () {
+                getFailedData(item);
+            });
+        });
+    }
+
+    function addCustomizedEvents(tdArr) {
+        var arr = [];
+        var a2 = tdArr.eq(2);
+        var a5 = tdArr.eq(5);
+        var a8 = tdArr.eq(8);
+        var a11 = tdArr.eq(11);
+        var a14 = tdArr.eq(14);
+        var a17 = tdArr.eq(17);
+
+        arr.push(a2);
+        arr.push(a5);
+        arr.push(a8);
+        arr.push(a11);
+        arr.push(a14);
+        arr.push(a17);
+
+        formatter(arr);
+    }
+
+
+    function getFailedData(_this) {
+        //debugger;
+        //获取参数的值
+        var source = '';
+        var i = _this.parent().parent().find("tr").index(_this.parent()[0]);
+        var category = '';
+        if (i < 5) {
+            source = 'AD';
+        } else {
+            source = 'nonAD';
+        }
+
+        var colnumber = _this.index();
+        var ind = 0;
+        if (i == 0 || i == 5) {
+            category = $("table:eq(0) tbody tr:eq(" + i + ") td:eq(1)").text();
+
+            if (colnumber == 3) {
+                ind = 2;
+            }
+            else if (colnumber == 6) {
+                ind = 3;
+            }
+            else if (colnumber == 9) {
+                ind = 4;
+            }
+            else if (colnumber == 12) {
+                ind = 5;
+            }
+            else if (colnumber == 15) {
+                ind = 6;
+            }
+            else if (colnumber == 18) {
+                ind = 7;
+            }
+        } else {
+            category = $("table:eq(0) tbody tr:eq(" + i + ") td:eq(0)").text();
+
+            if (colnumber == 2) {
+                ind = 2;
+            }
+            else if (colnumber == 5) {
+                ind = 3;
+            }
+            else if (colnumber == 8) {
+                ind = 4;
+            }
+            else if (colnumber == 11) {
+                ind = 5;
+            }
+            else if (colnumber == 14) {
+                ind = 6;
+            }
+            else if (colnumber == 17) {
+                ind = 7;
+            }
+        }
+
+
+        var building = $("table:eq(0) thead tr:eq(0) th:eq(" + ind + ")").text();
+
+        //var date = nowDateFormat();
+
+        //debugger;
+
+        //传值
+        window.open('/Desktop/GetDesktopFailedDataForCampus?source=' + source + '&category=' + category + '&building=' + building, 'top');
+    }
+
+    function loadChart(data, divname) {
+        var chart = echarts.init(document.getElementById(divname));
+
+        var ad_flexera = JSLINQ(JSLINQ(data).Where(function (item) { return item.Category == "Flexera" && item.Source == "AD"; }).items).OrderBy(function (item) { return item.Ldate; }).items;
+        var ad_s1 = JSLINQ(JSLINQ(data).Where(function (item) { return item.Category == "S1" && item.Source == "AD"; }).items).OrderBy(function (item) { return item.Ldate; }).items;
+        var ad_solidcore = JSLINQ(JSLINQ(data).Where(function (item) { return item.Category == "Solidcore" && item.Source == "AD"; }).items).OrderBy(function (item) { return item.Ldate; }).items;
+        var ad_wsus = JSLINQ(JSLINQ(data).Where(function (item) { return item.Category == "WSUS" && item.Source == "AD"; }).items).OrderBy(function (item) { return item.Ldate; }).items;
+        var nonad_flexera = JSLINQ(JSLINQ(data).Where(function (item) { return item.Category == "Flexera" && item.Source == "nonAD"; }).items).OrderBy(function (item) { return item.Ldate; }).items;
+        var nonad_s1 = JSLINQ(JSLINQ(data).Where(function (item) { return item.Category == "S1" && item.Source == "nonAD"; }).items).OrderBy(function (item) { return item.Ldate; }).items;
+        var nonad_solidcore = JSLINQ(JSLINQ(data).Where(function (item) { return item.Category == "Solidcore" && item.Source == "nonAD"; }).items).OrderBy(function (item) { return item.Ldate; }).items;
+        var nonad_wsus = JSLINQ(JSLINQ(data).Where(function (item) { return item.Category == "WSUS" && item.Source == "nonAD"; }).items).OrderBy(function (item) { return item.Ldate; }).items;
+
+
+        var xAxisData = JSLINQ(ad_flexera).Select(function (el) {
+            return el.Ldate;
+        }).items;
+
+        var ad_flexera_serialData = JSLINQ(ad_flexera).Select(function (el) {
+            return (el.rate * 100).toFixed(2);
+        }).items;
+        var ad_s1_serialData = JSLINQ(ad_s1).Select(function (el) {
+            return (el.rate * 100).toFixed(2);
+        }).items;
+        var ad_solidcore_serialData = JSLINQ(ad_solidcore).Select(function (el) {
+            return (el.rate * 100).toFixed(2);
+        }).items;
+        var ad_wsus_serialData = JSLINQ(ad_wsus).Select(function (el) {
+            return (el.rate * 100).toFixed(2);
+        }).items;
+        var nonad_flexera_serialData = JSLINQ(nonad_flexera).Select(function (el) {
+            return (el.rate * 100).toFixed(2);
+        }).items;
+        var nonad_s1_serialData = JSLINQ(nonad_s1).Select(function (el) {
+            return (el.rate * 100).toFixed(2);
+        }).items;
+        var nonad_solidcore_serialData = JSLINQ(nonad_solidcore).Select(function (el) {
+            return (el.rate * 100).toFixed(2);
+        }).items;
+        var nonad_wsus_serialData = JSLINQ(nonad_wsus).Select(function (el) {
+            return (el.rate * 100).toFixed(2);
+        }).items;
+
+
+        var linedata = JSLINQ(ad_flexera).Select(function (el) {
+            return (el.Target * 100).toFixed(2);
+        }).items;
+
+        var linedata2 = JSLINQ(ad_flexera).Select(function (el) {
+            return (el.Target2 * 100).toFixed(2);
+        }).items;
+
+        var option = {
+            tooltip: {//提示文字的格式
+                show: true,
+                trigger: 'axis',
+                axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                    type: 'line'        // 默认为直线，可选为：'line' | 'shadow'
+                },
+                formatter: '{b0}<br/>{a0}: {c0}%<br />{a1}: {c1}%<br />{a2}: {c2}%<br />{a3}: {c3}%<br />{a4}: {c4}%<br />{a5}: {c5}%<br />{a6}: {c6}%<br />{a7}: {c7}%<br />{a8}: {c8}%<br />{a9}: {c9}%'
+                //展示百分比  五条折线
+            },
+            legend: {
+                show: true,
+                top: "top",
+                selected: {
+                    // 选中'系列1'
+                    'AD_Flexera': true,
+                    // 不选中'系列2'
+                    'AD_S1': false,
+                    'AD_Solidcore': false,
+                    'AD_WSUS': false,
+                    'nonAD_Flexera': false,
+                    'nonAD_S1': false,
+                    'nonAD_Solidcore': false,
+                    'nonAD_WSUS': false,
+                    '97%': true,
+                    '99%': true,
+                },
+                data: [
+                    {
+                        name: 'AD_Flexera',
+                        //textStyle: {
+                        //    color: '#FFEC8B'
+                        //}
+                    },
+                    {
+                        name: 'AD_S1',
+                        //textStyle: {
+                        //    color: '#87CEFA'
+                        //}
+                    },
+                    {
+                        name: 'AD_Solidcore',
+                        //textStyle: {
+                        //    color: '#778899'
+                        //}
+                    },
+                    {
+                        name: 'AD_WSUS',
+                        //textStyle: {
+                        //    color: '#00FFFF'
+                        //}
+                    },
+                    {
+                        name: 'nonAD_Flexera',
+                        //textStyle: {
+                        //    color: '#BDB76B'
+                        //}
+                    },
+                    {
+                        name: 'nonAD_S1',
+                        //textStyle: {
+                        //    color: '#8FBC8F'
+                        //}
+                    },
+                    {
+                        name: 'nonAD_Solidcore',
+                        //textStyle: {
+                        //    color: '#EE6A50'
+                        //}
+                    },
+                    {
+                        name: 'nonAD_WSUS',
+                        //textStyle: {
+                        //    color: '#8B668B'
+                        //}
+                    },
+                    {
+                        name: '97%',
+                        //textStyle: {
+                        //    color: '#EE2C2C'
+                        //}
+                    },
+                    {
+                        name: '99%',
+                        //textStyle: {
+                        //    color: '#FFD700'
+                        //}
+                    }
+                ]
+            },
+            xAxis: {
+                type: 'category',
+                name: 'Time',
+                splitLine: { show: false },
+                data: xAxisData,
+                //boundaryGap:false,
+                axisLabel: {//坐标轴刻度标签的相关设置。
+                    interval: 0,
+                    rotate: "25"
+                },
+                nameTextStyle: {
+                    color: "blue",
+                    fontSize: 12,
+                    //padding: 10
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            //toolbox: {
+            //    feature: {
+            //        saveAsImage: {}
+            //    }
+            //},
+            yAxis: {
+                type: 'value',
+                show: true,
+                name: 'Coverage',
+                position: 'left',
+                nameLocation: 'end',
+                nameTextStyle: {
+                    color: "blue",
+                    fontSize: 12,
+                    //padding: 10
+                },
+                axisLabel: {
+                    formatter: '{value}%'
+                },
+                splitNumber: 5,
+                min: 95,
+                max: 100
+            },
+            series: [
+                {
+                    type: 'line',
+                    yAxisIndex: 0,
+                    name: 'AD_Flexera',
+                    smooth: false,
+                    symbol: 'triangle',
+                    symbolSize: 15,
+                    lineStyle: {
+                        color: '#5470C6',
+                        width: 4,
+                        type: 'dashed'
+                    },
+                    data: ad_flexera_serialData,
+                    //itemStyle: {
+                    //    color: '#FFEC8B'
+                    //},
+                    label: {
+                        normal: {
+                            show: true,
+                            //position: 'top',
+                            formatter: function (params) {
+                                return params.data + '%';
+                            },
+                            textStyle: { //数值样式
+                                fontFamily: 'Arial',
+                                //fontSize: 18
+                            }
+                        }
+                    }
+                },
+                {
+                    type: 'line',
+                    yAxisIndex: 0,
+                    name: 'AD_S1',
+                    smooth: false,
+                    symbol: 'pin',
+                    symbolSize: 15,
+                    lineStyle: {
+                        //color: '#5470C6',
+                        width: 4,
+                        type: 'dashed'
+                    },
+                    data: ad_s1_serialData,
+                    //itemStyle: {
+                    //    color: '#87CEFA'
+                    //},
+                    label: {
+                        normal: {
+                            show: true,
+                            //position: 'inside',
+                            formatter: function (params) {
+                                return params.data + '%';
+                            }
+                        }
+                    }
+                },
+                {
+                    type: 'line',
+                    yAxisIndex: 0,
+                    name: 'AD_Solidcore',
+                    symbol: 'arrow',
+                    symbolSize: 15,
+                    smooth: false,
+                    lineStyle: {
+                        //color: '#5470C6',
+                        width: 4,
+                        type: 'dashed'
+                    },
+                    data: ad_solidcore_serialData,
+                    //itemStyle: {
+                    //    color: '#778899'
+                    //},
+                    label: {
+                        normal: {
+                            show: true,
+                            //position: 'inside',
+                            formatter: function (params) {
+                                return params.data + '%';
+                            }
+                        }
+                    }
+                },
+                {
+                    type: 'line',
+                    yAxisIndex: 0,
+                    name: 'AD_WSUS',
+                    smooth: false,
+                    symbol: 'diamond',
+                    symbolSize: 15,
+                    lineStyle: {
+                        //color: '#5470C6',
+                        width: 4,
+                        type: 'dashed'
+                    },
+                    data: ad_wsus_serialData,
+                    //itemStyle: {
+                    //    color: '#00FFFF'
+                    //},
+                    label: {
+                        normal: {
+                            show: true,
+                            //position: 'inside',
+                            formatter: function (params) {
+                                return params.data + '%';
+                            }
+                        }
+                    }
+                },
+                {
+                    type: 'line',
+                    yAxisIndex: 0,
+                    name: 'nonAD_Flexera',
+                    smooth: false,
+                    symbol: 'triangle',
+                    symbolSize: 15,
+                    lineStyle: {
+                        //color: '#5470C6',
+                        width: 4,
+                        type: 'dashed'
+                    },
+                    data: nonad_flexera_serialData,
+                    //itemStyle: {
+                    //    color: '#BDB76B'
+                    //},
+                    label: {
+                        normal: {
+                            show: true,
+                            //position: 'inside',
+                            formatter: function (params) {
+                                return params.data + '%';
+                            }
+                        }
+                    }
+                },
+                {
+                    type: 'line',
+                    yAxisIndex: 0,
+                    name: 'nonAD_S1',
+                    symbol: 'pin',
+                    symbolSize: 15,
+                    smooth: false,
+                    lineStyle: {
+                        //color: '#5470C6',
+                        width: 4,
+                        type: 'dashed'
+                    },
+                    data: nonad_s1_serialData,
+                    //itemStyle: {
+                    //    color: '#8FBC8F'
+                    //},
+                    label: {
+                        normal: {
+                            show: true,
+                            //position: 'inside',
+                            formatter: function (params) {
+                                return params.data + '%';
+                            }
+                        }
+                    }
+                },
+                {
+                    type: 'line',
+                    yAxisIndex: 0,
+                    name: 'nonAD_Solidcore',
+                    symbol: 'arrow',
+                    symbolSize: 15,
+                    smooth: false,
+                    lineStyle: {
+                        //color: '#5470C6',
+                        width: 4,
+                        type: 'dashed'
+                    },
+                    data: nonad_solidcore_serialData,
+                    //itemStyle: {
+                    //    color: '#EE6A50'
+                    //},
+                    label: {
+                        normal: {
+                            show: true,
+                            //position: 'inside',
+                            formatter: function (params) {
+                                return params.data + '%';
+                            }
+                        }
+                    }
+                },
+                {
+                    type: 'line',
+                    yAxisIndex: 0,
+                    name: 'nonAD_WSUS',
+                    symbol: 'diamond',
+                    symbolSize: 15,
+                    smooth: false,
+                    lineStyle: {
+                        //color: '#5470C6',
+                        width: 4,
+                        type: 'dashed'
+                    },
+                    data: nonad_wsus_serialData,
+                    //itemStyle: {
+                    //    color: '#8B668B'
+                    //},
+                    label: {
+                        normal: {
+                            show: true,
+                            //position: 'inside',
+                            formatter: function (params) {
+                                return params.data + '%';
+                            }
+                        }
+                    }
+                },
+                {
+                    type: 'line',
+                    yAxisIndex: 0,
+                    name: '97%',
+                    data: linedata,
+                    symbol: 'none',
+                    itemStyle: {
+                        color: '#EE2C2C'
+                    },
+                    label: {
+                        normal: {
+                            show: false,
+                            //position: 'inside',
+                            formatter: function (params) {
+                                return params.data + '%';
+                            }
+                        }
+                    }
+                },
+                {
+                    type: 'line',
+                    yAxisIndex: 0,
+                    name: '99%',
+                    data: linedata2,
+                    symbol: 'none',
+                    itemStyle: {
+                        color: '#FFD700'
+                    },
+                    label: {
+                        normal: {
+                            show: false,
+                            //position: 'inside',
+                            formatter: function (params) {
+                                return params.data + '%';
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+
+        chart.setOption(option);
+        return chart;
+    }
+
+</script>

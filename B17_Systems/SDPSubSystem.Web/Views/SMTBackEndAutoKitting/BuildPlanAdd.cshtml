@@ -1,0 +1,293 @@
+﻿@{
+    Layout = null;
+}
+@using SDPSubSystem.Web.Common;
+@model SDPSubSystem.Model.SMTBackEndAutoKitting.udtEXBuildPlan
+
+<div class="modal-dialog" style="width:80%;height:530px;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" style="color:White" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-plus"></span>@Html.GetLang("L000002")</h4>
+        </div>
+        <div class="modal-body">
+            <div id="message-box" style="display:none" class="alert alert-danger fade in" role="alert"><ul></ul></div>
+            <form class="form-horizontal" id="addressadd">
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">@Html.GetLang("TH00015"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input id="_date" name="Date" class="form-control" data-date-format="yyyy-mm-dd" style="width:380px" />
+                    </div>
+                    @*<div id="_date" class="input-append col-sm-8" style="padding-top:10px">
+                        <input data-format="yyyy-mm-dd" type="text"></input>
+                        <span class="add-on">
+                            <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+                            </i>
+                        </span>
+                    </div>*@
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">@Html.GetLang("TH00016"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        @Html.DropDownList("ShiftCode", (List<SelectListItem>)ViewData["Shift"], new { @id = "ShiftCode", @style = "width:380px;", @class = "form-control", datatype = "*", nullmsg = "Please select the Type!" })
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">@Html.GetLang("TH00008"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        @Html.DropDownList("LineID", (List<SelectListItem>)ViewData["Line"], new { @id = "LineID", @style = "width:380px;", @class = "form-control", datatype = "*", nullmsg = "Please select the Type!" })
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">@Html.GetLang("TH00014"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        @Html.DropDownList("PJID", (List<SelectListItem>)ViewData["Project"], new { @id = "PJID", @style = "width:380px;", @class = "form-control", datatype = "*", nullmsg = "Please select the Type!" })
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">@Html.GetLang("TH00009"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <select class="form-control selectpicker" style="width:380px;" data-width="380px" data-live-search="true" id="Model" name="Model" title="Choose one of the following..." data-size="10"></select>
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">@Html.GetLang("TH00017"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="PlanQty" name="PlanQty" value="" />
+                    </div>
+                </div>
+                <div class="form-inline" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">@Html.GetLang("TH00018"):</label>
+                    <div class="col-sm-8 x" style="padding-top:10px">
+                        <input style="width:180px;" class="form-control" type="text" id="SortID" name="SortID" value="@ViewData["SortID"]" />
+                        <label class="checkbox-inline">
+                            <input id="synchroProduce" type="checkbox" value="option">@Html.GetLang("L000022")
+                        </label>
+                    </div>
+                </div>
+                <div id="exitPlans" class="container" style="margin: 0 0;padding:0 0;display:none " >
+                    <label class="control-label">@Html.GetLang("L000023"):</label>
+                    <table id="tab_tablee" class="table table-striped table-hover table-bordered tableWidth ">
+                        <thead>
+                            <tr>
+                                <th style="width:12px"><input type="checkbox" id="selectAlls" /></th>
+                                <th>@Html.GetLang("TH00015")</th>
+                                <th>@Html.GetLang("TH00016")</th>
+                                <th>@Html.GetLang("TH00008")</th>
+                                <th>@Html.GetLang("TH00014")</th>
+                                <th>@Html.GetLang("TH00009")</th>
+                                <th>@Html.GetLang("TH00017")</th>
+                                <th>@Html.GetLang("TH00018")</th>
+                                <th>@Html.GetLang("TH00019")</th>
+                                <th>@Html.GetLang("TH00020")</th>
+                                <th>@Html.GetLang("TH00005")</th>
+                                <th>@Html.GetLang("TH00006")</th>
+                                <th>@Html.GetLang("TH00007")</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">@Html.GetLang("TH00019"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="IssueQty" name="IssueQty" value="0" />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">@Html.GetLang("TH00020"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="FinishedQty" name="FinishedQty" value="0" />
+                    </div>
+                </div>
+                @*<div class="form-group" style="margin: 0 0;padding:0 0;">
+            <label class="col-sm-4 control-label">Status:</label>
+            <div class="col-sm-8" style="padding-top:10px">
+                @Html.DropDownList("Status", (List<SelectListItem>)ViewData["Status"], new { @id = "Status", @style = "width:380px;", @class = "form-control", datatype = "*", nullmsg = "Please select the Type!" })
+            </div>
+        </div>*@
+
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button id="btnAppend" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-saved"></span>@Html.GetLang("BT00007")</button>
+            <button id="btnClosePO" type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove-sign"></span>@Html.GetLang("BT00008")</button>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+<input id="_id" type="hidden" value="000000" />
+<input id="_model" type="hidden" value="@ViewData["Date"]" />
+
+<script type="text/javascript">
+
+    $("#_date").datetimepicker({
+        minView: "month", //日期时间选择器所能够提供的最精确的时间选择视图
+        maxView: "month",//日期时间选择器最高能展示的选择范围视图
+        format: 'yyyy-mm-dd',
+        todayBtn: true,
+        autoclose: true,
+        //startDate: date,
+        todayHighlight: true,
+        keyboardNavigation: true,
+        forceParse: true,
+        initialDate: new Date(),
+        weekStart: 1,
+        //pickerPosition: "bottom-left",
+        //pickerPosition: "bottom-right", 
+        //pickerPosition: "top-left", 
+        //pickerPosition: "top-right" ,
+        //language: 'pt-BR',
+    }).on("hide", function (event) {
+        event.stopPropagation();// 阻止调用modal的隐藏事件
+    }).on("show", function (event) {
+        event.stopPropagation();// 阻止调用modal的show事件
+    });
+
+    //$('#_date').datetimepicker({
+    //    language: 'pt-BR'
+    //});
+
+    $(function () {
+
+        $('#selectAlls').click(function () {
+            if ($(this).is(":checked")) {
+                $('#tab_tablee tbody input[name="selectid"]').prop("checked", true);
+            }
+            else {
+                $('#tab_tablee tbody input[name="selectid"]').prop("checked", false);
+            }
+        });
+
+        @*$("#btnselect").click(function () {
+            $("#_AddDialog").load('@Url.Action("selectpo")', { Flag: 'Add' }, function () {
+                $("#_AddDialog").modal("show");
+            });
+        })*@
+        //$('#DateTimeFrame').datetimepicker({
+        //    format: 'yyyy-mm',
+        //    weekStart: 1,
+        //    autoclose: true,
+        //    startView: 3,
+        //    minView: 3,
+        //    forceParse: false,
+        //    language: 'cn'
+        //});
+
+        $('#_date').val($('#_model').val());
+        
+        //$('#tab_tablee tbody tr').off('click');
+        $('#tab_tablee tbody').on('click', 'tr', function () {
+            //var approveID = table.row(this).data().ID;
+            var itemsLength = $("#tab_tablee tbody input[name='selectid']:checked").length;
+            //console.log(itemsLength);
+            //debugger;
+            if (itemsLength > 1) {
+                alert("@Html.GetLang("E000015")");
+            }else if (itemsLength == 1) {
+                var id = $("#tab_tablee tbody input[name='selectid']:checked").val();
+                $.post('@Url.Action("GetBuildPlanAddSortID")', { ID: id }, function (result) {
+                    $('#SortID').val(result.SortID);
+                })
+                document.getElementById('exitPlans').style.display = "none";
+                $('#SortID').attr("disabled", true);
+            } else {
+                alert("@Html.GetLang("E000017")");
+            }
+        });
+
+        $("#synchroProduce").click(function () {
+            if ($(this).is(":checked") == true) {
+                //选中触发事件
+                document.getElementById('exitPlans').style.display = "";
+                
+                var _cols = ["ID", "Date", "Shift", "Line", "Project", "Model", "PlanQty", "SortID", "IssueQty", "FinishedQty", "Status", "CreationTime", "LastUpdate"];
+                var _editcol = "";
+                var _tableName = "tab_tablee";
+                if ($('#tab_tablee tbody').html() != "") {
+                    $('#tab_tablee').dataTable().fnDestroy();
+                }
+                postLoadTableByBuildPlanAdd('@Url.Action("BuildPlanLoad")', _tableName, _cols, _editcol, '@Url.Action("BuildPlanEdit")');
+            } else {
+                //取消选中触发事件
+                //debugger;
+                $('#SortID').attr('disabled', false);
+            }
+        });
+
+        $("#btnAppend").click(function () {
+            var dataJson  = $('#addressadd').serializeJSON();
+            dataJson.SortID = $('#SortID').val();
+            //debugger;
+            $.post('@Url.Action("BuildPlanSaveAdd")',
+                { poststr: JSON.stringify(dataJson) },
+                function (result) {
+                    if (result.IsSuccess) {
+                        $("#tab_table").DataTable().ajax.reload();
+
+                        $.globalMessenger().post({
+                            message: "@Html.GetLang("E000024")",//提示信息
+                            type: 'info',//消息类型。error、info、success
+                            hideAfter: 2,//多长时间消失
+                            showCloseButton: true,//是否显示关闭按钮
+                            hideOnNavigate: true //是否隐藏导航
+                        });
+                    }
+                    else {
+                        if (result.Msg) {
+                            var m_ul = "<ul>";
+                            var flag = false;
+                            $.each(result.Msg, function (idx, msg) {
+                                m_ul += "<li>" + msg + "</li>";
+                                flag = true;
+                            });
+                            m_ul += "</ul>";
+                            if (flag) { bootbox.alert({ message: m_ul, title: "Error" }); }
+                        }
+                    }
+                    $("#_Dialog").modal("hide");
+                    $("#tab_table").DataTable().ajax.reload();
+                    //console.log(result);
+                    $("#_id").val(result.Data);
+                })
+            //console.log(poststr);
+        })
+
+        $('#PJID').change(function () {
+            var pjid = $('#PJID').val();
+            $.post('@Url.Action("GetBuildPlanAddModelDropDownList")', { PJID: pjid }, function (res) {
+                //$('.selectpicker').selectpicker('val', '');
+                //$('.selectpicker').selectpicker('refresh');
+
+                var partid = $("#Model").val();
+                var phtml = "";
+                //console.log(res);
+                for (var i = 0; i < res.Model.length; i++) {
+                    if (partid == res.Model[i].ID) {
+                        phtml += "<option  value='" + res.Model[i].ID + "' selected='selected' data-name='" + res.Model[i].Name + "'>" + res.Model[i].Name + "</option>";
+                    } else {
+                        phtml += "<option  value='" + res.Model[i].ID + "' data-name='" + res.Model[i].Name + "'>" + res.Model[i].Name + "</option>";
+                    }
+                }
+                $("#Model").html(phtml);
+                $('.selectpicker').selectpicker('refresh');//加载select框选择器
+
+
+            })
+
+        })
+    });
+
+    @*function getKeyAddPage(event) {
+        if (event.keyCode == 13) {
+            //$('#btnSearch').click();
+            $.post('@Url.Action("BuildPlanSaveAdd")',
+                { poststr: JSON.stringify($('#addressadd').serializeJSON()) },
+                function (result) {
+                    $("#_Dialog").modal("hide");
+                    $("#tab_table").DataTable().ajax.reload();
+                    //console.log(result);
+                    $("#_id").val(result.Data);
+                })
+        }
+    }*@
+</script>

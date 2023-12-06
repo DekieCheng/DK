@@ -1,0 +1,174 @@
+﻿html,body
+{
+    height:100%;
+    padding:0;
+    margin:0;
+    overflow:hidden;
+    font-family:Microsoft JhengHei UI;
+}
+
+
+.loginTop
+{
+    /*position:absolute;
+    left:50px;*/
+    width:100%;
+    font-size:30pt;
+    color:white;
+    height:40%;
+    
+    text-align:center;
+}
+.loginCenter{
+    width:100%;
+    height:60%;
+    background-color:#303641;
+}
+
+.loginContent{
+    position:absolute;
+    width:350px;
+    height:200px;
+    left:50%;
+    height:100px;
+    margin-left:-175px;
+    background-color:#303641;
+}
+
+.loader{
+    position:absolute;
+    height:100%;
+    width:100%;
+    background-color:gray;
+    opacity:0.5; 
+    -moz-opacity:0.5;
+    filter:alpha(opacity=50);
+    padding-top:200px;
+    text-align:center;
+}
+.loader img{
+    margin-left:-200px;
+}
+
+.detailDiv{
+    position:absolute;
+    width:80%;
+    height:200px;
+    top:60%;
+    left:50%;
+    margin-left:-40%;
+    border:2px outset #FFC619;
+    border-radius:10px;
+}
+
+.FaildetailDiv{
+    position:absolute;
+    width:500px;
+    height:250px;
+    top:50px;
+    left:50%;
+    margin-left:-250px;
+    border:2px outset #FFC619;
+    border-radius:10px;
+}
+
+.locationDiv{
+    position:absolute;
+    width:60%;
+    height:400px;
+    top:100px;
+    left:50%;
+    margin-left:-30%;
+    border:2px outset #FFC619;
+    border-radius:10px;
+}
+.visual-panel{
+    height:-moz-calc(50%-50px);
+    height:-webkit-calc(50%-50px);
+    height:calc(50% - 50px);
+}
+
+.visual-home{
+    position:absolute;
+    top:25px;
+    right:30px;
+}
+
+.layer
+{
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:1000;
+    height:100%;
+    width:100%;
+    background:black;
+    opacity:0.4;
+    filter:alpha(opacity=40)
+}
+
+.layer img
+{
+    display: block; 
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate3d(-50%,-50%,0); 
+    -webkit-transform: translate3d(-50%,-50%,0);
+}
+
+.tableWidth{
+    min-width:-moz-calc(100%-6px);
+    min-width:-webkit-calc(100%-6px);
+    min-width:calc(100% - 6px);
+}
+
+.visual-link{
+    cursor:pointer;
+}
+
+.visul-icon{
+    cursor:pointer;
+    color:dimgray;
+    line-height:25px;
+    font-size:12pt;
+}
+
+.bookmarks{
+    position:absolute;
+    top:52px;
+    right:15px;
+    cursor:pointer;
+    
+}
+.bookmarks:hover{
+    color:white;
+}
+
+.bookmarkbtn{
+    border:1px solid gray; 
+    border-top-left-radius:4px;
+    border-bottom-left-radius:4px;
+    text-align:center;
+    cursor:pointer;
+    float:left;
+    width:80%;
+}
+
+.bookmarkbtn:hover{
+    color:white;
+    background-color:gray;
+}
+
+.bookmarkI{
+    float:left;
+    border:1px solid gray; 
+    text-align:center; 
+    border-bottom-right-radius:4px; 
+    border-top-right-radius:4px; 
+    border-left:0px;
+}
+.bookmarkI:hover{
+    color:white;
+    background-color:gray;
+}

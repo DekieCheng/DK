@@ -1,0 +1,45 @@
+﻿@using SDPSubSystem.Web.Common;
+@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid center-in-center">
+    <div class="form-group" style="margin: 0 0;padding:0 0;">
+        <div class="col-md-3" ></div>
+        <label class="col-md-6 control-label" style="padding-top:10px;font-size:20px;">导入数据:</label>
+        <div class="col-md-3" style="padding-top:10px">
+            <button id="btnImport" class="btn btn-primary"><span class="glyphicon glyphicon-import"></span>@Html.GetLang("BT00004")</button>
+        </div>
+    </div>
+</div>
+<div class="modal fade bs-example-modal-lg" id="_Dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+<style type="text/css">
+    .center-in-center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+</style>
+
+<script type="text/javascript">
+
+    $(function () {
+        
+        //debugger;
+        $('#btnImport').x_import({
+            saveUrl: '@Url.Action("Import")', template: '@Url.Content("~/Template/Desktop_Computer-BuildingImportTemplate.xlsx")', callback: function () {
+                layer.alert("导入成功");
+            }
+        })
+
+    })
+
+
+</script>
+

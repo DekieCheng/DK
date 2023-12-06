@@ -1,0 +1,243 @@
+﻿@using SDPSubSystem.Web.Common;
+@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="panel-title" id="Type">借出登记</h2>
+        </div>
+        <div class="panel-body form-inline">
+            <div class="row">
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <label class="col-md-2 control-label" style="padding-top:10px;font-size:16px;" for="EmployeeID">请员工刷卡领用器材:</label>
+                    <div class="col-md-7" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="EmployeeID" name="EmployeeID" value=""  />
+                    </div>
+                </div>
+
+                <div class="row" style="padding-top:10px;">
+                    <div class="col-md-3"></div>
+                    <label class="col-md-2 control-label" style="padding-top:10px;font-size:16px;" for="EquipmentID">借出器材名称:</label>
+                    <div class="col-md-7" style="padding-top:10px">
+                        <select class="form-control selectpicker" style="width:380px;" data-width="380px" data-live-search="true" id="EquipmentID" name="EquipmentID" title="Choose one of the following..." data-size="10">
+                            <option></option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row" style="padding-top:10px;">
+                    <div class="col-md-5"></div>
+                    @*<label class="col-md-1 control-label" style="padding-top:10px;font-size:16px;" for="EquipmentID">借出器材名称:</label>*@
+                    <div class="col-md-7" style="padding-top:10px">
+                        <button type="button" id="btnConfirm" class="btn btn-danger"><span class="glyphicon glyphicon-check"></span>Confirm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Table -->
+    <div style="padding-top:5px;padding-bottom:5px;padding-left:5px;">
+        <input type="text" class="form-control" id="code" placeholder="@Html.GetLang("E000022")" style="width:200px;float:right;display:none" >
+        <table id="tab_table" class="table table-striped table-hover table-bordered tableWidth ">
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>时间</th>
+                    <th>借用人工号</th>
+                    <th>借用人姓名</th>
+                    <th>部门</th>
+                    <th>借用器材名称</th>
+                    <th>借出确认人</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+</div>
+
+<style type="text/css">
+    .center-in-center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+    
+</style>
+
+
+<script type="text/javascript">
+
+    var _cols = ["rowNum", "UseDatetime", "Borrower", "BorrowerName", "dept", "Equipment", "Confirmer"];
+    var _editcol = "";
+    var _tableName = "tab_table";
+    $(function () {
+
+        getDropDownListForEquipment();
+
+        $.ajaxSetup({
+            beforeSend: function (jqXHR, settings) {
+                var X_DB_MATRIX = parent.GetMatrix();
+                if (X_DB_MATRIX != null) {
+                    settings.url += settings.url.match(/\?/) ? "&" : "?";
+                    settings.url += "X_DB_MATRIX=" + X_DB_MATRIX;
+                }
+            },
+        });
+
+        postLoadTable('@Url.Action("CheckOutLoad")', _tableName, _cols, _editcol, '');
+
+
+        $('#EquipmentID').focus(function () {
+            getDropDownListForEquipment();
+        })
+
+        $('#EmployeeID').focus(function () {
+            $('#EmployeeID').val('');
+        })
+
+    })
+
+    $("#btnConfirm").click(function () {
+        save();
+    })
+
+    function save() {
+        var strpost = {
+            EmployeeID: $('#EmployeeID').val(),
+            EquipmentID: $('#EquipmentID').val()
+        }
+        $.post('@Url.Action("CheckOutSaveAdd")',
+            { poststr: JSON.stringify(strpost) },
+                function (result) {
+                    if (result.IsSuccess) {
+                        $("#tab_table").DataTable().ajax.reload();
+                        getDropDownListForEquipment();
+                        $('#EmployeeID').val('');
+
+                        $.globalMessenger().post({
+                            message: "操作成功",//提示信息
+                            type: 'info',//消息类型。error、info、success
+                            hideAfter: 2,//多长时间消失
+                            showCloseButton: true,//是否显示关闭按钮
+                            hideOnNavigate: true //是否隐藏导航
+                        });
+                    }
+                    else {
+                        if (result.Msg) {
+                            var m_ul = "<ul>";
+                            var flag = false;
+                            $.each(result.Msg, function (idx, msg) {
+                                m_ul += "<li>" + msg + "</li>";
+                                flag = true;
+                            });
+                            m_ul += "</ul>";
+                            if (flag) { bootbox.alert({ message: m_ul, title: "Error" }); }
+                        }
+                    }
+                    $("#_Dialog").modal("hide");
+                    $("#tab_table").DataTable().ajax.reload();
+                    //console.log(result);
+                    //$("#_id").val(result.Data);
+                })
+    }
+
+    function getDropDownListForEquipment() {
+        $.post('@Url.Action("GetDropdownList")', { }, function (res) {
+
+            var EquipmentID = $("#EquipmentID").val();
+             //debugger
+             var phtml = "";
+             //console.log(res);
+             for (var i = 0; i < res.EquipmentID.length; i++) {
+                 if (i==0) {
+                     phtml += "<option value='" + res.EquipmentID[i].ID + "' selected='selected' data-name='" + res.EquipmentID[i].Name + "'>" + res.EquipmentID[i].Name + "</option>";
+                 } else {
+                     phtml += "<option value='" + res.EquipmentID[i].ID + "' data-name='" + res.EquipmentID[i].Name + "'>" + res.EquipmentID[i].Name + "</option>";
+                 }
+             }
+             $("#EquipmentID").html(phtml);
+             $('.selectpicker').selectpicker('refresh');//加载select框选择器
+
+        })
+    }
+
+    function isNull(data) {
+        return (data == "" || data == undefined || data == null) ? true : false;
+    }
+
+    function getKey(event) {
+        if (event.keyCode == 13) {
+
+            var type = 'Out';
+            var employeeID = $('#EmployeeID').val();
+            var sn = $('#SN').val();
+            var time = nowTimestampFormat();
+
+            if ( isNull(employeeID) || isNull(sn) ) {
+                alert("请输入值，检查有空值");
+                return;
+            }
+
+            var valuestr = {
+                Type: type,
+                EmployeeID: employeeID,
+                SN: sn,
+                Time:time
+            }
+            $.ajax({
+                type: "post",
+                url: '@Url.Action("SaveCheckInFlow")',
+                data: { poststr: JSON.stringify(valuestr) },
+                async: false,
+                success: function (result) {
+                    if (result.IsSuccess) {
+
+                        var trtxt = $('<tr></tr>')
+                        trtxt.append('<td  style="width:20%; text-align:center">' + employeeID + '</td>');
+                        trtxt.append('<td  style="width:20%; text-align:center">' + sn + '</td>');
+                        trtxt.append('<td  style="width:10%; text-align:center">' + time + '</td>');
+                        $("#" + _tableName).children("tbody").append(trtxt);
+
+
+                        $.globalMessenger().post({
+                            message: "扫描成功",//提示信息
+                            type: 'info',//消息类型。error、info、success
+                            hideAfter: 2,//多长时间消失
+                            showCloseButton: true,//是否显示关闭按钮
+                            hideOnNavigate: true //是否隐藏导航
+                        });
+                    }
+                    else {
+                        if (result.Msg) {
+                            var m_ul = "<ul>";
+                            var flag = false;
+                            $.each(result.Msg, function (idx, msg) {
+                                m_ul += "<li>" + msg + "</li>";
+                                flag = true;
+                            });
+                            m_ul += "</ul>";
+                            if (flag) { bootbox.alert({ message: m_ul, title: "Error" }); }
+                        }
+                    }
+                }
+            });
+
+            $('#SN').val('');
+        }
+    }
+
+
+</script>
+

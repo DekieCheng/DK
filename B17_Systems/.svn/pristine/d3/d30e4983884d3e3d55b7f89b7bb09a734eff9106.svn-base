@@ -1,0 +1,69 @@
+﻿
+@{
+    Layout = null;
+}
+@using SDPSubSystem.Web.Common;
+@model SDPSubSystem.Model.SMTBackEndAutoKitting.udtEXIssueStation
+
+<div class="modal-dialog" style="width:55%;height:530px;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" style="color:White" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-edit"></span>@Html.GetLang("L000003")</h4>
+        </div>
+        <div class="modal-body">
+            <div id="message-box" style="display:none" class="alert alert-danger fade in" role="alert"><ul></ul></div>
+            <form class="form-horizontal" id="addressedit">
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">@Html.GetLang("TH00001"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="Name" name="Name" value="@Model.Name" />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">@Html.GetLang("TH00008"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        @Html.DropDownList("LineID", (List<SelectListItem>)ViewData["Line"], new { @id = "LineID", @style = "width:380px;", @class = "form-control", datatype = "*", nullmsg = "Please select the Type!" })
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">@Html.GetLang("TH00003"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        @Html.DropDownList("ProcessID", (List<SelectListItem>)ViewData["Process"], new { @id = "ProcessID", @style = "width:380px;", @class = "form-control", datatype = "*", nullmsg = "Please select the Type!" })
+                    </div>
+                </div>
+
+                <input id="_id" type="hidden" value="@Model.ID" />
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button id="btnSave" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-saved"></span>@Html.GetLang("BT00007")</button>
+            <button id="btnClosePO" type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove-sign"></span>@Html.GetLang("BT00008")</button>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+
+
+<script type="text/javascript">
+    $(function () {
+        
+        $("#btnSave").click(function () {
+            var strpost = {
+                ID: $('#_id').val(),
+                Name: $('#Name').val(),
+                LineID: $("#LineID").val(),
+                ProcessID: $("#ProcessID").val()
+            }
+            $.post('@Url.Action("IssueStationSaveEdit")',
+                { poststr: JSON.stringify(strpost) },
+                function (result) {
+                    $("#_Dialog").modal("hide");
+                    $("#tab_table").DataTable().ajax.reload();
+                    $("#_id").val(result.Data);
+                })
+
+            //console.log(poststr);
+        })
+        
+    });
+</script>

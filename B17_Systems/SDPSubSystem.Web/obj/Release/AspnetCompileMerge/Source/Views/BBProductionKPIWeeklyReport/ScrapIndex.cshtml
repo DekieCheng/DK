@@ -1,0 +1,349 @@
+﻿@using SDPSubSystem.Web.Common;
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11">
+    <link href="@Url.Content("~/Content/B11Site.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/bootstrap-3.3.5-dist/css/bootstrap.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/Font-Awesome3.2.1/css/font-awesome.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/DataTables/css/dataTables.bootstrap.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/zTree.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/zTree.theme.metro.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Layer/theme/default/layer.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/DataTables/css/fixedColumns.dataTables.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/DataTables/css/fixedColumns.bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/bootstrap-datetimepicker.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/bootstrap-fileinput/css/fileinput.min.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Scripts/jquery-3.3.1.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.cookie.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.dataTables.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/dataTables.fixedColumns.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/dataTables.bootstrap.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap-select.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap-datetimepicker.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/fileinput.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.ztree.all-3.5.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/echarts.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/common.js")"></script>
+    <script src="@Url.Content("~/Scripts/numeral.js")"></script>
+    <script src="@Url.Content("~/Scripts/bootbox.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/json2.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.x_import.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/JSLINQ.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.table2excel.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.x_modal.js")"></script>
+    <script src="@Url.Content("~/Scripts/jslinq.min.js")"></script>
+    <script src="@Url.Content("~/Content/Layer/layer.js")"></script>
+    <title>Scrap Dashboard</title>
+    <style>
+        .sys-box {
+            width: 300px;
+            height: 200px;
+            text-align: center;
+            word-wrap: break-word;
+            //background-color: #434343;
+            color: white;
+            float: left;
+            padding-top: 0px;
+            //box-shadow: 1px 1px 1px #888888;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body style="background-color:black">
+    <div class="container-fluid" style="background-color: black;">
+        <div class="row main" style="margin:25px">
+            @*<img class="col-md-1" src="~/Content/img/logo-big-white.png" />*@
+            <img class="col-md-1 openbtn " style="float: left; position: absolute; z-index: 1000; margin-left: 20px;" src="~/Content/img/logo-big-white.png" />
+        </div>
+        <div class="row" style="background-color: black;">
+            <div class="col-sm-12" style="background-color: black;">
+                <div id="line" style="height: 800px; background-color: black;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-example-modal-lg" id="_Dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+
+    <input id="givenVal" style="display:none" value="" />
+    <style type="text/css">
+
+        td {
+            border: 1px solid black;
+            height: 30px;
+            font-size: 18px;
+            font-weight: 300;
+        }
+
+
+        .bb {
+            font-weight: bold;
+            font-size: 20px;
+            text-align: center !important;
+        }
+
+        .title {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: #009add;
+            font-family: Microsoft YaHei;
+            text-align: center;
+        }
+    </style>
+
+    <script type="text/javascript">
+
+
+    $(function () {
+        update();
+    });
+
+    function update() {
+        $.post('@Url.Action("ScrapLoad")', null, function (result) {
+            //debugger
+            //gentable(result.Data, "tab_table");
+            loadChart(result, "line");
+        });
+
+    }
+
+    function gentable(data, divtable) {
+        //debugger
+        $('#' + divtable + ' thead').empty();
+        $.each(data, function (idx, item) {
+            var tr;
+            tr = $('<tr></tr>');
+
+            $.each(item, function (key, val) {
+                tr.append('<th class="title">' + key + '</th>');
+            });
+
+            $('#' + divtable + ' thead').append(tr);
+            return false;
+        });
+
+        $('#' + divtable + ' tbody').empty();
+        $.each(data, function (idx, item) {
+            var tr;
+            tr = $('<tr ></tr>');
+            $.each(item, function (key, val) {
+                tr.append('<td class="text_format2">' + val + '</td>');
+            });
+            $('#' + divtable + ' tbody').append(tr);
+        });
+
+
+    }
+
+
+    function loadChart(data, divname) {
+        var chart = echarts.init(document.getElementById(divname));
+        debugger
+        var Data = data.Data;
+        var xDatat = [];
+        var barData = [];
+        var linedataForTarget = [];
+        var linedataForActual = [];
+        $.each(Data, function (key, val) {
+            debugger
+            xDatat.push(val.Item);
+            barData.push(val.TotalScrapCost);
+            linedataForTarget.push(val.Target);
+            linedataForActual.push(val.Actual);
+        });
+
+        var title = data.Title[0].Column1;
+        var barLegend = data.Legend[0].Column1;
+
+        var option = {
+            tooltip: {//提示文字的格式
+                show: true,
+                trigger: 'axis',
+                axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                    type: 'line'        // 默认为直线，可选为：'line' | 'shadow'
+                },
+            },
+            title: {
+                text: title,
+                subtext: '',
+                left: 'center',
+                textStyle: {
+                    color: 'white'
+                }
+            },
+            legend: {
+                show: true,
+                top: "bottom",
+                textStyle: {
+                    color: 'white'
+                },
+            },
+            xAxis: {
+                type: 'category',
+                name: '',
+                splitLine: { show: false },
+                data: xDatat,
+                //boundaryGap:false,
+                axisLabel: {//坐标轴刻度标签的相关设置。
+                    interval: 0,
+                    rotate: "0"
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#fff',
+                    },
+                },
+                nameTextStyle: {
+                    color: "white",
+                    fontSize: 12,
+                    //padding: 10
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '10%',
+                containLabel: true
+            },
+            //toolbox: {
+            //    feature: {
+            //        saveAsImage: {}
+            //    }
+            //},
+            yAxis: [
+                {
+                    type:'value',
+                    show: true,
+                    name: '',
+                    position: 'left',
+                    nameLocation: 'end',
+                    nameTextStyle: {
+                        color: "blue",
+                        fontSize: 12,
+                        //padding: 10
+                    },
+                    axisLabel: {
+                        formatter: '{value}%',
+                        color: 'white'
+                    },
+                    splitNumber: 5,
+                    min:0,
+                    max: 1,
+                    splitLine: {
+                        show: false,
+                        color: 'white'
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#fff',
+                        },
+                    },
+                },
+                {
+                    type: 'value',
+                    show: true,
+                    name: '',
+                    position: 'right',
+                    nameLocation: 'end',
+                    nameTextStyle: {
+                        color: "blue",
+                        fontSize: 12,
+                        //padding: 10
+                    },
+                    axisLabel: {
+                        formatter: '${value}',
+                        color: 'white'
+                    },
+                    splitNumber: 5,
+                    min: 0,
+                    //max: 8000,
+                    splitLine: {
+                        show: false,
+                        color: 'white'
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#fff',
+                        },
+                    },
+                }],
+            series: [
+                {
+                    type: 'bar',
+                    yAxisIndex: 1,
+                    name: barLegend,
+                    data: barData,
+                    itemStyle: {
+                        normal: {
+                            color: function (param) {
+                                return '#009add';
+                            }
+                        }
+                    },
+                    label: {
+                        normal: {
+                            show: false,
+                            position: 'top',
+                            color: 'white',
+                            formatter: '${c}',
+                            fontSize:18
+                        }
+                    }
+                },
+                {
+                    type: 'line',
+                    yAxisIndex: 0,
+                    name: 'Scrap% Traget',
+                    data: linedataForTarget,
+                    symbol: 'circle',
+                    symbolSize: 8,
+                    itemStyle: {
+                        color: 'red'
+                    },
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'top',
+                            formatter: '{c}%',
+                            color: 'black',
+                            fontSize: 18
+                        }
+                    }
+                },
+                {
+                    type: 'line',
+                    yAxisIndex: 0,
+                    name: 'Total actual material Loss%',
+                    data: linedataForActual,
+                    symbol: 'circle',
+                    symbolSize: 8,
+                    itemStyle: {
+                        color: 'green'
+                    },
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'top',
+                            formatter: '{c}%',
+                            color: 'white',
+                            fontSize: 18
+                        }
+                    }
+                }
+           ]
+        }
+
+        chart.setOption(option);
+        return chart;
+    }
+
+    </script>
+
+</body>
+</html>

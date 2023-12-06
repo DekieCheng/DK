@@ -1,0 +1,96 @@
+﻿#nav{  
+    height: 39px;  
+    background: transparent;  
+    border-right: 1px solid #323232;    
+    border-radius: 3px;
+    margin-left: 0px;  
+    padding-left: 0px;  
+    float:right;
+}     
+  
+#nav li{  
+    list-style: none;  
+    display: block;  
+    float: left;  
+    height: 40px;  
+    position: relative;  
+    border-right: 1px solid #323232;  
+}  
+  
+#nav li a{  
+    padding: 0px 10px 0px 20px;  
+    margin: 0px 0;  
+    line-height: 40px;  
+    text-decoration: none;  
+    border-right: 1px solid black;  
+    height: 40px;  
+    color: #FFF;  
+    text-shadow: 1px 1px 1px #66696B;  
+}  
+  
+#nav ul{  
+    background-color: #1F292F;   
+    padding: 0px;  
+    border-bottom: 1px solid black;  
+    border-right: 1px solid black;  
+    border-left:1px solid black;  
+    border-radius: 0px 0px 3px 3px;  
+    box-shadow: 2px 2px 3px black;  
+    -webkit-box-shadow: 2px 2px 3px black;  
+    -moz-box-shadow:2px 2px 3px black;  
+    width:170px; 
+    right:0px;
+}  
+  
+  
+#nav li:hover{  
+    background: Black; 
+}  
+#nav li a{  
+    display: block;  
+}  
+#nav ul li {  
+    border-right:none;  
+    border-bottom:1px solid black;  
+    width:170px;  
+    height:39px;  
+}  
+#nav ul li a {    
+    color:white;   
+}  
+#nav ul li:hover{background-color:black;}  
+#nav ul li:last-child { border-bottom: none;}  
+#nav ul li:last-child a{ border-bottom: none;}  
+/* Sub menus */  
+#nav ul{  
+    display: none;  
+    visibility:hidden;  
+    position: absolute;  
+    top: 40px;  
+}  
+  
+/* Third-level menus */  
+#nav ul ul{  
+    top: 0px;  
+    right:170px;  
+    display: none;  
+    visibility:hidden;  
+    border: 1px solid black;  
+}  
+/* Fourth-level menus */  
+#nav ul ul ul{  
+    top: 0px;  
+    right:170px;  
+    display: none;  
+    visibility:hidden;  
+    border: 1px solid black;  
+}  
+  
+#nav ul li{  
+    display: block;  
+    visibility:visible;  
+}  
+#nav li:hover > ul{  
+    display: block;  
+    visibility:visible;  
+}  

@@ -1,0 +1,89 @@
+﻿@using SDPSubSystem.Web.Common;
+@*@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //Layout = "~/Views/Shared/_Layout_bootstrap5.cshtml";
+}*@
+
+<style>
+    
+    td {
+        color: black;
+        font-family: Microsoft YaHei;
+    }
+
+    th {
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        background-color: #00b0f0;
+        font-family: Microsoft YaHei;
+        text-align: left;
+    }
+</style>
+
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>
+        Quality System User Manual
+    </h1>
+
+    <Table id="DirectoryList" width=100% style="Font-size:25px">
+
+        @*<TR height=45><TH align=left><a href="Http://172.30.11.203:8888/QualityFiles/UserManual/Agile System Instruction.pdf">Agile System Instruction</a></TH></TR>*@
+
+    </Table>
+</body>
+</html>
+
+
+
+
+<script type="text/javascript">
+
+    $(function () {
+        $.post('@Url.Action("loadDataForDashboard")', {}, function (res) {
+            //debugger;
+            var phtml = "";
+            for (var i = 0; i < res.Data.length; i++) {
+                var str = "javascript" + ":downloadFile( '" + encodeURIComponent(res.Data[i].Link) + "')";
+                //phtml += '<a href="#" onclick="' + str + '" class="list-group-item list-group-item-action">' + res.Data[i].Name + '</a>';
+                phtml += '<TR height=45><TH align=left><a href="Http://172.30.11.203:8888/QualityFiles/UserManual/' + res.Data[i].Name+'.pdf">' + res.Data[i].Name + '</a></TH></TR>';
+            }
+            $("#DirectoryList").html(phtml);
+        });
+
+        @*$.post('@Url.Action("loadDataForDashboard")', {}, function (res) {
+            //debugger;
+            var phtml = "";
+            for (var i = 0; i < res.Data.length; i++) {
+                var str = "javascript" + ":downloadFile( '" + encodeURIComponent(res.Data[i].Link) + "')";
+                phtml += '<a href="#" onclick="' + str + '" class="list-group-item list-group-item-action">' + res.Data[i].Name + '</a>';
+                //phtml += "<a href=@Url.Content("~/upload/QualityManual/E-WI System Instruction_2023060820230612144141751.pptx") class=\"list-group-item list-group-item-action\">" + res.Data[i].Name + "</a>";
+            }
+            $("#DirectoryList").html(phtml);
+        });*@
+
+        @*$.post('@Url.Action("loadDataForDashboard")', {}, function (res) {
+            //debugger;
+            var phtml = "";
+            for (var i = 0; i < res.Data.length; i++) {
+                //var str = "javascript" + ":downloadFile( '" + encodeURIComponent(res.Data[i].Link) + "')";
+                phtml += '<a href="'+res.Data[i].Link+'" target="_blank">' + res.Data[i].Name + '</a>';
+                //phtml += "<a href=@Url.Content("~/upload/QualityManual/E-WI System Instruction_2023060820230612144141751.pptx") class=\"list-group-item list-group-item-action\">" + res.Data[i].Name + "</a>";
+            }
+            $("#DirectoryList").html(phtml);
+        });*@
+    });
+
+    function downloadFile(path) {
+        //debugger
+        //var filePath = path;
+        @*var url = '@Url.Action("DownloadFile",new { filePath = path })';*@
+        var url = '/QualityManual/DownloadFile?filePath=' + path;
+        window.open(url);
+    }
+
+</script>
+

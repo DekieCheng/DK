@@ -1,0 +1,7 @@
+2021-02-19 09:11:58,114  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType:SqlException , Content:Error converting data type nvarchar to datetime. , Function:Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action]) , Object:.Net SqlClient Data Provider , Controller:attrition , Action:GetstationData ; 
+2021-02-19 09:20:12,958  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType:ArgumentNullException , Content:Value cannot be null.
+Parameter name: input , Function:System.Object Deserialize(System.Web.Script.Serialization.JavaScriptSerializer, System.String, System.Type, Int32) , Object:System.Web.Extensions , Controller:attrition , Action:GetstationData ; 
+2021-02-19 09:20:23,828  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType:ArgumentNullException , Content:Value cannot be null.
+Parameter name: input , Function:System.Object Deserialize(System.Web.Script.Serialization.JavaScriptSerializer, System.String, System.Type, Int32) , Object:System.Web.Extensions , Controller:attrition , Action:GetstationData ; 
+2021-02-19 09:22:19,674  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType:ArgumentNullException , Content:Value cannot be null.
+Parameter name: input , Function:System.Object Deserialize(System.Web.Script.Serialization.JavaScriptSerializer, System.String, System.Type, Int32) , Object:System.Web.Extensions , Controller:attrition , Action:GetstationData ; 

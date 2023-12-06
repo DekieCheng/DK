@@ -1,0 +1,70 @@
+﻿@using SDPSubSystem.Web.Common;
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDP System</title>
+    <link href="@Url.Content("~/Content/B11Site.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/bootstrap-3.3.5-dist/css/bootstrap.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/Font-Awesome3.2.1/css/font-awesome.css")" rel="stylesheet" />
+    @*<link href="@Url.Content("~/Content/DataTables/css/dataTables.bootstrap.css")" rel="stylesheet" />*@
+    <link href="@Url.Content("~/Content/zTree.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/zTree.theme.metro.css")" rel="stylesheet" type="text/css" />
+    @*<link href="@Url.Content("~/Content/DataTables/css/fixedColumns.dataTables.min.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/DataTables/css/fixedColumns.bootstrap.min.css")" rel="stylesheet" type="text/css" />*@
+    <link href="@Url.Content("~/Content/bootstrap-datetimepicker.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/bootstrap-fileinput/css/fileinput.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/bootstrap-fileinput/css/fileinput.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/DataTables/css/jquery.dataTables.css")" rel="stylesheet" />
+
+    <script src="@Url.Content("~/Scripts/jquery-2.2.3.min.js")"></script>
+    @*<script src="@Url.Content("~/Scripts/jquery-3.3.1.js")"></script>*@
+
+    <script src="@Url.Content("~/Scripts/jquery.dataTables.js")"></script>
+
+    <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.cookie.js")"></script>
+    @*<script src="@Url.Content("~/Scripts/jquery.dataTables.min.js")"></script>*@
+    @*<script src="@Url.Content("~/Scripts/dataTables.fixedColumns.min.js")"></script>
+        <script src="@Url.Content("~/Scripts/dataTables.bootstrap.js")" type="text/javascript"></script>*@
+    <script src="@Url.Content("~/Scripts/bootstrap-select.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap-datetimepicker.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/fileinput.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.ztree.all-3.5.min.js")" type="text/javascript"></script>
+
+    <script src="@Url.Content("~/Scripts/common.js")"></script>
+    <script src="@Url.Content("~/Scripts/numeral.js")"></script>
+    <script src="@Url.Content("~/Scripts/bootbox.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/json2.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.x_import.js")" type="text/javascript"></script>
+
+    <script src="@Url.Content("~/Scripts/jslinq.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.table2excel.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.x_modal.js")"></script>
+
+
+
+
+    <script src="@Url.Content("~/Scripts/echarts.min.js")"></script>
+    <style>
+        th {
+            background-color: #337ab7;
+            color: white;
+        }
+
+        td {
+            word-break: keep-all;
+            white-space: nowrap;
+            font-size: 10pt;
+        }
+
+        body {
+            overflow: auto;
+        }
+    </style>
+</head>
+<body LangID="@Html.GetLangID().ToString()">
+    @RenderBody()
+</body>
+</html>

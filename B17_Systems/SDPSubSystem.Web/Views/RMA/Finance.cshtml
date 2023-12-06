@@ -1,0 +1,284 @@
+﻿@using SDPSubSystem.Web.Common;
+@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="form-inline" style="padding:10px 0;">
+        <label class="control-label" for="dateFrom">DateFrom:</label>
+        <input id="dateFrom" class="form-control" data-date-format="yyyy-mm-dd" style="width:200px" autocomplete="on" />
+
+        <label class="control-label" for="dateTo">DateTo:</label>
+        <input id="dateTo" class="form-control" data-date-format="yyyy-mm-dd" style="width:200px" autocomplete="on" />
+
+        <label class="control-label">@Html.GetLang("L000034"):</label>
+        <select class="form-control selectpicker" style="width:180px;" data-width="180px" data-live-search="true" id="Customer" name="Customer" title="Choose one of the following..." data-size="10"></select>
+
+        <label class="control-label">Model:</label>
+        <select class="form-control selectpicker" style="width:180px;" data-width="180px" data-live-search="true" id="Model" name="Model" title="Choose one of the following..." data-size="10" multiple>
+            <option value=""></option>
+        </select>
+
+
+        <button id="btnSearch" class="btn btn-danger "><span class="glyphicon glyphicon-search"></span>@Html.GetLang("BT00006")</button>
+        <button id="btnExport" class="btn btn-primary"><span class="glyphicon glyphicon-export"></span>@Html.GetLang("BT00005")</button>
+
+    </div>
+        <table id="tab_table" class="table table-striped table-hover table-bordered tableWidth ">
+            <thead>
+                <tr>
+                    <th style="width:12px"><input type="checkbox" id="selectAll" /></th>
+                    <th>RMA #</th>
+                    <th>Issued Date</th>
+                    <th>Item/Part #</th>
+                    <th>Qty</th>
+                    <th>Project</th>
+                    <th>Liability</th>
+                    <th>Defects/reason for return</th>
+                    <th>CQM</th>
+                    <th>Remark</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <div class="modal fade bs-example-modal-lg" id="_Dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+    <input id="code" type="hidden" value="" />
+
+
+
+    <script type="text/javascript">
+        var _cols = ["ID", "RMANumber", "IssuedDate", "BulkPN", "DefectQty", "ProjectName", "Liability", "IssueDescirption", "CQM", "Remark"];
+    var _editcol = "";
+    var _tableName = "tab_table";
+    $(function () {
+
+        var startDate = new Date();
+        var endDate = new Date();
+        $("#dateFrom").datetimepicker({
+            minView: "month", //日期时间选择器所能够提供的最精确的时间选择视图
+            maxView: "decade",//日期时间选择器最高能展示的选择范围视图
+            format: 'yyyy-mm-dd',
+            todayBtn: true,
+            autoclose: true,
+            //startDate: date,
+            todayHighlight: true,
+            keyboardNavigation: true,
+            forceParse: true,
+            initialDate: new Date(),
+            weekStart: 1,
+            //daysOfWeekDisabled:'0'
+        }).on('changeDate', function (ev) {
+            startDate = ev.date;
+            $('#dateTo').datetimepicker('setStartDate', startDate);
+        });
+
+        $("#dateTo").datetimepicker({
+            minView: "month", //日期时间选择器所能够提供的最精确的时间选择视图
+            maxView: "decade",//日期时间选择器最高能展示的选择范围视图
+            format: 'yyyy-mm-dd',
+            todayBtn: true,
+            autoclose: true,
+            startDate: startDate,
+            todayHighlight: true,
+            keyboardNavigation: true,
+            forceParse: true,
+            initialDate: new Date(),
+            weekStart: 1,
+            //daysOfWeekDisabled:'0'
+        }).on('changeDate', function (ev) {
+            endDate = ev.date;
+            $('#dateFrom').datetimepicker('setEndDate', endDate);
+        });
+
+
+        $.post('@Url.Action("getDetailDropForCustomer")', {}, function (res) {
+
+            var phtml = "";
+            for (var i = 0; i < res.Customer.length; i++) {
+                if (i == 0) {
+                    phtml += "<option  value='" + res.Customer[i].ID + "' selected='selected' data-name='" + res.Customer[i].Name + "'>" + res.Customer[i].Name + "</option>";
+                } else {
+                    phtml += "<option  value='" + res.Customer[i].ID + "' data-name='" + res.Customer[i].Name + "'>" + res.Customer[i].Name + "</option>";
+                }
+            }
+            $("#Customer").html(phtml);
+            $('.selectpicker').selectpicker('refresh');//加载select框选择器
+
+        });
+
+        $('#Customer').change(function () {
+            $.post('@Url.Action("getDetailDropForModel")', { Customer: $('#Customer').val() }, function (res) {
+                var phtml = "";
+                for (var i = 0; i < res.Model.length; i++) {
+                    if (i == 0) {
+                        phtml += "<option  value='" + res.Model[i].ID + "' selected='selected' data-name='" + res.Model[i].Name + "'>" + res.Model[i].Name + "</option>";
+                    } else {
+                        phtml += "<option  value='" + res.Model[i].ID + "' data-name='" + res.Model[i].Name + "'>" + res.Model[i].Name + "</option>";
+                    }
+                }
+                $("#Model").html(phtml);
+                $('.selectpicker').selectpicker('refresh');//加载select框选择器
+
+            });
+        });
+
+
+        postLoadTableFinance('@Url.Action("FinanceLoad")', _tableName, _cols, _editcol, '@Url.Action("TrackerEdit")');
+
+
+    });
+
+    //debugger;
+    $("#btnExport").click(function () {
+        var dateFrom = $('#dateFrom').val();
+        var dateTo = $('#dateTo').val();
+        var Customer = $('#Customer option:selected').text();
+        var Model = $('#Model option:selected').text();
+
+
+        $.fileDownload("@Url.Action("exportFinanceData")", {
+            httpMethod: 'post',
+            // 因为这个插件貌似只支持URL参数,所以要用jquery param将js对象转成URL参数
+            data: {
+                dateFrom: dateFrom,
+                dateTo: dateTo,
+                Customer: Customer,
+                Model: Model
+            },
+            // data: $.param(params),
+            prepareCallback: function (url) {
+                //console.log("正在导出...");
+            },
+            //要想成功回调失败和成功方法，要在响应首部加 response.setHeader("Set-Cookie", "fileDownload=true; path=/");
+            successCallback: function (url) {
+                $.globalMessenger().post({
+                    message: "操作成功",//提示信息
+                    type: 'info',//消息类型。error、info、success
+                    hideAfter: 5,//多长时间消失
+                    showCloseButton: true,//是否显示关闭按钮
+                    hideOnNavigate: true //是否隐藏导航
+                });
+            },
+            failCallback: function (html, url) {
+                //console.log("导出失败");
+                bootbox.alert({ message: 'There is an error', title: "Export Failed" });
+            }
+        });
+
+    });
+
+
+    $("#btnSearch").click(function () {
+        $("#" + _tableName).DataTable().ajax.reload();
+    });
+
+    //当Model下拉框被改变时，All被选中的话，就删除其他选中项，如果All没被选中的话，其他选中项不被删除
+    $('#Model').on('change', function () {
+
+        var firstSelectedValue = '';
+        var selectedValue = $('#Model').find("option:selected");
+        if (selectedValue.length > 0) {
+            firstSelectedValue = selectedValue[0].textContent;
+        }
+        if (firstSelectedValue == 'All') {
+            $("#Model").val('');
+            $("#Model").selectpicker('refresh');
+        }
+
+    })
+
+
+    function postLoadTableFinance(url, tableName, cols, editCol, editUrl) {
+        //debugger;
+        //console.log($('body').attr("LangID"));
+        //console.log('/Content/Datatables/Lang/Lang_' + $('body').attr("LangID") + '.txt');
+        //debugger;
+        var domCustomized = "<'row'<'col-sm-3'l><'col-sm-3'><'col-sm-6'>>" +
+            "<'row'<'col-sm-12'tr>>" +
+            "<'row'<'col-sm-3'i><'col-sm-3'><'col-sm-6'p>>";
+        var height = parseInt($("body").css("height").replace("px", "")) - 140;
+        var defs = [];
+        for (var i = 0; i < cols.length; i++) {
+            if (cols[i] == editCol) {
+                defs.push({
+                    "className": "text-left", "targets": i, "orderable": false, "data": cols[i], "render": function (data, type, full, meta) {
+                        if (data) {
+                            var str = "javascript" + ":postEdit(" + full.ID + ",'" + encodeURIComponent(editUrl) + "')";
+                            return '<a href="#" onclick="' + str + '">' + data + '</a>';
+                        } else {
+                            return '';
+                        }
+                    }
+                });
+            }
+            else if (cols[i] == "ID") {
+                defs.push({
+                    "className": "text-center", "targets": i, "orderable": false, "data": "ID", "render": function (data, type, full, meta) {
+                        return '<input type="checkbox" name="selectid" value="' + data + '" />';
+                    }
+                });
+            }
+            else {
+                defs.push({
+                    "className": "text-left", "targets": i, "orderable": false, "data": cols[i], "render": function (data, type, full, meta) {
+                        //debugger;
+                        return data;
+                    }
+                });
+            }
+        }
+        //debugger;
+        var t = $("#" + tableName).DataTable({
+            "dom": domCustomized,
+            //autoWidth: false,
+            deferRender: true,
+            filter: false,
+            processing: true,
+            serverSide: true,
+            order: [],
+            scrollY: height,
+            scrollX: true,
+            scrollCollapse: true,
+            scroller: true,
+            searching: true,
+            info: true,
+            paging: true,
+            paginationType: "full_numbers",
+            lengthMenu: [[10, 20, 50, 100, 99999999], [10, 20, 50, 100, "All"]],
+            pageLength: 10,
+            lengthChange: true, //fixedColumns: { leftColumns: 2 },
+            serverMethod: "POST",
+            ajax: {
+                url: url
+            },
+            language: {
+                url: '/Content/Datatables/Lang/Lang_' + $('body').attr("LangID") + '.txt'
+            },
+            columnDefs: defs,
+            fnServerParams: function (data) {
+                data.dateFrom = $("#dateFrom").val();
+                data.dateTo = $("#dateTo").val();
+                data.Customer = $("#Customer").val();
+                //data.Model = $("#Model").val();
+                data.Model = arrToStr($('#Model').find("option:selected"));
+            }
+
+        });
+    }
+
+
+    function arrToStr(value) {
+        // 选中的文本值集合
+        var checkText = [];
+        if (value.length > 0) {
+            for (var i = 0; i < value.length; i++) {
+                checkText.push(value[i].textContent);
+            }
+        }
+        return checkText.join(',');
+    }
+
+    </script>
+

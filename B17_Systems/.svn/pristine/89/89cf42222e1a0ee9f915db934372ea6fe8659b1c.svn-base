@@ -1,0 +1,118 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using SDPSubSystem.Web.Common;
+@model SDPSubSystem.Model.SysModels.SYS_Menu_Systems
+
+<style type="text/css">
+    .carousel-control.left {
+        background-image: none;
+        background-repeat: repeat-x;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+    }
+
+    .carousel-control.right {
+        left: auto;
+        right: 0;
+        background-image: none;
+        background-repeat: repeat-x;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+    }
+
+    .carousel-inner img {
+        width: 100%;
+    }
+
+    .img_define1 {
+        width: 100%; /*div自适应父级宽度*/
+        height: 100%; /*div自适应高度*/
+        background-size: contain; /*不能使用cover*/
+        background-repeat: no-repeat;
+        background-position: center; /*图片居中*/
+        background-image: url('../../Content/Image/PASS.jpg')
+    }
+
+    .img_define2 {
+        width: 100%; /*div自适应父级宽度*/
+        height: 100%; /*div自适应高度*/
+        background-size: contain; /*不能使用cover*/
+        background-repeat: no-repeat;
+        background-position: center; /*图片居中*/
+        background-image: url('../../Content/Image/FAIL.jpg')
+    }
+
+    .img_define3 {
+        width: 100%; /*div自适应父级宽度*/
+        height: 100%; /*div自适应高度*/
+        background-size: contain; /*不能使用cover*/
+        background-repeat: no-repeat;
+        background-position: center; /*图片居中*/
+        background-image: url('../../Content/Image/action.jpg')
+    }
+
+    #carousel-example-generic > .carousel-inner > .item {
+        height: 430px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+    }
+</style>
+@if (Model.Name == "ESD Audit System")
+{
+<div>
+    <div class="col-sm-12">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+            </ol>
+            <!-- Wrapper for slides 轮播的图片 轮播项 -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active" style="background-image: url('../../Content/Image/ESD.png')"></div>
+                <div class="item" style="background-image: url('../../Content/Image/PASS.jpg')"></div>
+                <div class="item" style="background-image: url('../../Content/Image/FAIL.jpg')"></div>
+                <div class="item" style="background-image: url('../../Content/Image/action.jpg')"></div>
+            </div>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox" style="display:none">
+                <div class="item active">
+                    <div class="img_define1"></div>
+                    @*<img src="@Url.Content("~/Content/Image/PASS.jpg")" alt="...">*@
+                    <div class="carousel-caption">
+                        ...
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="img_define2"></div>
+                    @*<img src="@Url.Content("~/Content/Image/FAIL.jpg")" alt="...">*@
+                    <div class="carousel-caption">
+                        ...
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="img_define3"></div>
+                    @*<img src="@Url.Content("~/Content/Image/action.jpg")" alt="...">*@
+                    <div class="carousel-caption">
+                        ...
+                    </div>
+                </div>
+            </div>
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
+}
+

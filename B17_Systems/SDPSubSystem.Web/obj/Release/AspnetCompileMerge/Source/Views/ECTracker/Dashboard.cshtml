@@ -1,0 +1,341 @@
+﻿@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_LayoutJquery.cshtml";
+}
+<style>
+
+    .BoldFormatLeftColumn {
+        color:black;
+        font-size: 20px;
+        font-weight: bold;
+        background-color: aliceblue;
+        font-family: Arial;
+        text-align: left;
+    }
+
+    .NormalFormat {
+        font-family: Calibri;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    th {
+        color: black;
+        background-color:white;
+    }
+
+</style>
+<div class="container-fluid">
+    <div class="row" style="padding-top:5px;padding-bottom:5px;padding-left:5px;">
+        <div class="col-sm-12" style="margin:0 0;padding:0 0;">
+            @*<label style="margin:0 0;padding:0 0;font-size:20px;">B17:</label>*@
+            <label class="control-label">Year:</label>
+            <select class="form-control selectpicker" style="width:200px;" data-width="70px" data-live-search="false" id="year" name="year" data-size="10"></select>
+        </div>
+    </div>
+    <div class="row" style="margin:0 0;padding:0 0;">
+        <div class="col-sm-12" style="margin:0 0;padding:0 0;">
+            
+            <table id="ECTable" class="table table-bordered table-hover tableWidth">
+                <thead></thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="panel panel-default">
+                
+                <div class="panel-body">
+                    <div id="ECTrackerChart" style="height:400px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+    $(function () {
+        var yearVal = "";
+        $.post('@Url.Action("GetYearDropdownList")', {}, function (res) {
+            //debugger
+
+            var outtypehtml = "";
+            for (var i = 0; i < res.YearDrop.length; i++) {
+                if ('2021' == res.YearDrop[i].ID) {
+                    outtypehtml += "<option value='" + res.YearDrop[i].ID + "' selected='selected' data-name='" + res.YearDrop[i].Name + "'>" + res.YearDrop[i].Name + "</option>";
+                } else {
+                    outtypehtml += "<option value='" + res.YearDrop[i].ID + "' data-name='" + res.YearDrop[i].Name + "'>" + res.YearDrop[i].Name + "</option>";
+                }
+            }
+            $("#year").html(outtypehtml);
+            $('.selectpicker').selectpicker('refresh');//加载select框选择器
+
+            yearVal = $('#year option:selected').text();
+            $.post('@Url.Action("GetDashboardData")', { year:yearVal }, function (result) {
+                //console.log(result);
+                loadTable(result.ECO, "ECTable");
+                loadChart(result.ECO, "ECTrackerChart");
+            })
+
+        })
+
+        $('#year').change(function () {
+            yearVal = $('#year option:selected').text();
+            $.post('@Url.Action("GetDashboardData")', { year:yearVal }, function (result) {
+                //console.log(result);
+                loadTable(result.ECO, "ECTable");
+                loadChart(result.ECO, "ECTrackerChart");
+            })
+        })
+    })
+
+    function loadTable(data, divtable) {
+        $('#' + divtable + ' thead').empty();
+        //debugger
+        $.each(data, function (idx, item) {
+            var tr;
+            tr = $('<tr></tr>');
+
+            $.each(item, function (key, val) {
+                if (key == 'Project') {
+                    tr.append('<th class="BoldFormatLeftColumn">' + key + '</th>');
+                } else {
+                    tr.append('<th class="NormalFormat">' + key + '</th>');
+                }
+            });
+
+            $('#' + divtable + ' thead').append(tr);
+            return false;
+        })
+
+        $('#' + divtable + ' tbody').empty();
+
+        var flag = 0;
+        $.each(data, function (idx, item) {
+            //debugger
+            var tr;
+            tr = $('<tr ></tr>');
+            flag = 0;
+            $.each(item, function (key, val) {
+                if (flag == 0) {
+                    tr.append('<td class="BoldFormatLeftColumn" >' + val + '</td>');
+                } else {
+                    tr.append('<td class="NormalFormat" >' + val + '</td>');
+                }
+                flag++;
+            });
+
+            $('#' + divtable + ' tbody').append(tr);
+        });
+    }
+
+
+
+
+    function loadChart(data, divname) {
+        var chart = echarts.init(document.getElementById(divname));
+        linqobj = jslinq(data);
+
+        var categoryData = linqobj.select(function (el) {
+            return el.Project;
+        }).toList();
+        //debugger;
+
+
+        //var xAxisData = linqobj.select(function (el) {
+        //    return el.reallinename;
+        //}).toList();
+        var xAxisData = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+        var linedata = linqobj.lastOrDefault();
+        var dataLineArr = [];
+        $.each(linedata, function (key, val) {
+            //debugger
+            for (var n = 0; n < xAxisData.length; n++) {
+                if (xAxisData[n] == key) {
+                    //debugger
+                    dataLineArr.push(val.substring(0, val.length - 1));
+                    return;
+                }
+            }
+        });
+
+        var colorArr = ['#fac858', '#ee6666','#0000FF', '#91cc75',  '#73c0de', '#3ba272', '#fc8452', '#9a60b4', '#ea7ccc', '#00008B', '#7A378B', '#008B45', '#76EEC6', '#FF3E96', '#DA70D6', '#8B3626', '#A020F0', '#CD661D', '#8B7355', '#8B4726', '#FF8247', '#CD9B1D', '#6B8E23', '#ADFF2F', '#556B2F', '#6A5ACD', '#000080', '#2F4F4F', '#79CDCD', '#00C5CD', '#53868B', '#BBFFFF', '#CAFF70', '#8B8B7A', '#BDB76B', '#CD950C', '#CD9B9B', '#E9967A', '#8B5A2B', '#8B1A1A', '#DA70D6', '#8A2BE2', '#CD6600', '#8B4500', '#8B3E2F', '#CD0000', '#8B0A50', '#FFB5C5', '#FFAEB9', '#8B636C', '#3A5FCD', '#7A378B', '#7A378B', '#1C1C1C'];
+
+        var seriesData = [];
+
+        //debugger
+        for (var l = 0; l < (categoryData.length - 3); l++) {
+            var dataArr = [];
+            $.each(data[l], function (key, val) {
+                //debugger
+                for (var n = 0; n < xAxisData.length; n++) {
+                    if (xAxisData[n] == key) {
+                        dataArr.push(val);
+                        return;
+                    }
+                }
+            });
+
+
+            //debugger;
+            seriesData.push({
+                name: data[l].Project,
+                type: 'bar',
+                stack: 'QtyStack',
+                emphasis: {
+                    focus: 'series'
+                },
+                barMaxWidth: '20%',
+                data: dataArr,
+                itemStyle: {
+                    normal: { color: colorArr[l] },
+                }
+            });
+        }
+        //debugger
+        seriesData.push({
+            type: 'line',
+            yAxisIndex: 1,
+            name: 'Outstanding %',
+            data: dataLineArr,
+            itemStyle: {
+                color: '#8B6914'
+            },
+            label: {
+                normal: {
+                    show: true,
+                    //position: 'top',
+                    formatter: function (params) {
+                        return params.data + '%';
+                    },
+                    textStyle: { //数值样式
+                        fontFamily: 'Arial',
+                        //fontSize: 18
+                    }
+                }
+            }
+        })
+
+        var option = {
+            title: {
+                text: 'Outstanding ECO Trend',
+                textStyle: {
+                    color: 'black',
+                    fontSize: '18',
+                    fontFamily: 'Calibri',
+                    width: '100',
+                },
+                textAlign: 'auto',
+                textVerticalAlign: 'auto',
+                padding: [0,  // 上
+                    10, // 右
+                    0,  // 下
+                    10 // 左
+                ],
+                left: '40%',
+                //right:'30%',
+                top: '1%',
+                bottom: '4%'
+            },
+            tooltip: {
+                show: true,
+                trigger: 'axis',
+                axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                    type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                },
+            },
+            toolbox: {
+                //feature: {
+                //    saveAsImage: {}
+                //}
+            },
+            legend: {
+                show: true,
+                top: "bottom"
+            },
+            yAxis: [{
+                type: 'value',
+                show: true,
+                name: '',
+                position: 'end',
+                nameLocation: 'end',
+                nameTextStyle: {
+                    color: "blue",
+                    fontSize: 12,
+                },
+            }, {
+                type: 'value',
+                show: true,
+                name: '',
+                position: 'end',
+                nameLocation: 'end',
+                nameTextStyle: {
+                    color: "blue",
+                    fontSize: 12,
+                },
+                axisLabel: {
+                    formatter: '{value}%'
+                },
+                splitNumber: 5,
+                min: 0,
+                max: 100
+            }],
+            xAxis: {
+                type: 'category',
+                name: '',
+                position: 'end',
+                nameLocation: 'end',
+                splitLine: { show: false },
+                data: xAxisData,
+                axisLabel: {
+                    interval: 0,
+                    rotate: 0
+                },
+                axisTick: {
+                    alignWithLabel: true
+                }
+                //nameTextStyle: {
+                //    color: "blue",
+                //    fontSize: 12
+                //}
+            },
+            grid: {
+                left: '1%',
+                right: '1%',
+                bottom: '6%',
+                containLabel: true
+            },
+            series: seriesData
+        }
+
+        // 加上true表示不合并配置
+        chart.setOption(option,true);
+
+        chart.on('click', function (param) {
+            debugger
+            parent.AddTab('ba4d9015-1458-4447-915b-20a623b3717a', 'ECO Tracker', '/ECTracker/Index?Project=' + param.seriesName + '&Month=' + param.name + '&Year=' + $('#year option:selected').text());
+
+            parent.$("#Jabra_ECO_CustomerProject_Hyperlink_Param_Transfer").val(param.seriesName);
+            parent.$("#Jabra_ECO_Month_Hyperlink_Param_Transfer").val(param.name);
+            parent.$("#Jabra_ECO_Year_Hyperlink_Param_Transfer").val($('#year option:selected').text());
+            var menu = parent.$('#nav li:eq(1)>ul li:eq(1)').children('a');
+
+            if (menu.attr("isGroup") == "N") {
+
+                if (menu.attr("pc") == "Customized") {
+                    parent.AddTab(menu.attr("tag"), menu.text(), menu.attr('url'));
+                }
+                else {
+                    $.post('@Url.Action("GetPageUrl")', { PageUrl: menu.attr('url') }, function (result) {
+                        parent.AddTab(menu.attr("tag"), menu.text(), result);
+                    })
+                }
+            }
+
+
+        });
+        
+    }
+</script>

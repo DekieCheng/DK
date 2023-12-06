@@ -1,0 +1,1 @@
+2021-04-26 20:06:29,973  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType£ºIndexOutOfRangeException , Content£ºCannot find column 4. , Function£ºSystem.Data.DataColumn get_Item(Int32) , Object£ºSystem.Data , Controller£ºSMTBackEndAutoKitting , Action£ºLineMatrixEdit ; 

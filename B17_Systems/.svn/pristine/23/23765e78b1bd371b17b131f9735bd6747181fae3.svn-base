@@ -1,0 +1,1 @@
+2020-04-08 16:14:44,338  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType£ºTypeInitializationException , Content£ºThe type initializer for 'SDPSubSystem.Data.CacheData.DataCache' threw an exception. , Function£ºBoolean IsExistsNoAuthorize(SDPSubSystem.Model.AssistModels.MvcEntity) , Object£ºSDPSubSystem.Data , Controller£ºDefault , Action£ºIndex ; 

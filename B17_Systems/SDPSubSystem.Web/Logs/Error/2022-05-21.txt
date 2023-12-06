@@ -1,0 +1,1 @@
+2022-05-21 09:12:54,427  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType£ºSqlException , Content£ºCould not find stored procedure 'uspRecreationRegister'. , Function£ºVoid OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action]) , Object£º.Net SqlClient Data Provider , Controller£ºRecreationMgnt , Action£ºGetDropdownList ; 

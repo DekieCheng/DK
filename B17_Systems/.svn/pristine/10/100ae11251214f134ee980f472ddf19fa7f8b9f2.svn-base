@@ -1,0 +1,13 @@
+2021-02-09 14:23:26,298  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType:ArgumentNullException , Content:Value cannot be null.
+Parameter name: input , Function:System.Object Deserialize(System.Web.Script.Serialization.JavaScriptSerializer, System.String, System.Type, Int32) , Object:System.Web.Extensions , Controller:attrition , Action:GetstationDataByLine ; 
+2021-02-09 14:27:49,369  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType:FormatException , Content:Input string was not in a correct format. , Function:Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean) , Object:mscorlib , Controller:attrition , Action:GetstationDataByLine ; 
+2021-02-09 14:34:14,722  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType:ArgumentNullException , Content:Value cannot be null.
+Parameter name: input , Function:System.Object Deserialize(System.Web.Script.Serialization.JavaScriptSerializer, System.String, System.Type, Int32) , Object:System.Web.Extensions , Controller:attrition , Action:GetstationDataByLine ; 
+2021-02-09 14:37:36,191  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType:ArgumentNullException , Content:Value cannot be null.
+Parameter name: input , Function:System.Object Deserialize(System.Web.Script.Serialization.JavaScriptSerializer, System.String, System.Type, Int32) , Object:System.Web.Extensions , Controller:attrition , Action:GetstationDataByLine ; 
+2021-02-09 14:38:26,208  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType:ArgumentNullException , Content:Value cannot be null.
+Parameter name: input , Function:System.Object Deserialize(System.Web.Script.Serialization.JavaScriptSerializer, System.String, System.Type, Int32) , Object:System.Web.Extensions , Controller:attrition , Action:GetstationDataByLine ; 
+2021-02-09 14:42:39,406  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType:ArgumentNullException , Content:Value cannot be null.
+Parameter name: input , Function:System.Object Deserialize(System.Web.Script.Serialization.JavaScriptSerializer, System.String, System.Type, Int32) , Object:System.Web.Extensions , Controller:attrition , Action:GetstationDataByLine ; 
+2021-02-09 14:42:47,604  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType:ArgumentNullException , Content:Value cannot be null.
+Parameter name: input , Function:System.Object Deserialize(System.Web.Script.Serialization.JavaScriptSerializer, System.String, System.Type, Int32) , Object:System.Web.Extensions , Controller:attrition , Action:GetstationDataByLine ; 

@@ -1,0 +1,182 @@
+﻿@{
+    Layout = null;
+}
+@using SDPSubSystem.Web.Common;
+
+<div class="modal-dialog" style="width:55%;height:530px;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" style="color:White" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">@Html.GetLang("L000003")</h4>
+        </div>
+
+        <div class="modal-body">
+            <div id="message-box" style="display:none" class="alert alert-danger fade in" role="alert"><ul></ul></div>
+            <form class="form-horizontal" id="addressEdit">
+
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">Bulk PN:</label>
+                    <div class="col-sm-8 dropdown" style="padding-top:3px">
+                        <input style="width:380px;" class="input-group" type="text" id="BulkPN" name="BulkPN" value="@ViewData["BulkPN"]" readonly />
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">RMA#:</label>
+                    <div class="col-sm-8 dropdown" style="padding-top:3px">
+                        <input style="width:380px;" class="input-group" type="text" id="RMANumber" name="RMANumber" value="@ViewData["RMANumber"]" readonly />
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">SN:</label>
+                    <div class="col-sm-8 dropdown" style="padding-top:3px">
+                        <input style="width:380px;" class="input-group" type="text" id="SN" name="SN" value="@ViewData["SN"]" readonly />
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">FA Result:</label>
+                    <div class="col-sm-8 dropdown" style="padding-top:3px">
+                        <input style="width:380px;" class="input-group" type="text" id="FAResult" name="FAResult" value="@ViewData["FAResult"]" />
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">FA Report:</label>
+                    <div class="col-sm-8 dropdown" style="padding-top:3px">
+                        <input style="display: inline-block" type="file" id="file" name="file" />
+                        <input id="uploadFile" type="button" value="Upload" style="width: 90px; background: #4f8fdd; color: #fff" />
+                        <input id="filePathShow" type="text" style="width: 400px; background: #ccc" readonly />
+                        <input id="filePath" name="FAReportPath" type="text" style="width: 200px; background: #ccc;display:none" />
+                        @*<input style="width:380px;" class="input-group" type="text" id="FAReportPath" name="FAReportPath" value="@ViewData["FAReportPath"]" />*@
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">Rootcause:</label>
+                    <div class="col-sm-8 dropdown" style="padding-top:3px">
+                        <input style="width:380px;" class="input-group" type="text" id="RootCause" name="RootCause" value="@ViewData["RootCause"]" />
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">Issue Category:</label>
+                    <div class="col-sm-8 dropdown" style="padding-top:3px">
+                        <input style="width:380px;" class="input-group" type="text" id="IssueCategory" name="IssueCategory" value="@ViewData["IssueCategory"]" />
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">Improve Action:</label>
+                    <div class="col-sm-8 dropdown" style="padding-top:3px">
+                        <input style="width:380px;" class="input-group" type="text" id="ImproveAction" name="ImproveAction" value="@ViewData["ImproveAction"]" />
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">Owner:</label>
+                    <div class="col-sm-8 dropdown" style="padding-top:3px">
+                        <input style="width:380px;" class="input-group" type="text" id="Owner" name="Owner" value="@ViewData["Owner"]" />
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">Status:</label>
+                    <div class="col-sm-8 dropdown" style="padding-top:3px">
+                        <input style="width:380px;" class="input-group" type="text" id="Status" name="Status" value="@ViewData["Status"]" />
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">CA Link:</label>
+                    <div class="col-sm-8 dropdown" style="padding-top:3px">
+                        <input style="width:380px;" class="input-group" type="text" id="CALink" name="CALink" value="@ViewData["CALink"]" />
+                    </div>
+                </div>
+
+
+                <input id="_id" name="ID" type="hidden" value='@ViewData["ID"]' />
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button id="btnEditSave" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span>@Html.GetLang("BT00007")</button>
+            <button id="btnClosePO" type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-plus-sign"></span>@Html.GetLang("BT00008")</button>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+
+<script type="text/javascript">
+    $(function () {
+        $(".modal-dialog").draggable();
+
+        $("#btnEditSave").click(function () {
+            //var poststr = JSON.stringify($('#shippingform').serializeJSON());
+            $.post('@Url.Action("SaveEdit")',
+                { poststr: JSON.stringify($('#addressEdit').serializeJSON()) },
+                function (result) {
+                    if (result.IsSuccess) {
+
+                        $.globalMessenger().post({
+                            message: "Edit Success",//提示信息
+                            type: 'info',//消息类型。error、info、success
+                            hideAfter: 5,//多长时间消失
+                            showCloseButton: true,//是否显示关闭按钮
+                            hideOnNavigate: true //是否隐藏导航
+                        });
+                    }
+                    else {
+                        if (result.Msg) {
+                            var m_ul = "<ul>";
+                            var flag = false;
+                            $.each(result.Msg, function (idx, msg) {
+                                m_ul += "<li>" + msg + "</li>";
+                                flag = true;
+                            });
+                            m_ul += "</ul>";
+                            if (flag) { bootbox.alert({ message: m_ul, title: "Error" }); }
+                        }
+                    }
+                    $("#tab_table").DataTable().ajax.reload();
+                    $("#_Dialog").modal("hide");
+                });
+        });
+
+        uploadFile("uploadFile", "file", "filePath", "filePathShow");
+
+
+    });
+
+    function uploadFile(ctlID_upload, ctlID_selectFile, ctlID_showFilePath,ctlID_showFileName) {
+        $('#' + ctlID_upload).click(function () {
+            var f = document.getElementById(ctlID_selectFile).files;
+            if (f.length == 0) {
+                layer.alert('请先选择要上传的文件!'); return;
+            } else {
+
+                var formFile = new FormData();
+                formFile.append("file", f[0]); //加入文件对象
+                var data = formFile;
+                //debugger
+                $.ajax({
+                    url: '@Url.Action("UploadFile")',
+                    data: data,
+                    type: "Post",
+                    async: false,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function (data) {
+                        debugger
+                        $('#' + ctlID_showFilePath).val(data.Flag);
+                        $('#' + ctlID_showFileName).val(data.Msg);
+                    },
+                    error: function (data) {
+                        layer.alert(data);
+                    }
+                })
+            }
+        })
+    }
+
+</script>

@@ -1,0 +1,316 @@
+﻿
+@{
+    Layout = null;
+}
+@using SDPSubSystem.Web.Common;
+@model SDPSubSystem.Model.ECTracker.udtECOtracker
+
+<style>
+    .ui-autocomplete {
+        z-index: 215000000 !important;
+    }
+
+    .ui-autocomplete {
+        max-height: 100px;
+        overflow-y: auto;
+        /* prevent horizontal scrollbar */
+        overflow-x: hidden;
+    }
+    /* IE 6 doesn't support max-height
+       * we use height instead, but this forces the menu to always be this tall
+        * html
+       */
+    .ui-autocomplete {
+        height: 100px;
+    }
+</style>
+<div class="modal-dialog" style="width:55%;height:600px;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" style="color:White" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-edit"></span>Edit Record</h4>
+        </div>
+        <div class="modal-body">
+            <div id="message-box" style="display:none" class="alert alert-danger fade in" role="alert"><ul></ul></div>
+            <form class="form-horizontal" id="addressedit">
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">GN ECO#:</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="GNECO" name="GNECO" value="@Model.GNECO" disabled />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">Flex ECO #:</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="FlexECO" name="FlexECO" value="@Model.FlexECO" disabled />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">EC Type:</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="ECType" name="ECType" value="@Model.ECType" disabled />
+
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">Change Type#:</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="ChangeType" name="ChangeType" value="@Model.ChangeType" disabled />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">EC Received Date:</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input id="ECReceivedDate" name="ECReceivedDate" class="form-control" data-date-format="yyyy-mm-dd" style="width:200px" autocomplete="off" value="@Model.ECReceivedDate" disabled />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">Customer Project:</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="CustomerProject" name="CustomerProject" value="@Model.CustomerProject" disabled />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">EC Description:</label>
+                    <div class="col-sm-8" style="padding-top:2px">
+                        <textarea class="form-control" id="ECDescription" name="ECDescription" cols="20" rows="5" placeholder="The field is not required." disabled>@Model.ECDescription</textarea>
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">Estimate implementation date:</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input id="EstimateImplementationDate" name="EstimateImplementationDate" class="form-control" data-date-format="yyyy-mm-dd" style="width:200px" autocomplete="off" value="@Model.EstimateImplementationDate" />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">Actual implementation date:</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input id="ActualImplementationDate" name="ActualImplementationDate" class="form-control" data-date-format="yyyy-mm-dd" style="width:200px" autocomplete="off" value="@Model.ActualImplementationDate" />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">Status:</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="Status" name="Status" value="@Model.Status" disabled />
+                        @*@Html.DropDownList("StatusID", (List<SelectListItem>)ViewData["Status"], new { @id = "StatusID", @style = "width:380px;", @class = "form-control", datatype = "*", nullmsg = "Please select the Type!" })*@
+                    </div>
+                </div>
+                <div class="form-group ui-widget" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">Owner:</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <select class="form-control selectpicker" style="width:380px;" data-width="380px" data-live-search="true" id="Owner" name="Owner" title="Choose one of the following..." data-size="10" multiple>
+                            <option value="@Model.Owner" selected></option>
+                        </select>
+                        @*<input style="width:380px;" class="form-control" type="text" id="Owner" name="Owner" value="@Model.Owner" />*@
+                    </div>
+                </div>
+
+                <input id="ID" name="ID" type="hidden" value="@Model.ID" />
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button id="btnSave" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-saved"></span>Save</button>
+            <button id="btnClosePO" type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove-sign"></span>Close</button>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+
+
+<script type="text/javascript">
+    //const { debug } = require("node:console");
+
+
+
+    $("#ECReceivedDate").datetimepicker({
+        minView: "month", //选择日期后，不会再跳转去选择时分秒
+        format: 'yyyy-mm-dd',
+        todayBtn: 1,
+        autoclose: 1,
+        initialDate: new Date(Date.parse($("#ECReceivedDate").val())),
+    }).on("hide", function (event) {
+        event.stopPropagation();// 阻止调用modal的隐藏事件
+    }).on("show", function (event) {
+        event.stopPropagation();// 阻止调用modal的show事件
+    });
+
+    $("#EstimateImplementationDate").datetimepicker({
+        minView: "month", //选择日期后，不会再跳转去选择时分秒
+        format: 'yyyy-mm-dd',
+        todayBtn: 1,
+        autoclose: 1,
+    }).on("hide", function (event) {
+        event.stopPropagation();// 阻止调用modal的隐藏事件
+    }).on("show", function (event) {
+        event.stopPropagation();// 阻止调用modal的show事件
+    });
+
+    $("#ActualImplementationDate").datetimepicker({
+        minView: "month", //选择日期后，不会再跳转去选择时分秒
+        format: 'yyyy-mm-dd',
+        todayBtn: 1,
+        autoclose: 1,
+    }).on("hide", function (event) {
+        event.stopPropagation();// 阻止调用modal的隐藏事件
+    }).on("show", function (event) {
+        event.stopPropagation();// 阻止调用modal的show事件
+    });
+
+    $(function () {
+        //var vaArray = new Array('aaa', 'a11', 'bb');
+        //var vaArray = [
+        //    "ActionScript",
+        //    "AppleScript",
+        //    "Asp",
+        //    "BASIC",
+        //    "C",
+        //    "C++",
+        //    "Clojure",
+        //    "COBOL",
+        //    "ColdFusion",
+        //    "Erlang",
+        //    "Fortran",
+        //    "Groovy",
+        //    "Haskell",
+        //    "Java",
+        //    "JavaScript",
+        //    "Lisp",
+        //    "Perl",
+        //    "PHP",
+        //    "Python",
+        //    "Ruby",
+        //    "Scala",
+        //    "Scheme"
+        //];
+        //$("#Owner").autocomplete({
+        //    minChars: 1,
+        //    maxHeight: 300,
+        //    lookup: vaArray,
+        //    //  serviceUrl: '${base}/getAutoCom.action',
+        //    //  params: { orgNameCom:$('#orgNameCom').val()},
+        //    onSelect: function (suggestion) {
+        //        //   immediately( document.getElementById("orgNameCom")  ,'5','orgNameCom','orgName'); // 我自己程序的方法 不需要用
+        //        //  alert('You selected: ' + suggestion.value + ', ' + suggestion.data);
+        //    },
+        //    //showNoSuggestionNotice: true,
+        //    //noSuggestionNotice: 'Sorry, no matching results'
+        //});
+
+
+        //$("#Owner").autocomplete(vaArray, {
+        //    width: 320,
+        //    max: 4,
+        //    highlight: false,
+        //    multiple: true,
+        //    multipleSeparator: "",
+        //    scroll: true,
+        //    scrollHeight: 300
+        //});
+
+        //var data = [{ text: 'Link A', url: '/page1' }, { text: 'Link B', url: '/page2' }];
+        //$("#Owner").autocomplete(data, {
+        //    formatItem: function (item) {
+        //        return item.text;
+        //    }
+        //}).result(function (event, item) {
+        //    //location.href = item.url;
+        //    $("#Owner").val( item.url);
+        //});
+
+         $.post('@Url.Action("GetCFTMatrixDropdownList")', { }, function (res) {
+             //console.log(result);
+             //debugger;
+             //data = result.CFT;
+
+             //data1 = ["c++", "java", "php", "coldfusion", "javascript", "asp", "ruby"]
+             
+             //$("#Owner").autocomplete(data,{
+             //    //dataType: "json",
+             //    //formatItem表明的是显示的格式，formatMatch表示匹配的内容，formatResult表示结果的内容
+             //    formatItem: function (row, i, max) {
+             //        //debugger;
+             //        //var obj = eval("(" + row + ")"); //转换成js对象
+             //        return row.Firstname + ' ' + row.Lastname+'('+row.Email+')';
+             //    },
+             //    formatMatch: function (row, i, max) {
+             //        return row.Firstname + ' ' + row.Lastname + '(' + row.Email + ')';
+             //    },
+             //    formatResult: function (row) {
+             //        //var obj = eval("(" + row + ")"); //转换成js对象
+             //        return row.Email;
+             //    },
+             //    //extraParams: {
+             //    //    searchStr: function () {
+             //    //        return $("#Owner").val();
+             //    //    }
+             //    //},
+             //    minChars: 1,
+             //    //minLength: 0,
+             //    //highlight: false,
+             //    matchContains: true,
+             //    //mustMatch:true,
+             //    max:100,
+             //    width: 380,
+             //    autoFocus: true,
+             //    autoFill: false,
+             //    multiple: true,
+             //    multipleSeparator: "",
+             //    scroll: true,
+             //    scrollHeight: 300
+             //});
+
+            // $("#Owner").autocomplete({
+            //     minLength: 0,
+            //     source:data,
+            //     focus: function (event, ui) {
+            //         $("#Owner").val(ui.item.Firstname + ' ' + ui.item.Lastname);
+            //         return false;
+            //     },
+            //     select: function (event, ui) {
+            //         $("#Owner").val(ui.item.Firstname+' '+ui.item.Lastname);
+            //         return false;
+            //     }
+            // })
+            //.autocomplete("instance")._renderItem = function (ul, item) {
+            //    return $("<li>")
+            //        .append("<div>" + item.Firstname + ' ' + item.Lastname + '(' + item.Email + ')' + "</div>")
+            //        .appendTo(ul);
+            //};
+             debugger
+             var owner = $("#Owner").val();
+             var phtml = "";
+             //console.log(res);
+             for (var i = 0; i < res.CFT.length; i++) {
+                 if (owner[0].toLocaleUpperCase() == res.CFT[i].ID.toLocaleUpperCase()) {
+                     phtml += "<option value='" + res.CFT[i].ID + "' selected='selected' data-name='" + res.CFT[i].Name + "'>" + res.CFT[i].Name + "</option>";
+                 } else {
+                     phtml += "<option value='" + res.CFT[i].ID + "' data-name='" + res.CFT[i].Name + "'>" + res.CFT[i].Name + "</option>";
+                 }
+             }
+             $("#Owner").html(phtml);
+             $('.selectpicker').selectpicker('refresh');//加载select框选择器
+
+        })
+        $("#btnSave").click(function () {
+
+            debugger;
+            $.post('@Url.Action("SaveEdit")',
+                { poststr: JSON.stringify($('#addressedit').serializeJSON()) },
+                function (result) {
+                    $("#_Dialog").modal("hide");
+                    $("#tab_table").DataTable().ajax.reload();
+                })
+
+            //console.log(poststr);
+        })
+    });
+
+    function split(val) {
+        return val.split(/,\s*/);
+    }
+    function extractLast(term) {
+        return split(term).pop();
+    }
+
+
+
+</script>

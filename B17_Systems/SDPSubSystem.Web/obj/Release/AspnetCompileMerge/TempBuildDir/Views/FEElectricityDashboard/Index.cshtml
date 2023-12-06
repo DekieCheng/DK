@@ -1,0 +1,285 @@
+﻿
+@{
+    Layout = null;
+}
+@model System.Data.DataTable
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>Flex B17 用电数据</title>
+    <!--<link rel="stylesheet" type="text/css" href="./css/app.css" />-->
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/FE/css/app.css")" />
+</head>
+
+<body>
+    <header id="header">
+        <div class="row">
+            <h3 class="header-title">Flex B17 用电数据</h3>
+            @*<div id="currTime" style="width:100%; text-align:right;font-size:8px;font-weight:bold;color:white; ">@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")</div>*@
+        </div>
+        
+    </header>
+
+    <div id="container">
+        <div id="flexCon">
+            <div class="flex-left">
+                <div class="flex-cell flex-cell-1">
+                    <div class="chart-wrapper">
+                        <h3 class="chart-title">B17厂房总用电量</h3>
+                        @*<table class="block-text" id="team-box"></table>*@
+                        <div class="chart-div" id="block1">
+                            <div class="chart-loader">
+                                <div class="loader"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-cell flex-cell-1">
+                    <div class="chart-wrapper">
+                        <h3 class="chart-title">空调系统用电</h3>
+                        <div class="chart-div" id="block2">
+                            <div class="chart-loader">
+                                <div class="loader"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-cell flex-cell-1">
+                    <div class="chart-wrapper">
+                        <h3 class="chart-title">B17写字楼用电</h3>
+                        <div class="chart-div" id="block3">
+                            <div class="chart-loader">
+                                <div class="loader"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-middle">
+                <div class="flex-column">
+                    <div class="flex-cell flex-cell-1">
+                        <div class="chart-wrapper">
+                            <h3 class="chart-title">B17太阳能用电量</h3>
+                            <div class="chart-div" id="block4">
+                                <div class="chart-loader">
+                                    <div class="loader"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-cell flex-cell-1">
+                        <div class="chart-wrapper">
+                            <h3 class="chart-title">B10 Mech用电</h3>
+                            <div class="chart-div" id="block5">
+                                <div class="chart-loader">
+                                    <div class="loader"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-cell flex-cell-1">
+                        <div class="chart-wrapper">
+                            <h3 class="chart-title">B17 Mech用电</h3>
+                            <div class="chart-div" id="block6">
+                                <div class="chart-loader">
+                                    <div class="loader"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-column">
+                    <div class="flex-cell flex-cell-1">
+                        <div class="chart-wrapper">
+                            <h3 class="chart-title">压缩空气系统用电</h3>
+                            <div class="chart-div" id="block7">
+                                <div class="chart-loader">
+                                    <div class="loader"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-cell flex-cell-1">
+                        <div class="chart-wrapper">
+                            <h3 class="chart-title">楼顶排风&其它用电</h3>
+                            <div class="chart-div" id="block8">
+                                <div class="chart-loader">
+                                    <div class="loader"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-cell flex-cell-1">
+                        <div class="chart-wrapper">
+                            <h3 class="chart-title">B17 PCBA照明用电</h3>
+                            <div class="chart-div" id="block9">
+                                <div class="chart-loader">
+                                    <div class="loader"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-column">
+                    <div class="flex-cell flex-cell-1">
+                        <div class="chart-wrapper">
+                            <h3 class="chart-title">B17一楼原材料仓用电</h3>
+                            <div class="chart-div" id="block10">
+                                <div class="chart-loader">
+                                    <div class="loader"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-cell flex-cell-1">
+                        <div class="chart-wrapper">
+                            <h3 class="chart-title">B17一楼PCBA车间用电</h3>
+                            <div class="chart-div" id="block11">
+                                <div class="chart-loader">
+                                    <div class="loader"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-cell flex-cell-1">
+                        <div class="chart-wrapper">
+                            <h3 class="chart-title">B17二楼车间用电</h3>
+                            <div class="chart-div" id="block12">
+                                <div class="chart-loader">
+                                    <div class="loader"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-right">
+                <div class="flex-cell flex-cell-1">
+                    <div class="chart-wrapper">
+                        <h3 class="chart-title">B17三楼A车间用电</h3>
+                        <div class="chart-div" id="block13">
+                            <div class="chart-loader">
+                                <div class="loader"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-cell flex-cell-1">
+                    <div class="chart-wrapper">
+                        <h3 class="chart-title">B17三楼B车间用电</h3>
+                        <div class="chart-div" id="block14">
+                            <div class="chart-loader">
+                                <div class="loader"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-cell flex-cell-1">
+                    <div class="chart-wrapper">
+                        <h3 class="chart-title">B17四楼A车间用电</h3>
+
+                        <div class="chart-div" id="block15">
+                            <div class="chart-loader">
+                                <div class="loader"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-cell flex-cell-1">
+                    <div class="chart-wrapper">
+                        <h3 class="chart-title">B17四楼B车间用电</h3>
+
+                        <div class="chart-div" id="block16">
+                            <div class="chart-loader">
+                                <div class="loader"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="@Url.Content("~/Content/FE/js/jquery-1.10.2.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/FE/js/plugin/countUp.min.js")"></script>
+    <script src="@Url.Content("~/Content/FE/js/echarts-4.2.1.min.js")"></script>
+    <!-- 主题 -->
+    <script type="text/javascript" src="@Url.Content("~/Content/FE/js/plugin/echarts-theme-shine.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/FE/js/plugin/echarts-theme-macarons.js")"></script>
+    <!-- 图表js -->
+    @*<script type="text/javascript" src="@Url.Content("~/Content/FE/js/echarts-map.js")"></script>*@
+    <script type="text/javascript" src="@Url.Content("~/Content/FE/js/echarts-block1.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/FE/js/echarts-block2.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/FE/js/echarts-block3.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/FE/js/echarts-block4.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/FE/js/echarts-block5.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/FE/js/echarts-block6.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/FE/js/echarts-block7.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/FE/js/echarts-block8.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/FE/js/echarts-block9.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/FE/js/echarts-block10.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/FE/js/echarts-block11.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/FE/js/echarts-block12.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/FE/js/echarts-block13.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/FE/js/echarts-block14.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/FE/js/echarts-block15.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/FE/js/echarts-block16.js")"></script>
+
+    <!--<script src="./js/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="./js/plugin/countUp.min.js"></script>
+    <script src="./js/echarts-4.2.1.min.js"></script>-->
+    <!-- 主题 -->
+    <!--<script type="text/javascript" src="./js/plugin/echarts-theme-shine.js"></script>
+    <script type="text/javascript" src="./js/plugin/echarts-theme-macarons.js"></script>-->
+    <!-- 图表js -->
+   
+<script type="text/javascript">
+
+    //var ajaxBaseUrl = './';
+    //var ajaxBaseUrl = '@Url.Content("~/Content/FE/")';
+
+    $(function () {
+
+        //获取当天日期
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = now.getMonth() + 1;
+        const day = now.getDate();
+        //$("#nowDate").html(year + "年" + month + "月" + day + "日");
+
+        //loadMap();
+        $.post('@Url.Action("GetData")', {  }, function (result) {
+            //debugger;
+            loadBlock1(result.Block1);
+            loadBlock2(result.Block2);
+            loadBlock3(result.Block3);
+            loadBlock4(result.Block4);
+            loadBlock5(result.Block5);
+            loadBlock6(result.Block6);
+            loadBlock7(result.Block7);
+            loadBlock8(result.Block8);
+            loadBlock9(result.Block9);
+            loadBlock10(result.Block10);
+            loadBlock11(result.Block11);
+            loadBlock12(result.Block12);
+            loadBlock13(result.Block13);
+            loadBlock14(result.Block14);
+            loadBlock15(result.Block15);
+            loadBlock16(result.Block16);
+
+        });
+    });
+
+</script>
+</body>
+
+</html>
+@*<script language="JavaScript">
+    setTimeout(function () { location.reload() }, 60000); //指定1秒刷新一次
+</script>*@
+
+

@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\SDPSubSystem.Web",
+    "\\SDPSubSystem.Web\\Controllers",
+    "\\SDPSubSystem.Web\\Views",
+    "\\SDPSubSystem.Web\\Views\\attrition"
+  ],
+  "SelectedNode": "\\SDPSubSystem.Web\\Views\\attrition\\attrtionreport.cshtml",
+  "PreviewInSolutionExplorer": false
+}

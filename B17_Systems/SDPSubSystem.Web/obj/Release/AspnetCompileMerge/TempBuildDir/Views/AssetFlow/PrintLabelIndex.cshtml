@@ -1,0 +1,52 @@
+﻿@using SDPSubSystem.Web.Common;
+@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid center-in-center">
+    <div class="form-group" style="margin: 0 0;padding:0 0;">
+        <div class="col-md-3" ></div>
+        <label class="col-md-1 control-label" style="padding-top:10px;font-size:20px;" for="SN">SN:</label>
+        <div class="col-md-8" style="padding-top:10px">
+            <input style="width:380px;" class="form-control" type="text" id="SN" name="SN" value=""  onkeypress="getKey(event);"/>
+        </div>
+    </div>
+</div>
+<style type="text/css">
+    .center-in-center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+</style>
+
+<script type="text/javascript">
+    
+    $(function () {
+        
+
+    })
+
+    function getKey(event) {
+        if (event.keyCode == 13) {
+            var sn = $('#SN').val();
+
+            $.post('Print', { SN: sn }, function (result) {
+                printZpl(result.zpl);
+            })
+        }
+    }
+
+    function printZpl(zpl) {
+        var printWindow = window.open();        printWindow.document.open('text/plain');        printWindow.document.write(zpl);        printWindow.document.close();        printWindow.focus();        printWindow.print();        printWindow.close();
+
+    }
+
+</script>
+

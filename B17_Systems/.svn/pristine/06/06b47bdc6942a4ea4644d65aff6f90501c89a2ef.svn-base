@@ -1,0 +1,664 @@
+﻿@{
+    ViewBag.Title = "Main Attrition";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container-fluid">
+    <div class="row" style="margin:0 0;padding:0 0;">
+        <div class="col-sm-12" style="margin:0 0;padding:0 0;">
+            @*<span>OverAll Line Trend Chart| LastUpdateTime:</span>*@
+            <div class="form-group" style="float:right;margin:0 0;padding:0 0;">
+                @*<input id="startTimeTransfer" type="hidden" value="" />
+                <input id="endTimeTransfer" type="hidden" value="" />
+                <input id="lineTransfer" type="hidden" value="" />*@
+                <button class="btn-primary" id="btnHour">Hour</button>
+                <button class="btn-primary" id="btnDay">Day</button>
+                <button class="btn-primary" id="btnWeek">Week</button>
+                <button class="btn-primary" id="btnMonth">Month</button>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin:0 0;padding:0 0;">
+        <div class="col-sm-12" style="margin:0 0;padding:0 0;">
+            <div class="panel panel-primary" style="margin:0 0;padding:0 0;" >
+                <div class="panel-heading" >
+                    @* <span>OverAll Line Trend Chart| LastUpdateTime:</span>
+                        <div style="float:right"><input type="checkbox" id="BUCheck" checked="checked" />SelectAll</div>*@
+                </div>
+                <div class="panel-body">
+                    <div id="byTime" style="height:250px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="panel panel-primary">
+                <div id="chartline" class="panel-heading">
+                    @*<span>Attrition By Line | LastUpdateTime:</span>
+                        <div style="float:right"><input type="checkbox" id="BUCheck" checked="checked" />SelectAll</div>*@
+                </div>
+                <div class="panel-body">
+                    <div id="byLine" style="height:250px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+    $(function () {
+
+        $("#btnHour").click(function () {
+            
+            var strdate = nowTimestampFormat().substr(0,13) + ':00:00'; //日期字符串
+            var isdate = new Date(strdate);  //把日期字符串转换成日期格式
+
+            isdate.setHours(isdate.getHours() + 1);//小时
+
+            var pdate = formatDateTime(isdate);   //把日期格式转换成字符串
+
+
+            parent.$("#startTimeTransfer").val(strdate);
+            parent.$("#endTimeTransfer").val(pdate);
+
+            $.post('@Url.Action("GetattrtionData")', { timetype:0}, function (result) {
+                //console.log(result);
+                loadChartByTime(result.Time, "byTime");
+                loadChartByline(result.Line, "byLine");
+            })
+        });
+        $("#btnDay").click(function () {
+
+            var isdate = new Date();  //把日期字符串转换成日期格式
+
+            startTime = formatDate(isdate) + ' 08:00:00';
+            parent.$("#startTimeTransfer").val(startTime);
+
+            var dayCount = 1;
+            isdate = new Date(startTime);
+            isdate = new Date((isdate / 1000 + (86400 * dayCount)) * 1000);  //日期加1天
+            endTime = formatDateTime(isdate);
+
+            parent.$("#endTimeTransfer").val(endTime);
+
+            $.post('@Url.Action("GetattrtionData")', { timetype:1}, function (result) {
+                //console.log(result);
+                loadChartByTime(result.Time, "byTime");
+                loadChartByline(result.Line, "byLine");
+            })
+        });
+        $("#btnWeek").click(function () {
+            var date = new Date();
+            var startDate = getWeekBeginAndEndDate(date).startTime;
+            parent.$("#startTimeTransfer").val(startDate);
+            
+            var pdate = getWeekBeginAndEndDate(date).endTime;
+
+            parent.$("#endTimeTransfer").val(pdate);
+
+            $.post('@Url.Action("GetattrtionData")', { timetype:2}, function (result) {
+                //console.log(result);
+                loadChartByTime(result.Time, "byTime");
+                loadChartByline(result.Line, "byLine");
+            })
+        });
+        $("#btnMonth").click(function () {
+            var date = new Date();
+            var y = date.getFullYear();
+            var m = date.getMonth() + 1;
+            m = m < 10 ? ('0' + m) : m;
+
+            var strdate = y + '-' + m + '-01 08:00:00';
+
+            var getyear = strdate.substr(0, 4);
+            var getmonth = strdate.substr(5, 2);
+            var endDate = getLastDateOfMonth(getmonth, getyear) + ' 08:00:00';
+
+            parent.$("#startTimeTransfer").val(strdate);
+            parent.$("#endTimeTransfer").val(endDate);
+
+            $.post('@Url.Action("GetattrtionData")', { timetype:3}, function (result) {
+                //console.log(result);
+                loadChartByTime(result.Time, "byTime");
+                loadChartByline(result.Line, "byLine");
+            })
+        });
+
+
+
+        //刚打开页面时，默认按Day
+        var isdate = new Date();  //把日期字符串转换成日期格式
+
+        startTime = formatDate(isdate) + ' 08:00:00';
+        parent.$("#startTimeTransfer").val(startTime);
+
+        var dayCount = 1;
+        isdate = new Date(startTime);
+        isdate = new Date((isdate / 1000 + (86400 * dayCount)) * 1000);  //日期加1天
+        endTime = formatDateTime(isdate);   
+
+        parent.$("#endTimeTransfer").val(endTime);
+
+        $.post('@Url.Action("GetattrtionData")', { timetype:1}, function (result) {
+            //console.log(result);
+            loadChartByTime(result.Time, "byTime");
+            loadChartByline(result.Line, "byLine");
+        })
+    })
+
+    function loadChartByTime(data, divname) {
+        var chart = echarts.init(document.getElementById(divname));
+        linqobj = jslinq(data);
+        //console.log(data);
+        var barcolor = [];
+        var xAxisData = linqobj.select(function (el) {
+            return el.OperatioDate;
+        }).toList();
+        var serialData = linqobj.select(function (el) {
+            return el.AttritionRate;
+        }).toList();
+        var linedata = linqobj.select(function (el) {
+            return el.Target;
+        }).toList();
+        var linedata2 = linqobj.select(function (el) {
+            return el.Target2;
+        }).toList();
+        linqobj.any(function (el) {
+            if (el.AttritionRate < el.Target) {
+                barcolor.push('#678AAD');
+                //return '#678AAD';
+            } else if (el.AttritionRate >= el.Target2) {
+                barcolor.push('#FF4500');
+                //return '#678AAD';
+            } else {
+                barcolor.push('#CDCD00');
+            }
+            
+        });
+        //console.log(barcolor);
+
+        var option = {
+            tooltip: {
+                show: true,
+                trigger: 'axis',
+                axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                    type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                }
+            },
+            legend:{
+                show: true,
+                top: "top",
+                data: [
+                    {
+                        name: 'AttritionRate',
+                        // 强制设置图形为圆。
+                        //icon: 'rect',
+                        // 设置文本为红色
+                        textStyle: {
+                            color: 'blue'
+                        }
+                    },
+                    {
+                        name: '0.15%',
+                        // 强制设置图形为圆。
+                        //icon: 'none',
+                        // 图例图形的形状，有多个可选值：'circle', 'rect', 'roundRect', 'triangle', 'diamond', 'pin', 'arrow', 'none'，
+                        // 也可引用自定义的图片
+                        //  icon: "image://https://p1.pstatp.com/list/dfic-imagehandler/8ac89fbe-b30c-4ba0-8d75-02c0f60a7ea6"
+                        // 设置文本为红色
+                        textStyle: {
+                            color: '#FFD700'
+                        }
+                    },
+                    {
+                        name: '0.20%',
+                        // 强制设置图形为圆。
+                        //icon: 'none',
+                        // 图例图形的形状，有多个可选值：'circle', 'rect', 'roundRect', 'triangle', 'diamond', 'pin', 'arrow', 'none'，
+                        // 也可引用自定义的图片
+                        //  icon: "image://https://p1.pstatp.com/list/dfic-imagehandler/8ac89fbe-b30c-4ba0-8d75-02c0f60a7ea6"
+                        textStyle: {
+                            color: '#EE2C2C'
+                        }
+                    }
+                ],
+                //textStyle: {
+                //    color: 'red',
+                //}
+            },
+            xAxis: {
+                type: 'category',
+                name: '时间',
+                splitLine: { show: false },
+                data: xAxisData,
+                axisLabel: {//坐标轴刻度标签的相关设置。
+                    interval: 0,
+                    rotate: "25"
+                },
+                nameTextStyle: {
+                    color: "blue",
+                    fontSize: 12,
+                    //padding: 10
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            toolbox: {
+                feature: {
+                    saveAsImage: {}
+                }
+            },
+            yAxis: [
+                {
+                    show: true,
+                    type:'value',
+                    name: '抛料率%',
+                    position: 'left',
+                    nameLocation: 'end',
+                    nameTextStyle: {
+                        color: "blue",
+                        fontSize: 12,
+                        //padding: 10
+                    }
+                }
+            ],
+
+            series: [
+                {
+                    type: 'bar',
+                    yAxisIndex: 0,
+                    name: 'AttritionRate',
+                    data: serialData,
+                    itemStyle: {
+                        normal: {
+                            color: function (param) {
+                                return barcolor[param.dataIndex];
+                            }
+                        }
+                    },
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'inside'
+                        }
+                    }
+                },
+                {
+                    type: 'line',
+                    yAxisIndex: 0,
+                    name: '0.15%',
+                    data: linedata,
+                    itemStyle: {
+                        color: '#FFD700'
+                    },
+                    label: {
+                        normal: {
+                            show: false,
+                            //position: top,
+                        }
+                    }
+                },
+                {
+                    type: 'line',
+                    yAxisIndex: 0,
+                    name: '0.20%',
+                    data: linedata2,
+                    itemStyle: {
+                        color: '#EE2C2C'
+                    },
+                    label: {
+                        normal: {
+                            show: false,
+                            //position: top,
+                        }
+                    }
+                }
+           ]
+        }
+        chart.setOption(option);
+        chart.on('click', function (param) {
+           
+
+            //alert(param.name);//x轴的值
+            //alert(option.series[param.seriesIndex].barIds[param.dataIndex]);//获取自定义的值
+
+            if (param.name.length == 10) {
+                //Day
+                var strdate = param.name + ' 08:00:00'; //日期字符串
+                var isdate = new Date(Date.parse(strdate.replace(/-/g, "/")));  //把日期字符串转换成日期格式
+                var dayCount = 1;
+                isdate = new Date((isdate / 1000 + (86400 * dayCount)) * 1000);  //日期加1天
+                var pdate = formatDateTime(isdate);   //把日期格式转换成字符串
+
+                parent.$("#startTimeTransfer").val(strdate);
+                parent.$("#endTimeTransfer").val(pdate);
+
+
+                $.post('@Url.Action("GetAttrtionDataByTime")', { startdate: strdate, endDate: pdate, timeType: 1 }, function (result) {
+                    //console.log(result);
+                    loadChartByline(result.Line, "byLine");
+                })
+            } else if (param.name.length == 13) {
+                //Hour
+                var strdate = param.name + ':00:00'; //日期字符串
+                var isdate = new Date(strdate);  //把日期字符串转换成日期格式
+
+                isdate.setHours(isdate.getHours() + 1);//小时
+                
+                var pdate = formatDateTime(isdate);   //把日期格式转换成字符串
+
+
+                parent.$("#startTimeTransfer").val(strdate);
+                parent.$("#endTimeTransfer").val(pdate);
+
+
+                $.post('@Url.Action("GetAttrtionDataByTime")', { startdate: strdate, endDate: pdate, timeType: 0 }, function (result) {
+                    //console.log(result);
+                    loadChartByline(result.Line, "byLine");
+                })
+            } else if (param.name.length == 6) {
+                //Week
+                var strdate = param.name; //日期字符串
+                var getyear = strdate.substr(0, 4);
+                var getweek = strdate.substr(4, 2);
+                
+                var isdate = getDateOfISOWeek(getweek, getyear);
+                var startDate = formatDate(isdate) + ' 08:00:00';
+                parent.$("#startTimeTransfer").val(startDate);
+
+                var endDate = new Date(startDate);
+                endDate.setDate(endDate.getDate() + 7);//时间加7天
+                var pdate = formatDateTime(endDate);  
+                
+                parent.$("#endTimeTransfer").val(pdate);
+
+
+                $.post('@Url.Action("GetAttrtionDataByTime")', { startdate: startDate, endDate: pdate, timeType: 2 }, function (result) {
+                    //console.log(result);
+                    loadChartByline(result.Line, "byLine");
+                })
+            } else if (param.name.length == 7) {
+                //Month
+                var strdate = param.name + '-01 08:00:00'; 
+
+                var getyear = strdate.substr(0, 4);
+                var getmonth = strdate.substr(5, 2);
+                var endDate = getLastDateOfMonth(getmonth, getyear)+' 08:00:00';
+
+                parent.$("#startTimeTransfer").val(strdate);
+                parent.$("#endTimeTransfer").val(endDate);
+
+
+                $.post('@Url.Action("GetAttrtionDataByTime")', { startdate: strdate, endDate: endDate, timeType: 3 }, function (result) {
+                    //console.log(result);
+                    loadChartByline(result.Line, "byLine");
+                })
+            }
+            
+
+        });
+        return chart;
+    }
+
+    
+    function loadChartByline(data, divname) {
+        var chart = echarts.init(document.getElementById(divname));
+        linqobj = jslinq(data);
+        var barcolor = [];
+        var xAxisData = linqobj.select(function (el) {
+            return el.reallinename;
+        }).toList();
+        var serialData = linqobj.select(function (el) {
+            return el.attritionRate;
+        }).toList();
+        var linedata = linqobj.select(function (el) {
+            return el.Target;
+        }).toList();
+        var linedata2 = linqobj.select(function (el) {
+            return el.Target2;
+        }).toList();
+        linqobj.any(function (el) {
+            if (el.attritionRate < el.Target) {
+                barcolor.push('#678AAD');
+                //return '#678AAD';
+            } else if (el.attritionRate >= el.Target2) {
+                barcolor.push('#FF4500');
+                //return '#678AAD';
+            } else {
+                barcolor.push('#CDCD00');
+            }
+
+        });
+        //console.log(barcolor);
+        var startTime = parent.$("#startTimeTransfer").val();
+        var endTime = parent.$("#endTimeTransfer").val();
+
+        
+
+        var option = {
+            tooltip: {
+                show: true,
+                trigger: 'axis',
+                axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                    type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                }
+            },
+            toolbox: {
+                feature: {
+                    saveAsImage: {}
+                }
+            },
+            legend: {
+                show: true,
+                top: "top",
+                data: [
+                    {
+                        name: 'AttritionRate',
+                        // 强制设置图形为圆。
+                        //icon: 'rect',
+                        // 设置文本为红色
+                        textStyle: {
+                            color: 'blue'
+                        }
+                    },
+                    {
+                        name: '0.15%',
+                        // 强制设置图形为圆。
+                        //icon: 'none',
+                        // 图例图形的形状，有多个可选值：'circle', 'rect', 'roundRect', 'triangle', 'diamond', 'pin', 'arrow', 'none'，
+                        // 也可引用自定义的图片
+                        //  icon: "image://https://p1.pstatp.com/list/dfic-imagehandler/8ac89fbe-b30c-4ba0-8d75-02c0f60a7ea6"
+                        // 设置文本为红色
+                        textStyle: {
+                            color: '#FFD700'
+                        }
+                    },
+                    {
+                        name: '0.20%',
+                        // 强制设置图形为圆。
+                        //icon: 'none',
+                        // 图例图形的形状，有多个可选值：'circle', 'rect', 'roundRect', 'triangle', 'diamond', 'pin', 'arrow', 'none'，
+                        // 也可引用自定义的图片
+                        //  icon: "image://https://p1.pstatp.com/list/dfic-imagehandler/8ac89fbe-b30c-4ba0-8d75-02c0f60a7ea6"
+                        textStyle: {
+                            color: '#EE2C2C'
+                        }
+                    }
+                ],
+                //textStyle: {
+                //    color: 'red',
+                //}
+            },
+            xAxis: {
+                type: 'category',
+                name: '产线',
+                splitLine: { show: false },
+                data: xAxisData,
+                axisLabel: {//坐标轴刻度标签的相关设置。
+                    interval: 0,
+                    rotate: "25"
+                },
+                nameTextStyle: {
+                    color: "blue",
+                    fontSize: 12,
+                    //padding: 10
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            yAxis: {
+                show: true,
+                name: startTime + '\n' + endTime + '\n'+ '抛料率%',
+                position: 'left',
+                nameLocation: 'end',
+                nameTextStyle: {
+                    color: "blue",
+                    fontSize: 12,
+                    //padding: 10
+                }
+            },
+            series: [
+                {
+                    type: 'bar',
+                    yAxisIndex: 0,
+                    name: 'AttritionRate',
+                    data: serialData,
+                    itemStyle: {
+                        normal: {
+                            color: function (param) {
+                                return barcolor[param.dataIndex];
+                            }
+                        }
+                    },
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'inside'
+                        }
+                    }
+                },
+                {
+                    type: 'line',
+                    yAxisIndex: 0,
+                    name: '0.15%',
+                    data: linedata,
+                    itemStyle: {
+                        color: '#FFD700'
+                    },
+                    label: {
+                        normal: {
+                            show: false,
+                            //position: top,
+                        }
+                    }
+                },
+                {
+                    type: 'line',
+                    yAxisIndex: 0,
+                    name: '0.20%',
+                    data: linedata2,
+                    itemStyle: {
+                        color: '#EE2C2C'
+                    },
+                    label: {
+                        normal: {
+                            show: false,
+                            //position: top,
+                        }
+                    }
+                }
+            ]
+        }
+
+        chart.setOption(option);
+        chart.on('click', function (param) {
+            
+            var line = param.name;
+            line = line+'\\'+line;
+            parent.$("#lineTransfer").val(line);
+            parent.$("#transferFlag").val('bar');
+            //console.log(parent.$("#startTimeTransfer").val());
+            //console.log(parent.$("#endTimeTransfer").val());
+            //console.log(parent.$("#lineTransfer").val());
+
+            //parent.$('#nav li ul li').eq(1).children('a').click();
+            var menu = parent.$('#nav li ul li').eq(1).children('a');
+                if (menu.attr("isGroup") == "N") {
+                    
+                    if (menu.attr("pc") == "Customized") {
+                        parent.AddTab(menu.attr("tag"), menu.text(), menu.attr('url'));
+                    }
+                    else {
+                        $.post('@Url.Action("GetPageUrl")', { PageUrl: menu.attr('url') }, function (result) {
+                            parent.AddTab(menu.attr("tag"), menu.text(), result);
+                        })
+                    }
+                }
+               
+
+            //alert(param.name);//x轴的值
+            //alert(option.series[param.seriesIndex].barIds[param.dataIndex]);//获取自定义的值
+            
+
+            @*$.post('@Url.Action("station")', { }, function (result) {
+                console.log(result);
+                
+            })*@
+            //window.open("URL", 'top'); 只是表示打开这个页面，并不是打开并刷新页面；
+
+            //window.location.href = "URL"; //表示重新定向到新页面，同时刷新打开的这个页面；
+
+            //top.location.href = "/attrition/station?startTime=" + startTime + '&endTime=' + endTime + '&Line=' + line;
+            //top.location.href = "/attrition/station";
+            //window.location.href = "/attrition/station";
+
+
+            //var parenturl = window.parent.document.getElementById('todomatter');
+            //$(parenturl).text(obj.getAttribute('typeName'));
+            //parenturl.setAttribute("_href", obj.getAttribute('hrefs'));
+            //parenturl.setAttribute("data-title", obj.getAttribute('typeName'));
+            //parenturl.click();
+            //$(parenturl).text('');
+
+            
+
+            //parent.window.location.href("StationAttrition", "/attrition/station");
+            //console.log(startTime);
+            //console.log(endTime);
+            //console.log(line);
+
+            //这个方法用来获取父页面下的对象的值
+            //parent.window.opener
+
+            //_tab = parent.$('.layout-tab').x_tab({ contentCtl: $('.layout-content') });
+            //var code = parent.$('#nav li ul li').eq(1).children('a').attr('tag');
+            //var text = parent.$('#nav li ul li').eq(1).children('a').text();
+            //var url = "/attrition/station";
+            
+
+
+            //_tab.Add(code, text, url);
+
+            
+            //"./punch/clock_frm.html?modFlag="+modFlag+'&role='+role; 
+
+
+            //关闭新打开的tab页面，并刷新父页面。
+
+            //window.opener.location.href
+
+            //window.close();  
+
+
+        });
+        return chart;
+    }
+</script>

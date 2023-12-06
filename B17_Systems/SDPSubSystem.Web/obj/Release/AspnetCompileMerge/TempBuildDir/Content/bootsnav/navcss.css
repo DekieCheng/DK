@@ -1,0 +1,132 @@
+﻿.navcss{  
+    height: 39px;  
+    background: transparent;  
+    /*border-right: 1px solid #323232;*/    
+    border-radius: 3px;
+    margin-left: 20px;  
+    padding-left: 0px;  
+    position:absolute;
+    /*right:90px;*/
+    top:5px;
+    
+}     
+  
+.navcss li{  
+    list-style: none;  
+    display: block;  
+    float: left;  
+    height: 40px;  
+    position: relative;  
+    /*border-right: 1px solid #323232;*/  
+}  
+.navcss li:hover{  
+    background-color: gray; 
+}  
+  
+.navcss li a{  
+    padding: 0px 10px 0px 20px;  
+    margin: 0px 0;  
+    line-height: 40px;  
+    text-decoration: none;  
+    border-right: 1px solid black;  
+    height: 40px;  
+    color: #FFF;  
+    
+    word-break:keep-all;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display:block;
+}  
+  
+.navcss ul{  
+    background-color: #1F292F;   
+    padding: 0px;  
+    border-bottom: 1px solid black;  
+    border-right: 1px solid black;  
+    border-left:1px solid black;  
+    border-radius: 0px 0px 3px 3px;  
+    box-shadow: 2px 2px 3px black;  
+    -webkit-box-shadow: 2px 2px 3px black;  
+    -moz-box-shadow:2px 2px 3px black;  
+    width:200px; 
+    right:0px;
+    z-index:999;
+}  
+  
+  
+.navcss ul li {  
+    border-right:none;  
+    border-bottom:1px solid black;  
+    width:200px;  
+    height:39px;  
+}  
+.navcss ul li a {    
+    color:white;  
+    word-break:keep-all;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis; 
+}  
+.navcss ul li:hover{background-color:black;}  
+.navcss ul li:last-child { border-bottom: none;}  
+.navcss ul li:last-child a{ border-bottom: none;}  
+/* Sub menus */  
+.navcss ul{  
+    display: none;  
+    visibility:hidden;  
+    position: absolute;  
+    top: 40px;  
+}  
+  
+/* Third-level menus */  
+.navcss ul ul{  
+    top: 0px;  
+    right:200px;  
+    display: none;  
+    visibility:hidden;  
+    border: 1px solid black;  
+}  
+ /*Fourth-level menus*/   
+.navcss ul ul ul{  
+    top: 0px;  
+    right:200px;  
+    display: none;  
+    visibility:hidden;  
+    border: 1px solid black;  
+}  
+
+.navcssul{
+    top: 0px;  
+    right:200px;  
+    display: none;  
+    visibility:hidden;  
+    border: 1px solid black;  
+}
+  
+.navcss ul li{  
+    display: block;  
+    visibility:visible;  
+}  
+.navcss li:hover > ul{  
+    display: block;  
+    visibility:visible;  
+}  
+
+.navcss i{
+    position: absolute;
+    display:inline-block;
+    top:12px;
+    left:3px;
+	font-size: 16px;
+	color: #FFFFFF;
+	-webkit-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+.navcss i.icon-angle-right{
+    right: 8px;
+    top:14px;
+    font-size:12px;
+	left: auto;
+}

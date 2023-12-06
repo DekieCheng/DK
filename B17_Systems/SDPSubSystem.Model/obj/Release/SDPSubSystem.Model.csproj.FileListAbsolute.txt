@@ -1,0 +1,12 @@
+C:\work\SVN\B17_Systems\SDPSubSystem.Model\bin\Release\SDPSubSystem.Model.dll.config
+C:\work\SVN\B17_Systems\SDPSubSystem.Model\bin\Release\SDPSubSystem.Model.dll
+C:\work\SVN\B17_Systems\SDPSubSystem.Model\bin\Release\SDPSubSystem.Model.pdb
+C:\work\SVN\B17_Systems\SDPSubSystem.Model\bin\Release\EntityFramework.dll
+C:\work\SVN\B17_Systems\SDPSubSystem.Model\bin\Release\EntityFramework.SqlServer.dll
+C:\work\SVN\B17_Systems\SDPSubSystem.Model\bin\Release\EntityFramework.xml
+C:\work\SVN\B17_Systems\SDPSubSystem.Model\bin\Release\EntityFramework.SqlServer.xml
+C:\work\SVN\B17_Systems\SDPSubSystem.Model\obj\Release\SDPSubSystem.Model.csproj.AssemblyReference.cache
+C:\work\SVN\B17_Systems\SDPSubSystem.Model\obj\Release\SDPSubSystem.Model.csproj.CoreCompileInputs.cache
+C:\work\SVN\B17_Systems\SDPSubSystem.Model\obj\Release\SDPSubSystem.Model.csproj.CopyComplete
+C:\work\SVN\B17_Systems\SDPSubSystem.Model\obj\Release\SDPSubSystem.Model.dll
+C:\work\SVN\B17_Systems\SDPSubSystem.Model\obj\Release\SDPSubSystem.Model.pdb

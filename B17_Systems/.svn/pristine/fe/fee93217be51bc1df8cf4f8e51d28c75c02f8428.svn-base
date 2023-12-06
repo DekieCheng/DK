@@ -1,0 +1,228 @@
+﻿
+@{
+    Layout = null;
+}
+@using SDPSubSystem.Model.SysModels;
+@using SDPSubSystem.Web.Common;
+@using System.Data;
+@model SDPSubSystem.Model.SysModels.SYS_Menu_Systems
+@{
+    int LangID;
+    int.TryParse(ViewData["LangID"].ToString(), out LangID);
+    string HomeUrl = string.IsNullOrEmpty(Model.HomeUrl) ? Url.Action("Main", "Home") : Model.HomeUrl;
+    DataSet ds = ViewData["Menus"] as DataSet;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@Html.Raw(LangID == 1 ? Model.Name : Model.CName)</title>
+    <link href="@Url.Content("~/Content/bootstrap-3.3.5-dist/css/bootstrap.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/themes/Layout-2/Layout2-black.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/B11Site.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/Font-Awesome3.2.1/css/font-awesome.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/bootsnav/navcss.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/themes/tab-black.css")" rel="stylesheet" />
+    @*<script type="text/javascript" src="@Url.Content("~/Scripts/jquery-3.3.1.js")"></script>*@
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-3.3.1.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.cookie.js")"></script>
+    <script src="@Url.Content("~/Scripts/bootbox.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.x_tab.js")"></script>
+    <style type="text/css">
+        .not-arrow {
+            padding: 5px 10px;
+            border: 0px solid #dcd8d8;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none; /*去掉下拉箭头*/
+            background-color: black;
+            color: white;
+            font-weight: bold;
+            margin-top: -10px;
+        }
+
+            /*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+
+            .not-arrow::-ms-expand {
+                display: none;
+            }
+    </style>
+    <script type="text/javascript">
+        var _tab = null;
+        $(function () {
+            if ($('#_IsMatrix').val() == "Y") {
+                var pj = $.cookie('_subsystem_matrix');
+                if (typeof (pj) != 'undefined') {
+                    $('#_MatrixCode').val(pj);
+                }
+
+                $('#_MatrixCode').change(function () {
+                    $.cookie('_subsystem_matrix', $(this).val(), { expires: 365 });
+                    window.location.reload();
+                })
+            }
+            _tab = $('.layout-tab').x_tab({ contentCtl: $('.layout-content') });
+            _tab.Add('@Guid.NewGuid().ToString()', '@Html.GetLang("L000012")', '@HomeUrl', true);
+            $('#top_menu .icon-reorder').click(function () {
+                if ($('.navcss').css('display') == 'none') {
+                    $('.navcss').show(500);
+                }
+                else {
+                    $('.navcss').hide(500);
+                }
+            });
+            $('#nav a').click(function () {
+                parent.$("#transferFlag").val('li');
+                var menu = $(this);
+                if (menu.attr("isGroup") == "N") {
+                    
+                    if (menu.attr("pc") == "Customized") {
+                        AddTab(menu.attr("tag"), menu.text(), menu.attr('url'));
+                    }
+                    else {
+                        $.post('@Url.Action("GetPageUrl")', { PageUrl: menu.attr('url') }, function (result) {
+                            AddTab(menu.attr("tag"), menu.text(), result);
+                        })
+                    }
+                }
+                return false;
+            })
+            $('#top-cog').click(function () {
+                if ($('.cog-content').css("display") == "none") {
+                    $('.cog-content').show();
+                }
+                else {
+                    $('.cog-content').hide();
+                }
+            })
+            $('.cog-content li').click(function () {
+                $('.cog-content').hide();
+                var thisLi = $(this);
+                if (thisLi.attr("class") == "visual-exists") {
+                    window.location.href = "@Url.Action("LogOff")";
+                }
+                else {
+                    $.post('@Url.Action("GetPageUrl")', { PageUrl: thisLi.attr('url') }, function (result) {
+                        AddTab(thisLi.attr('tag'), thisLi.text(), result);
+                    })
+                }
+            })
+        })
+
+        function loadCompete() {
+            $('.layer').hide();
+        }
+
+        function AddTab(code, text, url) {
+            
+            if (!_tab.IsExist(code)) {
+                $('.layer').show();
+                setTimeout(loadCompete, 10000);
+            }
+            if ($('#_IsMatrix').val() == "Y") {
+                url += ((url.indexOf("?") > 0 ? "&" : "?") + "X_DB_MATRIX=" + GetMatrix());
+            }
+            _tab.Add(code, text, url);
+
+        }
+        function GetMatrix() {
+            if ($('#_IsMatrix').val() == "Y") {
+                return $('#_MatrixCode').val();
+            }
+            else {
+                return null;
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <div class="layout-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-11" style="line-height:48px; font-weight:bold; ">
+                    <div style="float:left;">
+                        <img alt="" style="margin:-10px 0px 0px -5px; max-height:35px;" src="@Url.Content("~/Content/Image/Biglogo.png")" />
+                        <span style="font-size:18px;font-weight:bold;">@Html.Raw(LangID == 1 ? Model.Name : Model.CName)</span>
+                    </div>
+                    <div id="top_menu" style="height:30px; width:30px; margin-left:40px; margin-top:3px  ;float:left;cursor:pointer; text-decoration:none;">
+                        <a><i class="icon-reorder" style="font-size:16pt;"></i></a>
+                        @{
+                            DataTable dt = ds.Tables[0];
+                            var menus = (from d in dt.AsEnumerable()
+                                         select new
+                                         {
+                                             Code = d.Field<string>("Code"),
+                                             Name = d.Field<string>("Name"),
+                                             SeqNo = d.Field<double>("SeqNo"),
+                                             IsGroup = d.Field<string>("IsGroup"),
+                                             Icon = d.Field<string>("Icon"),
+                                             GroupCode = d.Field<string>("GroupCode"),
+                                             PageCategory = d.Field<string>("PageCategory"),
+                                             PageUrl = d.Field<string>("PageUrl")
+                                         }).ToList();
+                            var groups = menus.Where(d => d.IsGroup == "Y").OrderBy(d => d.SeqNo).ToList();
+                            <ul id="nav" class="navcss">
+                                @foreach (var g in groups)
+                                {
+                                    <li>
+                                        <a href="#" tag="@g.Code" isGroup="Y"><i class="@g.Icon"></i>@g.Name</a>
+                                        <ul>
+                                            @{
+                                                var pages = menus.Where(d => d.IsGroup == "N" && d.GroupCode == g.Code).OrderBy(d => d.SeqNo).ToList();
+                                                foreach (var p in pages)
+                                                {
+                                                    <li><a href="#" tag="@p.Code" pc="@p.PageCategory" url="@p.PageUrl" isGroup="N"><i class="@p.Icon"></i> @p.Name</a></li>
+                                                }
+                                            }
+
+                                        </ul>
+                                    </li>
+                                }
+                            </ul>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="layout-body" style="padding:0px;">
+        <div class="layout-tab"></div>
+        <div class="layout-content">
+            @*<iframe id="content" code="" style="height:100%; width:100%; border:0px; overflow-y:auto; " src="@Url.Action("Main", "Home")"></iframe>*@
+            <div class="layer" style="display:none"><img alt="" src="@Url.Content("~/Content/Image/loading.gif")" /></div>
+        </div>
+    </div>
+    <div style="position:absolute; top :15px; right:20px; color:white; cursor:pointer">
+        <div style="float:left;@Html.Raw(Model.IsMatrix == "Y" ? "" : "display:none")">
+            @Html.DropDownList("Selected", ViewData["MatrixCode"] as IEnumerable<SelectListItem>, new Dictionary<string, object> { { "id", "_MatrixCode" }, { "class", "not-arrow" } })
+        </div>
+        <a id="top-cog"><span style="font-size:14pt;" class="glyphicon glyphicon-cog"></span></a>
+        <a><span style="font-size:14pt;" class="glyphicon glyphicon-question-sign"></span></a>
+    </div>
+    <input type="hidden" id="_IsMatrix" value="@Model.IsMatrix" />
+    <input type="hidden" id="_SysCode" value="@Model.Code" />
+
+    <input id="startTimeTransfer" type="hidden" value="" />
+    <input id="endTimeTransfer" type="hidden" value="" />
+    <input id="lineTransfer" type="hidden" value="" />
+    <input id="transferFlag" type="hidden" value="" />
+
+    <div class="cog-content" style="z-index:999;">
+        <ul>
+            <li class="visual-exists"><span class="glyphicon glyphicon-off"></span>@Html.GetLang("BT00011")</li>
+
+            @if (ds.Tables.Count > 1)
+            {
+                DataTable dtable = ds.Tables[1];
+                foreach (DataRow dr in dtable.Rows)
+                {
+                    <li tag="@dr["code"].ToString()" url="@dr["PageUrl"]"><i class="@dr["Icon"].ToString()"></i> @dr["Name"].ToString()</li>
+                }
+            }
+        </ul>
+    </div>
+</body>
+</html>

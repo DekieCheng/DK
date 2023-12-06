@@ -1,0 +1,120 @@
+﻿@{
+    Layout = null;
+}
+@using SDPSubSystem.Web.Common;
+
+<div class="modal-dialog" style="width: 55%; height: 400px;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" style="color:White" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-edit"></span>@Html.GetLang("L000003")</h4>
+        </div>
+        <div class="modal-body">
+            <div id="message-box" style="display:none" class="alert alert-danger fade in" role="alert"><ul></ul></div>
+            <form class="form-horizontal" id="addressEdit">
+
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label" for="PlanDate">PlanDate:</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:80%;" class="form-control" type="text" id="PlanDate" name="PlanDate" value='@ViewData["PlanDate"]' disabled />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label" for="Line">Line:</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:80%;" class="form-control" type="text" id="Line" name="Line" value='@ViewData["Line"]' disabled />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label" for="WO#">WO#:</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:80%;" class="form-control" type="text" id="WO#" name="WO#" value='@ViewData["WO#"]' disabled />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label" for="P_N">P_N:</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:80%;" class="form-control" type="text" id="P_N" name="P_N" value='@ViewData["P_N"]' disabled />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label" for="Sort_ID">Sort_ID:</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:80%;" class="form-control" type="text" id="Sort_ID" name="Sort_ID" value='@ViewData["Sort_ID"]' disabled />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label" for="Plan_Qty">Plan_Qty:</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:80%;" class="form-control" type="text" id="Plan_Qty" name="Plan_Qty" value='@ViewData["Plan_Qty"]' />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label" for="Act_Qty">Act_Qty:</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:80%;" class="form-control" type="text" id="Act_Qty" name="Act_Qty" value='@ViewData["Act_Qty"]' disabled />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label" for="Status">Status:</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:80%;" class="form-control" type="text" id="Status" name="Status" value='@ViewData["Status"]' disabled />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label" for="PSID">PSID:</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:80%;" class="form-control" type="text" id="PSID" name="PSID" value='@ViewData["PSID"]' disabled />
+                    </div>
+                </div>
+
+                <input id="_id" name="ID" type="hidden" value='@ViewData["ID"]' />
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button id="btnEditSave" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span>@Html.GetLang("BT00007")</button>
+            <button id="btnClosePO" type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-plus-sign"></span>@Html.GetLang("BT00008")</button>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+
+
+<script type="text/javascript">
+    $(function () {
+        $(".modal-dialog").draggable();
+
+        $("#btnEditSave").click(function () {
+            //var poststr = JSON.stringify($('#shippingform').serializeJSON());
+            $.post('@Url.Action("SaveEdit")',
+                { poststr: JSON.stringify($('#addressEdit').serializeJSON()) },
+                function (result) {
+                    if (result.IsSuccess) {
+
+                        $.globalMessenger().post({
+                            message: "Edit Success",//提示信息
+                            type: 'info',//消息类型。error、info、success
+                            hideAfter: 5,//多长时间消失
+                            showCloseButton: true,//是否显示关闭按钮
+                            hideOnNavigate: true //是否隐藏导航
+                        });
+                    }
+                    else {
+                        if (result.Msg) {
+                            var m_ul = "<ul>";
+                            var flag = false;
+                            $.each(result.Msg, function (idx, msg) {
+                                m_ul += "<li>" + msg + "</li>";
+                                flag = true;
+                            });
+                            m_ul += "</ul>";
+                            if (flag) { bootbox.alert({ message: m_ul, title: "Error" }); }
+                        }
+                    }
+
+                    $("#_Dialog").modal("hide");
+                });
+        });
+
+
+    });
+</script>

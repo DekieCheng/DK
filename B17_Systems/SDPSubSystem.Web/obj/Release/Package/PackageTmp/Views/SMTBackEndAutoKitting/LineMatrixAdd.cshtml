@@ -1,0 +1,108 @@
+﻿@{
+    Layout = null;
+}
+@using SDPSubSystem.Web.Common;
+
+<div class="modal-dialog" style="width:55%;height:530px;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" style="color:White" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-plus"></span>@Html.GetLang("L000002")</h4>
+        </div>
+        <div class="modal-body">
+            <div id="message-box" style="display:none" class="alert alert-danger fade in" role="alert"><ul></ul></div>
+            <form class="form-horizontal" id="addressadd">
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">@Html.GetLang("TH00001"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="Name" name="Name" value=""/>
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">@Html.GetLang("TH00002"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="Location" name="Location" value="" />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">@Html.GetLang("TH00003"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        @Html.DropDownList("ProcessID", (List<SelectListItem>)ViewData["Process"], new { @id = "ProcessID", @style = "width:380px;", @class = "form-control", datatype = "*", nullmsg = "Please select the Type!" })
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button id="btnAppend" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-saved"></span>@Html.GetLang("BT00007")</button>
+            <button id="btnClosePO" type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove-sign"></span>@Html.GetLang("BT00008")</button>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+<input id="_id" type="hidden" value="000000" />
+
+<script type="text/javascript">
+    $(function () {
+        @*$("#btnselect").click(function () {
+            $("#_AddDialog").load('@Url.Action("selectpo")', { Flag: 'Add' }, function () {
+                $("#_AddDialog").modal("show");
+            });
+        })*@
+        //$('#DateTimeFrame').datetimepicker({
+        //    format: 'yyyy-mm',
+        //    weekStart: 1,
+        //    autoclose: true,
+        //    startView: 3,
+        //    minView: 3,
+        //    forceParse: false,
+        //    language: 'cn'
+        //});
+        $("#btnAppend").click(function () {
+            //var poststr = JSON.stringify($('#shippingform').serializeJSON());
+            $.post('@Url.Action("LineMatrixSaveAdd")',
+                { poststr: JSON.stringify($('#addressadd').serializeJSON()) },
+                function (result) {
+                    $("#_Dialog").modal("hide");
+                    $("#tab_table").DataTable().ajax.reload();
+                    //console.log(result);
+                    $("#_id").val(result.Data);
+                })
+            //console.log(poststr);
+        })
+
+        @*$('#Customer').change(function () {
+            $('#PartFamily').empty();
+            var obj = {
+                Action: 'GetPartFamily',
+                Customer: $('#Customer').val()
+            }
+            $.post('@Url.Action("GetPartFamily", "whlimit")', { poststr: JSON.stringify(obj) }, function (result) {
+                //console.log(result);
+                $('#PartFamily').append('<option value="' + "" + '">' + "" + '</option>');
+                $.each(result, function (idx, item) {
+                    //console.log(item);
+                    $('#PartFamily').append('<option value="' + item.Value + '">' + item.Text + '</option>');
+                })
+                //if (result.length > 0) {
+                //    $('#PartFamily option:first').prop("selected", 'selected');
+                //}
+                $("#PartFamily").trigger("change");
+            })
+
+        })*@
+    });
+
+    function getKeyAddPage(event) {
+        if (event.keyCode == 13) {
+            //$('#btnSearch').click();
+            $.post('@Url.Action("OwnerMatrixSaveAdd")',
+                { poststr: JSON.stringify($('#addressadd').serializeJSON()) },
+                function (result) {
+                    $("#_Dialog").modal("hide");
+                    $("#tab_table").DataTable().ajax.reload();
+                    //console.log(result);
+                    $("#_id").val(result.Data);
+                })
+        }
+    }
+</script>

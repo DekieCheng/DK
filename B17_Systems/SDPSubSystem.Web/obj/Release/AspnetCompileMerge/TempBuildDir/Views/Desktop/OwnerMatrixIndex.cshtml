@@ -1,0 +1,100 @@
+﻿@using SDPSubSystem.Web.Common;
+@{
+    ViewBag.Title = "Desktop Computer Owner Maintainance";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container-fluid">
+    <div class="row" style="padding-top:5px;padding-bottom:5px">
+        <div class="btn-group col-sm-6">
+            <button id="btnAdd" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span>Add</button>
+
+            <button id="btnDelete" class="btn btn-primary"><span class="glyphicon glyphicon-trash"></span>Delete</button>
+
+            <button id="btnApprove" v-on:click="approveMethod" class="btn btn-primary" style="padding-right:15px;display:none"><span class="glyphicon glyphicon-check"></span></button>
+
+        </div>
+        <div class="input-group col-sm-6">
+            <input type="text" class="form-control" id="code" placeholder="Please input value to search" style="width:200px;float:right" onkeypress="getKey(event);">
+            <span class="input-group-btn">
+                <button id="btnSearch" class="btn btn-primary "><span class="glyphicon glyphicon-search"></span>Search</button>
+            </span>
+        </div>
+    </div>
+    <table id="tab_table" class="table table-striped table-hover table-bordered tableWidth ">
+        <thead>
+            <tr>
+                <th style="width:12px"><input type="checkbox" id="selectAll" /></th>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+<div class="modal fade bs-example-modal-lg" id="_Dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+
+
+<script type="text/javascript">
+    var _cols = ["ID", "Name", "Email"];
+    var _editcol = "Name";
+    var _tableName = "tab_table";
+    $(function () {
+       // $.ajaxSetup({ cache: false, async: true });
+        $.ajaxSetup({
+            beforeSend: function (jqXHR, settings) {
+                var X_DB_MATRIX = parent.GetMatrix();
+                if (X_DB_MATRIX != null) {
+                    settings.url += settings.url.match(/\?/) ? "&" : "?";
+                    settings.url += "X_DB_MATRIX=" + X_DB_MATRIX;
+                }
+            },
+        });
+
+
+        $('#selectAll').click(function () {
+            if ($(this).is(":checked")) {
+                $('#tab_data tbody input[name="selectid"]').prop("checked", true);
+            }
+            else {
+                $('#tab_data tbody input[name="selectid"]').removeAttr("checked");
+            }
+        })
+        postLoadTable('@Url.Action("OwnerMatrixLoad")', _tableName, _cols, _editcol, '@Url.Action("OwnerMatrixEdit")');
+        @*postLoadTableModal('@Url.Action("LoadShippingNotice")', _tableName, _cols, _editcol, '@Url.Action("EditShippingNotice")');*@
+
+        $("#btnSearch").click(function () {
+            $("#" + _tableName).DataTable().ajax.reload();
+        });
+
+        
+        $('#btnAdd').click(function () {
+            $("#_Dialog").load('@Url.Action("OwnerMatrixAdd")', "", function () {
+                $("#_Dialog").modal("show");
+            });
+        });
+        $('#btnDelete').click(function () {
+            postDelete('@Url.Action("OwnerMatrixDelete")', _tableName);
+        });
+
+        
+    })
+
+    // 使后打开的模态窗优先级高
+
+    $("#_Dialog").on("show.bs.modal", ".modal", function (event) {
+
+        var zIndex = 1040 + 10 * $(".modal:visible").length;
+
+        $(this).css("z-index", zIndex);
+
+    });
+
+    function getKey(event) {
+        if (event.keyCode == 13) {
+            //$('#btnSearch').click();
+            $("#" + _tableName).DataTable().ajax.reload();
+        }
+    }
+
+</script>
+

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <data Area="" Controller="Home" Action="Logon"></data>
+  <data Area="" Controller="Home" Action="ErrorPage"></data>
+  <data Area="" Controller="attrition" Action="kpibyline"></data>
+  <data Area="" Controller="attrition" Action="getKPIData"></data>
+  <data Area="" Controller="attrition" Action="attrtionreport"></data>
+  <data Area="" Controller="attrition" Action="Getattrtionreportdata"></data>
+  <data Area="" Controller="attrition" Action="AttritionByLine"></data>
+  <data Area="" Controller="attrition" Action="GetattritionDatabyLine"></data>
+  <data Area="" Controller="attrition" Action="picattrtion"></data>
+  <data Area="" Controller="attrition" Action="Getattrtionpicdata"></data>
+  <data Area="" Controller="Humi" Action="Index"></data>
+  <data Area="" Controller="Humi" Action="Gethumidata"></data>
+</root>

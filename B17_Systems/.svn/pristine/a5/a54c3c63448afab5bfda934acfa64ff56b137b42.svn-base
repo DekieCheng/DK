@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <data lang="1" file="en.xml">English</data>
+  <data lang="2" file="cn.xml">中文</data>
+</root>

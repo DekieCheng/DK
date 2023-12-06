@@ -1,0 +1,1 @@
+2021-02-06 16:22:38,445  SDPSubSystem.Web.Filter.ExceptionLogAttribute : MessageType:SqlException , Content:Conversion failed when converting the varchar value 'All' to data type int. , Function:Void OnError(System.Data.SqlClient.SqlException, Boolean, System.Action`1[System.Action]) , Object:.Net SqlClient Data Provider , Controller:attrition , Action:station ; 

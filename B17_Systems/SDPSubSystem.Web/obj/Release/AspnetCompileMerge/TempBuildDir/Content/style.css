@@ -1,0 +1,177 @@
+﻿html, body {margin: 0px; background: #fff; padding: 0px; overflow: auto; border: 0px; font-family:Microsoft JhengHei UI Light, Microsoft JhengHei UI, Microsoft JhengHei Light, Microsoft JhengHei, Tahoma; width: 100%; height: 100%; overflow: auto; }
+.hidden { display: none; }
+
+#tbl { width: 100%; height:100%; border: 1px solid #3366ff; border-collapse: collapse; /*collapse表格无间距*/white-space:nowrap; }
+#tbl td {vertical-align:middle;}
+
+#tb2 { width: 100%; height:100%; border: 1px solid #3366ff; border-collapse: collapse; /*collapse表格无间距*/white-space:nowrap; }
+#tb2 td {vertical-align:middle; border:1px solid #3366ff;}
+.tb { width: 100%; height:100%; border: 1px solid #3366ff; border-collapse: collapse; /*collapse表格无间距*/white-space:nowrap; }
+.tb td {vertical-align:middle; border:1px solid #3366ff;}
+
+.sss {height:85%
+}
+.si_header
+{
+  text-align :left;
+  width:90%;
+  height:30px;
+  padding:3px 0px 3px 2px;
+  white-space:nowrap;
+  vertical-align: middle; 
+  font-family:Eras ITC;
+  font-weight:bolder;
+  color:#fff;
+  font-size: 30pt; font-weight: bold; 
+  text-shadow: #666 2px 2px 2px!important;  /* -- Firefox support */
+  text-shadow: 2px 2px 2px #666;   
+ background: -webkit-gradient(linear, 0px 0px, 0px bottom, from( #084B8A  ), to(#CEE3F6)); /* -> old version */
+  background: -webkit-linear-gradient(to bottom, #084B8A  , #CEE3F6);  /* Safari、iOS Safari、Android 0-> new version */
+  background: -moz-linear-gradient(to bottom, #084B8A, #CEE3F6);   /* FF; 315 deg = to top right */
+  background: -ms-linear-gradient(to bottom, #084B8A , #CEE3F6); 
+  background: -o-linear-gradient(to bottom,#084B8A  , #CEE3F6);  /* Opera */
+  background: linear-gradient(to bottom, #084B8A , #CEE3F6); 
+  opacity:0.6; filter:alpha(apacity=60); -moz-opacity:0.6; 
+  filter:progid:DXImageTransform.Microsoft.gradient(startcolorstr=#CEE3F6,endcolorstr=white,gradientType=1);
+  
+
+ /* behavior: url(../ie-css3.htc); */
+  
+}
+
+.Chart1 {
+    width:100%;
+    height:60px;
+}
+
+.si_header2
+{
+  text-align :right;
+  width:600px;
+  height:30px;
+  padding:3px 0px 3px 2px;
+  white-space:nowrap;
+  vertical-align:bottom; 
+  color:#fff;
+  text-align:center; font-size: 12pt; 
+  text-shadow: #666 2px 2px 2px!important;  /* -- Firefox support */
+  text-shadow: 2px 2px 2px #666;   
+ background: -webkit-gradient(linear, 0px 0px, 0px bottom, from( #084B8A  ), to(#CEE3F6)); /* -> old version */
+  background: -webkit-linear-gradient(to bottom, #084B8A  , #CEE3F6);  /* Safari、iOS Safari、Android 0-> new version */
+  background: -moz-linear-gradient(to bottom, #084B8A, #CEE3F6);   /* FF; 315 deg = to top right */
+  background: -ms-linear-gradient(to bottom, #084B8A , #CEE3F6); 
+  background: -o-linear-gradient(to bottom,#084B8A  , #CEE3F6);  /* Opera */
+  background: linear-gradient(to bottom, #084B8A , #CEE3F6); 
+  opacity:0.6; filter:alpha(apacity=60); -moz-opacity:0.6; 
+  filter:progid:DXImageTransform.Microsoft.gradient(startcolorstr=#CEE3F6,endcolorstr=white,gradientType=1);
+  
+
+ /* behavior: url(../ie-css3.htc); */
+  
+}
+
+
+.si_tdTitle
+{
+  text-align :left;
+  width:100%;
+  height:30px;
+  padding:3px 0px 3px 2px;
+  white-space:nowrap;
+  vertical-align: middle; 
+  font-family:Eras ITC;
+  font-weight:bolder;
+  color:#fff;
+  font-size: 16pt; font-weight: bold; 
+  text-shadow: #666 2px 2px 2px!important;  /* -- Firefox support */
+  text-shadow: 2px 2px 2px #666;   
+ background: -webkit-gradient(linear, 0px 0px, 0px right, from( #086A87  ), to(#0080FF)); /* -> old version */
+  background: -webkit-linear-gradient(to right,  #086A87  ,#CEE3F6);  /* Safari、iOS Safari、Android 0-> new version */
+  background: -moz-linear-gradient(to right,  #086A87, #CEE3F6);   /* FF; 315 deg = to top right */
+  background: -ms-linear-gradient(to right,  #086A87 , #CEE3F6); 
+  background: -o-linear-gradient(to right, #086A87  , #CEE3F6);  /* Opera */
+  background: linear-gradient(to right,  #086A87, #CEE3F6); 
+  opacity:0.6; filter:alpha(apacity=60); -moz-opacity:0.6; 
+  filter:progid:DXImageTransform.Microsoft.gradient(startcolorstr=#CEE3F6,endcolorstr=white,gradientType=1);
+  
+
+ /* behavior: url(../ie-css3.htc); */
+  
+}
+ .tdHand{ cursor: pointer;text-align:center; font-family: Microsoft JhengHei UI,Century Gothic,Microsoft YaHei UI,Lucida Sans; width:14%;   border:1px solid #000; color:#36f; font-size:12pt; font-weight: bold; height:16px;  padding: 1px 1px 1px 1px; color:Green;}
+ 
+.tdHandt{ cursor: pointer text;text-align:center; font-family: Microsoft JhengHei UI,Century Gothic,Microsoft YaHei UI,Lucida Sans; width:14%;  border:1px solid #000; color:#36f; font-size:12pt; font-weight: bold; height:16px;  padding: 1px 1px 1px 1px;color:Green;}
+.tdHand:hover
+{ cursor: pointer;text-align:center; font-family:Microsoft JhengHei UI,Century Gothic,Microsoft YaHei UI,Lucida Sans;  width:14%;  border:1px solid #000; color:#36f; font-size:12pt; font-weight: bold; height:16px;  background-color:Yellow ; padding: 1px 1px 1px 1px; color:red; font-weight:bold;
+    }
+    
+.tdHandt:hover{ cursor: pointer text;text-align:center; font-family: Microsoft JhengHei UI,Century Gothic,Microsoft YaHei UI,Lucida Sans; width:14%;  border:1px solid #000; color:#36f; font-size:12pt; font-weight: bold; height:16px; background-color:Yellow ; padding: 1px 1px 1px 1px;color:red; font-weight:bold}
+
+.Tls_LinePara_GridView { width: 100%; margin:0px; border: 1px solid #3366ff;}
+.Tls_LinePara_GridView td { font-family:Microsoft JhengHei UI,Century Gothic,Microsoft YaHei UI,Lucida Sans; padding:1px; height:12px; color:#3366ff;font-size:10pt; border: 1px solid #66aaee; text-align:left;  }
+ 
+ 
+.td1 {height:2px;background-color: #045FB4 }
+.ttd1 { width:50%}
+.tdTitle1 { background-color:#3366ff; height:40px; font-size:14pt; color:#fff; font-weight:bold; text-align:center; vertical-align:bottom ; width:100%}
+.tdTitle2{ background-color:#3366ff; height:30px; font-size:large; color:#fff;width:50px; vertical-align:bottom;}
+.tdTitle3{ background-color:#3366ff; height:30px; font-size:large; color:#fff;width:150px; vertical-align:middle;}
+#tdTitle2 { background-color:#3366ff; height:30px; font-size:large; color:#fff}
+.Tls_Login_Content { width: 100%; height:100%; vertical-align: middle; text-align: center; padding: 0px 0px 0px 0px; margin: 0px auto;}
+.div_LoginForm { position: relative; vertical-align: middle; text-align:left; margin:0px auto; width: 354px; 
+height:140px;
+    top: 0px;
+    left: -23px;
+}
+.Tls_Login_fieldset { border:1px solid #3388ff; width: 329px; height:110px; filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#C3DAF5);
+}
+.tdFiFODesc{ width:50%; text-align:center; vertical-align:middle; font:20px ;  font-weight: bold ; border:1px solid #3366ff ; background:#228B22 ; color:White;}
+.Tls_Login_SmallTitle { font-family:Lucida Sans; font-size: 12pt; font-weight: bold;}
+.Tls_Login_SmallContent { vertical-align: middle; text-align: center; width: 350px; height: 90px;}
+.Tls_Login_Project_td { font-family:Lucida Sans; font-size: 10pt; font-weight: normal; width: 30%; white-space:nowrap; padding:0px 10px 0px 0px; text-align: right;}
+.Tls_Login_Project_Combox_td { font-family:Lucida Sans; vertical-align: middle; font-size: 18pt; font-weight: bold; text-align: left;}
+.Tls_Login_Project_Combox { font-family:Lucida Sans; font-size: 18pt; font-weight: bold; border:1px solid #3388ff; color:#3388ff; vertical-align:bottom; text-align:left
+}
+.Tls_Login_Project_Combox_type { font-family:Lucida Sans; font-size: 12pt; font-weight: bold; width: 60px; border:1px solid #3388ff; color:#3388ff; vertical-align:bottom; text-align:right;}
+.Tls_Login_Button_td { text-align:center; padding: 0px 0px 0px 0px;}
+.Tls_Login_Button { font-family:Lucida Sans; vertical-align: middle; font-size: 12pt; font-weight: bold; border:0px solid #336699; color:#ff7700; cursor: hand; background: #3366ff;
+}
+.eDbUPH_gridcell2 {  font-size:10pt;font-family: Lucida Sans Unicode; color:#ffff00; font-weight:normal;height: 20px; vertical-align:middle; border:1px solid #aaaaaa; background:#ff0000;}
+
+.tdFIFO{border:1px solid #3388ff; text-align:left; background:#CEE3F6}
+.tdFIFOG{border:1px solid #3388ff; text-align:left; background:#008000}
+.tdFIFOY{border:1px solid #3388ff; text-align:left; background:#FFFF00}
+.tdFIFOO{border:1px solid #3388ff; text-align:left; background:#FFA500}
+.tdFIFOR{border:1px solid #3388ff; text-align:left; background:#FF0000}
+.thh{background-color: #33ccff;text-align: left;font-size: 12pt; font-weight:bold; vertical-align:bottom;border:1px solid #3388ff;}
+.thd{text-align: left;font-size: 12pt;border:1px solid #3388ff;}
+.thA{text-align: left;font-size: 12pt;border:1px solid #3388ff;background:yellow}
+
+.locHead1{background-color: #BB5510;text-align: center;font-size: 11pt; font-weight:bold; border:1px solid #3388ff;}
+.locHead2{background-color: #FFA470;text-align: center;font-size: 11pt; font-weight:bold; border:1px solid #3388ff;}
+.locHead3{background-color: #AA7700;text-align: center;font-size: 11pt; font-weight:bold; border:1px solid #3388ff;}
+.locHead4{background-color: #F0E68C;text-align: center;font-size: 11pt; font-weight:bold; border:1px solid #3388ff;}
+.locHead5{background-color: #52a431;text-align: center;font-size: 11pt; font-weight:bold; border:1px solid #3388ff;}
+.locHead6{background-color: #99FF99;text-align: center;font-size: 11pt; font-weight:bold; border:1px solid #3388ff;}
+.Loc1{background-color: #008800; color:White;text-align: center;font-size: 9pt; font-weight:bold; border:1px solid #3388ff;}
+.Loc0{text-align: center;font-size: 9pt;border:1px solid #3388ff;font-weight:bold}
+
+#loctable{border:1px solid #3388ff; width:100%; text-align:left }
+#txtStartTime {width:150px; font-size:15px}
+#txtEndTime {width:150px; font-size:15px}
+#btnSearch { border: #2C59aa 0px solid; font-size: 12pt; color:#ff7700; width:65px; height: 22px; font-weight:bold; vertical-align: middle; text-align: center; cursor:pointer; background: #3366ff;}
+#btnExport { border: #2C59aa 0px solid; font-size: 12pt; color:#ff7700; width:65px; height: 22px; font-weight:bold; vertical-align: middle; text-align: center; cursor:pointer; background: #3366ff;}
+#btnRefresh { border: #2C59aa 0px solid; font-size: 12pt; color:#ff7700; width:65px; height: 22px; font-weight:bold; vertical-align: middle; text-align: center; cursor:pointer; background: #ffffff;}
+#btnShutAlarm { border: #2C59aa 0px solid; font-size: 12pt; color:#ff7700; width:85px; height: 22px; font-weight:bold; vertical-align: middle; text-align: center; cursor:pointer; background: #ffffff;}
+
+#GridView1 { width: 100%; margin: 0px; border: 1px solid #3366ff; border-collapse: collapse; white-space: nowrap}
+#GridView1 tr th { height: 35px; color: black; font-size: 16pt; border: 1px solid #66aaee; text-align: left; background-color: #33ccff; font-size:large; font-weight:bold }
+#GridView1 tr td { height:28px;  color: black; font-size: 14pt; border: 1px solid #66aaee; text-align: left; background-color: white; text-align:left; text-decoration:none;font-size:large; font-weight:bold }
+#GridView1 tr td a{  white-space:nowrap;  }
+#GridView1 tr td.summary { background-color:#88ffff; color:#000; }
+#GridView1 tr td.summary_alarm { background-color:#88ffff; color:red; }
+#GridView1 tr td.summary_normal { background-color:#88ffff; color:Green; }
+#GridView1 tr td.alarm { color: Red; }
+#GridView1 tr td.normal { color: Green; }
+
+

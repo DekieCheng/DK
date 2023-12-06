@@ -1,0 +1,169 @@
+﻿@using SDPSubSystem.Web.Common;
+@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="panel-title" id="Type">@Html.GetLang("L000031")</h2>
+        </div>
+        <div class="panel-body form-inline">
+            <div class="row">
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <label class="col-md-1 control-label" style="padding-top:10px;font-size:16px;" for="EmployeeID">@Html.GetLang("L000028"):</label>
+                    <div class="col-md-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="EmployeeID" name="EmployeeID" value="" onkeypress="getKey0(event);" />
+                    </div>
+                </div>
+
+                <div class="row" style="padding-top:10px;">
+                    <div class="col-md-3"></div>
+                    <label class="col-md-1 control-label" style="padding-top:10px;font-size:16px;" for="SN">@Html.GetLang("L000029"):</label>
+                    <div class="col-md-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="SN" name="SN" value="" onkeypress="getKey(event);" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Table -->
+    <div style="padding-top:5px;padding-bottom:5px;padding-left:5px;">
+        <table id="tab_table" class="table table-striped table-hover table-bordered tableWidth ">
+            <thead>
+                <tr>
+                    <th>@Html.GetLang("L000028")</th>
+                    <th>@Html.GetLang("L000029")</th>
+                    <th>@Html.GetLang("TH00037")</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+</div>
+
+<style type="text/css">
+    .center-in-center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+    th {
+        text-align: center!important;
+        vertical-align: middle!important;
+        }
+</style>
+
+
+<script type="text/javascript">
+    
+    var _tableName = "tab_table";
+    $(function () {
+        
+        $.ajaxSetup({
+            beforeSend: function (jqXHR, settings) {
+                var X_DB_MATRIX = parent.GetMatrix();
+                if (X_DB_MATRIX != null) {
+                    settings.url += settings.url.match(/\?/) ? "&" : "?";
+                    settings.url += "X_DB_MATRIX=" + X_DB_MATRIX;
+                }
+            },
+        });
+
+        setInterval(function () {
+            $('#EmployeeID').val('');
+        },120000);//每2分钟失效
+
+        $('#SN').focus(function () {
+            $('#SN').val('');
+        })
+
+        $('#EmployeeID').focus(function () {
+            $('#EmployeeID').val('');
+        })
+
+    })
+
+    function isNull(data) {
+        return (data == "" || data == undefined || data == null) ? true : false;
+    }
+    
+    function getKey(event) {
+        if (event.keyCode == 13) {
+
+            var type = 'Out';
+            var employeeID = $('#EmployeeID').val();
+            var sn = $('#SN').val();
+            var time = nowTimestampFormat();
+
+            if ( isNull(employeeID) || isNull(sn) ) {
+                alert("请输入值，检查有空值");
+                return;
+            }
+
+            var valuestr = {
+                Type: type,
+                EmployeeID: employeeID,
+                SN: sn,
+                Time:time
+            }
+            $.ajax({
+                type: "post",
+                url: '@Url.Action("SaveCheckInFlow")',
+                data: { poststr: JSON.stringify(valuestr) },
+                async: false,
+                success: function (result) {
+                    if (result.IsSuccess) {
+                        
+                        var trtxt = $('<tr></tr>')
+                        trtxt.append('<td  style="width:20%; text-align:center">' + employeeID + '</td>');
+                        trtxt.append('<td  style="width:20%; text-align:center">' + sn + '</td>');
+                        trtxt.append('<td  style="width:10%; text-align:center">' + time + '</td>');
+                        $("#" + _tableName).children("tbody").append(trtxt);
+
+
+                        $.globalMessenger().post({
+                            message: "扫描成功",//提示信息
+                            type: 'info',//消息类型。error、info、success
+                            hideAfter: 2,//多长时间消失
+                            showCloseButton: true,//是否显示关闭按钮
+                            hideOnNavigate: true //是否隐藏导航
+                        });
+                    }
+                    else {
+                        if (result.Msg) {
+                            var m_ul = "<ul>";
+                            var flag = false;
+                            $.each(result.Msg, function (idx, msg) {
+                                m_ul += "<li>" + msg + "</li>";
+                                flag = true;
+                            });
+                            m_ul += "</ul>";
+                            if (flag) { bootbox.alert({ message: m_ul, title: "Error" }); }
+                        }
+                    }
+                }
+            });
+
+            $('#SN').val('');
+        }
+    }
+
+    function getKey0(event) {
+        if (event.keyCode == 13) {
+            $("#SN").focus();
+        }
+    }
+
+</script>
+

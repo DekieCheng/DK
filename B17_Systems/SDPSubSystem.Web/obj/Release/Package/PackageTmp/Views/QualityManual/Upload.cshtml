@@ -1,0 +1,183 @@
+﻿@{
+    Layout = null;
+}
+@using SDPSubSystem.Web.Common;
+
+<div class="modal-dialog" style="width: 55%; height: 400px;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" style="color:White" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Upload</h4>
+        </div>
+        <div class="modal-body">
+            <div id="message-box" style="display:none" class="alert alert-danger fade in" role="alert"><ul></ul></div>
+            <form class="form-horizontal" id="addressadd">
+
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">File:</label>
+                    <div class="col-sm-8 dropdown" style="padding-top:10px">
+                        <input style="display: inline-block" type="file" id="file" name="file" />
+                        <input id="uploadFile" type="button" value="Upload" style="width: 90px; background: #4f8fdd; color: #fff" />
+                        <input id="filePathShow" name="Name" type="text" style="width: auto; background: #ccc" readonly />
+                        <input id="filePath" name="Link" type="text" style="width: auto; background: #ccc;display:none" />
+                    </div>
+                </div>
+                
+
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button id="btnConfirm" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span>Confirm</button>
+            <button id="btnClosePO" type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-plus-sign"></span>@Html.GetLang("BT00008")</button>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+<input id="_id" type="hidden" value="000000" />
+
+<script type="text/javascript">
+    $(function () {
+
+
+        uploadFile("uploadFile", "file", "filePath", "filePathShow");
+
+
+        $("#btnConfirm").click(function () {
+
+            $.post('@Url.Action("SaveUpload")',
+                { poststr: JSON.stringify($('#addressadd').serializeJSON()) },
+                function (result) {
+                    if (result.IsSuccess) {
+
+                        $.globalMessenger().post({
+                            message: "Upload Success",//提示信息
+                            type: 'info',//消息类型。error、info、success
+                            hideAfter: 5,//多长时间消失
+                            showCloseButton: true,//是否显示关闭按钮
+                            hideOnNavigate: true //是否隐藏导航
+                        });
+                    }
+                    else {
+                        if (result.Msg) {
+                            var m_ul = "<ul>";
+                            var flag = false;
+                            $.each(result.Msg, function (idx, msg) {
+                                m_ul += "<li>" + msg + "</li>";
+                                flag = true;
+                            });
+                            m_ul += "</ul>";
+                            if (flag) {
+                                //bootbox.confirm({ message: m_ul, title: "Error" });
+                                var message_lang = m_ul;
+                                var title_lang = "Confirm";
+                                var import_lang = "Import";
+                                var cancel_lang = "Cancel";
+                                if ($('body').attr("LangID") != "1") {
+                                    message_lang = m_ul;
+                                    title_lang = " 确认";
+                                    import_lang = "导入";
+                                    cancel_lang = "取消";
+                                }
+                                bootbox.confirm({
+                                    message: message_lang, title: title_lang,
+                                    buttons: {
+                                        confirm: {
+                                            label: import_lang,
+                                            className: 'btn-danger'
+                                        },
+                                        cancel: {
+                                            label: cancel_lang,
+                                            className: 'btn-default'
+                                        }
+                                    },
+                                    callback: function (result) {
+                                        if (result) {
+                                            //新增
+                                            $.post('@Url.Action("SaveAdd")',
+                                                { poststr: JSON.stringify($('#addressadd').serializeJSON()) },
+                                                function (result) {
+                                                    if (result.IsSuccess) {
+
+                                                        $.globalMessenger().post({
+                                                            message: "Add Success",//提示信息
+                                                            type: 'info',//消息类型。error、info、success
+                                                            hideAfter: 5,//多长时间消失
+                                                            showCloseButton: true,//是否显示关闭按钮
+                                                            hideOnNavigate: true //是否隐藏导航
+                                                        });
+
+                                                        load();
+                                                    }
+                                                    else {
+                                                        if (result.Msg) {
+                                                            var m_ul = "<ul>";
+                                                            var flag = false;
+                                                            $.each(result.Msg, function (idx, msg) {
+                                                                m_ul += "<li>" + msg + "</li>";
+                                                                flag = true;
+                                                            });
+                                                            m_ul += "</ul>";
+                                                            if (flag) { bootbox.alert({ message: m_ul, title: "Error" }); }
+                                                        }
+                                                    }
+
+                                                    $("#_Dialog").modal("hide");
+                                                });
+                                        }
+                                    }
+                                });
+
+                            }
+                        }
+                    }
+
+                    $("#_Dialog").modal("hide");
+                })
+
+        });
+
+        //实现模态框拖拽(不加参数，可以点击模态框任何地方拖拽)
+         $( ".modal-dialog" ).draggable();
+
+        //bootstrap模态框头部支持拖动
+        //$(".modal-dialog").draggable({
+        //    cursor: "move",
+        //    handle: '.modal-header'
+        //});
+
+    });
+
+    function uploadFile(ctlID_upload, ctlID_selectFile, ctlID_showFilePath,ctlID_showFileName) {
+        $('#' + ctlID_upload).click(function () {
+            var f = document.getElementById(ctlID_selectFile).files;
+            if (f.length == 0) {
+                layer.alert('请先选择要上传的文件!'); return;
+            } else {
+
+                var formFile = new FormData();
+                formFile.append("file", f[0]); //加入文件对象
+                var data = formFile;
+                //debugger
+                $.ajax({
+                    url: '@Url.Action("UploadFile")',
+                    data: data,
+                    type: "Post",
+                    async: false,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function (data) {
+                        debugger
+                        $('#' + ctlID_showFilePath).val(data.Flag);
+                        $('#' + ctlID_showFileName).val(data.Msg);
+
+
+                    },
+                    error: function (data) {
+                        layer.alert(data);
+                    }
+                })
+            }
+        })
+    }
+
+</script>

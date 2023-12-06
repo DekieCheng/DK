@@ -1,0 +1,147 @@
+﻿@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_LayoutJquery.cshtml";
+}
+<div class="container-fluid">
+    <div class="row" style="margin:0 0;padding:0 0;">
+        <div class="col-sm-12" style="margin:0 0;padding:0 0;">
+            <table id="Glue_Table" class="table table-striped table-hover table-bordered tableWidth">
+                <thead></thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<style type="text/css">
+    .title {
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        background-color: #00b0f0;
+        font-family: Microsoft YaHei;
+        text-align: center;
+    }
+
+    .text_format {
+        text-align: center;
+        font-size: 14px;
+        font-weight: bold;
+        width: 40px !important;
+    }
+
+    .text_format2 {
+        text-align: center;
+        font-size: 14px;
+        font-weight: bold;
+        width: 10px !important;
+    }
+
+    .img_define {
+        width: 100%; /*div自适应父级宽度*/
+        height: 100%; /*div自适应高度*/
+        background-size: contain; /*不能使用cover*/
+        background-repeat: no-repeat;
+        background-position: center; /*图片居中*/
+    }
+
+    .tbSelectCss {
+        background-color: #d5f4fe !important;
+    }
+</style>
+<script type="text/javascript">
+
+    $(function () {
+        $.post('@Url.Action("GetDashboardData")', {  }, function (result) {
+            loadTable(result, "Glue_Table");
+        })
+    })
+
+       
+
+    function loadTable(data, divtable) {
+        $('#' + divtable + ' thead').empty();
+        //debugger
+        $.each(data.GlueUsageColumn, function (idx, item) {
+            //debugger
+            var tr;
+            tr = $('<tr></tr>');
+
+            $.each(item, function (key, val) {
+                //debugger
+                if (key.indexOf('W') >= 0) {
+                    tr.append('<th class="title" colspan=3>' + key + '</th>');
+                } else {
+                    tr.append('<th class="title" rowspan=2>' + key + '</th>');
+                }
+            });
+            $('#' + divtable + ' thead').append(tr);
+
+            var tr_new = $('<tr></tr>');
+            $.each(item, function (key, val) {
+                //debugger
+                if (key.indexOf('W') >= 0) {
+                    tr_new.append('<th class="title">Plan</th>');
+                    tr_new.append('<th class="title">Actual</th>');
+                    tr_new.append('<th class="title">Color</th>');
+                }
+            });
+            $('#' + divtable + ' thead').append(tr_new);
+            return false;
+        })
+
+        $('#' + divtable + ' tbody').empty();
+
+        $.each(data.GlueUsage, function (idx, item) {
+            //debugger
+            var tr;
+            tr = $('<tr ></tr>');
+            $.each(item, function (key, val) {
+                if (val == 'Red') {
+                    tr.append('<td class="text_format2 img_define" ><img src="../../Content/Image/Red.png" alt=""/></td>');
+                } else if (val == 'Yellow') {
+                    tr.append('<td class="text_format2 img_define" ><img src="../../Content/Image/Yellow.png" alt=""/></td>');
+                } else if (val == 'Green') {
+                    tr.append('<td class="text_format2 img_define" ><img src="../../Content/Image/Green.png" alt=""/></td>');
+                } else if (val == 'White') {
+                    tr.append('<td class="text_format2 img_define" ><img src="../../Content/Image/White.png" alt=""/></td>');
+                }else {
+                    tr.append('<td class="text_format" >' + val + '</td>');
+                }
+            });
+
+            $('#' + divtable + ' tbody').append(tr);
+        });
+
+        var height = document.body.clientHeight - 70;
+
+        var table = $('#Glue_Table').DataTable({
+            responsive: true,
+            scrollY: height,
+            scrollX: "1000px",
+            scrollCollapse: true,
+            paging: false,
+            fixedColumns: { leftColumns: 3 },
+            ordering: false,
+            searching: false,
+            info: false,
+            createdRow: function (row, data, dataIndex) {
+                //debugger
+                $(row).attr('onclick', 'javascript:changeColorByClick(this);');
+                $(row).attr('background-color', '#76EEC6');
+            },
+            drawCallback: function (settings) {
+                //$($('.DTFC_RightBodyLiner')).css('overflow-y', 'auto');
+                $($('.DTFC_LeftBodyLiner')).css('overflow', 'hidden');
+            }
+        });
+    }
+
+    function changeColorByClick(obj) {
+        //var _itemVal = obj.cells[1].innerHTML;
+        //debugger
+        //变色，消除原来的变色
+        $(obj).addClass("tbSelectCss");
+        $(obj).siblings().removeClass("tbSelectCss");
+    }
+
+</script>

@@ -1,0 +1,162 @@
+﻿@{
+    Layout = null;
+}
+@using SDPSubSystem.Web.Common;
+
+<div class="modal-dialog" style="width:55%;height:530px;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" style="color:White" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-plus"></span>@Html.GetLang("L000002")</h4>
+        </div>
+        <div class="modal-body">
+            <div id="message-box" style="display:none" class="alert alert-danger fade in" role="alert"><ul></ul></div>
+            <form class="form-horizontal" id="addressadd">
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">@Html.GetLang("TH00008"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        @Html.DropDownList("LineID", (List<SelectListItem>)ViewData["Line"], new { @id = "LineID", @style = "width:380px;", @class = "form-control", datatype = "*", nullmsg = "Please select the Type!" })
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">@Html.GetLang("TH00014"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        @Html.DropDownList("PJID", (List<SelectListItem>)ViewData["Project"], new { @id = "PJID", @style = "width:380px;", @class = "form-control", datatype = "*", nullmsg = "Please select the Type!" })
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">@Html.GetLang("TH00009"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        @*@Html.DropDownList("PartID", (List<SelectListItem>)ViewData["PartID"], new { @id = "PartID", @style = "width:380px;", @class = "form-control", datatype = "*", nullmsg = "Please select the Type!" })*@
+                        <select class="form-control selectpicker" style="width:380px;" data-width="380px" data-live-search="true" id="PartID" name="PartID" title="Choose one of the following..." data-size="10"></select>
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">@Html.GetLang("TH00010"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        @*@Html.DropDownList("OutputStationTypeID", (List<SelectListItem>)ViewData["OutputStationType"], new { @id = "OutputStationTypeID", @style = "width:380px;", @class = "form-control", datatype = "*", nullmsg = "Please select the Type!" })*@
+                        <select class="form-control selectpicker" style="width:380px;" data-width="380px" data-live-search="true" id="OutputStationTypeID" name="OutputStationTypeID" title="Choose one of the following..." data-size="10"></select>
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">@Html.GetLang("TH00012"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="UPH" name="UPH" value="" />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">@Html.GetLang("TH00013"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        @Html.DropDownList("NeedManualOutput", (List<SelectListItem>)ViewData["NeedManualOutput"], new { @id = "NeedManualOutput", @style = "width:380px;", @class = "form-control", datatype = "*", nullmsg = "Please select the Type!" })
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">@Html.GetLang("TH00011"):</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="OutputLeadTime" name="OutputLeadTime" value="" />
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button id="btnAppend" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-saved"></span>@Html.GetLang("BT00007")</button>
+            <button id="btnClosePO" type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove-sign"></span>@Html.GetLang("BT00008")</button>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+<input id="_id" type="hidden" value="000000" />
+
+<script type="text/javascript">
+    $(function () {
+        @*$("#btnselect").click(function () {
+            $("#_AddDialog").load('@Url.Action("selectpo")', { Flag: 'Add' }, function () {
+                $("#_AddDialog").modal("show");
+            });
+        })*@
+        //$('#DateTimeFrame').datetimepicker({
+        //    format: 'yyyy-mm',
+        //    weekStart: 1,
+        //    autoclose: true,
+        //    startView: 3,
+        //    minView: 3,
+        //    forceParse: false,
+        //    language: 'cn'
+        //});
+        $("#btnAppend").click(function () {
+            //var poststr = JSON.stringify($('#shippingform').serializeJSON());
+            $.post('@Url.Action("ModelParameterSaveAdd")',
+                { poststr: JSON.stringify($('#addressadd').serializeJSON()) },
+                function (result) {
+                    if (result.IsSuccess) {
+                        $("#tab_table").DataTable().ajax.reload();
+
+                        $.globalMessenger().post({
+                            message: "@Html.GetLang("E000024")",//提示信息
+                            type: 'info',//消息类型。error、info、success
+                            hideAfter: 2,//多长时间消失
+                            showCloseButton: true,//是否显示关闭按钮
+                            hideOnNavigate: true //是否隐藏导航
+                        });
+                    }
+                    else {
+                        if (result.Msg) {
+                            var m_ul = "<ul>";
+                            var flag = false;
+                            $.each(result.Msg, function (idx, msg) {
+                                m_ul += "<li>" + msg + "</li>";
+                                flag = true;
+                            });
+                            m_ul += "</ul>";
+                            if (flag) { bootbox.alert({ message: m_ul, title: "Error" }); }
+                        }
+                    }
+                    $("#_Dialog").modal("hide");
+                    $("#tab_table").DataTable().ajax.reload();
+                    //console.log(result);
+                    $("#_id").val(result.Data);
+                })
+            //console.log(poststr);
+        })
+
+        $('#PJID').change(function () {
+            
+            var project = $('#PJID').val();
+            $.post('@Url.Action("getDetailDropByProject")', { PJID: project }, function (res) {
+                //$('.selectpicker').selectpicker('val', '');
+                //$('.selectpicker').selectpicker('refresh');
+
+                var partid = $("#PartID").val();
+                var phtml = "";
+                //console.log(res);
+                for (var i = 0; i < res.PartID.length; i++) {
+                    if (partid == res.PartID[i].ID) {
+                        phtml += "<option  value='" + res.PartID[i].ID + "' selected='selected' data-name='" + res.PartID[i].Name + "'>" + res.PartID[i].Name + "</option>";
+                    } else {
+                        phtml += "<option  value='" + res.PartID[i].ID + "' data-name='" + res.PartID[i].Name + "'>" + res.PartID[i].Name + "</option>";
+                    }
+                }
+                $("#PartID").html(phtml);
+                $('.selectpicker').selectpicker('refresh');//加载select框选择器
+
+
+
+                var OutputStationTypeid = $("#OutputStationTypeID").val();
+                var outtypehtml = "";
+                for (var i = 0; i < res.OutputStationType.length; i++) {
+                    if (OutputStationTypeid == res.OutputStationType[i].ID) {
+                        outtypehtml += "<option  value='" + res.OutputStationType[i].ID + "' selected='selected' data-name='" + res.OutputStationType[i].Name + "'>" + res.OutputStationType[i].Name + "</option>";
+                    } else {
+                        outtypehtml += "<option  value='" + res.OutputStationType[i].ID + "' data-name='" + res.OutputStationType[i].Name + "'>" + res.OutputStationType[i].Name + "</option>";
+                    }
+                }
+                $("#OutputStationTypeID").html(outtypehtml);
+                $('.selectpicker').selectpicker('refresh');//加载select框选择器
+                
+            })
+
+        })
+    });
+
+   
+</script>

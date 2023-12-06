@@ -1,0 +1,534 @@
+﻿@{
+    ViewBag.Title = "Station Attrition";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container-fluid">
+    <div class="row"  style="margin:0 0;padding:0 0;" >
+        <div class="col-sm-12" style="margin:0 0;padding:0 0;" >
+            @*<span>OverAll Line Trend Chart| LastUpdateTime:</span>*@
+            <label  style="margin:0 0;padding:0 0;" >Line:</label>
+            @Html.DropDownList("Line", ViewData["Line"] as List<SelectListItem>, new Dictionary<string, object> { { "id", "Line" }, { "class", "form-group dropdown-menu-left" },{ "Style", "margin:0 0;padding:0 0;" } })
+            <label  style="margin:0 0;padding:0 0;" >From:</label>
+            <input class="form-group input-group-sm "  style="margin:0 0;padding:0 0;"  id="starttime" />
+            <label  style="margin:0 0;padding:0 0;" >To:</label>
+            <input class="form-group input-group-sm"  style="margin:0 0;padding:0 0;" id="endtime" />
+            <button class="btn-primary"  style="margin:0 0;padding:0 0;"  id="btnsearch">Search</button>
+            <div class="form-group" style="float:right;margin:0 0;padding:0 0;">
+                <button class="btn-primary" id="btnHour">Hour</button>
+                <button class="btn-primary" id="btnDay">Day</button>
+                <button class="btn-primary" id="btnWeek">Week</button>
+                <button class="btn-primary" id="btnMonth">Month</button>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin:0 0;padding:0 0;">
+        <div class="col-sm-12" style="margin:0 0;padding:0 0;">
+            <div class="panel panel-primary" style="margin:0 0;padding:0 0;">
+                <div id="charttime" class="panel-heading" >
+                </div>
+                <div class="panel-body" id="table_div" style="margin:0 0;padding:0 0;height:255px; overflow-y: scroll;">
+                    <table style="margin:0 0;padding:0 0;height:250px;" id="tab_table" class="table table-striped table-hover table-bordered tableWidth ">
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>Vacuum</th>
+                                <th>Ident</th>
+                                <th>Total</th>
+                                <th>Attritionrate</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="panel panel-primary">
+                <div id="chartline" class="panel-heading">
+                    @*<span>Attrition By Line | LastUpdateTime:</span>
+        <div style="float:right"><input type="checkbox" id="BUCheck" checked="checked" />SelectAll</div>*@
+                </div>
+                <div class="panel-body">
+                    <div id="byTime" style="height:250px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    
+    var _cols = ["Component", "Vacuum", "ident", "total", "attritionrate"]
+    $(function () {
+        $('#starttime').datetimepicker({
+            CustomFormat: "yyyy-MM-dd HH:mm:ss",
+            Format: "Custom",
+            kind: "dtktime",
+            weekStart: 1,
+            autoclose: true,
+            startView: 2,
+            minView: 2,
+            forceParse: true,
+            language: 'zh-CN',
+            todayBtn: "true",
+        });
+        $('#endtime').datetimepicker({
+            CustomFormat: "yyyy-MM-dd HH:mm:ss",
+            Format: "Custom",
+            kind: "dtktime",
+            weekStart: 1,
+            autoclose: true,
+            startView: 2,
+            minView: 2,
+            forceParse: true,
+            language: 'zh-CN',
+            todayBtn: "true",
+        });
+
+        $("#btnHour").click(function () {
+            var valuestr = {
+                Line: $("#Line").val(),
+                StartTime: $("#starttime").val(),
+                EndTime: $("#endtime").val(),
+                TimeType:0
+            }
+            $.post('@Url.Action("GetstationData")', { poststr: JSON.stringify( valuestr) }, function (result) {
+                //console.log(result);
+                //localStorage.setItem
+                //localStorage.getItem
+                loadChartByTime(result.Time, "byTime");
+                gentable(result.Line, "tab_table", _cols);
+            })
+        });
+        $("#btnDay").click(function () {
+            var valuestr = {
+                Line: $("#Line").val(),
+                StartTime: $("#starttime").val(),
+                EndTime: $("#endtime").val(),
+                TimeType: 1
+            }
+            $.post('@Url.Action("GetstationData")', { poststr: JSON.stringify( valuestr) }, function (result) {
+                //console.log(result);
+                loadChartByTime(result.Time, "byTime");
+                gentable(result.Line, "tab_table", _cols);
+            })
+        });
+        $("#btnWeek").click(function () {
+            var valuestr = {
+                Line: $("#Line").val(),
+                StartTime: $("#starttime").val(),
+                EndTime: $("#endtime").val(),
+                TimeType: 2
+            }
+            $.post('@Url.Action("GetstationData")', { poststr: JSON.stringify( valuestr) }, function (result) {
+                //console.log(result);
+                loadChartByTime(result.Time, "byTime");
+                gentable(result.Line, "tab_table", _cols);
+                
+            })
+        });
+        $("#btnMonth").click(function () {
+            var valuestr = {
+                Line: $("#Line").val(),
+                StartTime: $("#starttime").val(),
+                EndTime: $("#endtime").val(),
+                TimeType: 3
+            }
+            $.post('@Url.Action("GetstationData")', { poststr: JSON.stringify( valuestr) }, function (result) {
+                //console.log(result);
+                loadChartByTime(result.Time, "byTime");
+                gentable(result.Line, "tab_table", _cols);
+            })
+        });
+        $("#btnsearch").click(function () {
+            var valuestr = {
+                Line: $("#Line").val(),
+                StartTime: $("#starttime").val(),
+                EndTime: $("#endtime").val(),
+                TimeType: 0
+            }
+
+            $.post('@Url.Action("GetstationData")', { poststr: JSON.stringify(valuestr) }, function (result) {
+                //console.log(result);
+                loadChartByTime(result.Time, "byTime");
+                gentable(result.Line, "tab_table", _cols);
+            
+            })
+            
+        });
+
+        //获取参数并赋值触发
+
+        if (parent.$("#transferFlag").val()=='bar') {
+            $(' select#Line option ').each(function (index, domEle) {
+                //写入代码
+                let lineName = parent.$("#lineTransfer").val();
+                if (lineName == domEle.text) {
+                    $('select#Line')[0].selectedIndex = index;
+                }
+            });
+
+            //window.opener.document.getElementById("text的id").value = 要传过去的值;
+            //window.parent.document
+            //window.opener.document
+            $("#starttime").val(parent.$("#startTimeTransfer").val());
+            $("#endtime").val(parent.$("#endTimeTransfer").val());
+            //$("#Line").val(parent.$("#lineTransfer").val());
+
+        }
+
+        var valuestr1 = {
+            Line: $("#Line").val(),
+            StartTime: $("#starttime").val(),
+            EndTime: $("#endtime").val(),
+            TimeType: 1
+        }
+
+        $.post('@Url.Action("GetstationData")', { poststr: JSON.stringify(valuestr1) }, function (result) {
+            //console.log(result);
+            gentable(result.Line, "tab_table", _cols);
+            loadChartByTime(result.Time, "byTime");
+            
+            
+        })
+        
+        
+    })
+
+    $(document).ready(function () {
+        //var column = [
+        //    { "data": "Component", name: "Component", "orderable": false },
+        //    { "data": "Vacuum", name: "Vacuum", "orderable": true },
+        //    { "data": "ident", name: "ident", "orderable": true },
+        //    { "data": "total", name: "Total", "orderable": true },
+        //    { "data": "attritionrate", name: "attritionrate", "orderable": true }
+        //];
+        //$('#tab_table').DataTable({
+        //    "ordering": true,
+        //    "columns": column,
+        //    "ajax": function (data, callback, settings) {
+        //        callback(
+        //            JSON.parse(localStorage.getItem('dataTablesData'))
+        //        );
+        //    }
+        //});
+    });
+
+   
+    var height = parseInt($("tab_table").css("height"))-55;
+    function postLoadTableForAttrition(tableName, cols) {
+        
+        //初始化表头
+        var column = [
+            { "data": "Component", name: "Component", "orderable": false },
+            { "data": "Vacuum", name: "Vacuum", "orderable": true },
+            { "data": "ident", name: "ident", "orderable": true },
+            { "data": "total", name: "total", "orderable": true },
+            { "data": "attritionrate", name: "attritionrate", "orderable": true }
+        ];
+        
+        var language = {
+            "processing": "<img src='loading-spinner-grey.gif'/><span>&nbsp;&nbsp;" + "处理中..." + "</span>",
+            "lengthMenu": "每页 _MENU_ 条结果",
+            "zeroRecords": "没有匹配结果",
+            "info": "<span class='seperator'>  </span>" + "总共找到 _TOTAL_ 条结果",
+            "infoFiltered": " (从所有 _MAX_ 条记录中得到)",
+            "infoEmpty": "共 0 项",
+            "emptyTable": "表中数据为空",
+            "paginate": {
+                "previous": "前页",
+                "next": "下页",
+                "first": "第一页  ",
+                "last": "  尾页"
+            }
+        };
+        
+        var table = $("#" + tableName).DataTable({
+            "dom": '<"top"frt><"bottom"lip>',
+            //fixedColumns: { leftColumns: 2 },
+            //"language": language,  //language
+            "language": {
+                url: '/Content/Datatables/Lang/Lang_' + $('body').attr("LangID") + ".txt"
+            },
+            "paginate": true,  // page button
+            "searching": false,  // search bar
+            "autoWidth": true,  //automatically set the column width
+            "lengthChange": true,  // record number in each row
+            //"lengthChange": false,
+            "displayLength": 6,  // row number in each page
+            "lengthMenu": [[5, 10, 20, -1], [5, 10, 20, "All"]],
+            //lengthMenu: [[20, 50, 100], [20, 50, 100]],
+            "ordering": true,  // sort
+            //order: [],
+            "info": true,  // Showing info
+            //"scrollY": 300,
+            "scrollX": true,
+            "scrollY": height,
+            "scrollCollapse": true,
+            //scrollCollapse: false,
+            "pagingType": "full",  // page style
+            //paginationType: "full_numbers",
+            "processing": true,
+            "serverSide": false,
+            "columns": column,
+            "columnDefs": [],
+            //"columnDefs": [
+            //    {
+
+            //        defaultContent: '',
+            //        targets: ['_all']
+            //    }
+            //],
+            //fnServerParams: function (data) {
+            //    data.code = $("#code").val();
+            //},
+            
+        /*"fnServerData": function (sSource, aoData, fnCallback, oSettings) {                    
+               oSettings.jqXHR = $.ajax({
+                "type": 'get',
+                "url": sSource,
+                "dataType": "JSON",
+                "success": function (resp) {                                       
+                    oSettings.iDraw = oSettings.iDraw + 1;
+
+                    resp = resp.data || [];
+                    var data = {};
+                    data.aaData = resp;
+                    var totalCounts = resp.length;
+
+                    data.iTotalRecords = totalCounts;
+                    data.iTotalDisplayRecords = totalCounts;
+                    data.sEcho = oSettings;
+                    fnCallback(data);
+                },
+                "error": function(resp) {
+                    var data = {};
+                    data.aaData = [];
+                    var totalCounts = 0;
+
+                    data.iTotalRecords = totalCounts;
+                    data.iTotalDisplayRecords = totalCounts;
+                    data.sEcho = oSettings;
+                    fnCallback(data);
+                }
+            });
+
+        }*/
+           
+
+        });
+    }
+
+    function gentable(data, divtable, _cols) {
+        
+        //localStorage.setItem('dataTablesData', JSON.stringify(data));
+
+        //$('#divtable').DataTable({
+        //    ajax: {
+        //        url: '/api/myData',
+        //        dataSrc: 'staff'
+        //    },
+        //    columns: [... ]
+        //});
+        
+        //postLoadTableForAttrition(divtable, _cols);
+        if ($('#tab_table tbody').html() != "") {
+            $('#tab_table').dataTable().fnDestroy();
+        }
+        
+        $('#' + divtable + ' tbody').empty();
+        $.each(data, function (idx, item) {
+            //console.log(item);
+            var tr;
+
+            tr = $('<tr ></tr>');
+            //}
+            $.each(_cols, function (idx, c) {
+
+                tr.append('<td>' + item[c] + '</td>');
+
+                //if (c == 'Component') {
+                //    tr.append('<td data-search=' + item[c] +'>' + item[c] + '</td>');
+                //}
+                //else if(){
+                //    tr.append('<td data-search=>' + item[c] + '</td>');
+                //}
+            });
+            $('#' + divtable + ' tbody').append(tr);
+        })
+        $('#tab_table').DataTable({
+            "info": true,  // Showing info
+            "scrollX": true,
+            "lengthMenu": [[5, 10, 20, -1], [5, 10, 20, "All"]],
+            "scrollY": height,
+        });
+    }
+
+    function loadChartByTime(data, divname) {
+        var chart = echarts.init(document.getElementById(divname));
+        linqobj = jslinq(data);
+        var xAxisData = linqobj.select(function (el) {
+            return el.operationdate;
+        }).toList();
+        var serialData = linqobj.select(function (el) {
+            return el.attritionrate;
+        }).toList();
+        var linedata = linqobj.select(function (el) {
+            return el.Target;
+        }).toList();
+        var linedata2 = linqobj.select(function (el) {
+            return el.Target2;
+        }).toList();
+        var option = {
+            tooltip: {
+                show: true,
+                trigger: 'axis',
+                axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                    type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                }
+            },
+            legend: {
+                show: true,
+                top: "top",
+                data: [
+                    {
+                        name: 'AttritionRate',
+                        // 强制设置图形为圆。
+                        //icon: 'rect',
+                        // 设置文本为红色
+                        textStyle: {
+                            color: 'blue'
+                        }
+                    },
+                    {
+                        name: '0.15%',
+                        // 强制设置图形为圆。
+                        //icon: 'none',
+                        // 图例图形的形状，有多个可选值：'circle', 'rect', 'roundRect', 'triangle', 'diamond', 'pin', 'arrow', 'none'，
+                        // 也可引用自定义的图片
+                        //  icon: "image://https://p1.pstatp.com/list/dfic-imagehandler/8ac89fbe-b30c-4ba0-8d75-02c0f60a7ea6"
+                        // 设置文本为红色
+                        textStyle: {
+                            color: '#FFD700'
+                        }
+                    },
+                    {
+                        name: '0.20%',
+                        // 强制设置图形为圆。
+                        //icon: 'none',
+                        // 图例图形的形状，有多个可选值：'circle', 'rect', 'roundRect', 'triangle', 'diamond', 'pin', 'arrow', 'none'，
+                        // 也可引用自定义的图片
+                        //  icon: "image://https://p1.pstatp.com/list/dfic-imagehandler/8ac89fbe-b30c-4ba0-8d75-02c0f60a7ea6"
+                        textStyle: {
+                            color: '#EE2C2C'
+                        }
+                    }
+                ],
+                //textStyle: {
+                //    color: 'red',
+                //}
+            },
+            xAxis: {
+                type: 'category',
+                name: '时间',
+                splitLine: { show: false },
+                data: xAxisData,
+                axisLabel: {//坐标轴刻度标签的相关设置。
+                    interval: 0,
+                    rotate: "25"
+                },
+                nameTextStyle: {
+                    color: "blue",
+                    fontSize: 12,
+                    //padding: 10
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            toolbox: {
+                feature: {
+                    saveAsImage: {}
+                }
+            },
+            yAxis: {
+                    show: true,
+                    name: '抛料率%',
+                    position: 'left',
+                    nameLocation: 'end',
+                    nameTextStyle: {
+                        color: "blue",
+                        fontSize: 12,
+                        //padding: 10
+                    }
+                },
+                //{
+                //    min: 0,
+                //    position: 'right',
+                //    nameLocation: 'middle',
+                //    axisLabel: {
+                //        formatter: '{value}%'
+                //    },
+                //    splitLine: { show: false }
+                //}
+            series: [
+                {
+                    type: 'line',
+                    yAxisIndex: 0,
+                    name: 'AttritionRate',
+                    smooth: true,   
+                    data: serialData,
+                    itemStyle: {
+                        color: '#678AAD'
+                    },
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'inside'
+                        }
+                    }
+                },
+                {
+                    type: 'line',
+                    yAxisIndex: 0,
+                    name: '0.15%',
+                    data: linedata,
+                    itemStyle: {
+                        color: '#FFD700'
+                    },
+                    label: {
+                        normal: {
+                            show: false,
+                            //position: top,
+                        }
+                    }
+                },
+                {
+                    type: 'line',
+                    yAxisIndex: 0,
+                    name: '0.20%',
+                    data: linedata2,
+                    itemStyle: {
+                        color: '#EE2C2C'
+                    },
+                    label: {
+                        normal: {
+                            show: false,
+                            //position: top,
+                        }
+                    }
+                }
+           ]
+        }
+
+        chart.setOption(option);
+        return chart;
+    }
+
+   
+</script>

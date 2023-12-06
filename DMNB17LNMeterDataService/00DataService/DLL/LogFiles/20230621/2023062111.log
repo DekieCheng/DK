@@ -1,0 +1,691 @@
+2023-06-21 11:00:05.264: ExecutionforCompressedAirFlow started
+2023-06-21 11:00:05.266: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:00:05.543: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 C1 84 41 42 ED 5D 3E 43 50 00 3F 2B BF 00 47 D9 B4 07 42 BA 00 00 00 00 71 AF] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:00:08.574: ExecutionforCompressedAirFlow time : 3309
+
+2023-06-21 11:00:08.576: ExecutionforCompressedAirFlow started
+2023-06-21 11:00:08.578: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:00:08.883: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 3B 7B 44 8D 14 ED 40 8E D6 A9 3F 7E 27 80 48 55 D4 CB 40 63 00 00 00 00 A3 BB] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:00:11.915: ExecutionforCompressedAirFlow time : 3338
+
+2023-06-21 11:00:34.561: ExecutionforCompressedAirFlow started
+2023-06-21 11:00:34.563: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:00:34.849: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 DB 4C 40 D0 1C DB 3D D2 0E A1 3F 22 BF 00 47 D9 D9 2D 42 BA 00 00 00 00 2A 3F] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:00:37.880: ExecutionforCompressedAirFlow time : 3318
+
+2023-06-21 11:00:37.903: ExecutionforCompressedAirFlow started
+2023-06-21 11:00:37.914: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:00:38.202: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 E8 5F 44 A3 E4 BA 40 A4 3B AE 3F 83 27 80 48 55 E7 5D 41 5B 00 00 00 00 3C 04] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:00:41.403: ExecutionforCompressedAirFlow time : 3498
+
+2023-06-21 11:01:12.676: ExecutionforCompressedAirFlow started
+2023-06-21 11:01:12.678: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:01:12.953: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 99 68 42 08 6B B7 3F 09 07 6A 3F 3F BF 00 47 D9 22 F1 42 BB 00 00 00 00 16 E4] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:02:42.237: ExecutionforCompressedAirFlow started
+2023-06-21 11:02:42.248: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:02:42.531: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 74 9A 42 09 48 3B 3F 0A 2A BF 3F 3F BF 00 47 D9 53 3D 42 BD 00 00 00 00 13 29] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:02:45.604: ExecutionforCompressedAirFlow time : 3365
+
+2023-06-21 11:02:45.606: ExecutionforCompressedAirFlow started
+2023-06-21 11:02:45.607: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:02:45.896: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 E8 FB 45 05 B7 27 41 06 A7 3A 3F 8E 27 80 48 55 26 8A 42 B1 00 00 00 00 AC D7] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:02:48.931: ExecutionforCompressedAirFlow time : 3325
+
+2023-06-21 11:03:09.092: ExecutionforCompressedAirFlow started
+2023-06-21 11:03:09.093: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:03:09.398: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 C1 70 41 E2 1E 8E 3E E4 02 BB 3F 3B BF 00 47 D9 C9 A1 42 BD 00 00 00 00 5B 2C] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:03:12.439: ExecutionforCompressedAirFlow time : 3346
+
+2023-06-21 11:03:12.440: ExecutionforCompressedAirFlow started
+2023-06-21 11:03:12.441: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:03:12.726: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 D1 35 45 01 99 13 41 02 3F 64 3F 8D 27 C0 48 55 7C A6 40 93 00 00 00 00 F1 E2] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:03:15.736: ExecutionforCompressedAirFlow time : 3295
+
+2023-06-21 11:03:39.094: ExecutionforCompressedAirFlow started
+2023-06-21 11:03:39.096: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:03:39.364: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 76 C5 41 BB 97 64 3E BC 37 63 3F 37 BF 00 47 D9 1A F5 42 BE 00 00 00 00 AD 01] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:03:42.368: ExecutionforCompressedAirFlow time : 3273
+
+2023-06-21 11:03:42.371: ExecutionforCompressedAirFlow started
+2023-06-21 11:03:42.373: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:03:42.644: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 BF 92 44 8C 98 45 40 8D 08 55 3F 80 27 C0 48 55 49 6B 41 7D 00 00 00 00 92 97] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:03:45.649: ExecutionforCompressedAirFlow time : 3277
+
+2023-06-21 11:04:09.099: ExecutionforCompressedAirFlow started
+2023-06-21 11:04:09.101: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:04:09.375: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 1A 7E 41 C2 45 56 3E C3 CB 0D 3F 37 BF 00 47 D9 88 9F 42 BE 00 00 00 00 1C 36] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:04:12.389: ExecutionforCompressedAirFlow time : 3289
+
+2023-06-21 11:04:12.391: ExecutionforCompressedAirFlow started
+2023-06-21 11:04:12.392: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:04:12.666: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 51 0D 44 8C 29 16 40 8D 93 00 3F 7E 27 C0 48 55 61 04 41 C7 00 00 00 00 89 81] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:04:15.670: ExecutionforCompressedAirFlow time : 3278
+
+2023-06-21 11:04:39.101: ExecutionforCompressedAirFlow started
+2023-06-21 11:04:39.103: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:04:39.386: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 82 08 41 43 AF 0A 3E 44 5F AB 3F 2B BF 00 47 D9 C9 88 42 BE 00 00 00 00 CC 3F] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:04:42.455: ExecutionforCompressedAirFlow time : 3353
+
+2023-06-21 11:04:42.456: ExecutionforCompressedAirFlow started
+2023-06-21 11:04:42.458: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:04:42.734: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 C1 BF 44 85 8F AE 40 86 A5 A9 3F 7C 27 C0 48 55 15 02 42 08 00 00 00 00 32 41] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:04:45.739: ExecutionforCompressedAirFlow time : 3282
+
+2023-06-21 11:05:09.105: ExecutionforCompressedAirFlow started
+2023-06-21 11:05:09.107: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:05:09.390: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 A7 EB 41 41 D2 13 3E 42 39 00 3F 2B BF 00 47 D9 FC 57 42 BE 00 00 00 00 F8 94] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:05:12.429: ExecutionforCompressedAirFlow time : 3322
+
+2023-06-21 11:05:12.431: ExecutionforCompressedAirFlow started
+2023-06-21 11:05:12.432: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:05:12.723: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 21 02 44 82 E9 5B 40 82 8D FB 3F 7B 27 C0 48 55 9E 8F 42 2B 00 00 00 00 C5 B0] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:05:15.728: ExecutionforCompressedAirFlow time : 3297
+
+2023-06-21 11:05:39.110: ExecutionforCompressedAirFlow started
+2023-06-21 11:05:39.111: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:05:39.407: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 E2 04 41 38 FE AA 3E 39 7D FF 3F 2A BF 00 47 D9 2C 64 42 BF 00 00 00 00 01 38] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:05:42.412: ExecutionforCompressedAirFlow time : 3302
+
+2023-06-21 11:05:42.414: ExecutionforCompressedAirFlow started
+2023-06-21 11:05:42.416: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:05:42.719: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 BF 41 44 84 8B A2 40 85 58 52 3F 7C 27 C0 48 55 7E C7 42 4E 00 00 00 00 DD 6F] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:05:45.724: ExecutionforCompressedAirFlow time : 3308
+
+2023-06-21 11:06:09.227: ExecutionforCompressedAirFlow started
+2023-06-21 11:06:09.230: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:06:09.507: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 AA AA 40 D6 F5 2B 3D D7 89 F8 3F 22 BF 00 47 D9 55 3B 42 BF 00 00 00 00 39 D5] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:06:12.528: ExecutionforCompressedAirFlow time : 3300
+
+2023-06-21 11:06:12.530: ExecutionforCompressedAirFlow started
+2023-06-21 11:06:12.532: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:06:12.815: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 C1 3B 44 9B B1 08 40 9C 26 81 3F 82 27 C0 48 55 6A 8C 42 74 00 00 00 00 9F D0] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:06:15.852: ExecutionforCompressedAirFlow time : 3321
+
+2023-06-21 11:06:39.137: ExecutionforCompressedAirFlow started
+2023-06-21 11:06:39.138: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:06:39.421: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 5F AF 40 C5 8F 90 3D C6 6B 4C 3F 21 BF 00 47 D9 70 01 42 BF 00 00 00 00 A7 DC] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:06:42.451: ExecutionforCompressedAirFlow time : 3313
+
+2023-06-21 11:06:42.454: ExecutionforCompressedAirFlow started
+2023-06-21 11:06:42.456: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:06:42.740: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 3A 31 44 9F 2F 57 40 A0 9D D7 3F 82 27 C0 48 55 3D 51 42 8F 00 00 00 00 8D 90] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:06:45.745: ExecutionforCompressedAirFlow time : 3291
+
+2023-06-21 11:07:06.879: ExecutionforCompressedAirFlow started
+2023-06-21 11:07:06.937: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:07:07.213: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 8A 0B 40 DB DC 0C 3D DC D7 A3 3F 22 BF 00 47 D9 8A 47 42 BF 00 00 00 00 02 86] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:07:10.244: ExecutionforCompressedAirFlow time : 3363
+
+2023-06-21 11:07:10.273: ExecutionforCompressedAirFlow started
+2023-06-21 11:07:10.276: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:07:10.550: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 C6 37 44 A0 BD BF 40 A1 D2 58 3F 82 27 C0 48 55 56 9F 42 A3 00 00 00 00 9A 97] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:07:13.609: ExecutionforCompressedAirFlow time : 3335
+
+2023-06-21 11:07:36.877: ExecutionforCompressedAirFlow started
+2023-06-21 11:07:36.878: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:07:37.159: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 2C 37 42 08 FD DE 3F 08 F5 C0 3F 3E BF 00 47 D9 D0 16 42 BF 00 00 00 00 B2 9D] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:07:40.164: ExecutionforCompressedAirFlow time : 3286
+
+2023-06-21 11:07:40.166: ExecutionforCompressedAirFlow started
+2023-06-21 11:07:40.167: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:07:40.464: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 F5 B0 45 09 CA 18 41 0A 6C E4 3F 8F 27 C0 48 55 D4 D5 42 C0 00 00 00 00 9A 8D] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:07:43.510: ExecutionforCompressedAirFlow time : 3344
+
+2023-06-21 11:08:06.881: ExecutionforCompressedAirFlow started
+2023-06-21 11:08:06.882: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:08:07.161: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 90 CE 42 3E B6 34 3F 3F 37 1D 3F 48 BF 00 47 D9 82 01 42 C0 00 00 00 00 4B 69] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:08:10.166: ExecutionforCompressedAirFlow time : 3284
+
+2023-06-21 11:08:10.168: ExecutionforCompressedAirFlow started
+2023-06-21 11:08:10.170: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:08:10.450: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 FD 3B 45 11 DD FF 41 12 E8 BC 3F 90 28 00 48 55 1B 01 41 6D 00 00 00 00 CE 3D] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:08:13.496: ExecutionforCompressedAirFlow time : 3327
+
+2023-06-21 11:08:36.887: ExecutionforCompressedAirFlow started
+2023-06-21 11:08:36.888: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:08:37.158: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 0B CC 42 46 3C B6 3F 47 50 C9 3F 49 BF 00 47 D9 55 8D 42 C1 00 00 00 00 7C 7D] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:08:40.162: ExecutionforCompressedAirFlow time : 3274
+
+2023-06-21 11:08:40.164: ExecutionforCompressedAirFlow started
+2023-06-21 11:08:40.166: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:08:40.438: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 B8 41 45 11 98 9B 41 12 DC 3C 3F 90 28 00 48 55 D0 D3 42 08 00 00 00 00 86 93] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:08:43.489: ExecutionforCompressedAirFlow time : 3323
+
+2023-06-21 11:09:06.888: ExecutionforCompressedAirFlow started
+2023-06-21 11:09:06.890: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:09:07.163: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 CB 51 42 0D A5 A0 3F 0E F6 15 3F 3F BF 00 47 D9 0C 02 42 C2 00 00 00 00 24 AB] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:09:10.167: ExecutionforCompressedAirFlow time : 3278
+
+2023-06-21 11:09:10.169: ExecutionforCompressedAirFlow started
+2023-06-21 11:09:10.170: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:09:10.447: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 61 42 45 07 31 B1 41 08 4C 64 3F 8E 28 00 48 55 E6 CA 42 52 00 00 00 00 B4 B0] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:09:13.460: ExecutionforCompressedAirFlow time : 3290
+
+2023-06-21 11:09:36.892: ExecutionforCompressedAirFlow started
+2023-06-21 11:09:36.892: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:09:37.176: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 22 59 41 66 84 AA 3E 67 05 04 3F 2E BF 00 47 D9 87 3C 42 C2 00 00 00 00 64 8F] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:09:40.182: ExecutionforCompressedAirFlow time : 3289
+
+2023-06-21 11:09:40.185: ExecutionforCompressedAirFlow started
+2023-06-21 11:09:40.187: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:09:40.469: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 0E 26 44 A1 06 1D 40 A2 DB D8 3F 82 28 00 48 55 A4 74 42 89 00 00 00 00 8E 70] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:09:43.510: ExecutionforCompressedAirFlow time : 3323
+
+2023-06-21 11:10:06.895: ExecutionforCompressedAirFlow started
+2023-06-21 11:10:06.897: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:10:07.177: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 6F A8 41 D1 B2 1B 3E D2 5A 0E 3F 39 BF 00 47 D9 E2 01 42 C2 00 00 00 00 98 6C] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:10:10.185: ExecutionforCompressedAirFlow time : 3289
+
+2023-06-21 11:10:10.187: ExecutionforCompressedAirFlow started
+2023-06-21 11:10:10.189: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:10:10.474: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 5B B0 44 8A 30 B5 40 8B 01 54 3F 7E 28 00 48 55 B8 C4 42 9C 00 00 00 00 34 CB] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:10:13.514: ExecutionforCompressedAirFlow time : 3325
+
+2023-06-21 11:10:36.911: ExecutionforCompressedAirFlow started
+2023-06-21 11:10:36.913: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:10:37.187: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 BD 60 41 8B 94 85 3E 8C 5A 07 3F 31 BF 00 47 D9 4A 4C 42 C3 00 00 00 00 D9 75] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:10:40.200: ExecutionforCompressedAirFlow time : 3288
+
+2023-06-21 11:10:40.203: ExecutionforCompressedAirFlow started
+2023-06-21 11:10:40.204: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:10:40.485: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 0C 05 44 88 DD 7B 40 88 53 A9 3F 7D 28 00 48 55 EF 9C 42 AE 00 00 00 00 82 3B] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:10:43.515: ExecutionforCompressedAirFlow time : 3311
+
+2023-06-21 11:11:06.911: ExecutionforCompressedAirFlow started
+2023-06-21 11:11:06.913: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:11:07.192: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 CD 8D 41 3D F1 C6 3E 3E E7 AA 3F 2A BF 00 47 D9 80 D0 42 C3 00 00 00 00 C5 14] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:11:10.198: ExecutionforCompressedAirFlow time : 3284
+
+2023-06-21 11:11:10.199: ExecutionforCompressedAirFlow started
+2023-06-21 11:11:10.201: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:11:10.488: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 D7 80 44 83 A2 7C 40 84 12 A7 3F 7C 28 00 48 55 A1 04 42 C0 00 00 00 00 52 1B] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:11:13.518: ExecutionforCompressedAirFlow time : 3317
+
+2023-06-21 11:11:37.070: ExecutionforCompressedAirFlow started
+2023-06-21 11:11:37.074: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:11:37.370: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 AB 24 41 2F B9 9A 3E 30 B2 54 3F 29 BF 00 47 D9 AF F9 42 C3 00 00 00 00 FB EF] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:11:40.548: ExecutionforCompressedAirFlow time : 3476
+
+2023-06-21 11:11:40.551: ExecutionforCompressedAirFlow started
+2023-06-21 11:11:40.553: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:11:40.837: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 D5 4C 44 73 4C B5 40 75 4E 4E 3F 7A 28 40 48 55 61 A0 40 9B 00 00 00 00 CE 3D] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:11:43.843: ExecutionforCompressedAirFlow time : 3290
+
+2023-06-21 11:15:58.552: Service is running for the filter CompressedAirFlow with interval 20000 .
+2023-06-21 11:15:58.663: ExecutionforCompressedAirFlow started
+2023-06-21 11:15:58.712: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:15:58.996: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 B2 E6 42 07 83 D3 3F 08 E2 14 3F 3E BF 00 47 D9 04 2E 42 C7 00 00 00 00 15 F7] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:16:02.207: ExecutionforCompressedAirFlow time : 3543
+
+2023-06-21 11:16:02.210: ExecutionforCompressedAirFlow started
+2023-06-21 11:16:02.212: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:16:02.482: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 ED 7E 45 03 B8 9C 41 04 A5 64 3F 8D 28 80 48 55 CE 67 41 BA 00 00 00 00 9E 05] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:16:05.510: ExecutionforCompressedAirFlow time : 3298
+
+2023-06-21 11:16:24.217: Service is running for the filter CompressedAirFlow with interval 20000 .
+2023-06-21 11:16:24.225: ExecutionforCompressedAirFlow started
+2023-06-21 11:16:24.233: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:16:24.517: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 7C 1D 41 94 60 B9 3E 95 82 06 3F 32 BF 00 47 D9 51 94 42 C7 00 00 00 00 92 10] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:16:27.573: ExecutionforCompressedAirFlow time : 3347
+
+2023-06-21 11:16:27.574: ExecutionforCompressedAirFlow started
+2023-06-21 11:16:27.576: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:16:27.850: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 32 C9 44 8B 09 19 40 8C 3F FE 3F 7E 28 80 48 55 43 1D 42 08 00 00 00 00 42 FA] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:16:30.854: ExecutionforCompressedAirFlow time : 3278
+
+2023-06-21 11:16:50.893: Service is running for the filter CompressedAirFlow with interval 1000 .
+2023-06-21 11:16:50.900: ExecutionforCompressedAirFlow started
+2023-06-21 11:16:50.908: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:16:51.190: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 43 B7 41 CC 7E 34 3E CD D6 0E 3F 38 BF 00 47 D9 A9 33 42 C7 00 00 00 00 8F 54] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:16:54.219: ExecutionforCompressedAirFlow time : 3317
+
+2023-06-21 11:16:54.220: ExecutionforCompressedAirFlow started
+2023-06-21 11:16:54.222: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:16:54.504: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 34 BF 44 82 FD 37 40 82 93 FB 3F 7B 28 80 48 55 D8 AF 42 26 00 00 00 00 7E F5] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:16:57.542: ExecutionforCompressedAirFlow time : 3320
+
+2023-06-21 11:17:22.459: Service is running for the filter CompressedAirFlow with interval 1000 .
+2023-06-21 11:17:23.082: Service is running for the filter CompressedAirFlow with interval 1000 .
+2023-06-21 11:17:23.083: Service is running for the filter CompressedAirFlow with interval 1000 .
+2023-06-21 11:17:26.834: ExecutionforCompressedAirFlow started
+2023-06-21 11:17:26.835: ExecutionforCompressedAirFlow started
+2023-06-21 11:17:26.836: ExecutionforCompressedAirFlow started
+2023-06-21 11:17:26.843: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:17:26.845: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:17:26.845: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:17:27.130: Arrived data length:[29], Data(Hex):[02 00 00 F9 91 41 3F 21 22 3E 41 15 AA 3F 2B BF 80 47 D9 6E A5 3D 01 00 00 00 00 6A B3] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:17:27.130: Arrived data length:[29], Data(Hex):[02 00 00 F9 91 41 3F 21 22 3E 41 15 AA 3F 2B BF 80 47 D9 6E A5 3D 01 00 00 00 00 6A B3] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:17:27.131: Try to re-read [EmptyDataCounter=1] data due to [Read data [02 00 00 F9 91 41 3F 21 22 3E 41 15 AA 3F 2B BF 80 47 D9 6E A5 3D 01 00 00 00 00 6A B3] is not enough from remote host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D]]
+2023-06-21 11:17:27.131: Try to re-read [EmptyDataCounter=1] data due to [Read data [02 00 00 F9 91 41 3F 21 22 3E 41 15 AA 3F 2B BF 80 47 D9 6E A5 3D 01 00 00 00 00 6A B3] is not enough from remote host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D]]
+2023-06-21 11:17:31.461: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 36 E3 41 3B 57 20 3E 3C B0 54 3F 2A BF 80 47 D9 BA 7F 3D 29 00 00 00 00 2A B2] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:17:31.542: Arrived data length:[19], Data(Hex):[3B 94 AA 3F 2A BF 80 47 D9 F3 40 3D 36 00 00 00 00 83 DD] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:17:31.542: Arrived data length:[19], Data(Hex):[3B 94 AA 3F 2A BF 80 47 D9 F3 40 3D 36 00 00 00 00 83 DD] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:17:31.543: Try to re-read [EmptyDataCounter=2] data due to [Read data [3B 94 AA 3F 2A BF 80 47 D9 F3 40 3D 36 00 00 00 00 83 DD] is not enough from remote host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D]]
+2023-06-21 11:17:31.543: Try to re-read [EmptyDataCounter=2] data due to [Read data [3B 94 AA 3F 2A BF 80 47 D9 F3 40 3D 36 00 00 00 00 83 DD] is not enough from remote host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D]]
+2023-06-21 11:17:31.837: Arrived data length:[29], Data(Hex):[02 00 00 EE 1A 41 39 0C 5D 3E 3B 94 AA 3F 2A BF 80 47 D9 F3 40 3D 36 00 00 00 00 83 DD] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:17:31.837: Arrived data length:[29], Data(Hex):[02 00 00 EE 1A 41 39 0C 5D 3E 3B 94 AA 3F 2A BF 80 47 D9 F3 40 3D 36 00 00 00 00 83 DD] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:17:31.837: Try to re-read [EmptyDataCounter=3] data due to [Read data [02 00 00 EE 1A 41 39 0C 5D 3E 3B 94 AA 3F 2A BF 80 47 D9 F3 40 3D 36 00 00 00 00 83 DD] is not enough from remote host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D]]
+2023-06-21 11:17:31.838: Try to re-read [EmptyDataCounter=3] data due to [Read data [02 00 00 EE 1A 41 39 0C 5D 3E 3B 94 AA 3F 2A BF 80 47 D9 F3 40 3D 36 00 00 00 00 83 DD] is not enough from remote host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D]]
+2023-06-21 11:17:32.129: Arrived data length:[29], Data(Hex):[02 00 00 09 57 41 39 26 3A 3E 3A 81 54 3F 2A BF 80 47 D9 1B BC 3D 44 00 00 00 00 AB 4A] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:17:32.131: Try to re-read [EmptyDataCounter=4] data due to [Read data [02 00 00 09 57 41 39 26 3A 3E 3A 81 54 3F 2A BF 80 47 D9 1B BC 3D 44 00 00 00 00 AB 4A] is not enough from remote host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D]]
+2023-06-21 11:17:32.135: Arrived data length:[29], Data(Hex):[02 00 00 09 57 41 39 26 3A 3E 3A 81 54 3F 2A BF 80 47 D9 1B BC 3D 44 00 00 00 00 AB 4A] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:17:32.136: Try to re-read [EmptyDataCounter=4] data due to [Read data [02 00 00 09 57 41 39 26 3A 3E 3A 81 54 3F 2A BF 80 47 D9 1B BC 3D 44 00 00 00 00 AB 4A] is not enough from remote host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D]]
+2023-06-21 11:17:32.433: Arrived data length:[29], Data(Hex):[02 00 00 09 57 41 39 26 3A 3E 3A 81 54 3F 2A BF 80 47 D9 1B BC 3D 44 00 00 00 00 AB 4A] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:17:32.433: Arrived data length:[29], Data(Hex):[02 00 00 09 57 41 39 26 3A 3E 3A 81 54 3F 2A BF 80 47 D9 1B BC 3D 44 00 00 00 00 AB 4A] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:17:35.506: ExecutionforCompressedAirFlow time : 8670
+
+2023-06-21 11:17:35.506: Exceeded the re-read counter [EmptyDataCounter=1], still cannot received the correct data, will skip this circle from remote host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:17:35.506: Exceeded the re-read counter [EmptyDataCounter=1], still cannot received the correct data, will skip this circle from remote host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:17:35.509: ExecutionforCompressedAirFlow started
+2023-06-21 11:17:35.511: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:17:35.805: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 E0 60 44 72 56 50 40 74 26 F9 3F 7A 28 80 48 55 44 E3 42 54 00 00 00 00 DB 26] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:17:38.508: ExecutionforCompressedAirFlow time : 11673
+
+2023-06-21 11:17:38.508: ExecutionforCompressedAirFlow time : 11673
+
+2023-06-21 11:17:38.510: ExecutionforCompressedAirFlow started
+2023-06-21 11:17:38.510: ExecutionforCompressedAirFlow started
+2023-06-21 11:17:38.513: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:17:38.513: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:17:38.796: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 1B 7C 44 71 8E B2 40 72 DD F9 3F 79 28 80 48 55 7D 3A 42 57 00 00 00 00 A4 99] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:17:38.796: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 1B 7C 44 71 8E B2 40 72 DD F9 3F 79 28 80 48 55 7D 3A 42 57 00 00 00 00 A4 99] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:17:38.834: ExecutionforCompressedAirFlow time : 3324
+
+2023-06-21 11:17:41.854: ExecutionforCompressedAirFlow time : 3342
+
+2023-06-21 11:17:41.857: ExecutionforCompressedAirFlow time : 3345
+
+2023-06-21 11:17:46.836: Service is running for the filter CompressedAirFlow with interval 20000 .
+2023-06-21 11:17:46.838: ExecutionforCompressedAirFlow started
+2023-06-21 11:17:46.843: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:17:47.147: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 8B DF 41 33 A0 4E 3E 34 08 FE 3F 2A BF 80 47 D9 EC 9C 3D C2 00 00 00 00 E3 B3] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:17:50.170: ExecutionforCompressedAirFlow time : 3331
+
+2023-06-21 11:17:50.172: ExecutionforCompressedAirFlow started
+2023-06-21 11:17:50.173: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:17:50.460: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 D3 BF 44 6A 3D 4A 40 6C D7 F9 3F 78 28 80 48 55 26 02 42 64 00 00 00 00 2D B5] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:17:53.465: ExecutionforCompressedAirFlow time : 3292
+
+2023-06-21 11:18:06.837: Service is running for the filter CompressedAirFlow with interval 20000 .
+2023-06-21 11:18:06.990: ExecutionforCompressedAirFlow started
+2023-06-21 11:18:06.996: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:18:07.265: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 EA 76 41 32 FD EC 3E 33 FA FF 3F 29 BF 80 47 D9 72 25 3E 20 00 00 00 00 8C 36] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:18:10.450: ExecutionforCompressedAirFlow time : 3459
+
+2023-06-21 11:18:10.573: ExecutionforCompressedAirFlow started
+2023-06-21 11:18:10.579: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:18:10.844: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 60 FE 44 6D CE 77 40 6E 42 F9 3F 79 28 80 48 55 52 AA 42 79 00 00 00 00 CB FC] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:18:13.997: ExecutionforCompressedAirFlow time : 3423
+
+2023-06-21 11:18:26.839: Service is running for the filter CompressedAirFlow with interval 20000 .
+2023-06-21 11:18:26.842: ExecutionforCompressedAirFlow started
+2023-06-21 11:18:26.844: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:18:27.115: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 BB 16 41 1A A9 50 3E 1B C3 FD 3F 27 BF 80 47 D9 81 23 3E 5A 00 00 00 00 4E EC] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:18:30.151: ExecutionforCompressedAirFlow time : 3308
+
+2023-06-21 11:18:30.153: ExecutionforCompressedAirFlow started
+2023-06-21 11:18:30.155: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:18:30.437: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 55 BC 44 67 B9 E7 40 68 44 4C 3F 78 28 80 48 55 0F 24 42 87 00 00 00 00 30 BF] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:18:33.442: ExecutionforCompressedAirFlow time : 3288
+
+2023-06-21 11:18:46.839: Service is running for the filter CompressedAirFlow with interval 20000 .
+2023-06-21 11:18:46.841: ExecutionforCompressedAirFlow started
+2023-06-21 11:18:46.843: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:18:47.114: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 22 8B 41 1C 12 EE 3E 1D E6 A8 3F 27 BF 80 47 D9 14 73 3E 89 00 00 00 00 46 DF] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:18:50.154: ExecutionforCompressedAirFlow time : 3311
+
+2023-06-21 11:18:50.156: ExecutionforCompressedAirFlow started
+2023-06-21 11:18:50.158: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:18:50.439: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 AA 22 44 69 11 E3 40 6B A6 F9 3F 78 28 80 48 55 4D 83 42 91 00 00 00 00 19 9E] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:18:53.445: ExecutionforCompressedAirFlow time : 3288
+
+2023-06-21 11:19:06.844: Service is running for the filter CompressedAirFlow with interval 20000 .
+2023-06-21 11:19:07.691: ExecutionforCompressedAirFlow started
+2023-06-21 11:19:07.692: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:19:07.971: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 8A 2D 41 17 73 7D 3E 18 74 53 3F 27 BF 80 47 D9 69 AF 3E A5 00 00 00 00 AE B7] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:19:11.000: ExecutionforCompressedAirFlow time : 3308
+
+2023-06-21 11:19:11.002: ExecutionforCompressedAirFlow started
+2023-06-21 11:19:11.003: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:19:11.283: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 D5 C7 44 6A 3F 55 40 6C D8 4E 3F 78 28 80 48 55 D7 9D 42 9B 00 00 00 00 0F A9] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:19:14.293: ExecutionforCompressedAirFlow time : 3291
+
+2023-06-21 11:19:40.115: Service is running for the filter CompressedAirFlow with interval 20000 .
+2023-06-21 11:19:40.124: ExecutionforCompressedAirFlow started
+2023-06-21 11:19:40.132: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:19:40.414: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 0D 41 40 CA 44 56 3D CB BA A1 3F 21 BF 80 47 D9 29 21 3E C9 00 00 00 00 BE 2A] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:19:43.492: ExecutionforCompressedAirFlow time : 3367
+
+2023-06-21 11:19:43.494: ExecutionforCompressedAirFlow started
+2023-06-21 11:19:43.496: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:19:43.784: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 EB AE 44 95 D2 80 40 96 58 01 3F 81 28 80 48 55 CD 0E 42 AF 00 00 00 00 25 E5] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:19:46.788: ExecutionforCompressedAirFlow time : 3293
+
+2023-06-21 11:20:00.117: Service is running for the filter CompressedAirFlow with interval 20000 .
+2023-06-21 11:20:00.120: ExecutionforCompressedAirFlow started
+2023-06-21 11:20:00.121: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:20:00.404: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 52 DE 40 C4 81 21 3D C5 59 4C 3F 21 BF 80 47 D9 BB 49 3E DA 00 00 00 00 ED 40] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:20:03.458: ExecutionforCompressedAirFlow time : 3337
+
+2023-06-21 11:20:03.460: ExecutionforCompressedAirFlow started
+2023-06-21 11:20:03.462: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:20:03.742: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 BB 26 44 96 A3 37 40 97 75 01 3F 81 28 80 48 55 26 5B 42 BD 00 00 00 00 3D 30] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:20:06.783: ExecutionforCompressedAirFlow time : 3322
+
+2023-06-21 11:20:20.117: Service is running for the filter CompressedAirFlow with interval 20000 .
+2023-06-21 11:20:20.245: ExecutionforCompressedAirFlow started
+2023-06-21 11:20:20.250: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:20:20.533: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 F2 D8 40 C0 1B E9 3D C2 1E F6 3F 21 BF 80 47 D9 04 AD 3E EC 00 00 00 00 BA E3] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:20:23.745: ExecutionforCompressedAirFlow time : 3498
+
+2023-06-21 11:20:23.861: ExecutionforCompressedAirFlow started
+2023-06-21 11:20:23.864: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:20:24.148: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 4D 93 44 95 33 72 40 96 41 D6 3F 81 28 C0 48 55 73 D5 3F AD 00 00 00 00 E5 14] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:20:27.198: ExecutionforCompressedAirFlow time : 3336
+
+2023-06-21 11:21:30.440: Service is running for the filter CompressedAirFlow with interval 20 seconds.
+2023-06-21 11:21:31.265: ExecutionforCompressedAirFlow started
+2023-06-21 11:21:31.272: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:21:31.551: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 90 55 42 1A 7E 4D 3F 1B 56 C2 3F 42 BF 80 47 D9 E0 E5 3F 38 00 00 00 00 DE 8D] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:21:34.603: ExecutionforCompressedAirFlow time : 3337
+
+2023-06-21 11:21:34.604: ExecutionforCompressedAirFlow started
+2023-06-21 11:21:34.606: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:21:34.880: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 F7 08 45 07 C8 5D 41 08 0C 0F 3F 8F 28 C0 48 55 17 A8 41 F3 00 00 00 00 E7 9B] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:21:37.885: ExecutionforCompressedAirFlow time : 3280
+
+2023-06-21 11:21:50.439: Service is running for the filter CompressedAirFlow with interval 20 seconds.
+2023-06-21 11:21:54.573: ExecutionforCompressedAirFlow started
+2023-06-21 11:21:54.575: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:21:54.851: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 2F 6C 42 4D 6B 54 3F 4E 55 76 3F 4A BF 80 47 D9 72 35 3F 81 00 00 00 00 5E 25] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:21:57.876: ExecutionforCompressedAirFlow time : 3302
+
+2023-06-21 11:21:57.878: ExecutionforCompressedAirFlow started
+2023-06-21 11:21:57.880: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:21:58.159: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 DD FA 45 0C B6 DC 41 0D F8 3B 3F 8F 28 C0 48 55 89 66 42 34 00 00 00 00 4D 0B] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:22:01.180: ExecutionforCompressedAirFlow time : 3301
+
+2023-06-21 11:22:10.442: Service is running for the filter CompressedAirFlow with interval 20 seconds.
+2023-06-21 11:22:10.443: ExecutionforCompressedAirFlow started
+2023-06-21 11:22:10.444: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:22:10.726: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 47 95 42 50 88 41 3F 51 C4 1F 3F 4A BF 80 47 D9 01 76 3F 9F 00 00 00 00 06 DC] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:22:13.767: ExecutionforCompressedAirFlow time : 3322
+
+2023-06-21 11:22:13.769: ExecutionforCompressedAirFlow started
+2023-06-21 11:22:13.771: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:22:14.051: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 E2 2D 45 0A B8 01 41 0B 99 65 3F 8F 28 C0 48 55 E3 A5 42 59 00 00 00 00 4A FF] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:22:17.082: ExecutionforCompressedAirFlow time : 3312
+
+2023-06-21 11:22:30.443: Service is running for the filter CompressedAirFlow with interval 20 seconds.
+2023-06-21 11:22:30.575: ExecutionforCompressedAirFlow started
+2023-06-21 11:22:30.580: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:22:30.865: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 B6 BE 42 3E DC 5E 3F 3F 3C C8 3F 48 BF 80 47 D9 F0 28 3F C3 00 00 00 00 E5 F1] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:22:34.012: ExecutionforCompressedAirFlow time : 3435
+
+2023-06-21 11:22:34.133: ExecutionforCompressedAirFlow started
+2023-06-21 11:22:34.136: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:22:34.419: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 C7 EE 45 06 97 71 41 07 2F 3A 3F 8E 28 C0 48 55 76 E1 42 86 00 00 00 00 C7 D2] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:22:37.478: ExecutionforCompressedAirFlow time : 3345
+
+2023-06-21 11:22:50.445: Service is running for the filter CompressedAirFlow with interval 20 seconds.
+2023-06-21 11:22:50.447: ExecutionforCompressedAirFlow started
+2023-06-21 11:22:50.449: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:22:50.719: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 06 DF 42 14 EA C7 3F 14 25 16 3F 41 BF 80 47 D9 E4 DC 3F E0 00 00 00 00 51 89] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:22:53.768: ExecutionforCompressedAirFlow time : 3320
+
+2023-06-21 11:22:53.770: ExecutionforCompressedAirFlow started
+2023-06-21 11:22:53.771: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:22:54.044: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 2F 3A 45 02 F7 A9 41 02 51 38 3F 8D 28 C0 48 55 BE 32 42 9C 00 00 00 00 1A B5] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:22:57.070: ExecutionforCompressedAirFlow time : 3299
+
+2023-06-21 11:23:10.447: Service is running for the filter CompressedAirFlow with interval 20 seconds.
+2023-06-21 11:23:10.454: ExecutionforCompressedAirFlow started
+2023-06-21 11:23:10.473: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:23:10.750: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 50 78 41 CD 8C 93 3E CE F1 0E 3F 38 BF 80 47 D9 60 D0 3F F9 00 00 00 00 EE A4] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:23:13.805: ExecutionforCompressedAirFlow time : 3349
+
+2023-06-21 11:23:13.807: ExecutionforCompressedAirFlow started
+2023-06-21 11:23:13.809: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:23:14.079: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 22 A9 44 C8 56 CB 40 C9 A6 B3 3F 87 28 C0 48 55 C6 92 42 B2 00 00 00 00 27 45] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:23:17.147: ExecutionforCompressedAirFlow time : 3338
+
+2023-06-21 11:23:30.448: Service is running for the filter CompressedAirFlow with interval 20 seconds.
+2023-06-21 11:23:30.453: ExecutionforCompressedAirFlow started
+2023-06-21 11:23:30.457: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:23:30.724: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 62 2C 41 9C 52 F1 3E 9D 81 B3 3F 33 BF 80 47 D9 9E 4C 40 02 00 00 00 00 6B 40] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:23:33.729: ExecutionforCompressedAirFlow time : 3275
+
+2023-06-21 11:23:33.731: ExecutionforCompressedAirFlow started
+2023-06-21 11:23:33.733: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:23:34.008: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 34 19 44 85 01 2E 40 86 7B 54 3F 7C 28 C0 48 55 08 99 42 C0 00 00 00 00 E1 3D] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:23:37.073: ExecutionforCompressedAirFlow time : 3341
+
+2023-06-21 11:23:50.448: Service is running for the filter CompressedAirFlow with interval 20 seconds.
+2023-06-21 11:23:50.450: ExecutionforCompressedAirFlow started
+2023-06-21 11:23:50.452: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:23:50.726: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 CC F0 41 C3 FA 65 3E C4 F8 63 3F 37 BF 80 47 D9 9F 03 40 0A 00 00 00 00 F2 0B] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:23:53.739: ExecutionforCompressedAirFlow time : 3288
+
+2023-06-21 11:23:53.741: ExecutionforCompressedAirFlow started
+2023-06-21 11:23:53.743: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:23:54.024: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 95 33 44 75 0F 4D 40 77 95 FB 3F 7A 29 00 48 55 76 F0 3F E2 00 00 00 00 C3 C6] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:23:57.080: ExecutionforCompressedAirFlow time : 3338
+
+2023-06-21 11:24:10.450: Service is running for the filter CompressedAirFlow with interval 20 seconds.
+2023-06-21 11:24:10.452: ExecutionforCompressedAirFlow started
+2023-06-21 11:24:10.454: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:24:10.732: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 4E E8 41 B5 66 0D 3E B6 6B 0C 3F 36 BF 80 47 D9 28 3C 40 13 00 00 00 00 37 45] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:24:13.775: ExecutionforCompressedAirFlow time : 3322
+
+2023-06-21 11:24:13.777: ExecutionforCompressedAirFlow started
+2023-06-21 11:24:13.778: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:24:14.060: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 B3 58 44 6A 1C B1 40 6C D2 A4 3F 78 29 00 48 55 94 B0 40 DF 00 00 00 00 BE E1] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:24:17.125: ExecutionforCompressedAirFlow time : 3346
+
+2023-06-21 11:24:30.451: Service is running for the filter CompressedAirFlow with interval 20 seconds.
+2023-06-21 11:24:30.455: ExecutionforCompressedAirFlow started
+2023-06-21 11:24:30.458: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:24:30.742: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 84 DF 41 44 B3 6F 3E 45 74 AA 3F 2B BF 80 47 D9 37 59 40 19 00 00 00 00 1A A1] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:24:33.816: ExecutionforCompressedAirFlow time : 3359
+
+2023-06-21 11:24:33.823: ExecutionforCompressedAirFlow started
+2023-06-21 11:24:33.827: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:24:34.114: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 6F D7 44 67 D4 2A 40 68 48 A2 3F 78 29 00 48 55 D4 84 41 42 00 00 00 00 0E 2F] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:24:37.119: ExecutionforCompressedAirFlow time : 3294
+
+2023-06-21 11:24:50.454: Service is running for the filter CompressedAirFlow with interval 20 seconds.
+2023-06-21 11:24:50.456: ExecutionforCompressedAirFlow started
+2023-06-21 11:24:50.457: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:24:50.745: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 E5 99 41 29 EB 2C 3E 2A 2E A9 3F 29 BF 80 47 D9 3D C9 40 1D 00 00 00 00 B8 97] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:24:53.771: ExecutionforCompressedAirFlow time : 3313
+
+2023-06-21 11:24:53.773: ExecutionforCompressedAirFlow started
+2023-06-21 11:24:53.774: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:24:54.062: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 97 F3 44 69 FF 98 40 6A A3 F9 3F 78 29 00 48 55 77 AC 41 8A 00 00 00 00 25 E2] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:24:57.087: ExecutionforCompressedAirFlow time : 3313
+
+2023-06-21 11:25:10.455: Service is running for the filter CompressedAirFlow with interval 20 seconds.
+2023-06-21 11:25:10.458: ExecutionforCompressedAirFlow started
+2023-06-21 11:25:10.461: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:25:10.751: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 59 66 41 29 5E 22 3E 2A 21 FE 3F 29 BF 80 47 D9 D3 E9 40 20 00 00 00 00 79 D7] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:25:13.810: ExecutionforCompressedAirFlow time : 3351
+
+2023-06-21 11:25:13.812: ExecutionforCompressedAirFlow started
+2023-06-21 11:25:13.814: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:25:14.112: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 55 E4 44 64 B5 70 40 65 C4 4E 3F 77 29 00 48 55 B5 0D 41 B3 00 00 00 00 60 B3] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:25:17.166: ExecutionforCompressedAirFlow time : 3353
+
+2023-06-21 11:25:30.457: Service is running for the filter CompressedAirFlow with interval 20 seconds.
+2023-06-21 11:25:30.459: ExecutionforCompressedAirFlow started
+2023-06-21 11:25:30.461: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:25:30.754: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 A0 35 41 20 97 82 3E 21 53 FD 3F 28 BF 80 47 D9 7D 2F 40 24 00 00 00 00 D7 B3] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:25:33.797: ExecutionforCompressedAirFlow time : 3337
+
+2023-06-21 11:25:33.799: ExecutionforCompressedAirFlow started
+2023-06-21 11:25:33.801: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:25:34.101: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 77 AE 44 64 D7 6E 40 65 C9 F7 3F 77 29 00 48 55 FC 36 41 DB 00 00 00 00 46 89] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:25:37.106: ExecutionforCompressedAirFlow time : 3305
+
+2023-06-21 11:25:50.458: Service is running for the filter CompressedAirFlow with interval 20 seconds.
+2023-06-21 11:25:50.460: ExecutionforCompressedAirFlow started
+2023-06-21 11:25:50.462: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:25:50.750: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 E2 82 41 19 CF 6E 3E 1A AE FD 3F 27 BF 80 47 D9 E7 4A 40 27 00 00 00 00 2F 65] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:25:53.757: ExecutionforCompressedAirFlow time : 3295
+
+2023-06-21 11:25:53.760: ExecutionforCompressedAirFlow started
+2023-06-21 11:25:53.762: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:25:54.060: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 FE 87 44 61 5A 79 40 63 5F A4 3F 77 29 00 48 55 3E EE 42 02 00 00 00 00 6A 2D] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:25:57.086: ExecutionforCompressedAirFlow time : 3325
+
+2023-06-21 11:26:10.471: Service is running for the filter CompressedAirFlow with interval 20 seconds.
+2023-06-21 11:26:10.473: ExecutionforCompressedAirFlow started
+2023-06-21 11:26:10.475: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:26:10.765: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 31 1D 41 10 0F 1D 3E 11 B7 FC 3F 26 BF 80 47 D9 3C 77 40 2B 00 00 00 00 AE EF] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:26:13.796: ExecutionforCompressedAirFlow time : 3321
+
+2023-06-21 11:26:13.798: ExecutionforCompressedAirFlow started
+2023-06-21 11:26:13.800: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:26:14.075: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 C2 44 44 67 27 16 40 69 56 4E 3F 78 29 00 48 55 A4 1D 42 15 00 00 00 00 CA AB] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:26:17.126: ExecutionforCompressedAirFlow time : 3327
+
+2023-06-21 11:26:30.489: Service is running for the filter CompressedAirFlow with interval 20 seconds.
+2023-06-21 11:26:30.491: ExecutionforCompressedAirFlow started
+2023-06-21 11:26:30.492: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:26:30.769: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 4C A4 41 0E 27 BA 3E 0F 86 51 3F 26 BF 80 47 D9 82 E0 40 2E 00 00 00 00 68 B7] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:26:33.834: ExecutionforCompressedAirFlow time : 3342
+
+2023-06-21 11:26:33.835: ExecutionforCompressedAirFlow started
+2023-06-21 11:26:33.837: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:26:34.123: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 A4 68 44 6D 12 49 40 6F 4D F9 3F 79 29 00 48 55 F9 18 42 29 00 00 00 00 5D FB] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:26:37.127: ExecutionforCompressedAirFlow time : 3291
+
+2023-06-21 11:26:50.490: Service is running for the filter CompressedAirFlow with interval 20 seconds.
+2023-06-21 11:26:50.493: ExecutionforCompressedAirFlow started
+2023-06-21 11:26:50.494: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:26:50.770: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 0F D5 40 CC 4A 02 3D CD DC 4C 3F 21 BF 80 47 D9 06 00 40 31 00 00 00 00 02 5A] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:26:53.934: ExecutionforCompressedAirFlow time : 3440
+
+2023-06-21 11:26:54.069: ExecutionforCompressedAirFlow started
+2023-06-21 11:26:54.075: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:26:54.359: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 B8 3C 44 8E 93 F8 40 8F 51 AB 3F 80 29 00 48 55 B9 F8 42 43 00 00 00 00 41 24] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:26:57.513: ExecutionforCompressedAirFlow time : 3443
+
+2023-06-21 11:27:10.502: Service is running for the filter CompressedAirFlow with interval 20 seconds.
+2023-06-21 11:27:10.505: ExecutionforCompressedAirFlow started
+2023-06-21 11:27:10.506: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:27:10.807: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 D6 AF 40 C3 04 33 3D C5 50 F6 3F 21 BF 80 47 D9 3A 66 40 33 00 00 00 00 F2 04] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:27:13.828: ExecutionforCompressedAirFlow time : 3323
+
+2023-06-21 11:27:13.830: ExecutionforCompressedAirFlow started
+2023-06-21 11:27:13.831: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:27:14.139: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 28 C8 44 91 08 45 40 92 AB 81 3F 80 29 00 48 55 07 AE 42 5C 00 00 00 00 D7 57] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:27:17.204: ExecutionforCompressedAirFlow time : 3373
+
+2023-06-21 11:27:31.698: Service is running for the filter CompressedAirFlow with interval 20 seconds.
+2023-06-21 11:27:31.700: ExecutionforCompressedAirFlow started
+2023-06-21 11:27:31.701: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:27:32.323: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 9C C2 40 C4 CB 77 3D C5 5E 41 3F 21 BF 80 47 D9 64 01 40 35 00 00 00 00 16 73] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:27:35.353: ExecutionforCompressedAirFlow time : 3652
+
+2023-06-21 11:27:35.355: ExecutionforCompressedAirFlow started
+2023-06-21 11:27:35.356: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:27:36.708: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 50 6C 44 91 30 26 40 92 B1 2C 3F 80 29 00 48 55 16 DF 42 7A 00 00 00 00 A6 FF] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:28:35.990: Service is running for the filter CompressedAirFlow with interval 20 seconds.
+2023-06-21 11:28:36.000: ExecutionforCompressedAirFlow started
+2023-06-21 11:28:36.009: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:28:36.292: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 67 47 40 CD A3 85 3D CE F2 A2 3F 21 BF 80 47 D9 7A D6 40 3C 00 00 00 00 2A F7] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:28:39.342: ExecutionforCompressedAirFlow time : 3341
+
+2023-06-21 11:28:39.344: ExecutionforCompressedAirFlow started
+2023-06-21 11:28:39.346: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:28:39.622: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 42 03 44 A7 43 86 40 A8 AA D9 3F 83 29 00 48 55 F1 7B 42 A6 00 00 00 00 B0 7B] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:28:42.628: ExecutionforCompressedAirFlow time : 3283
+
+2023-06-21 11:28:55.990: Service is running for the filter CompressedAirFlow with interval 20 seconds.
+2023-06-21 11:28:55.999: ExecutionforCompressedAirFlow started
+2023-06-21 11:28:56.000: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:28:56.275: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 6C 02 42 08 3E 0C 3F 09 00 14 3F 3F BF 80 47 D9 82 6D 40 43 00 00 00 00 4B F7] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:28:59.279: ExecutionforCompressedAirFlow time : 3280
+
+2023-06-21 11:28:59.281: ExecutionforCompressedAirFlow started
+2023-06-21 11:28:59.283: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:28:59.562: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 C0 5A 45 04 8C BD 41 05 CC E4 3F 8D 29 00 48 55 27 78 42 BA 00 00 00 00 58 8D] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:29:02.593: ExecutionforCompressedAirFlow time : 3310
+
+2023-06-21 11:29:15.990: Service is running for the filter CompressedAirFlow with interval 20 seconds.
+2023-06-21 11:29:15.998: ExecutionforCompressedAirFlow started
+2023-06-21 11:29:16.000: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:29:16.289: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 93 C7 42 3A B3 09 3F 3B 9D 1D 3F 47 BF 80 47 D9 26 84 40 52 00 00 00 00 8B 7B] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:29:19.295: ExecutionforCompressedAirFlow time : 3296
+
+2023-06-21 11:29:19.297: ExecutionforCompressedAirFlow started
+2023-06-21 11:29:19.299: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:29:19.580: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 21 07 45 0A F5 B1 41 0A 75 10 3F 8F 29 40 48 55 BD DC 40 A5 00 00 00 00 1B 4C] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:29:22.597: ExecutionforCompressedAirFlow time : 3299
+
+2023-06-21 11:29:35.991: Service is running for the filter CompressedAirFlow with interval 20 seconds.
+2023-06-21 11:29:35.999: ExecutionforCompressedAirFlow started
+2023-06-21 11:29:36.000: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:29:36.288: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 E5 AF 42 53 2B EC 3F 55 43 CA 3F 4B BF 80 47 D9 59 CD 40 64 00 00 00 00 1C F3] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:29:39.311: ExecutionforCompressedAirFlow time : 3311
+
+2023-06-21 11:29:39.313: ExecutionforCompressedAirFlow started
+2023-06-21 11:29:39.314: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:29:39.605: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 8B 2B 45 0B 62 03 41 0C B9 10 3F 8F 29 40 48 55 4C BD 41 8C 00 00 00 00 47 E1] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:29:42.611: ExecutionforCompressedAirFlow time : 3297
+
+2023-06-21 11:29:55.991: Service is running for the filter CompressedAirFlow with interval 20 seconds.
+2023-06-21 11:29:55.994: ExecutionforCompressedAirFlow started
+2023-06-21 11:29:55.996: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:29:56.282: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 51 5E 42 4E 8F 04 3F 4F 7E 20 3F 4A BF 80 47 D9 61 DE 40 77 00 00 00 00 5F 74] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:29:59.338: ExecutionforCompressedAirFlow time : 3341
+
+2023-06-21 11:29:59.346: ExecutionforCompressedAirFlow started
+2023-06-21 11:29:59.350: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:29:59.636: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 5D 67 45 07 2D D0 41 08 EE BA 3F 8E 29 40 48 55 EC 26 41 EE 00 00 00 00 92 B7] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:30:02.641: ExecutionforCompressedAirFlow time : 3293
+
+2023-06-21 11:30:15.993: Service is running for the filter CompressedAirFlow with interval 20 seconds.
+2023-06-21 11:30:15.998: ExecutionforCompressedAirFlow started
+2023-06-21 11:30:15.999: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:30:16.269: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 BF 1C 42 1D B1 FA 3F 1E E7 6C 3F 42 BF 80 47 D9 81 E6 40 83 00 00 00 00 DA E0] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:30:19.284: ExecutionforCompressedAirFlow time : 3285
+
+2023-06-21 11:30:19.287: ExecutionforCompressedAirFlow started
+2023-06-21 11:30:19.289: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:30:19.558: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 0B 2A 45 02 D3 62 41 02 4A 63 3F 8D 29 40 48 55 8A 49 42 26 00 00 00 00 C5 2A] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:30:22.614: ExecutionforCompressedAirFlow time : 3324
+
+2023-06-21 11:30:35.996: Service is running for the filter CompressedAirFlow with interval 20 seconds.
+2023-06-21 11:30:36.005: ExecutionforCompressedAirFlow started
+2023-06-21 11:30:36.007: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:30:36.316: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 F8 97 42 00 BF 28 3F 01 C5 14 3F 3D BF 80 47 D9 FF C7 40 89 00 00 00 00 5F C8] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:30:39.351: ExecutionforCompressedAirFlow time : 3344
+
+2023-06-21 11:30:39.353: ExecutionforCompressedAirFlow started
+2023-06-21 11:30:39.354: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:30:39.625: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 98 C0 44 E0 F2 8B 40 E1 56 8B 3F 8A 29 40 48 55 9C 9B 42 53 00 00 00 00 99 5A] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:30:42.670: ExecutionforCompressedAirFlow time : 3316
+
+2023-06-21 11:30:55.998: Service is running for the filter CompressedAirFlow with interval 20 seconds.
+2023-06-21 11:30:56.006: ExecutionforCompressedAirFlow started
+2023-06-21 11:30:56.007: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:30:56.284: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 CA 41 41 89 9E 66 3E 8A 16 07 3F 31 BF 80 47 D9 18 53 40 8D 00 00 00 00 4B 76] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:30:59.327: ExecutionforCompressedAirFlow time : 3321
+
+2023-06-21 11:30:59.329: ExecutionforCompressedAirFlow started
+2023-06-21 11:30:59.330: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:30:59.612: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 14 DF 44 85 E1 C4 40 85 71 FC 3F 7C 29 40 48 55 3C 03 42 70 00 00 00 00 C6 EC] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:31:02.617: ExecutionforCompressedAirFlow time : 3287
+
+2023-06-21 11:50:17.474: Service is running for the filter CompressedAirFlow with interval 3600 seconds.
+2023-06-21 11:50:17.486: ExecutionforCompressedAirFlow started
+2023-06-21 11:50:17.536: Try to read data from host [10.200.2.86:5300] by the command [02 03 00 00 00 0E C4 3D].
+2023-06-21 11:50:17.810: Arrived data length:[33], Data(Hex):[02 03 1C 00 00 00 00 19 CF 40 C2 44 A6 3D C3 32 F6 3F 21 BF 80 47 D9 14 6B 41 20 00 00 00 00 D6 B6] from host [10.200.2.86:5300] by command [02 03 00 00 00 0E C4 3D]
+2023-06-21 11:50:20.865: ExecutionforCompressedAirFlow time : 3378
+
+2023-06-21 11:50:20.867: ExecutionforCompressedAirFlow started
+2023-06-21 11:50:20.869: Try to read data from host [10.200.2.87:5300] by the command [01 03 00 00 00 0E C4 0E].
+2023-06-21 11:50:21.134: Arrived data length:[33], Data(Hex):[01 03 1C 00 00 00 00 7D 68 44 9A 6B 43 40 9B FA 2C 3F 81 2A 40 48 55 38 22 42 83 00 00 00 00 84 CA] from host [10.200.2.87:5300] by command [01 03 00 00 00 0E C4 0E]
+2023-06-21 11:50:24.178: ExecutionforCompressedAirFlow time : 3310
+

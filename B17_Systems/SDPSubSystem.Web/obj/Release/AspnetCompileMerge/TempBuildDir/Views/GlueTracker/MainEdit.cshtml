@@ -1,0 +1,157 @@
+﻿
+@{
+    Layout = null;
+}
+@using SDPSubSystem.Web.Common;
+@model SDPSubSystem.Model.GlueTracker.GlueTrack_GlueMain
+
+<style>
+    .ui-autocomplete {
+        z-index: 215000000 !important;
+    }
+
+    .ui-autocomplete {
+        max-height: 100px;
+        overflow-y: auto;
+        /* prevent horizontal scrollbar */
+        overflow-x: hidden;
+    }
+    /* IE 6 doesn't support max-height
+       * we use height instead, but this forces the menu to always be this tall
+        * html
+       */
+    .ui-autocomplete {
+        height: 100px;
+    }
+</style>
+<div class="modal-dialog" style="width:55%;height:600px;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" style="color:White" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-edit"></span>Edit Record</h4>
+        </div>
+        <div class="modal-body">
+            <div id="message-box" style="display:none" class="alert alert-danger fade in" role="alert"><ul></ul></div>
+            <form class="form-horizontal" id="addressedit">
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">P/N:</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="GluePartNumber" name="GluePartNumber" value="@Model.GluePartNumber" readonly />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">Part Description:</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="PartDescription" name="PartDescription" value="@Model.PartDescription" readonly />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">Baan Usage:</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="BaanUsage" name="BaanUsage" value="@Model.BaanUsage" readonly />
+
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">Project Name:</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="ProjectName" name="ProjectName" value="@Model.ProjectName" readonly />
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">Station Type Name:</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <select class="form-control selectpicker" style="width:380px;" data-width="380px" data-live-search="true" id="StationTypeName" name="StationTypeName" title="Choose one of the following..." data-size="10" >
+                            <option value="@Model.StationTypeName" selected></option>
+                        </select>
+                        
+                    </div>
+                </div>
+                <div class="form-group" style="margin: 0 0;padding:0 0;">
+                    <label class="col-sm-4 control-label">Current Usage:</label>
+                    <div class="col-sm-8" style="padding-top:10px">
+                        <input style="width:380px;" class="form-control" type="text" id="CurrentUsage" name="CurrentUsage" value="@Model.CurrentUsage"  />
+                        @*@Html.DropDownList("StatusID", (List<SelectListItem>)ViewData["Status"], new { @id = "StatusID", @style = "width:380px;", @class = "form-control", datatype = "*", nullmsg = "Please select the Type!" })*@
+                    </div>
+                </div>
+
+                <input id="ID" name="ID" type="hidden" value="@Model.ID" />
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button id="btnSave" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-saved"></span>Save</button>
+            <button id="btnClosePO" type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove-sign"></span>Close</button>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+
+
+<script type="text/javascript">
+    
+    $(function () {
+        
+         $.post('@Url.Action("GetDropdownList")', { }, function (res) {
+             
+             var stationTypeName = $("#StationTypeName").val();
+             //debugger
+             var phtml = "";
+             //console.log(res);
+             for (var i = 0; i < res.StationTypeName.length; i++) {
+                 if (trim(stationTypeName.toLocaleUpperCase()) == trim(res.StationTypeName[i].ID.toLocaleUpperCase())) {
+                     phtml += "<option value='" + res.StationTypeName[i].ID + "' selected='selected' data-name='" + res.StationTypeName[i].Name + "'>" + res.StationTypeName[i].Name + "</option>";
+                 } else {
+                     phtml += "<option value='" + res.StationTypeName[i].ID + "' data-name='" + res.StationTypeName[i].Name + "'>" + res.StationTypeName[i].Name + "</option>";
+                 }
+             }
+             $("#StationTypeName").html(phtml);
+             $('.selectpicker').selectpicker('refresh');//加载select框选择器
+
+        })
+        $("#btnSave").click(function () {
+
+            //debugger;
+            $.post('@Url.Action("SaveEdit")',
+                { poststr: JSON.stringify($('#addressedit').serializeJSON()) },
+                function (result) {
+                    $("#_Dialog").modal("hide");
+                    $("#tab_table").DataTable().ajax.reload();
+                })
+
+            //console.log(poststr);
+        })
+    });
+
+    function trim(param) {
+
+        if ((vRet = param) == '') { return vRet; }
+
+        while (true) {
+
+            if (vRet.indexOf(' ') == 0) {
+
+                vRet = vRet.substring(1, parseInt(vRet.length));
+
+            } else if ((parseInt(vRet.length) != 0) && (vRet.lastIndexOf(' ') == parseInt(vRet.length) - 1)) {
+
+                vRet = vRet.substring(0, parseInt(vRet.length) - 1);
+
+            } else {
+
+                return vRet;
+
+            }
+
+        }
+
+    }
+
+    function split(val) {
+        return val.split(/,\s*/);
+    }
+    function extractLast(term) {
+        return split(term).pop();
+    }
+
+
+
+</script>
