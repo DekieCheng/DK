@@ -45,10 +45,10 @@ namespace FFObjectViewer
             // 
             this.btnGetInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGetInfo.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGetInfo.Location = new System.Drawing.Point(535, 507);
+            this.btnGetInfo.Location = new System.Drawing.Point(511, 507);
             this.btnGetInfo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnGetInfo.Name = "btnGetInfo";
-            this.btnGetInfo.Size = new System.Drawing.Size(98, 62);
+            this.btnGetInfo.Size = new System.Drawing.Size(122, 62);
             this.btnGetInfo.TabIndex = 1;
             this.btnGetInfo.Text = "Get Info";
             this.btnGetInfo.UseVisualStyleBackColor = true;
@@ -63,6 +63,7 @@ namespace FFObjectViewer
             this.txtFile.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtFile.Multiline = true;
             this.txtFile.Name = "txtFile";
+            this.txtFile.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtFile.Size = new System.Drawing.Size(457, 95);
             this.txtFile.TabIndex = 2;
             this.txtFile.DragDrop += new System.Windows.Forms.DragEventHandler(this.txtFile_DragDrop);
@@ -83,9 +84,9 @@ namespace FFObjectViewer
             // cmdBrow
             // 
             this.cmdBrow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmdBrow.Location = new System.Drawing.Point(464, 390);
+            this.cmdBrow.Location = new System.Drawing.Point(464, 358);
             this.cmdBrow.Name = "cmdBrow";
-            this.cmdBrow.Size = new System.Drawing.Size(29, 63);
+            this.cmdBrow.Size = new System.Drawing.Size(29, 95);
             this.cmdBrow.TabIndex = 5;
             this.cmdBrow.Text = "...";
             this.cmdBrow.UseVisualStyleBackColor = true;
@@ -106,7 +107,7 @@ namespace FFObjectViewer
             // 
             this.chkPara.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.chkPara.AutoSize = true;
-            this.chkPara.Location = new System.Drawing.Point(519, 407);
+            this.chkPara.Location = new System.Drawing.Point(511, 358);
             this.chkPara.Name = "chkPara";
             this.chkPara.Size = new System.Drawing.Size(125, 18);
             this.chkPara.TabIndex = 7;
@@ -117,7 +118,7 @@ namespace FFObjectViewer
             // 
             this.chkPro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.chkPro.AutoSize = true;
-            this.chkPro.Location = new System.Drawing.Point(519, 435);
+            this.chkPro.Location = new System.Drawing.Point(511, 397);
             this.chkPro.Name = "chkPro";
             this.chkPro.Size = new System.Drawing.Size(117, 18);
             this.chkPro.TabIndex = 7;
@@ -133,6 +134,7 @@ namespace FFObjectViewer
             this.txtDBScript.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtDBScript.Multiline = true;
             this.txtDBScript.Name = "txtDBScript";
+            this.txtDBScript.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtDBScript.Size = new System.Drawing.Size(457, 95);
             this.txtDBScript.TabIndex = 2;
             this.txtDBScript.DragDrop += new System.Windows.Forms.DragEventHandler(this.txtDBScript_DragDrop);
@@ -153,9 +155,9 @@ namespace FFObjectViewer
             // cmdDBScript
             // 
             this.cmdDBScript.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmdDBScript.Location = new System.Drawing.Point(461, 507);
+            this.cmdDBScript.Location = new System.Drawing.Point(461, 474);
             this.cmdDBScript.Name = "cmdDBScript";
-            this.cmdDBScript.Size = new System.Drawing.Size(29, 63);
+            this.cmdDBScript.Size = new System.Drawing.Size(29, 96);
             this.cmdDBScript.TabIndex = 5;
             this.cmdDBScript.Text = "...";
             this.cmdDBScript.UseVisualStyleBackColor = true;

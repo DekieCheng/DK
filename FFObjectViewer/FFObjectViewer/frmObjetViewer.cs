@@ -8,6 +8,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Microsoft.SqlServer.TransactSql.ScriptDom;
+using System.Text;
 
 namespace FFObjectViewer
 {
@@ -102,7 +103,8 @@ namespace FFObjectViewer
             {
                 Assembly assembly = Assembly.LoadFrom(filePath);
                 rtInfo.AppendText("DLL Name: " + assembly.FullName + Environment.NewLine);
-                foreach (Type type in assembly.GetTypes())
+                Type[] types = assembly.GetTypes();
+                foreach (Type type in types)
                 {
                     if (!type.IsVisible || type.IsSealed) continue;
                     rtInfo.AppendText("Class Name: " + type.Name + Environment.NewLine);
@@ -178,7 +180,7 @@ namespace FFObjectViewer
                 LoadSQLScript();
             }
             catch (Exception ex)
-            { MessageBox.Show(ex.Message); }
+            { MessageBox.Show(ex.Message, "btnGet_Click"); }
         }
 
         private void LoadSQLScript()
@@ -190,22 +192,86 @@ namespace FFObjectViewer
                 if (string.IsNullOrEmpty(dbfile)) continue;
                 try
                 {
-                    SQLGetViews(dbfile);
+                    SQLGetObjectName(dbfile);
                 }
                 catch (Exception ex)
-                { }
-                try
+                { MessageBox.Show(ex.Message, "SQLGetObjectName"); }
+            }
+        }
+
+        private string SQLGetObjectName(string ScriptName)
+        {
+            try
+            {
+                string infomet = string.Empty;
+                FileStream stream = new FileStream(ScriptName, FileMode.Open);
+                TSql130Parser parser = new TSql130Parser(initialQuotedIdentifiers: false);
+                using (StreamReader reader = new StreamReader(stream))
                 {
-                    SQLGetProcedures(dbfile);
-                }
-                catch (Exception ex)
-                { }
-                try
-                {
-                    SQLGetFunctions(dbfile);
-                }
-                catch (Exception ex)
-                { }
+                    IList<ParseError> errors;
+                    TSqlFragment tSqlFragment = parser.Parse(reader, out errors);
+
+                    //Table
+                    TableVisitor tvisitor = new TableVisitor();
+                    tSqlFragment.Accept(tvisitor);
+                    if (tvisitor.Statements.Count > 0)
+                    {
+                        foreach (CreateTableStatement view in tvisitor.Statements)
+                        {
+                            if (view.SchemaObjectName.Identifiers[0].Value != "dbo")
+                            {
+                                rtInfo.AppendText("Table " + view.SchemaObjectName.Identifiers[0].Value + Environment.NewLine);
+                            }
+                            else
+                            {
+                                rtInfo.AppendText("Table " + view.SchemaObjectName.Identifiers[1].Value + Environment.NewLine);
+                            }
+                        }
+                        return infomet;
+                    }
+
+                    //View
+                    ViewVisitor visitor = new ViewVisitor();
+                    tSqlFragment.Accept(visitor);
+                    if (visitor.Statements.Count > 0)
+                    {
+                        foreach (CreateViewStatement view in visitor.Statements)
+                        {
+                            rtInfo.AppendText("View " + view.SchemaObjectName.Identifiers[0].Value + Environment.NewLine);
+                        }
+                        return infomet;
+                    }
+
+                    //Procedure
+                    ProcedureVisitor pvisitor = new ProcedureVisitor();
+                    tSqlFragment.Accept(pvisitor);
+                    if (pvisitor.Statements.Count > 0)
+                    {
+                        foreach (CreateProcedureStatement procedure in pvisitor.Statements)
+                        {
+                            rtInfo.AppendText("Stored Procedure " + procedure.ProcedureReference.Name.BaseIdentifier.Value + Environment.NewLine);
+                        }
+                        return infomet;
+                    }
+
+                    //function
+                    FunctionVisitor fvisitor = new FunctionVisitor();
+                    tSqlFragment.Accept(fvisitor);
+                    if (fvisitor.Statements.Count > 0)
+                    {
+                        foreach (CreateFunctionStatement funct in fvisitor.Statements)
+                        {
+                            rtInfo.AppendText("Function " + funct.Name.BaseIdentifier.Value + Environment.NewLine);
+                        }
+                        return infomet;
+                    }
+                };
+                return infomet;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "SQLGetObjectName");
+                return string.Empty;
             }
         }
 
@@ -226,7 +292,6 @@ namespace FFObjectViewer
                     {
                         foreach (CreateViewStatement view in visitor.Statements)
                         {
-                            // infomet = infomet + "View " + view.SchemaObjectName.Identifiers[0].Value + ",";
                             rtInfo.AppendText("View " + view.SchemaObjectName.Identifiers[0].Value + Environment.NewLine);
                         }
                     }
@@ -235,7 +300,7 @@ namespace FFObjectViewer
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString());
+                MessageBox.Show(ex.Message, "SQLGetViews");
                 return string.Empty;
             }
         }
@@ -257,7 +322,6 @@ namespace FFObjectViewer
                     {
                         foreach (CreateProcedureStatement procedure in visitor.Statements)
                         {
-                            // infomet = infomet + "Stored Procedure " + procedure.ProcedureReference.Name.BaseIdentifier.Value + ",";
                             rtInfo.AppendText("Stored Procedure " + procedure.ProcedureReference.Name.BaseIdentifier.Value + Environment.NewLine);
                         }
                     }
@@ -266,7 +330,7 @@ namespace FFObjectViewer
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString());
+                MessageBox.Show(ex.Message, "SQLGetProcedures");
                 return string.Empty;
             }
         }
@@ -288,7 +352,6 @@ namespace FFObjectViewer
                     {
                         foreach (CreateFunctionStatement funct in visitor.Statements)
                         {
-                            // infomet = infomet + "Function " + funct.Name.BaseIdentifier.Value + ",";
                             rtInfo.AppendText("Function " + funct.Name.BaseIdentifier.Value + Environment.NewLine);
                         }
                     }
@@ -297,7 +360,7 @@ namespace FFObjectViewer
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString());
+                MessageBox.Show(ex.Message, "SQLGetFunctions");
                 return string.Empty;
             }
         }
@@ -313,16 +376,26 @@ namespace FFObjectViewer
         private string GetFiles(string[] files)
         {
             string finalf = "";
-            if (files.Length > 0 && (Path.GetExtension(files[0]).Equals(".dll", StringComparison.OrdinalIgnoreCase)
-                    || Path.GetExtension(files[0]).Equals(".exe", StringComparison.OrdinalIgnoreCase)
-                    || Path.GetExtension(files[0]).Equals(".sql", StringComparison.OrdinalIgnoreCase))
-                )
+
+            if (Directory.Exists(files[0]))
             {
-                foreach (string s in files)
+                files = Directory.GetFiles(files[0]);
+                finalf = string.Join(Environment.NewLine, files);
+            }
+            else
+            {
+                if (files.Length > 0 && (Path.GetExtension(files[0]).Equals(".dll", StringComparison.OrdinalIgnoreCase)
+                        || Path.GetExtension(files[0]).Equals(".exe", StringComparison.OrdinalIgnoreCase)
+                        || Path.GetExtension(files[0]).Equals(".sql", StringComparison.OrdinalIgnoreCase))
+                    )
                 {
-                    finalf += s + Environment.NewLine;
+                    foreach (string s in files)
+                    {
+                        finalf += s + Environment.NewLine;
+                    }
                 }
             }
+
             return finalf;
         }
 

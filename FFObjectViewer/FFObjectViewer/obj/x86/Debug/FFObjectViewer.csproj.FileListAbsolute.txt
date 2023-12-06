@@ -31,7 +31,6 @@ C:\00work\03others\00-Study\DK\FFObjectViewer\FFObjectViewer\bin\x86\Debug\Syste
 C:\00work\03others\00-Study\DK\FFObjectViewer\FFObjectViewer\bin\x86\Debug\System.Memory.dll
 C:\00work\03others\00-Study\DK\FFObjectViewer\FFObjectViewer\bin\x86\Debug\System.Numerics.Vectors.dll
 C:\00work\03others\00-Study\DK\FFObjectViewer\FFObjectViewer\bin\x86\Debug\System.Buffers.dll
-C:\00work\03others\00-Study\DK\FFObjectViewer\FFObjectViewer\obj\x86\Debug\FFObjectViewer.csproj.AssemblyReference.cache
 C:\00work\03others\00-Study\DK\FFObjectViewer\FFObjectViewer\obj\x86\Debug\FFObjectViewer.frmObjetViewer.resources
 C:\00work\03others\00-Study\DK\FFObjectViewer\FFObjectViewer\obj\x86\Debug\FFObjectViewer.Properties.Resources.resources
 C:\00work\03others\00-Study\DK\FFObjectViewer\FFObjectViewer\obj\x86\Debug\FFObjectViewer.csproj.GenerateResource.cache

@@ -12,6 +12,16 @@ public class ViewVisitor : TSqlFragmentVisitor
     }
 }
 
+public class TableVisitor : TSqlFragmentVisitor
+{
+    public List<CreateTableStatement> Statements = new List<CreateTableStatement>();
+
+    public override void Visit(CreateTableStatement node)
+    {
+        Statements.Add(node);
+    }
+}
+
 public class ProcedureVisitor : TSqlFragmentVisitor
 {
     public List<CreateProcedureStatement> Statements = new List<CreateProcedureStatement>();
