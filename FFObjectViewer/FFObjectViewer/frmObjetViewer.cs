@@ -194,6 +194,18 @@ namespace FFObjectViewer
                 }
                 catch (Exception ex)
                 { }
+                try
+                {
+                    SQLGetProcedures(dbfile);
+                }
+                catch (Exception ex)
+                { }
+                try
+                {
+                    SQLGetFunctions(dbfile);
+                }
+                catch (Exception ex)
+                { }
             }
         }
 
@@ -214,8 +226,8 @@ namespace FFObjectViewer
                     {
                         foreach (CreateViewStatement view in visitor.Statements)
                         {
-                            infomet = infomet + "View " + view.SchemaObjectName.Identifiers[0].Value + ",";
-                            rtInfo.AppendText(infomet + Environment.NewLine);
+                            // infomet = infomet + "View " + view.SchemaObjectName.Identifiers[0].Value + ",";
+                            rtInfo.AppendText("View " + view.SchemaObjectName.Identifiers[0].Value + Environment.NewLine);
                         }
                     }
                 };
@@ -245,8 +257,8 @@ namespace FFObjectViewer
                     {
                         foreach (CreateProcedureStatement procedure in visitor.Statements)
                         {
-                            infomet = infomet + "Stored Procedure " + procedure.ProcedureReference.Name.BaseIdentifier.Value + ",";
-                            rtInfo.AppendText(infomet + Environment.NewLine);
+                            // infomet = infomet + "Stored Procedure " + procedure.ProcedureReference.Name.BaseIdentifier.Value + ",";
+                            rtInfo.AppendText("Stored Procedure " + procedure.ProcedureReference.Name.BaseIdentifier.Value + Environment.NewLine);
                         }
                     }
                 }
@@ -276,8 +288,8 @@ namespace FFObjectViewer
                     {
                         foreach (CreateFunctionStatement funct in visitor.Statements)
                         {
-                            infomet = infomet + "Function " + funct.Name.BaseIdentifier.Value + ",";
-                            rtInfo.AppendText(infomet + Environment.NewLine);
+                            // infomet = infomet + "Function " + funct.Name.BaseIdentifier.Value + ",";
+                            rtInfo.AppendText("Function " + funct.Name.BaseIdentifier.Value + Environment.NewLine);
                         }
                     }
                 }
