@@ -1,8 +1,17 @@
-C:\OneDriver\OneDrive - Flex\Desktop\08others\00SampleCodes\FFObjectViewer\FFObjectViewer\obj\Debug\FFObjectViewer.frmObjetViewer.resources
-C:\OneDriver\OneDrive - Flex\Desktop\08others\00SampleCodes\FFObjectViewer\FFObjectViewer\obj\Debug\FFObjectViewer.Properties.Resources.resources
-C:\OneDriver\OneDrive - Flex\Desktop\08others\00SampleCodes\FFObjectViewer\FFObjectViewer\obj\Debug\FFObjectViewer.csproj.GenerateResource.cache
-C:\OneDriver\OneDrive - Flex\Desktop\08others\00SampleCodes\FFObjectViewer\FFObjectViewer\obj\Debug\FFObjectViewer.csproj.CoreCompileInputs.cache
-C:\OneDriver\OneDrive - Flex\Desktop\08others\00SampleCodes\FFObjectViewer\FFObjectViewer\bin\Debug\FFObjectViewer.exe
-C:\OneDriver\OneDrive - Flex\Desktop\08others\00SampleCodes\FFObjectViewer\FFObjectViewer\bin\Debug\FFObjectViewer.pdb
-C:\OneDriver\OneDrive - Flex\Desktop\08others\00SampleCodes\FFObjectViewer\FFObjectViewer\obj\Debug\FFObjectViewer.exe
-C:\OneDriver\OneDrive - Flex\Desktop\08others\00SampleCodes\FFObjectViewer\FFObjectViewer\obj\Debug\FFObjectViewer.pdb
+C:\00work\03others\00-Study\DK\FFObjectViewer\FFObjectViewer\bin\Debug\FFObjectViewer.exe.config
+C:\00work\03others\00-Study\DK\FFObjectViewer\FFObjectViewer\bin\Debug\FFObjectViewer.exe
+C:\00work\03others\00-Study\DK\FFObjectViewer\FFObjectViewer\bin\Debug\FFObjectViewer.pdb
+C:\00work\03others\00-Study\DK\FFObjectViewer\FFObjectViewer\bin\Debug\Microsoft.SqlServer.TransactSql.ScriptDom.dll
+C:\00work\03others\00-Study\DK\FFObjectViewer\FFObjectViewer\bin\Debug\System.Reflection.Metadata.dll
+C:\00work\03others\00-Study\DK\FFObjectViewer\FFObjectViewer\bin\Debug\System.Reflection.MetadataLoadContext.dll
+C:\00work\03others\00-Study\DK\FFObjectViewer\FFObjectViewer\bin\Debug\System.Collections.Immutable.dll
+C:\00work\03others\00-Study\DK\FFObjectViewer\FFObjectViewer\bin\Debug\System.Memory.dll
+C:\00work\03others\00-Study\DK\FFObjectViewer\FFObjectViewer\bin\Debug\System.Numerics.Vectors.dll
+C:\00work\03others\00-Study\DK\FFObjectViewer\FFObjectViewer\bin\Debug\System.Buffers.dll
+C:\00work\03others\00-Study\DK\FFObjectViewer\FFObjectViewer\obj\Debug\FFObjectViewer.frmObjetViewer.resources
+C:\00work\03others\00-Study\DK\FFObjectViewer\FFObjectViewer\obj\Debug\FFObjectViewer.Properties.Resources.resources
+C:\00work\03others\00-Study\DK\FFObjectViewer\FFObjectViewer\obj\Debug\FFObjectViewer.csproj.GenerateResource.cache
+C:\00work\03others\00-Study\DK\FFObjectViewer\FFObjectViewer\obj\Debug\FFObjectViewer.csproj.CoreCompileInputs.cache
+C:\00work\03others\00-Study\DK\FFObjectViewer\FFObjectViewer\obj\Debug\FFObjectViewer.csproj.CopyComplete
+C:\00work\03others\00-Study\DK\FFObjectViewer\FFObjectViewer\obj\Debug\FFObjectViewer.exe
+C:\00work\03others\00-Study\DK\FFObjectViewer\FFObjectViewer\obj\Debug\FFObjectViewer.pdb

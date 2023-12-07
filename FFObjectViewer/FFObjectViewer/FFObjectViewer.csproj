@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>FFObjectViewer</RootNamespace>
     <AssemblyName>FFObjectViewer</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
@@ -75,31 +75,19 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.SqlServer.Dac">
-      <HintPath>Lib\Microsoft.SqlServer.Dac.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SqlServer.Dac.Extensions">
-      <HintPath>Lib\Microsoft.SqlServer.Dac.Extensions.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.SqlServer.TransactSql.ScriptDom">
       <HintPath>Lib\Microsoft.SqlServer.TransactSql.ScriptDom.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.SqlServer.Types, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Lib\Microsoft.SqlServer.Types.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Reflection.Metadata">
-      <HintPath>Lib\System.Reflection.Metadata.dll</HintPath>
-    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Reflection.MetadataLoadContext">
       <HintPath>Lib\System.Reflection.MetadataLoadContext.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />

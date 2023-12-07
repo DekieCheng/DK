@@ -1,14 +1,16 @@
-﻿using Microsoft.Win32;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.DirectoryServices;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Text;
 using System.Windows.Forms;
 using Microsoft.SqlServer.TransactSql.ScriptDom;
-using System.Text;
 
 namespace FFObjectViewer
 {
@@ -41,8 +43,10 @@ namespace FFObjectViewer
                     this.rtInfo.AppendText("Source File: " + file + Environment.NewLine);
                     try
                     {
+                        GetMethods(file);
+
                         // 加载文件中的类名和方法名到TreeView
-                        LoadAssembly(file);
+                        // LoadAssembly(file);
                     }
                     catch (Exception ex)
                     { }
@@ -218,7 +222,11 @@ namespace FFObjectViewer
                     {
                         foreach (CreateTableStatement view in tvisitor.Statements)
                         {
-                            if (view.SchemaObjectName.Identifiers[0].Value != "dbo")
+                            string tableName = view.SchemaObjectName.Identifiers[0].Value;
+                            if (string.IsNullOrEmpty(tableName)) continue;
+                            if (tableName.Substring(0, 1) == "#") continue;
+
+                            if (tableName != "dbo")
                             {
                                 rtInfo.AppendText("Table " + view.SchemaObjectName.Identifiers[0].Value + Environment.NewLine);
                             }
@@ -227,7 +235,7 @@ namespace FFObjectViewer
                                 rtInfo.AppendText("Table " + view.SchemaObjectName.Identifiers[1].Value + Environment.NewLine);
                             }
                         }
-                        return infomet;
+                        //  return infomet;
                     }
 
                     //View
@@ -239,7 +247,7 @@ namespace FFObjectViewer
                         {
                             rtInfo.AppendText("View " + view.SchemaObjectName.Identifiers[0].Value + Environment.NewLine);
                         }
-                        return infomet;
+                        //  return infomet;
                     }
 
                     //Procedure
@@ -251,7 +259,7 @@ namespace FFObjectViewer
                         {
                             rtInfo.AppendText("Stored Procedure " + procedure.ProcedureReference.Name.BaseIdentifier.Value + Environment.NewLine);
                         }
-                        return infomet;
+                        //  return infomet;
                     }
 
                     //function
@@ -263,7 +271,7 @@ namespace FFObjectViewer
                         {
                             rtInfo.AppendText("Function " + funct.Name.BaseIdentifier.Value + Environment.NewLine);
                         }
-                        return infomet;
+                        //   return infomet;
                     }
                 };
                 return infomet;
@@ -362,6 +370,63 @@ namespace FFObjectViewer
             {
                 MessageBox.Show(ex.Message, "SQLGetFunctions");
                 return string.Empty;
+            }
+        }
+
+        private void GetMethods(string path)
+        {
+            try
+            {
+                FileInfo fileInfo = new FileInfo(path);
+                List<string> pathList = new List<string>();
+
+                string[] referencePath = new string[] {
+                    @"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v3.5",
+                fileInfo.DirectoryName };
+
+                foreach (object item in referencePath)
+                {
+                    string[] runtimeAssemblies = Directory.GetFiles(item.ToString(), " *.dll", SearchOption.AllDirectories);
+                    pathList.AddRange(runtimeAssemblies);
+                }
+                pathList.AddRange(Directory.GetFiles(fileInfo.DirectoryName, "*.dll", SearchOption.AllDirectories));
+                string[] runtimeAssemblies2 = Directory.GetFiles(RuntimeEnvironment.GetRuntimeDirectory(), "*.dll", SearchOption.AllDirectories);
+                pathList.AddRange(runtimeAssemblies2);
+                pathList.Add(path);
+                MetadataLoadContext mlc = new MetadataLoadContext(new PathAssemblyResolver(pathList));
+                Assembly assembly = mlc.LoadFromAssemblyPath(path);
+                System.Reflection.AssemblyName name = assembly.GetName();
+                TypeInfo[] assemblyTypes = ((!true) ? assembly.DefinedTypes.Where((TypeInfo t) => t.Namespace != null && !t.IsSpecialName && t.Assembly.Equals(assembly) && t.Namespace.Equals(name.Name) && t.DeclaringType == null).ToArray() : assembly.DefinedTypes.Where((TypeInfo t) => t.Assembly.Equals(assembly) && t.FullName != null && (t.FullName.StartsWith("Flex") || t.FullName == name.Name) && t.DeclaringType == null).ToArray());
+                string infomet = "";
+                infomet = "DLL " + name.Name + ",";
+                rtInfo.AppendText(infomet + Environment.NewLine);
+                TypeInfo[] array = assemblyTypes;
+                foreach (TypeInfo type in array)
+                {
+                    BindingFlags bindingFlags = BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic;
+                    MethodInfo[] methods = ((!true) ? (from w in type.GetMethods(bindingFlags)
+                                                       where !w.IsSpecialName && w.DeclaringType.Namespace == name.Name
+                                                       select w).ToArray() : (from w in type.GetMethods(bindingFlags)
+                                                                              where !w.IsSpecialName && w.DeclaringType.Namespace != null && w.DeclaringType.Namespace.StartsWith("Flex")
+                                                                              select w).ToArray());
+                    infomet = "Class " + type.Name + ",";
+                    rtInfo.AppendText(infomet + Environment.NewLine);
+                    if (methods.Count() > 0)
+                    {
+                        MethodInfo[] array2 = methods;
+                        foreach (MethodInfo mi in array2)
+                        {
+                            infomet = ((!(mi.DeclaringType.FullName.ToUpper() == "SYSTEM.VOID")) ? "Function" : "Method");
+                            infomet = infomet + " " + mi.Name + ",";
+                            rtInfo.AppendText(infomet + Environment.NewLine);
+                        }
+                    }
+                }
+                mlc.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
             }
         }
 
