@@ -1,0 +1,12 @@
+setup.py
+dekiefirstpymodule/__init__.py
+dekiefirstpymodule/__main__.py
+dekiefirstpymodule/add.py
+dekiefirstpymodule/substract.py
+dekiefirstpymodule.egg-info/PKG-INFO
+dekiefirstpymodule.egg-info/SOURCES.txt
+dekiefirstpymodule.egg-info/dependency_links.txt
+dekiefirstpymodule.egg-info/top_level.txt
+dekiefirstpymodule/extras/__init__.py
+dekiefirstpymodule/extras/divide.py
+dekiefirstpymodule/extras/multiply.py
