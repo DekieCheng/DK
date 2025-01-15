@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Project:    SerialPort Terminal
  * Company:    Coad .NET, http://coad.net
  * Author:     Noah Coad, http://coad.net/noah
@@ -31,6 +31,7 @@ namespace SerialPortTerminal
     #region Public Enumerations
     public enum DataMode { Text, Hex }
     public enum LogMsgType { Incoming, Outgoing, Normal, Warning, Error };
+
     #endregion
 
     public partial class frmTerminal : Form
@@ -59,6 +60,8 @@ namespace SerialPortTerminal
 
             // Enable/disable controls based on the current state
             EnableControls();
+
+            LoadEncodingsIntoComboBox(this.cboEncoding);
 
             // When data is recieved through the port, call this method
             comport.DataReceived += new SerialDataReceivedEventHandler(port_DataReceived);
@@ -109,6 +112,19 @@ namespace SerialPortTerminal
             }
         }
 
+        private void LoadEncodingsIntoComboBox(ComboBox comboBox)
+        {
+            comboBox.Items.Clear();
+            comboBox.Items.Add("UTF-8");
+            comboBox.Items.Add("ASCII");
+            comboBox.Items.Add("Unicode");
+            comboBox.Items.Add("UTF-32");
+            comboBox.Items.Add("ISO-8859-1");
+            comboBox.Items.Add("Windows-1252");
+            comboBox.Items.Add("UTF-7");
+            comboBox.SelectedIndex = 0; // 默认选择 UTF-8  
+        }
+
         /// <summary> Enable/disable controls based on the app's current state. </summary>
         private void EnableControls()
         {
@@ -121,32 +137,33 @@ namespace SerialPortTerminal
             else btnOpenPort.Text = "&Open Port";
         }
 
-        /// <summary> Send the user's data currently entered in the 'send' box.</summary>
         private void SendData()
         {
             if (CurrentDataMode == DataMode.Text)
             {
-                // Send the user's text straight out the port
-                if (txtSendData.Text == "") return;
-                comport.Write(txtSendData.Text);
-                Log(LogMsgType.Outgoing, txtSendData.Text + "\n");
+                try
+                {
+                    Encoding selectedEncoding = Encoding.GetEncoding(this.cboEncoding.SelectedItem.ToString());
+                    if (string.IsNullOrEmpty(txtSendData.Text)) return;
+                    byte[] data = selectedEncoding.GetBytes(txtSendData.Text);
+                    comport.Write(data, 0, data.Length);
+                    Log(LogMsgType.Outgoing, txtSendData.Text + "\n");
+                }
+                catch (FormatException)
+                {
+                    Log(LogMsgType.Error, txtSendData.Text + "\n");
+                }
             }
             else
             {
                 try
                 {
-                    // Convert the user's string of hex digits (ex: B4 CA E2) to a byte array
                     byte[] data = HexStringToByteArray(txtSendData.Text);
-
-                    // Send the binary data out the port
                     comport.Write(data, 0, data.Length);
-
-                    // Show the hex digits on in the terminal window
                     Log(LogMsgType.Outgoing, ByteArrayToHexString(data) + "\n");
                 }
                 catch (FormatException)
                 {
-                    // Inform the user if the hex string was not properly formatted
                     Log(LogMsgType.Error, "Not properly formatted hex string: " + txtSendData.Text + "\n");
                 }
             }
@@ -163,9 +180,11 @@ namespace SerialPortTerminal
                 rtfTerminal.SelectionFont = new Font(rtfTerminal.SelectionFont, FontStyle.Bold);
                 rtfTerminal.SelectionColor = LogMsgTypeColor[(int)msgtype];
                 rtfTerminal.AppendText(msg);
+                rtfTerminal.SelectionColor = Color.Black; // 其他文本恢复为黑色  
                 rtfTerminal.ScrollToCaret();
             }));
         }
+
 
         /// <summary> Convert a string of hex digits (ex: E4 CA B2) to a byte array. </summary>
         /// <param name="s"> The string containing the hex digits (with or without spaces). </param>

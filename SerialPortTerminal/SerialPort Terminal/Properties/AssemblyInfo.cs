@@ -1,4 +1,4 @@
-using System.Reflection;
+ï»¿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -10,15 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("SerialPort Terminal")]
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-[assembly: AssemblyCopyright("Copyright ©  2005")]
-=======
-[assembly: AssemblyCopyright("Copyright @ 2025")]
->>>>>>> Stashed changes
-=======
-[assembly: AssemblyCopyright("Copyright @ 2025")]
->>>>>>> Stashed changes
+[assembly: AssemblyCopyright("Copyright ? 2005")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -37,5 +29,5 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("2.0.0.101")]
-[assembly: AssemblyFileVersion("2.0.0.101")]
+[assembly: AssemblyVersion("2.0.0.102")]
+[assembly: AssemblyFileVersion("2.0.0.102")]

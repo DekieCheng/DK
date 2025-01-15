@@ -1,0 +1,11 @@
+C:\00work\02sc-cfd-git\05TL\DK\SerialPortTerminal\SerialPort Terminal\bin\Debug\SerialPortTerminal.exe.config
+C:\00work\02sc-cfd-git\05TL\DK\SerialPortTerminal\SerialPort Terminal\bin\Debug\SerialPortTerminal.exe
+C:\00work\02sc-cfd-git\05TL\DK\SerialPortTerminal\SerialPort Terminal\bin\Debug\SerialPortTerminal.pdb
+C:\00work\02sc-cfd-git\05TL\DK\SerialPortTerminal\SerialPort Terminal\obj\Debug\SerialPortTerminal.frmAbout.resources
+C:\00work\02sc-cfd-git\05TL\DK\SerialPortTerminal\SerialPort Terminal\obj\Debug\SerialPortTerminal.frmTerminal.resources
+C:\00work\02sc-cfd-git\05TL\DK\SerialPortTerminal\SerialPort Terminal\obj\Debug\SerialPortTerminal.Properties.Resources.resources
+C:\00work\02sc-cfd-git\05TL\DK\SerialPortTerminal\SerialPort Terminal\obj\Debug\SerialPortTerminal.csproj.GenerateResource.cache
+C:\00work\02sc-cfd-git\05TL\DK\SerialPortTerminal\SerialPort Terminal\obj\Debug\SerialPortTerminal.csproj.CoreCompileInputs.cache
+C:\00work\02sc-cfd-git\05TL\DK\SerialPortTerminal\SerialPort Terminal\obj\Debug\SerialPortTerminal.exe
+C:\00work\02sc-cfd-git\05TL\DK\SerialPortTerminal\SerialPort Terminal\obj\Debug\SerialPortTerminal.pdb
+C:\00work\02sc-cfd-git\05TL\DK\SerialPortTerminal\SerialPort Terminal\obj\Debug\SerialPortTerminal.csproj.AssemblyReference.cache
