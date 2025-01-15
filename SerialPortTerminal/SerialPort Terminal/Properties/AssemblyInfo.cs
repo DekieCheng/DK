@@ -11,7 +11,11 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("SerialPort Terminal")]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [assembly: AssemblyCopyright("Copyright ©  2005")]
+=======
+[assembly: AssemblyCopyright("Copyright @ 2025")]
+>>>>>>> Stashed changes
 =======
 [assembly: AssemblyCopyright("Copyright @ 2025")]
 >>>>>>> Stashed changes
