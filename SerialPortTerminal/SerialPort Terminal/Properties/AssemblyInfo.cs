@@ -10,7 +10,15 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("SerialPort Terminal")]
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [assembly: AssemblyCopyright("Copyright ©  2005")]
+=======
+[assembly: AssemblyCopyright("Copyright @ 2025")]
+>>>>>>> Stashed changes
+=======
+[assembly: AssemblyCopyright("Copyright @ 2025")]
+>>>>>>> Stashed changes
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
