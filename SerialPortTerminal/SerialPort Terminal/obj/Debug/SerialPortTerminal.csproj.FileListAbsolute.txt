@@ -8,4 +8,3 @@ C:\00work\02sc-cfd-git\05TL\DK\SerialPortTerminal\SerialPort Terminal\obj\Debug\
 C:\00work\02sc-cfd-git\05TL\DK\SerialPortTerminal\SerialPort Terminal\obj\Debug\SerialPortTerminal.csproj.CoreCompileInputs.cache
 C:\00work\02sc-cfd-git\05TL\DK\SerialPortTerminal\SerialPort Terminal\obj\Debug\SerialPortTerminal.exe
 C:\00work\02sc-cfd-git\05TL\DK\SerialPortTerminal\SerialPort Terminal\obj\Debug\SerialPortTerminal.pdb
-C:\00work\02sc-cfd-git\05TL\DK\SerialPortTerminal\SerialPort Terminal\obj\Debug\SerialPortTerminal.csproj.AssemblyReference.cache

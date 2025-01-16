@@ -79,7 +79,8 @@ namespace SerialPortTerminal
             Settings.Default.Parity = (Parity)Enum.Parse(typeof(Parity), cmbParity.Text);
             Settings.Default.StopBits = (StopBits)Enum.Parse(typeof(StopBits), cmbStopBits.Text);
             Settings.Default.PortName = cmbPortName.Text;
-
+            Settings.Default.RtsEnable = chkRTS.Checked;
+            Settings.Default.DtrEnable = chkDTR.Checked;
             Settings.Default.Save();
         }
 
@@ -98,6 +99,8 @@ namespace SerialPortTerminal
             cmbParity.Text = Settings.Default.Parity.ToString();
             cmbBaudRate.Text = Settings.Default.BaudRate.ToString();
             CurrentDataMode = Settings.Default.DataMode;
+            chkDTR.Checked = Settings.Default.DtrEnable;
+            chkRTS.Checked = Settings.Default.RtsEnable;
 
             cmbPortName.Items.Clear();
             foreach (string s in SerialPort.GetPortNames())
@@ -237,6 +240,7 @@ namespace SerialPortTerminal
         {
             Log(LogMsgType.Normal, String.Format("Application Started at {0}\n", DateTime.Now));
         }
+
         private void frmTerminal_FormClosing(object sender, FormClosingEventArgs e)
         {
             // The form is closing, save the user's preferences
@@ -245,11 +249,13 @@ namespace SerialPortTerminal
 
         private void rbText_CheckedChanged(object sender, EventArgs e)
         { if (rbText.Checked) CurrentDataMode = DataMode.Text; }
+
         private void rbHex_CheckedChanged(object sender, EventArgs e)
         { if (rbHex.Checked) CurrentDataMode = DataMode.Hex; }
 
         private void cmbBaudRate_Validating(object sender, CancelEventArgs e)
         { int x; e.Cancel = !int.TryParse(cmbBaudRate.Text, out x); }
+
         private void cmbDataBits_Validating(object sender, CancelEventArgs e)
         { int x; e.Cancel = !int.TryParse(cmbDataBits.Text, out x); }
 
@@ -283,6 +289,7 @@ namespace SerialPortTerminal
             // If the port is open, send focus to the send data box
             if (comport.IsOpen) txtSendData.Focus();
         }
+
         private void btnSend_Click(object sender, EventArgs e)
         { SendData(); }
 
@@ -324,7 +331,6 @@ namespace SerialPortTerminal
         }
         private void txtSendData_KeyPress(object sender, KeyPressEventArgs e)
         { e.Handled = KeyHandled; }
-        #endregion
 
         private void btnAutoSend_Click(object sender, EventArgs e)
         {
@@ -359,5 +365,7 @@ namespace SerialPortTerminal
                 Log(LogMsgType.Error, ex.Message);
             }
         }
+
+        #endregion
     }
 }
